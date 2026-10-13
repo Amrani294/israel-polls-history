@@ -1,0 +1,38 @@
+P|Likud|Likud|pos=Right-wing|lead=Benjamin Netanyahu
+P|Israeli Labor Party|Israeli Labor Party|pos=Centre-left|lead=Levi Eshkol (first); Yair Golan (last)
+P|Meretz|Meretz|pos=Left-wing|lead=
+P|United Torah Judaism|United Torah Judaism|pos=Social: ; Right-wing; Economic:; Centre-left|lead=Ya'akov Asher
+P|Shas|Shas|pos=Fiscal: Centre-left; Social: Right-wing|lead=Aryeh Deri
+P|Ra'am|Ra'am|pos=|lead=Mansour Abbas
+P|Yisrael Beiteinu|Yisrael Beiteinu|pos=Right-wing|lead=Avigdor Lieberman
+P|Otzma Yehudit|Otzma Yehudit|pos=Far-right|lead=Itamar Ben-Gvir
+P|Hadash–Ta'al|Hadash–Ta'al|pos=Left-wing|lead=Yousef Jabareen
+P|The Jewish Home|The Jewish Home|pos=Far-right|lead=Hagit Moshe
+P|Balad (political party)|Balad (political party)|pos=Left-wing to far-left|lead=Sami Abu Shehadeh
+P|Yesh Atid|Yesh Atid|pos=Centre|lead=Yair Lapid
+P|Joint List|Joint List|pos=Left-wing|lead=Yousef Jabareen
+P|Blue and White (political alliance)|Blue and White (political alliance)|pos=Centre|lead=Benny Gantz
+P|Yamina|Yamina|pos=Right-wing to far-right|lead=Ayelet Shaked
+P|Labor-Gesher|Labor-Gesher|pos=Centre-left|lead=Amir Peretz; Orly Levy
+P|Labor-Gesher-Meretz|Labor-Gesher-Meretz|pos=Centre-left|lead=Amir Peretz
+P|New Hope (Israel)|New Hope (Israel)|pos=Centre-right to right-wing|lead=Gideon Sa'ar
+P|Religious Zionist Party|Religious Zionist Party|pos=Far-right|lead=Bezalel Smotrich
+P|National Unity (Israel)|National Unity (Israel)|pos=Centre to centre-right|lead=Benny Gantz
+P|National Union (Israel)|National Union (Israel)|pos=Right-wing to far-right|lead=Ya'akov Katz; Benny Begin; Rehavam Ze'evi; Binyamin Elon; Avigdor Lieberman
+P|Hadash|Hadash|pos=Left-wing to far-left|lead=
+P|Kadima|Kadima|pos=Centre|lead=Ariel Sharon; Ehud Olmert; Tzipi Livni ; Shaul Mofaz; Akram Hasson
+P|Hatnua|Hatnua|pos=Centre to centre-left|lead=Tzipi Livni
+P|Likud Yisrael Beiteinu|Likud Yisrael Beiteinu|pos=Right-wing|lead=Benjamin Netanyahu
+P|Zionist Union|Zionist Union|pos=Centre-left|lead=Isaac Herzog (2014–2017); Tzipi Livni (2014–2019); Avi Gabbay (2017–2019)
+P|Kulanu|Kulanu|pos=Centre to centre-right|lead=Moshe Kahlon
+P|Yachad (political party)|Yachad (political party)|pos=Right-wing to far-right|lead=Eli Yishai
+P|Zehut|Zehut|pos=Right-wing to far-right|lead=Moshe Feiglin
+P|Gesher (2019 political party)|Gesher (2019 political party)|pos=Centre|lead=Orly Levy
+P|New Right (Israel)|New Right (Israel)|pos=Right-wing to far-right|lead=Naftali Bennett
+P|Union of Right-Wing Parties|Union of Right-Wing Parties|pos=Right-wing to far-right|lead=Rafi Peretz
+P|Democratic Union (Israel)|Democratic Union (Israel)|pos=Centre-left to left-wing|lead=Nitzan Horowitz; Stav Shaffir; Yair Golan; Ehud Barak
+P|Ra'am–Balad|ERROR missingtitle
+P|United Arab List–Balad|ERROR missingtitle
+P|Ta'al|Ta'al|pos=Big tent|lead=Ahmad Tibi
+P|Religious Zionist Party (2022 alliance)|ERROR missingtitle
+P|Am Shalem (political party)|ERROR missingtitle

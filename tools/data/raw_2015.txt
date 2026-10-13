@@ -1,0 +1,78 @@
+SOURCE|https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election
+H0|Date|Poll|Likud|YisraelBeiteinu|YeshAtid|Labor|Hatnuah|JewishHome|Shas|UTJ|Meretz|Hadash|UAL-Ta'al|Balad|Otzma|Yachad|Kulanu
+R0|17 Mar 2015|Channel 1 exit poll|27|5|11|26^c2|~|8|7|6|5|12^c3|~|~|0^c2|~|9
+R0|17 Mar 2015|Channel 2 exit poll|28|5|11|27^c2|~|8|7|6|5|13^c3|~|~|0^c2|~|10
+R0|17 Mar 2015|Channel 10 exit poll|27|5|11|27^c2|~|8|7|7|5|13^c3|~|~|0^c2|~|10
+E0|13 Mar 2015|Deadline for publishing election polls; under Israeli law, publishing election polls in the last five days before an election is prohibited.
+R0|13 Mar 2015|Channel 2|22|5|12|26^c2|~|11|7|6|5|13^c3|~|~|5^c2|~|8
+R0|13 Mar 2015|Channel 10|20|5|12|24^c2|~|12|7|7|5|13^c3|~|~|5^c2|~|10
+R0|13 Mar 2015|Reshet Bet|21|6|11|25^c2|~|11|9|6|5|13^c3|~|~|4^c2|~|9
+R0|13 Mar 2015|Teleseker/Channel 1|22|6|12|25^c2|~|11|8|7|4|12^c3|~|~|4^c2|~|9
+R0|12 Mar 2015|Panels/Maariv|21|5|13|24^c2|~|12|7|7|5|13^c3|~|~|4^c2|~|9
+R0|12 Mar 2015|Dialog/Haaretz|21|4|12|24^c2|~|11|7|6|6|13^c3|~|~|5^c2|~|11
+R0|10 Mar 2015|Channel 2|21|6|12|25^c2|~|13|7|6|5|13^c3|~|~|4^c2|~|8
+R0|6 Mar 2015|Panels/Maariv|22|5|13|24^c2|~|12|7|6|6|13^c3|~|~|4^c2|~|8
+R0|5 Mar 2015|Channel 1|24|6|13|24^c2|~|11|8|7|4|12^c3|~|~|4^c2|~|7
+R0|4 Mar 2015|Dialog/Channel 10|23|5|13|23^c2|~|11|7|6|5|13^c3|~|~|4^c2|~|10
+R0|4 Mar 2015|Midgam/Channel 2|23|6|12|24^c2|~|12|6|6|6|13^c3|~|~|4^c2|~|8
+E0|3 Mar 2015|PM Netanyahu delivers a speech about Iran to a joint meeting of U.S. Congress^c20
+R0|27 Feb 2015|Israel Radio|22|6|12|23^c2|~|12|8|6|5|13^c3|~|~|4^c2|~|9
+R0|27 Feb 2015|Maariv|23|5|12|25^c2|~|11|7|7|5|13^c3|~|~|4^c2|~|8
+E0|26 Feb 2015|Television debate of the leaders of all parties except Likud, Zionist Union, and UTJ^c20
+R0|26 Feb 2015|Panels/Maariv-Jerusalem Post|23|5|12|24^c2|~|12|7|7|5|13^c3|~|~|4^c2|~|8
+R0|26 Feb 2015|Channel 1|24|6|12|24^c2|~|12|7|7|4|12^c3|~|~|5^c2|~|7
+R0|26 Feb 2015|Channel 10|21|6|13|23^c2|~|12|7|7|5|12^c3|~|~|5^c2|~|9
+R0|24 Feb 2015|Midgam /Channel 2|22|6|12|24^c2|~|12|7|7|6|12^c3|~|~|5^c2|~|7
+R0|24 Feb 2015|Dialog/Haaretz|23|6|12|23^c2|~|12|7|7|5|12^c3|~|~|4^c2|~|9
+R0|22 Feb 2015|Teleseker/Nana 10|23|4|11|25^c2|~|14|5|7|6|12^c3|~|~|5^c2|~|8
+R0|20 Feb 2015|Smith/Israel Radio|24|5|10|24^c2|~|13|8|7|5|12^c3|~|~|4^c2|~|8
+R0|19 Feb 2015|Panels/Maariv|22|5|12|24^c2|~|13|7|7|6|12^c3|~|~|4^c2|~|8
+R0|19 Feb 2015|Teleseker/Channel 1|24|6|11|24^c2|~|13|7|7|4|12^c3|~|~|4^c2|~|8
+R0|18 Feb 2015|Channel 10|22|5|12|23^c2|~|13|7|7|5|12^c3|~|~|4^c2|~|10
+R0|15 Feb 2015|Midgam/Channel 2|24|7|11|25^c2|~|11|6|7|5|12^c3|~|~|5^c2|~|7
+R0|13 Feb 2015|Smith/Israel Radio|25|5|9|24^c2|~|13|8|7|5|13^c3|~|~|4^c2|~|7
+R0|13 Feb 2015|Panels/Maariv|24|6|12|23^c2|~|11|6|7|6|13^c3|~|~|5^c2|~|7
+R0|11 Feb 2015|Teleseker/Channel 1|27|7|10|23^c2|~|11|6|8|5|12^c3|~|~|4^c2|~|7
+R0|8 Feb 2015|Midgam/Channel 10|23|5|10|23^c2|~|14|6|6|5|13^c3|~|~|5^c2|~|10
+R0|7 Feb 2015|Teleseker/Channel 1|27|6|11|23^c2|~|11|6|8|5|12^c3|~|~|4^c2|~|7
+R0|6 Feb 2015|Smith/Israel Radio|26|5|9|25^c2|~|14|9|8|5|12^c3|~|~|0^c2|~|7
+R0|6 Feb 2015|Panels/Maariv|26|5|11|22^c2|~|13|6|8|6|12^c3|~|~|4^c2|~|7
+R0|1 Feb 2015|Dialog/Haaretz|25|6|9|23^c2|~|14|6|8|5|12^c3|~|~|4^c2|~|8
+R0|30 Jan 2015|Smith/Israel Radio|26|5|8|26^c2|~|15|9|7|5|12^c3|~|~|0^c2|~|7
+R0|30 Jan 2015|Panels/Maariv|25|5|11|24^c2|~|14|7|8|6|12^c3|~|~|0|0|8
+E0|29 Jan 2015|Deadline for parties to submit final Knesset candidate lists to the Central Elections Commission^c20
+E0|29 Jan 2015|Otzma Yehudit and Yachad reach agreement to run a joint list^c20
+R0|29 Jan 2015|Teleseker/Channel 1|27|7|8|26^c2|~|14|7|8|5|12^c3|~|~|0|0|6
+R0|28 Jan 2015|Channel 10|23|4|10|25^c2|~|16|6|6|5|12^c3|~|~|0|4|9
+R0|26 Jan 2015|Channel 2/Midgam|23|7|9|26^c2|~|15|7|7|6|12^c3|~|~|0|0|8
+R0|23 Jan 2015|Israel Radio|25|5|9|25^c2|~|16|9|7|5|12^c3|~|~|0|0|7
+E0|22 Jan 2015|United Arab List, Ta'al, Hadash, Balad and Islamic Movement in Israel reach agreement to run as a united list^c20
+R0|22 Jan 2015|Teleseker/Channel 1|26|7|8|24^c2|~|15|9|8|5|11^c3|~|~|0|0|7
+R0|16 Jan 2015|Panels/Maariv|22|6|11|25^c2|~|17|6|7|6|11^c3|~|~|0|0|9
+R0|15 Jan 2015|Midgam/Channel 2|23|6|11|25^c2|~|16|6|6|5|11^c3|~|~|0|0|11
+R0|15 Jan 2015|Channel 10|20|5|10|24^c2|~|16|6|7|6|12^c3|~|~|0|4|10
+R0|9 Jan 2015|Teleseker/Walla-Maariv|25|6|9|24^c2|~|15|6|8|6|11^c3|~|~|0|0|10
+R0|7 Jan 2015|Dialog/Haaretz|22|6|12|23^c2|~|16|5|7|6|5|5|0|0|4|9
+R0|6 Jan 2015|Teleseker/Channel 1|25|7|9|24^c2|~|15|6|8|7|11^c3|~|~|0|0|8
+R0|2 Jan 2015|Panels/Galay Israel Radio|23|7|9|24^c2|~|16|7|7|7|6|5^c2|~|0|0|9
+R0|31 Dec 2014|Channel 10|21|7|9|23^c2|~|17|5|7|6|11^c3|~|~|0|4|10
+R0|29 Dec 2014|Midgam/Channel 2|24|8|9|24^c2|~|16|6|7|5|0|6|5|0|0|10
+R0|25 Dec 2014|Sarid/Channel 2|22|10|9|25^c2|~|17|4|7|7|12^c3|~|~|0|0|7
+R0|24 Dec 2014|Jerusalem Post and Maariv/Panels|23|5|11|24^c2|~|17|4|7|7|5|6|0|0|4|7
+R0|23 Dec 2014|TRI/Nana 10|20|7|19|21^c2|~|16|5|8|6|11^c3|~|~|0|4|19
+R0|23 Dec 2014|Channel 10|21|9|10|22^c2|~|17|4|7|6|5|6|0|0|4|9
+R0|19 Dec 2014|Smith/Reshet Bet|22|8|8|23^c2|~|13|7|7|7|10^c3|~|~|0|6|9
+R0|18 Dec 2014|Panels/Maariv|21|8|10|23^c2|~|16|4|7|7|5|5|0|0|4|10
+R0|17 Dec 2014|Haaretz/Dialog|21|8|11|21^c2|~|16|4|8|6|5|5|0|0|3|12
+E0|15 Dec 2014|Former Shas chairman Eli Yishai forms a new party, Yachad^c20
+R0|11 Dec 2014|Midgam/Channel 2|23|8|8|24^c2|~|15|9|8|5|11^c3|~|~|0|—|9
+R0|11 Dec 2014|Panels/Maariv|20|10|9|24^c2|~|17|6|8|6|5|5|0|0|—|10
+E0|10 Dec 2014|Labor (led by Isaac Herzog) and Hatnuah (led by Tzipi Livni) agree to run on a joint list, called Zionist Union^c20
+R0|10 Dec 2014|Channel 10|20|11|10|22^c2|~|15|7|7|6|5|5|0|0|—|13
+E0|8 Dec 2014|19th Knesset dissolved, elections called^c20
+R0|5 Dec 2014|NRG/Makor Rishon Maagar Mochot|25|13|9|13|4|15|7|7|6|10^c3|~|~|0|—|10
+R0|5 Dec 2014|Jerusalem Post/Maariv Panels|21|9|11|14|4|18|7|8|8|5|4|0|0|—|11
+R0|2 Dec 2014|Dialog/Channel 10|22|12|9|13|4|17|7|8|7|9^c3|~|~|0|—|12
+R0|2 Dec 2014|Midgam/Channel 2|22|10|9|13|4|17|9|8|7|11^c3|~|~|0|—|10
+E0|2 Dec 2014|Netanyahu dismisses Yair Lapid and Tzipi Livni from the cabinet^c20
+CHECK|hash=474260742

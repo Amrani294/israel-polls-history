@@ -1,0 +1,42 @@
+SOURCE|https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election
+H0|Date|Poll|Kadima|Likud|YisraelBeiteinu|Labor|Shas|UTJ|NationalUnion|JewishHome|UAL-Ta'al|Hadash|Balad|Meretz|YeshAtid|Otzma|AmShalem|Hatnuah
+R0|22 Jan 2013|Channel 1 exit poll|0|31^c2|~|17|11|6|12^c2|~|3|3|2|7|19|2|0|7
+R0|22 Jan 2013|Channel 2 exit poll|0|31^c2|~|17|12|6|12^c2|~|3|4|2|7|19|0|0|7
+R0|22 Jan 2013|Channel 10 exit poll|0|31^c2|~|17|13|6|12^c2|~|4|5|2|6|18|0|0|6
+R0|17 Jan 2013|Haaretz/Dialogue|2|32^c2|~|17|12|5|14^c2|~|3|5|4|6|12|||8
+R0|17 Jan 2013|Maariv/Ma'agar Mochot|3|37^c2|~|15|12|6|14^c2|~|3|4|3|7|8|2|1|5
+R0|16 Jan 2013|Channel 10/Dialogue|2|32^c2|~|16|11|6|14^c2|~|3|4|4|6|11|2||9
+R0|15 Jan 2013|Channel 2/Dahaf|2|33^c2|~|17|11|6|12^c2|~|3|4|3|6|11|2||9
+R0|12 Jan 2013|Channel1/Midgam|2|33^c2|~|16|10|5|15^c2|~|4|4|3|6|10|3||9
+R0|11 Jan 2013|Maariv/Maagar|3|38^c2|~|16|12|6|13^c2|~|3|4|3|5|8|1|1|7
+R0|10 Jan 2013|Mako & Channel2/Panels|2|33^c2|~|16|10|6|15^c2|~|4|3|4|5|10|2|2|8
+R0|10 Jan 2013|Reshet Bet/Sarid|2|34^c2|~|17|9|7|14^c2|~|3|4|3|4|9|2|1|7
+R0|10 Jan 2013|Channel 2/Dahaf|2|33^c2|~|18|10|5|14^c2|~|4|4|3|6|11|2||11
+R0|9 Jan 2013|News1/Reshet Bet/Machon Sarid|2|34^c2|~|17|9|7|14^c2|~|3|4|3|4|9|2||7
+R0|7 Jan 2013|Channel 10/Dialog|2|35^c2|~|17|12|6|14^c2|~|4|3|4|5|11|||7
+R0|7 Jan 2013|Panels Politics, Mako||32^c2|~|16|10|6|16^c2|~|11^c3|~|~|5|10|3|2|9
+R0|3 Jan 2013|Israel Radio/Geocartography||35^c2|~|18|8|7|18^c2|~|11^c3|~|~|7|5|6||6
+R0|2 Jan 2013|Haaretz/Dialog|2|34^c2|~|16|11|6|14^c2|~|4|4|4|4|9|2||10
+R0|1 Jan 2013|Channel 2/Dahaf||33^c2|~|17|11|6|13^c2|~|4|4|3|5|11|2||11
+R0|27 Dec 2012|Reshet Bet/Meno Geva||34^c2|~|16|13|6|15^c2|~|4|4|3|5|9|||11
+R0|21 Dec 2012|Maariv/Maagar||37^c2|~|20|11|6|12^c2|~|4|3|3|4|7|2||9
+R0|20 Dec 2012|Reshet Bet||36^c2|~|19|11|6|11^c2|~|3|4|3|4|11||3|9
+R0|18 Dec 2012|Channel 2/Dahaf||35^c2|~|19|11|6|12^c2|~|4|4|3|3|9|2|2|10
+R0|14 Dec 2012|Maariv/Maagar|1|38^c2|~|20|12|6|11^c2|~|10^c3|~|~|3|8|1|1|9
+R0|10 Dec 2012|Haaretz/Dialog|2|39^c2|~|17|12|6|11^c2|~|5|4|3|3|6|0|3|9
+R0|6 Dec 2012|Channel 2|2|38^c2|~|19|13|6|12^c2|~|3|3|3|2|5|1|3|10
+E0|6 Dec 2012|Atzmaut announces withdrawal^c20
+R0|6 Dec 2012|Reshet Bet/Meno Geva|0|36^c2|~|20|10|6|11^c2|~|4|3|4|3|9|3|2|9
+R0|5 Dec 2012|Channel 10/Dialog|2|37^c2|~|20|10|6|11^c2|~|5|3|3|4|7|0|3|9
+R0|28 Nov 2012|Haaretz/Dialog|2|39^c2|~|18|11|6|8^c2|~|11^c3|~|~|5|8|2|3|7
+R0|18 Nov 2012|Haaretz/Dialogue|3|41^c2|~|21|12|5|8^c2|~|5|3|4|4|9||3|
+R0|13 Nov 2012|MAKO/Panels|2|36^c2|~|21|10|5|12^c2|~|9^c3|~|~|5|15||3|
+R0|6 Nov 2012|Channel 2/Maagar|3|39^c2|~|22|14|6|7^c2|~|10^c3|~|~|3|10|||
+R0|28 Oct 2012|Maariv/Teleseker|4|43^c2|~|20|10|6|8^c2|~|11^c3|~|~|3|15|||
+R0|28 Oct 2012|Channel 2/Maagar|3|42^c2|~|23|13|5|5^c2|~|10^c3|~|~|6|9|||
+R0|28 Oct 2012|Channel 10/Panels|5|35^c2|~|23|14|6|9^c2|~|11^c3|~|~|4|13|||
+E0|25 Oct 2012|Likud and Yisrael Beiteinu announce joint list^c20
+R0|18 Oct 2012|Haaretz/Dialog|9|29|13|20|11|6|6^c2|~|4|4|3|5|11|||
+R0|11 Oct 2012|Maariv/Teleseker|6|29|13|17|10|5|2|5|4|3|3|4|17|||
+R0|10 Oct 2012|Haaretz/Dialog|7|29|15|19|10|6|8^c2|~|5|4|2|4|11|||
+CHECK|hash=839998656

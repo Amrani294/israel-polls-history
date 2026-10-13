@@ -1,0 +1,8 @@
+SOURCE|https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election
+H0|Date|Polling firm|Publisher|Likud|YeshAtid|Blue &White|JointList|Shas|UTJ|YisraelBeiteinu|Meretz|Ra'am|Yamina|NewHope|Labor|ReligiousZionist|NewEconomic
+R0|17–18 Mar 21|Smith|Mako|31|19|4|8|8|7|7|4|4|9|9|5|5|(1.4%)
+H1|Date|Polling firm|Publisher|Likud|YeshAtid|B&W|JointList|Ta'al|Ra'am|Shas|UTJ|YB|Meretz|Yamina|Labor|NewHope|RZ|OtzmaYehudit-Noam|JH|Israelis|NEP
+H2|Date|Polling firm|Publisher|Likud|YeshAtid|JointList|Blue &White|Shas|UTJ|YB|Yamina|Meretz|Labor|Telem|NewHope|RZ|JH|Gesher|OY|Israelis|Tnufa|NEP
+H3|Date|Polling firm|Publisher|Likud|Yesh Atid-Telem|JointList|Blue &White|Shas|UTJ|YB|Yamina|NewHope|Meretz|Labor|JH|Gesher|OY|Israelis|Tnufa|NEP
+H4|Date|Polling firm|Publisher|Likud|Yesh Atid-Telem|JointList|Blue &White|Shas|UTJ|YisraelBeiteinu|Yamina|NewHope|Meretz|Labor|JewishHome|Gesher|OtzmaYehudit
+CHECK|hash=918577485

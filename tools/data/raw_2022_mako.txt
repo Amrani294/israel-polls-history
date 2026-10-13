@@ -1,0 +1,15 @@
+SOURCE|https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election
+H0|Date|Polling firm|Publisher|Likud|YeshAtid|NationalUnity|Shas|JewishHome|Labor|UTJ|YisraelBeiteinu|RZP-OY|Hadash–Ta'al|Meretz|Ra'am|Balad
+R0|24–25 Oct 22|Panels Politics|Mako/Knesset Channel|31|24|12|8|(2.1%)|5|7|6|14|4|5|4|(1.8%)
+R0|19 Oct 22|Midgam|Keshet|31|24|11|8|(1.9%)|6|7|6|14|4|5|4|(1.3%)
+R0|18–19 Oct 22|Panels Politics|Mako/Knesset Channel|32|24|11|8|(1.9%)|5|7|7|13|4|5|4|(1.4%)
+R0|11–12 Oct 22|Panels Politics|Mako/Knesset Channel|32|25|12|8|(2.4%)|4|7|6|13|4|5|4|(0.7%)
+R0|3–4 Oct 22|Panels Politics|Mako/Knesset Channel|32|24|11|8|(2.3%)|6|7|6|13|4|5|4|(1.3%)
+R0|28–29 Sep 22|Panels Politics|Mako/Knesset Channel|32|24|12|8|(1.8%)|5|7|6|13|4|5|4|(1.6%)
+R0|20–21 Sep 22|Panels Politics|Mako/Knesset Channel|33|24|12|8|(1.9%)|5|7|6|12|4|5|4|(1.1%)
+H1|Date|Polling firm|Publisher|Likud|YeshAtid|NationalUnity|Shas|JH/Yamina|Labor|UTJ|YisraelBeiteinu|RZP-OY|JointList|Meretz|Ra'am
+R1|12–13 Sep 22|Panels Politics|Mako/Knesset Channel|32|26|12|8|(1.4%)|5|6|5|11|6|5|4
+H2|Date|Polling firm|Publisher|Likud|YeshAtid|NationalUnity|Shas|ZionistSpirit|Labor|UTJ|YisraelBeiteinu|RZP-OY|JointList|Meretz|Ra'am
+H3|Date|Polling firm|Publisher|Likud|YeshAtid|NationalUnity|Shas|ZionistSpirit|Labor|UTJ|YisraelBeiteinu|ReligiousZionist|OtzmaYehudit|JointList|Meretz|Ra'am
+H4|Date|Polling firm|Publisher|Likud|YeshAtid|NUP/B&W–NH|Shas|ZionistSpirit/Yamina|Labor|UTJ|YisraelBeiteinu|ReligiousZionist|JointList|Meretz|Ra'am
+CHECK|hash=317889320

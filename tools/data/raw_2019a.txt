@@ -1,0 +1,68 @@
+SOURCE|https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election
+H0|Date|Polling firm|Likud|Labor|Blue &White|Kulanu|Ra'am–Balad|Shas|UTJ|URWP|YisraelBeiteinu|Meretz|Hadash–Ta'al|NewRight|Gesher|Zehut
+R0|16 Apr|Election results|35|6|35|4|4|8|8|5|5|4|6|0|0|0
+R0|9 Apr|Channel 13 exit poll|36|7|36|4|–|7|7|4|4|4|7|4|–|–
+R0|9 Apr|Channel 11 exit poll|36|8|37|5|–|7|7|5|4|5|6|–|–|–
+R0|9 Apr|Channel 12 exit poll|33|6|37|4|6|6|7|5|5|5|6|–|–|–
+E0|5 Apr|Election silence starting end of Friday before election day.^c17
+R0|5 Apr|Panel Project HaMidgam/Statnet/Channel 13|28|11|28|4|4|5|6|7|4|5|6|6|(2.8%)|6
+R0|5 Apr|Smith/Maariv|27|9|29|5|4|6|7|6|4|5|7|6|(2.6%)|5
+R0|4 Apr|TNS/Kan|31|8|30|5|4|4|6|6|(2.4%)|6|8|6|(2.9%)|6
+R0|4 Apr|Midgam/iPanel/Channel 12|26|10|30|5|4|5|7|5|5|5|7|6|(2.6%)|5
+R0|2-3 Apr|Dialog/Haaretz|30|10|27|5|4|5|6|7|4|5|7|5|(2.8%)|5
+R0|2 Apr|Panel Project HaMidgam/Statnet/Channel 13|29|14|28|4|5|5|6|7|(2.2%)|5|6|5|(2.9%)|6
+R0|31 Mar|Panels Politics/Channel 12|31|9|30|4|(2.1%)|5|6|5|4|6|9|6|(2.2%)|5
+R0|31 Mar|Midgam/iPanel/Channel 12|28|8|32|5|4|6|6|5|4|5|7|5|(1.6%)|5
+R0|28 Mar|Smith/Maariv|29|8|30|4|4|6|6|6|4|5|7|7|(3%)|4
+R0|28 Mar|Panel Project HaMidgam/Statnet/Channel 13|30|10|30|4|4|4|7|7|(2.2%)|5|7|5|(2.3%)|7
+R0|26 Mar|TNS/Kan|28|8|30|6|5|6|7|5|(2.1%)|5|7|7|(2.6%)|6
+R0|24 Mar|Midgam/Channel 12|28|10|32|(2.6%)|4|6|7|5|4|4|7|5|4|4
+R0|24 Mar|Panel Project HaMidgam/Statnet/Channel 13|28|10|31|5|4|5|6|8|(2.4%)|5|7|5|(1.6%)|6
+R0|22 Mar|Panels Politics/Maariv|31|9|30|4|–|4|7|6|5|6|9|5|–|4
+R0|20 Mar|Midgam/iPanel/Channel 12|27|10|32|4|4|5|7|5|4|4|8|6|(1.6%)|4
+R0|20 Mar|Panel Project HaMidgam/Channel 13|29|9|31|5|4|5|7|7|(2.2%)|5|7|6|(2.3%)|5
+R0|17 Mar|Direct Polls/Kan|31|9|30|(2.1%)|4|6|6|6|4|6|8|6|(1.1%)|4
+R0|14 Mar|Midgam/iPanel/Channel 12|28|10|31|4|4|6|7|7|4|4|7|4|(2.3%)|4
+R0|11 Mar|Panel HaMidgam Project/Statnet/Channel 13|28|7|31|4|5|5|6|7|4|6|7|6|(2.3%)|4
+R0|7 Mar|Dialog/Haaretz|28|10|31|4|4|5|7|8|(2%)|4|8|7|(1.8%)|4
+R0|5 Mar|TNS/Kan|30|7|35|5|4|5|7|5|(2%)|5|8|5|(2%)|4
+R0|5 Mar|Midgam/Channel 12|30|9|36|5|4|6|7|6|(2.7%)|4|8|5|(2.2%)|(2.0%)
+R0|3 Mar|Panels Politics/Channel 12|30|8|38|5|(2.2%)|4|7|7|(2.1%)|6|9|6|(2.8%)|(2.9%)
+R0|1 Mar|Panel HaMidgam Project/Statnet/Channel 13|30|6|36|4|4|6|7|7|(2.3%)|6|9|5|(2.3%)|(1.6%)
+R0|1 Mar|TNS/Kan|29|6|37|5|5|6|7|5|(2%)|6|7|7|(3%)|(3%)
+R0|1 Mar|Maagar Mohot/Radio 103FM & Maariv|25|7|37|5|–|6|6|10|–|6|7|8|–|–
+R0|28 Feb|Panels Politics/Maariv|29|6|35|5|(1.5%)|5|7|7|4|5|11|6|(3.0%)|(2.9%)
+R0|21 Feb|Panels Politics/Maariv|29|7|35|4|5|5|7|6|4|4|6|8|(2.4%)|(2.8%)
+R0|21 Feb|Direct polls/Kan|32|8|35|(1.9%)|(2.1%)|6|6|6|5|4|11|7|(2.4%)|(2.1%)
+R0|21 Feb|Midgam/Channel 12|30|8|36|4|6|5|7|4|4|4|6|6|(3.1%)|(2%)
+R0|21 Feb|Panel HaMidgam Project/Statnet/Channel 13|26|5|36|4|4|6|7|8|5|4|10|5|–|–
+E0|21 Feb|Deadline for party lists to be submitted^c17
+E0|21 Feb|The Joint List splits up. Hadash joins Ta'al as Balad runs with Ra'am.^c17
+E0|21 Feb|Yesh Atid and Hosen L'Yisrael reach agreement to run as one list called Blue & White^c17
+E0|20 Feb|The Jewish Home, Tkuma and Otzma Yehudit reach agreement to run as one list called URWP^c17
+H1|Date|Polling firm|Likud|Labor|JointList|YeshAtid|Kulanu|Shas|UTJ|Hatnuah|JewishHome|YisraelBeiteinu|Meretz|NewRight|Ta'al|Gesher|Zehut|Hosen-Telem
+E1|18 Feb|Hatnuah announces withdrawal^c19
+R1|17 Feb|Channel 13|32|5|7|10|4|4|6|–|5|4|4|9|6|–|–|24
+R1|17 Feb|Midgam/Channel 12|30|10|5|12|5|6|7|–|4|4|5|7|7|–|–|18
+R1|16 Feb|Direct Polls/Kan|30|10|6|10|4|5|6|–|5|5|5|8|6|–|–|20
+E1|14 Feb|Meretz holds its primaries^c19
+R1|13 Feb|Direct Polls/Kan|30|11|6|11|4|5|7|–|–|6|4|10|6|–|–|20
+R1|12 Feb|Panel Project HaMidgam/Channel 13|32|8|6|11|5|6|7|–|–|4|5|8|7|–|–|21
+E1|11 Feb|Labor holds its primaries^c19
+R1|7 Feb|Midgam/Channel 12|32|7|5|11|5|6|7|–|–|5|5|8|7|–|–|22
+R1|7 Feb|Panel Project HaMidgam/Channel 13|32|5|7|10|4|5|5|–|5|4|4|9|6|–|–|24
+R1|6 Feb|Direct Polls/Kan|32|6|6|11|4|5|6|–|5|5|4|7|7|–|–|22
+E1|5 Feb|Likud holds its primaries^c19
+R1|3–4 Feb|Dialog/Haaretz|30|5|7|9|5|5|6|–|6|5|4|7|5|4|–|22
+E1|3 Feb|The Jewish Home chooses Rabbi Rafi Peretz as its leader^c19
+R1|1 Feb|Panels Politics/Maariv|31|6|5|12|5|4|7|–|4|5|5|6|6|4|–|20
+R1|30 Jan|Panel Project HaMidgam/Channel 13|30|6|6|9|4|5|6|–|4|4|4|6|8|4|–|24
+R1|30 Jan|Midgam/Channel 12|30|6|6|11|5|5|7|–|4|4|4|7|6|4|–|21
+R1|30 Jan|Direct Polls/Kan|31|8|6|9|4|4|6|–|4|5|6|8|6|–|–|23
+E1|29 Jan|Moshe Feiglin's Zehut party holds Israel's first open primaries^c19
+E1|29 Jan|Hosen L'Yisrael announces they will run a joint list with Moshe Ya'alon's Telem party^c19
+R1|24 Jan|Direct Polls/Reshet Bet|31|9|6|11|4|5|6|–|4|5|6|8|6|4|–|15
+R1|16 Jan|TNS/Kan|31|7|12|10|6|5|6|4|4|4|5|7|—|6|—|13
+R1|16 Jan|Midgam/Channel 12|32|9|6|14|4|6|7|–|–|6|5|8|6|4|–|13
+E1|8 Jan|Ta'al withdraws from the Joint List^c19
+CHECK|hash=632922073

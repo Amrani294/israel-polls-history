@@ -1,0 +1,95 @@
+SOURCE|https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election
+H0|Date|Polling firm|Publisher|Likud|YeshAtid|Blue &White|JointList|Shas|UTJ|YisraelBeiteinu|Meretz|Ra'am|Yamina|NewHope|Labor|ReligiousZionist|NewEconomic
+E0|23 Mar 21|Election results^c2
+R0|23 Mar 21|Camil Fuchs|Channel 13|32|16|8|8|8|7|8|7|0|7|5|7|7|0
+R0|23 Mar 21|Midgam/iPanel|Channel 12|30|18|7|9|9|6|7|7|0|7|6|8|7|0
+R0|23 Mar 21|Kantar|Kan 11|30|18|8|8|9|7|7|6|0|7|6|7|7|0
+E0|19 Mar 21|Election silence starting end of Friday before election day^c16
+R0|19 Mar 21|Camil Fuchs|Channel 13|30|18|4|8|8|7|6|4|4|10|10|6|5|(2.1%)
+R0|18–19 Mar 21|Midgam/iPanel|Channel 12|32|18|4|8|8|7|7|4|4|9|9|6|4|(1.3%)
+R0|18 Mar 21|Panels Politics|Maariv|30|19|5|8|8|6|8|4|4|10|8|5|5|–
+R0|17–18 Mar 21|Direct Polls|–|32|17|7|7|9|7|9|4|4|8|7|4|5|(1.3%)
+R0|17–18 Mar 21|Kantar|Kan 11|31|19|4|8|8|7|7|4|4|9|9|5|5|(1.4%)
+R0|16 Mar 21|Midgam/iPanel|Channel 12|30|18|4|8|8|7|7|4|4|10|10|6|4|(1.4%)
+R0|14 Mar 21|Camil Fuchs|Channel 13|28|20|4|8|6|7|7|4|4|11|9|6|6|(2.1%)
+R0|11 Mar 21|Panels Politics|The Jerusalem Post/Maariv|27|20|4(3.9%)|8|8|7|8|4(3.6%)|4(3.5%)|11|10|5|4(3.4%)|(1.1%)
+R0|11 Mar 21|Kantar|Kan 11|29|19|5|8|8|7|7|(2.8%)|4|12|11|6|4|(1.6%)
+R0|10 Mar 21|Midgam/iPanel|Channel 12|28|19|4(3.55%)|9|8|7|7|4(3.28%)|(3.1%)|13|11|6|4(3.3%)|(2.1%)
+R0|9 Mar 21|Camil Fuchs|Channel 13|29|20|4|8|6|7|7|4|4|11|9|6|5|(1.7%)
+R0|4 Mar 21|Midgam/iPanel|Channel 12|29|20|5|9|8|7|7|(3%)|(3%)|12|12|7|4|(1.9%)
+R0|4 Mar 21|Panels Politics|Maariv|27|20|4|8|8|7|9|4|(2.4%)|12|12|5|4|(1.2%)
+R0|4 Mar 21|Kantar|Kan 11|29|20|5|8|7|7|7|(3.0%)|4|11|12|6|4|(1.7%)
+R0|3 Mar 21|Direct Polls|–|29|18|6|8|8|7|9|(2.1%)|(2.9%)|13|11|6|5|(1.9%)
+R0|2 Mar 21|Camil Fuchs|Channel 13|27|19|4|8|7|7|7|4|4|11|11|6|5|(2.1%)
+R0|2 Mar 21|Midgam/iPanel|Channel 12|28|19|5|9|8|6|7|(2.5%)|(2.8%)|12|14|7|5|(1.8%)
+R0|25 Feb 21|Panels Politics|Maariv|29|17|5|9|8|7|7|4|(2.2%)|11|14|5|4|(1.6%)
+R0|25 Feb 21|Camil Fuchs|Channel 13|27|18|4|8|7|7|6|5|4|11|13|6|4|(1.7%)
+R0|23 Feb 21|Kantar|Kan 11|29|18|4|9|8|7|7|4|–|11|13|6|4|(2.2%)
+R0|23 Feb 21|Midgam/iPanel|Channel 12|28|18|5|9|8|7|7|4|(2.0%)|11|13|6|4|(2.1%)
+R0|18 Feb 21|Panels Politics|Maariv|28|18|(2.5%)|9|8|7|8|5|(2.1%)|12|15|5|5|(1.9%)
+R0|16 Feb 21|Midgam/iPanel|Channel 12|29|18|4|9|8|7|7|4|(1.8%)|10|13|6|5|(1.9%)
+R0|15 Feb 21|Camil Fuchs|Channel 13|28|17|4|8|7|7|5|5|4|11|13|6|5|(1.8%)
+R0|11 Feb 21|Panels Politics|Maariv|28|19|4|8|8|7|7|4|(1.1%)|12|13|6|4|(1.3%)
+R0|10 Feb 21|Midgam/iPanel|Channel 12|28|18|4|9|8|7|7|4|(0.9%)|11|13|6|5|(1.7%)
+R0|9 Feb 21|Kantar|Kan 11|29|18|4|9|8|7|6|(2.8%)|(1.9%)|13|14|7|5|(2.1%)
+R0|6–7 Feb 21|Direct Polls|–|31|14|4|7|8|7|9|(2.9%)|4|11|14|7|4|(1.1%)
+R0|5 Feb 21|Camil Fuchs|Channel 13|30|17|4|7|7|6|5|4|4|11|13|7|5|–
+R0|5 Feb 21|Midgam/iPanel|Channel 12|29|17|4|9|8|7|7|4|(1.7%)|11|14|6|4|(2.8%)
+R0|4 Feb 21|Panels Politics|Maariv|29|16|–|10|8|7|8|5|(0.9%)|11|16|6|4|(1.1%)
+E0|4 Feb 21|Deadline for submitting the lists of candidates^c17
+E0|4 Feb 21|Gesher announces a joint run with Likud^c17
+E0|4 Feb 21|The Israelis, Tnufa and The Jewish Home drop out of the race^c17
+H1|Date|Polling firm|Publisher|Likud|YeshAtid|B&W|JointList|Ta'al|Ra'am|Shas|UTJ|YB|Meretz|Yamina|Labor|NewHope|RZ|OtzmaYehudit-Noam|JH|Israelis|NEP
+E1|3 Feb 21|Religious Zionist Party announces a joint list with Noam-Otzma Yehudit^c21
+E1|3 Feb 21|Ta'al rejoins the Joint List; Ra'am confirms independent run^c21
+R1|2 Feb 21|Camil Fuchs|Channel 13|29|16|4|10^c3|~|~|7|8|7|5|10|8|16|(2%)|(2%)|–|(0.9%)|(2.7%)
+E1|1 Feb 21|Telem drops out of the race^c20
+R1|31 Jan 21|Midgam/iPanel|Channel 12|30|17|4|9^c2|~|(1.8%)|8|8|7|4|13|6|14|–|–|–|–|–
+E1|31 Jan 21|Noam and Otzma Yehudit announce a joint list^c20
+E1|28 Jan 21|Ra'am and Ta'al officially split from the Joint List^c22
+H2|Date|Polling firm|Publisher|Likud|YeshAtid|JointList|Blue &White|Shas|UTJ|YB|Yamina|Meretz|Labor|Telem|NewHope|RZ|JH|Gesher|OY|Israelis|Tnufa|NEP
+R2|28 Jan 21|Panels Politics|Maariv|30|18|10|4|8|8|7|12|5|4|(0.4%)|14|(2.8%)|(0.2%)|–|(1.9%)|(2.6%)|–|(2.2%)
+R2|26 Jan 21|Midgam/iPanel|Channel 12|29|16|10|4|8|8|7|14|5|4|(0.3%)|15|(2.2%)|(0.3%)|(0%)|(2.1%)|(2.7%)|(0.4%)|(2.8%)
+R2|24 Jan 21|Camil Fuchs|Channel 13|32|18|10|4|6|7|6|10|5|4|(0.4%)|14|(2.6%)|(0.3%)|–|–|4|(0.5%)|(2.8%)
+E2|24 Jan 21|Merav Michaeli is elected chairwoman of the Israeli Labor Party^c22
+R2|21 Jan 21|Panels Politics|Maariv|31|16|10|4|8|8|7|11|5|(0.7%)|–|16|(2%)|–|–|(1.4%)|4|–|(2.1%)
+E2|20 Jan 21|Religious Zionist Party officially splits from Yamina^c22
+E2|19 Jan 21|Hagit Moshe is elected chairwoman of The Jewish Home^c22
+R2|19 Jan 21|Midgam/iPanel|Channel 12|30|14|10|5|8|8|7|13|6|(1.6%)|(0.4%)|15|(1.9%)|(0.6%)|(0.7%)|(0.5%)|4|(0.4%)|(2.4%)
+R2|14 Jan 21|Panels Politics|Maariv|32|14|11|5|8|8|7|12|6|(0.9%)|(0.4%)|17|(2.6%)|–|(0.5%)|(1.9%)|(2.5%)|(0.7%)|(1.9%)
+R2|12 Jan 21|Midgam/iPanel|Channel 12|29|13|10|5|8|8|7|13|5|(1.1%)|(0.7%)|16|(2.5%)|(0.7%)|(0.1%)|(0.7%)|6|(0.3%)|(2.7%)
+E2|10 Jan 21|Yesh Atid and Telem split^c22
+H3|Date|Polling firm|Publisher|Likud|Yesh Atid-Telem|JointList|Blue &White|Shas|UTJ|YB|Yamina|NewHope|Meretz|Labor|JH|Gesher|OY|Israelis|Tnufa|NEP
+R3|8 Jan 21|Camil Fuchs|Channel 13|31|16|10|4|7|7|6|13|16|5|(1.1%)|(1.2%)|(0.4%)|–|5|(0.9%)|(1.3%)
+R3|7 Jan 21|Panels Politics|Maariv|28|14|10|4|8|7|7|13|18|5|(1.9%)|(0.3%)|(0.3%)|(1.7%)|6|(1.3%)|(1.3%)
+R3|5 Jan 21|Midgam/iPanel|Channel 12|27|13|10|5|8|8|6|14|18|5|(1.5%)|(0.3%)|(0.1%)|–|6|(0.3%)|(2.8%)
+E3|5 Jan 21|Jewish Home leader, Rafi Peretz, announces his retirement from politics^c22
+E3|4 Jan 21|Former Mossad head Danny Yatom announces his intention to form a new political party for retirees, later named the Israeli Veterans Party^c2
+R3|31 Dec 20|Panels Politics|Maariv|29|14|11|(2.6%)|8|8|7|13|17|5|(1.1%)|–|–|–|8|(0.4%)|(2.6%)
+R3|30 Dec 20|Midgam/iPanel|Channel 12|28|13|11|4|8|8|6|12|17|5|(1.2%)|(0.4%)|(0%)|–|8|(0.8%)|–
+R3|30 Dec 20|Camil Fuchs|Channel 13|29|11|10|5|8|8|6|12|17|5|–|–|–|–|9|–|–
+R3|30 Dec 20|Kantar|Kan 11|28|13|11|4|8|7|5|14|18|4|–|–|–|–|8|–|–
+E3|30 Dec 20|Former accountant general Yaron Zelekha forms the New Economic Party^c19
+E3|29 Dec 20|Tel Aviv Mayor Ron Huldai forms The Israelis^c19
+R3|27 Dec 20|Midgam/iPanel|Channel 12|28|16|11|5|8|8|7|13|19|5|(1.5%)|(1%)|(0%)|–|—N/a|(1.3%)|—N/a
+R3|24 Dec 20|Panels Politics|Maariv|26|15|11|4|8|7|7|14|21|7|(1.4%)|(0.3%)|(0%)|(1%)|—N/a|(0.8%)|—N/a
+E3|24 Dec 20|MK Ofer Shelah leaves Yesh Atid with plans to start his own political party, later named Tnufa^c19
+H4|Date|Polling firm|Publisher|Likud|Yesh Atid-Telem|JointList|Blue &White|Shas|UTJ|YisraelBeiteinu|Yamina|NewHope|Meretz|Labor|JewishHome|Gesher|OtzmaYehudit
+E4|23 Dec 20|Likud Minister Ze'ev Elkin and MK Sharren Haskel join New Hope^c16
+E4|23 Dec 20|Minister Amir Peretz announces that he will not run for Labor Party leadership^c16
+E4|23 Dec 20|The 23rd Knesset is dispersed^c16
+R4|22 Dec 20|Kantar|Kan 11|28|13|11|6|8|7|6|15|20|6|–|–|–|–
+R4|22 Dec 20|Midgam/iPanel|Channel 12|29|16|11|5|8|8|7|13|18|5|(1.7%)|(0.1%)|(0.2%)|–
+E4|22 Dec 20|Likud MK Michal Shir joins New Hope^c17
+R4|20 Dec 20|Camil Fuchs|Channel 13|28|16|11|5|7|7|6|14|19|7|–|–|–|–
+R4|17 Dec 20|Panels Politics|Maariv|29|13|11|7|8|8|7|13|19|5|–|–|–|–
+R4|15 Dec 20|Midgam/iPanel|Channel 12|27|14|11|6|8|8|6|13|21|6|(2.1%)|(0.5%)|(0.4%)|–
+E4|15 Dec 20|Likud MK Yifat Shasha-Biton joins New Hope^c16
+R4|9–10 Dec 20|Panels Politics|Maariv|27|13|12|7|9|7|8|16|16|5|(1%)|(0.6%)|(0.7%)|(0.7%)
+R4|9 Dec 20|Kantar|Kan 11|25|15|11|7|8|7|6|17|18|6|–|–|–|–
+R4|9 Dec 20|Camil Fuchs|Channel 13|28|16|11|6|7|7|7|16|15|7|–|–|–|–
+R4|9 Dec 20|Midgam/iPanel|Channel 12|26|15|11|6|8|8|6|18|16|6|–|–|–|–
+E4|9 Dec 20|Derekh Eretz MKs Zvi Hauser and Yoaz Hendel join New Hope^c17
+R4|8–9 Dec 20|Direct Polls|–|28|13|11|6|10|8|8|16|16|4|–|–|–|–
+E4|8 Dec 20|Likud MK Gideon Sa'ar forms New Hope^c17
+CHECK|hash=670123192

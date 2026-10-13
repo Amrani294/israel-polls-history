@@ -1,0 +1,65 @@
+SOURCE|https://en.wikipedia.org/wiki/Opinion_polling_for_the_2009_Israeli_legislative_election
+H0|Date|Media|Pollster|Kadima|Labor|Shas|Likud|Yisrael Beiteinu|UAL-Ta'al|Hadash|Balad|Jewish Home|National Union|Gil|UTJ|Meretz|Greens
+R0|Feb 6, 2009|Channel 1|Midgam Research|23|16|10|28|19|4|4|2|3|3|0|5|5|0
+R0|Feb 6, 2009|Channel 10|Dialog|25|14|9|27|19|3|3|2|2|4|0|6|6|0
+R0|Feb 6, 2009|Haaretz|Dialog|25|14|9|27|18|3|3|2|2|4|0|6|7|0
+R0|Feb 6, 2009|Maariv|TNS Teleseker|23|17|10|26|19|4|4|2|3|3|2|5|6|0
+R0|Feb 5, 2009|Channel 2|Panels|25|14|10|26|18|3|4|2|3|4|0|5|6|0
+R0|Feb 5, 2009|Israel Radio's "Hakol Diburim" (It's All Talk)|Shvakim Panorama|21|16|11|25|16|3|4|2|4|4|2|7|5|0
+R0|Feb 4, 2009|Channel 2's "Mishal Cham"|Maagar Mochot|23|13|10|26|19|2|4|3|3|2|1|6|6|1
+R0|Feb 4, 2009|Maariv|TNS Teleseker|23|17|10|27|17|4|4|0|3|4|2|5|6|0
+R0|Feb 2, 2009|Channel 1|Midgam Research|23|17|10|28|18|2|4|2|4|3|0|5|4|0
+R0|Feb 2, 2009|Channel 2|Panels|24|14|11|27|17|4|3|2|3|4|0|5|6|0
+R0|Jan 30, 2009|Maariv|TNS Teleseker|23|17|10|28|16|4|4|0|4|3|0|5|6|0
+R0|Jan 29, 2009|Channel 2|Panels|23|13|10|29|16|4|4|2|3|4|0|5|5|2
+R0|Jan 29, 2009|Haaretz/Channel 10|Dialog|25|14|10|28|15|4|3|2|3|4|2|5|5|0
+R0|Jan 28, 2009|Israel Radio's "Hakol Diburim" (It's All Talk)|Shvakim Panorama|20|16|11|29|16|3|3|3|3|3|2|7|4|0
+R0|Jan 27, 2009|Channel 2's "Mishal Cham"|Maagar Mochot|22|13|10|34|16|3|4|3|3|2|0|5|5|0
+R0|Jan 26, 2009|Channel 2|Panels|22|15|11|29|16|4|4|2|0|5|0|6|6|0
+R0|Jan 25, 2009|Channel 1|Midgam Research|22|17|10|30|16|3|3|3|3|3|0|5|5|0
+R0|Jan 23, 2009|Channel 1's Friday Diary|Shvakim Panorama|20|17|11|29|14|3|3|4|3|3|0|7|6|0
+R0|Jan 23, 2009|Maariv|TNS Teleseker|24|16|9|28|16|3|4|2|4|2|0|6|6|0
+R0|Jan 22, 2009|Channel 2|Panels|24|15|10|30|15|4|3|2|2|4|0|5|6|0
+R0|Jan 20, 2009|Channel 1|Geocartography|21|15|9|33|13|4|3|3|4|3|0|7|5|0
+R0|Jan 20, 2009|Channel 2's "Mishal Cham"|Maagar Mochot|22|14|11|30|16|2|4|3|2|2|0|5|7|0
+R0|Jan 19, 2009|Channel 2|Panels|24|14|10|30|15|3|4|2|2|4|0|5|5|2
+R0|Jan 18, 2009|Channel 2|Maagar Mochot|23|15|12|31|13|3|4|2|3|1|1|5|6|1
+R0|Jan 18, 2009|Channel 10|Dialog|26|14|10|29|14|3|3|2|2|4|0|5|6|2
+R0|Jan 16, 2009|Haaretz|Dialog|25|16|9|29|12|3|3|2|3|3|0|6|7|2
+R0|Jan 16, 2009|Maariv|TNS Teleseker|26|17|9|28|14|4|4|2|3|3|0|5|5|0
+R0|Jan 15, 2009|Channel 2|Panels|27|15|8|29|13|3|4|3|2|4|0|5|5|2
+R0|Jan 14, 2009|Israel Radio's "Hakol Diburim" (It's All Talk)|Shvakim Panorama|21|15|10|28|15|4|3|3|3|3|0|7|5|3
+R0|Jan 13, 2009|Channel 2's "Mishal Cham"|Maagar Mochot|26|16|10|28|14|3|4|3|3|2|0|5|6|0
+R0|Jan 12, 2009|Channel 2|Panels|28|13|8|33|13|2|4|3|0|4|0|5|5|2
+R0|Jan 9, 2009|Channel 1's Friday Diary|Shvakim Panorama|22|16|10|31|14|10^c3|~|~|4|0|0|7|6|0
+R0|Jan 9, 2009|Maariv|TNS Teleseker|27|17|9|29|13|10^c3|~|~|4|0|0|6|5|0
+R0|Jan 7, 2009|Channel 10|Dialog|27|16|11|31|10|3|3|0|2|3|0|5|7|0
+R0|Jan 6, 2009|Channel 2's "Mishal Cham"|Maagar Mochot|25|17|10|32|10|9^c3|~|~|4|2|0|5|6|0
+R0|Jan 5, 2009|Channel 2|Panels|28|15|9|31|13|4|3|2|2|4|0|4|5|0
+R0|Jan 2, 2009|Maariv|TNS Teleseker|28|16|11|28|12|10^c3|~|~|4|0|0|5|6|0
+R0|Jan 1, 2009|Channel 2|Panels|27|14|8|30|11|10^c3|~|~|3|3|0|6|7|1
+R0|Jan 1, 2009|Haaretz|Dialog|27|16|9|32|11|4|4|2|3|0|0|5|7|0
+R0|Dec 30, 2008|Channel 2's "Mishal Cham"|Maagar Mochot|25|15|10|31|10|10^c3|~|~|4|1|2|5|5|2
+R0|Dec 29, 2008|Channel 2|Panels|29|14|8|29|13|10^c3|~|~|3|3|0|4|7|0
+R0|Dec 28, 2008|Haaretz/Channel 10|Dialog|28|16|10|30|10|3|4|3|2^c2|~|1|5|7|1
+R0|Dec 26, 2008|Maariv|TNS Teleseker|30|11|10|29|12|10^c3|~|~|3^c2|~|2|5|7|0
+R0|Dec 25, 2008|Channel 2|Panels|27|11|10|30|10|3|4|3|6^c2|~|0|4|7|2
+R0|Dec 25, 2008|Haaretz|Dialog|26|11|13|30|11|3|3|2|6^c2|~|2|5|8|0
+R0|Dec 24, 2008|Channel 1|Midgam Research|25|11|10|31|12|10^c3|~|~|5^c2|~|0|7|6|3
+R0|Dec 24, 2008|Channel 2|Maagar Mochot|25|10|12|29|12|3|4|2|4^c2|~|1|6|8|4
+R0|Dec 24, 2008|Israel Radio's "Hakol Diburim" (It's All Talk)|Shvakim Panorama|23|14|12|32|12|10^c3|~|~|4^c2|~|0|7|6|0
+R0|Dec 23, 2008|Channel 1|Geocartography|26|9-10|8-9|34|10|4|3|3|6^c2|~|0|6|9|0-2
+R0|Dec 23, 2008|Channel 2's "Mishal Cham"|Maagar Mochot|25|11|12|31|13|9^c3|~|~|5^c2|~|2|5|6|1
+R0|Dec 22, 2008|Channel 2|Panels|29|10|10|28|11|10^c3|~|~|5^c2|~|0|5|6|3
+R0|Dec 19, 2008|Maariv|TNS Teleseker|30|12|9|30|12|4|3|3|5^c2|~|0|5|7|0
+R0|Dec 18, 2008|Channel 2|Panels|30|10|10|29|11|9^c3|~|~|6^c2|~|0|6|6|3
+R0|Dec 16, 2008|Channel 2's "Mishal Cham"|Maagar Mochot|25|10|12|29|12|9^c3|~|~|4^c2|~|1|6|8|4
+R0|Dec 15, 2008|Channel 2|Panels|27|13|11|31|10|10^c3|~|~|5^c2|~|0|5|6|2
+R0|Dec 11, 2008|Maariv|TNS Teleseker|28|12|9|31|11|10^c3|~|~|6^c2|~|0|5|5|3
+R0|Dec 10, 2008|Haaretz|Dialog|27|12|9|36|9|4|4|3|4^c2|~|0|6|6|0
+R0|Dec 10, 2008|Israel Radio's "Hakol Diburim" (It's All Talk)|Shvakim Panorama|20-21|14-15|12|34-35|11|9-10^c3|~|~|4^c2|~|0|7|6|0
+R0|Dec 1, 2008|Channel 2|Panels|25|6|12|33|11|10^c3|~|~|7^c2|~|0|5|7|4
+R0|Nov 25, 2008|Channel 1|Geocartography|25|7|11|37|8|9^c3|~|~|4^c2|~|0|8|8|3
+R0|Nov 20, 2008|Haaretz|Dialog|28|10|10|34|10|4|5|2|4^c2|~|0|6|7|0
+R0|Nov 19, 2008|Israel Radio's "Hakol Diburim" (It's All Talk)|Maagar Mochot|23|8|13|34|10|9^c3|~|~|7^c2|~|0|5|10|1
+CHECK|hash=828590566

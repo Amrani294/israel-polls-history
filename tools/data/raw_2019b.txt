@@ -1,0 +1,58 @@
+SOURCE|https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election
+H0|Date|Polling firm|Publisher|Likud|Blue &White|JointList|Shas|UTJ|Yamina|Labor-Gesher|YisraelBeiteinu|Dem.Union|Zehut|OtzmaYehudit
+R0|17 Sep|KANTAR|Kan 11|31|32|13|9|8|7|6|9|5|—|–
+R0|17 Sep|Midgam|Channel 12|32|32|13|9|8|7|6|9|5|—|–
+R0|17 Sep|Panel Project HaMidgam|Channel 13|30|32|15|9|8|6|6|8|6|—|–
+E0|13 Sep|Election silence starting end of Friday before election day.^c16
+R0|13 Sep|Panel Project HaMidgam|Channel 13|32|32|12|6|7|9|4|9|5|—|4
+R0|12–13 Sep|Midgam|Channel 12|32|32|10|7|8|8|5|8|6|—|4
+R0|12 Sep|Smith|Maariv|33|32|12|8|7|9|5|8|6|—|(3.1%)
+R0|11–12 Sep|KANTAR|Kan 11|31|33|11|7|8|9|5|7|5|—|4
+R0|10 Sep|Panel Project HaMidgam|Channel 13|31|32|11|6|7|9|5|9|6|—|4
+R0|9–10 Sep|Midgam|Channel 12|31|32|9|7|7|9|6|9|6|—|4
+R0|9 Sep|KANTAR|Kan 11|31|32|10|7|7|9|5|9|6|—|4
+R0|5 Sep|Panel Project HaMidgam|Channel 13|32|32|10|6|8|10|5|11|6|—|(2.76%)
+R0|4–5 Sep|Smith|103fm & Maariv|32|32|9|8|7|9|6|10|7|—|(2.5%)
+R0|4–5 Sep|Midgam|Channel 12|32|32|10|7|8|9|6|9|7|—|(2.5%)
+R0|1 Sep|Panel Project HaMidgam|Channel 13|31|32|10|6|7|10|6|11|7|—|(2.8%)
+R0|1 Sep|KANTAR|Kan 11|32|31|11|7|7|10|6|9|7|—|(2.9%)
+E0|29 Aug|Zehut announces withdrawal^c16
+R0|28 Aug|Smith|103fm/Maariv|32|31|10|8|7|10|5|10|7|(1.6%)|(2.5%)
+R0|28 Aug|Midgam|Channel 12|31|30|10|7|8|10|7|10|7|(1.2%)|(1.8%)
+R0|22–25 Aug|KANTAR|Kan 11|32|31|11|7|7|10|7|9|6|(1.7%)|(2.3%)
+R0|22 Aug|Midgam|Channel 12|30|30|11|7|8|11|6|10|7|(2.3%)|(1.9%)
+R0|15 Aug|Panel Project HaMidgam|Channel 13|31|31|9|6|7|12|5|11|8|(1.4%)|(2.1%)
+R0|13 Aug|Midgam|Channel 12|30|29|11|7|8|11|7|10|7|(2.9%)|(2.7%)
+R0|5 Aug|Direct Polls|Channel 13|30|29|11|7|7|11|7|10|8|(2.2%)|(1.9%)
+R0|4 Aug|KANTAR|Reshet Bet|29|30|11|7|7|11|6|11|8|(1.9%)|(2.8%)
+R0|2 Aug|Midgam|Channel 12|30|29|11|7|8|12|6|10|7|(2.2%)|(1.9%)
+E0|1 Aug|Deadline for submitting the candidate lists^c16
+R0|1 Aug|Panel Project HaMidgam|Channel 13|30|29|11|6|7|11|6|11|9|–|–
+E0|31 Jul|Kulanu officially dissolves and its remaining members join Likud^c16
+R0|30 Jul|Midgam|Channel 12|30|30|11|7|8|12|5|10|7|(1.4%)|(1.2%)
+E0|29 Jul|The URWP and the New Right agree to run together as Yamina^c16
+H1|Date|Polling firm|Publisher|Likud–Kulanu|Blue &White|JointList|Shas|UTJ|Labor-Gesher|YisraelBeiteinu|URWP|Dem.Union|NewRight|Zehut
+R1|26 Jul|Smith|103fm/Maariv|30|28|11|8|7|6|9|5|9|7|–
+R1|25 Jul|Panel Project HaMidgam|Channel 13|28|23|11|5|6|7|10|4|12|10|4
+R1|25 Jul|Midgam|Channel 12|29|27|11|7|8|5|10|4|10|9|(1.9%)
+R1|25 Jul|KANTAR|Kan 11|30|30|10|7|8|5|9|4|8|9|(2.4%)
+E1|25 Jul|Meretz, IDP and the Green Movement agree to run together as the Democratic Union^c15
+H2|Date|Polling firm|Publisher|Likud–Kulanu|Blue &White|JointList|Shas|UTJ|Labor-Gesher|YisraelBeiteinu|URWP|Meretz|NewRight|Zehut|IDP
+E2|21 Jul|Ayelet Shaked becomes the leader of the New Right^c16
+R2|21 Jul|KANTAR|Kan 11|30|30|10|7|8|8|10|4|5|8|(1.2%)|(2.8%)
+R2|21 Jul|Midgam & iPanel|Channel 12|30|29|11|7|8|7|9|5|4|6|(1.8%)|4
+R2|19 Jul|Smith|103fm/Maariv|32|29|10|8|7|6|9|4|5|6|–|4
+E2|18 Jul|Labor and Gesher agree to run on a joint list^c16
+H3|Date|Polling firm|Publisher|Likud–Kulanu|Blue &White|JointList|Shas|UTJ|Labor|YisraelBeiteinu|URWP|Meretz|NewRight|Zehut|Gesher|IDP
+R3|16 Jul|Midgam|Channel 12|31|30|11|7|8|6|10|4|4|5|(1.7%)|–|4
+R3|12 Jul|Smith|103fm/Maariv|33|30|10|8|7|5|8|4|5|6|–|–|4
+E3|9 Jul|The Jewish Home and Tkuma agree to run together again as the URWP^c16
+R3|3 Jul|Midgam|Channel 12|32|31|12|7|7|8|9|5|4|5|(2.1%)|–|(3%)
+R3|3 Jul|Statnet|Channel 13|31|29|9|7|6|7|8|4|4|5|4|–|6
+E3|2 Jul|Labor elects Amir Peretz as its leader^c16
+E3|27 Jun|Meretz elects Nitzan Horowitz as its leader^c16
+R3|26 Jun|Panel Project HaMidgam|Channel 13|32|32|12|6|6|5|7|4|6|4|–|–|6
+E3|26 Jun|Former PM Ehud Barak announces the founding of the Israel Democratic Party^c16
+E3|25 Jun|Otzma Yehudit leaves the Union of the Right-Wing Parties^c16
+E3|20 Jun|Hadash–Ta'al and Ra'am–Balad agree to re-establish the Joint List^c16
+CHECK|hash=906358776
