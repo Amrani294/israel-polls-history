@@ -19,8 +19,22 @@
   main.innerHTML =
     '<section class="e-head"><div class="wrap"><h1>על האתר ומקורות</h1>' +
     '<p class="lede" style="margin-top:8px">כאן מוסבר מאיפה הגיע כל נתון, אילו החלטות התקבלו בדרך, ומה המגבלות.</p>' +
-    '<p style="margin-top:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">האתר נבנה על ידי <b style="font-family:var(--display);font-size:1.7rem;line-height:1">יונתן עמרני</b>' +
-    '<a class="ig" href="https://www.instagram.com/amrani_yonatan.18/" target="_blank" rel="noopener"><span class="ig-l" dir="rtl">אינסטגרם</span>@amrani_yonatan.18</a></p></div></section>' +
+    '<p class="contact-row">האתר נבנה על ידי <b class="who">יונתן עמרני</b>' +
+    '<a class="ig" href="https://www.instagram.com/amrani_yonatan.18/" target="_blank" rel="noopener"><span class="ig-l" dir="rtl">אינסטגרם</span>@amrani_yonatan.18</a>' +
+    '<a class="ig mail" href="mailto:yonatanamrani7@gmail.com"><span class="ig-l" dir="rtl">מייל</span>yonatanamrani7@gmail.com</a></p>' +
+
+    '<div class="editor-note"><h2>דבר העורך</h2>' +
+    "<p>היי, אני יונתן, בן 16, סטודנט למדעי המחשב.</p>" +
+    "<p>במערכת הבחירות האחרונה התחלתי להתעניין בפוליטיקה, ואיתה עלתה השאלה: עד כמה הסקרים באמת מדויקים, ואיך הם עמדו במבחן לאורך השנים? " +
+    "פניתי ל-Claude וביקשתי: “תארגן לי קובץ אקסל שמרכז את כל המידע מהסקרים של מערכות הבחירות האחרונות, כמה שיותר אחורה”.</p>" +
+    "<p>כשראיתי את התוצאה, הבנתי שאני לא יכול לשמור אותה רק לעצמי. אז החלטתי לבנות, בעזרת AI, אתר שמאגד את כל הנתונים במקום אחד, בממשק נוח: ארכיון של מערכות הבחירות האחרונות בישראל.</p>" +
+    "<p>האתר עדיין בהרצה. מצאתם באג, או שיש לכם הצעה לשיפור? אשמח לשמוע.</p>" +
+    '<p class="sig">יונתן עמרני</p></div>' +
+
+    '<div class="ai-note" role="note"><p><b>שימו לב:</b> איסוף הנתונים ובניית האתר נעשו בעזרת בינה מלאכותית (AI), ולכן ייתכנו טעויות. כל נתון מגיע עם קישור למקור שלו, ואפשר לבדוק אותו שם.</p>' +
+    '<p>מצאתם באג או טעות באחד הנתונים? צרו קשר: <a href="mailto:yonatanamrani7@gmail.com" dir="ltr">yonatanamrani7@gmail.com</a> או באינסטגרם ' +
+    '<a href="https://www.instagram.com/amrani_yonatan.18/" target="_blank" rel="noopener" dir="ltr">@amrani_yonatan.18</a></p></div>' +
+    "</div></section>" +
     '<section class="block" style="padding-top:10px"><div class="wrap prose">' +
 
     "<h2>מה יש באתר</h2>" +
