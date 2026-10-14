@@ -114,13 +114,30 @@
     return list.rec === "-" ? c : "המליצה על " + c;
   }
 
-  // A portrait that fails to load falls back to initials. One listener for the
-  // whole page (no inline onerror attributes, so the CSP can forbid inline script).
+  // A portrait that fails to load shows initials. Wikimedia Commons sometimes refuses
+  // when a page asks for many thumbnails at once, so a failed portrait is retried
+  // (twice, spread out in time) and replaces the initials when it arrives.
+  // One pair of listeners for the whole page (no inline onerror attributes, so the
+  // CSP can forbid inline script).
+  var RETRIES = 2;
+  function isPortrait(t) {
+    return t && t.tagName === "IMG" && t.parentNode && t.parentNode.classList && t.parentNode.classList.contains("ph");
+  }
   document.addEventListener("error", function (ev) {
     var t = ev.target;
-    if (t && t.tagName === "IMG" && t.parentNode && t.parentNode.classList && t.parentNode.classList.contains("ph")) {
-      t.parentNode.classList.add("failed");
-    }
+    if (!isPortrait(t)) return;
+    t.parentNode.classList.add("failed");
+    var n = Number(t.getAttribute("data-retry") || 0);
+    if (n >= RETRIES) return;
+    var base = t.getAttribute("data-src") || t.getAttribute("src");
+    t.setAttribute("data-src", base);
+    t.setAttribute("data-retry", String(n + 1));
+    setTimeout(function () {
+      t.src = base + (base.indexOf("?") >= 0 ? "&" : "?") + "retry=" + (n + 1);
+    }, 1500 * (n + 1) + Math.random() * 2500);
+  }, true);
+  document.addEventListener("load", function (ev) {
+    if (isPortrait(ev.target)) ev.target.parentNode.classList.remove("failed");
   }, true);
 
   /* ---------------------------------------------------------------- hemicycle */
