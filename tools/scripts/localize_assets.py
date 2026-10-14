@@ -7,9 +7,13 @@ way to change what visitors see is to change the files themselves.
 
 Run from the site folder, on a computer with internet access (Python 3, standard library only):
 
-    python3 tools/scripts/localize_assets.py .
+    python3 tools/scripts/localize_assets.py .        (Windows: py tools/scripts/localize_assets.py .)
 
-It can be run again safely: files already downloaded are skipped.
+It can be run again safely: files already downloaded are skipped, so after new people are
+added (for example a 2026 update) running it again downloads only the new portraits.
+If Wikimedia refuses some downloads, the script waits and retries; whatever still fails
+keeps loading from Wikimedia, and the CSP keeps allowing Wikimedia until a later run
+gets everything.
 """
 import hashlib
 import json
@@ -17,11 +21,13 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.request
 
 UA_FONTS = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
             "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")   # makes Google Fonts answer with woff2
-UA_WIKI = "IsraelPollsHistory/1.0 (static site; one-time download of portrait thumbnails)"
+UA_WIKI = ("IsraelPollsHistory/1.0 (https://pollsisraelhistory.netlify.app; "
+           "one-time download of portrait thumbnails) python-urllib")
 FONT_CSS = ("https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700"
             "&family=IBM+Plex+Sans+Hebrew:wght@400;500;600;700&display=swap")
 GOOGLE_LINKS = [
@@ -42,10 +48,22 @@ def local_image_name(commons_file):
     return hashlib.md5(commons_file.encode("utf-8")).hexdigest() + ext
 
 
-def get(url, ua, timeout=60):
-    req = urllib.request.Request(url, headers={"User-Agent": ua})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
+def get(url, ua, timeout=60, tries=4):
+    """Download with retries: Wikimedia answers 429 when asked too fast."""
+    for attempt in range(tries):
+        req = urllib.request.Request(url, headers={"User-Agent": ua})
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read()
+        except urllib.error.HTTPError as err:
+            if err.code not in (429, 500, 502, 503, 504) or attempt == tries - 1:
+                raise
+            wait = int(err.headers.get("Retry-After", "0") or 0) or 5 * (attempt + 1)
+            time.sleep(min(wait, 60))
+        except urllib.error.URLError:
+            if attempt == tries - 1:
+                raise
+            time.sleep(5 * (attempt + 1))
 
 
 def read_js(path):
@@ -100,7 +118,7 @@ def images(site):
                 if len(data) < 200:
                     raise ValueError("response too small")
                 open(dest, "wb").write(data)
-                time.sleep(0.2)          # be gentle with Wikimedia
+                time.sleep(0.5)          # be gentle with Wikimedia
             except Exception as err:     # keep the remote URL for this one
                 failed.append((title, str(err)))
                 continue
@@ -110,6 +128,17 @@ def images(site):
     for t, e in failed:
         print("  failed:", t, e)
     return not failed
+
+
+def headers(site, images_ok):
+    """Narrow the Netlify CSP in _headers the same way as the pages."""
+    path = os.path.join(site, "_headers")
+    if not os.path.exists(path):
+        return
+    s = open(path, encoding="utf-8").read()
+    for origin in (REMOTE_ORIGINS if images_ok else REMOTE_ORIGINS[:2]):
+        s = s.replace(" " + origin, "")
+    open(path, "w", encoding="utf-8").write(s)
 
 
 def html(site, images_ok):
@@ -134,6 +163,8 @@ def main(site):
     fonts(site)
     ok = images(site)
     html(site, ok)
+    headers(site, ok)
+    print("done. Check the site in the browser (open index.html), then commit the changes.")
 
 
 if __name__ == "__main__":
