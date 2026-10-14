@@ -123,7 +123,7 @@
     "<h1>היסטוריית הסקרים של ישראל</h1>" +
     '<p class="lede" style="margin-top:14px">שמונה מערכות בחירות לכנסת, מ-2009 ועד 2022: מי נבחר, איך התחלקה הכנסת בין ימין לשמאל ובין קואליציה לאופוזיציה, ומה אמרו הסקרים לפני כן.</p>' +
     axisLegend() +
-    '<div class="kicker-row"><a class="btn" href="' + A.electionHref(latest.key) + '">' + esc(A.electionTitle(latest)) + '</a><a class="btn ghost" href="polls.html">ארכיון הסקרים</a></div>' +
+    '<div class="kicker-row"><a class="btn" href="' + A.electionHref(latest.key) + '">' + esc(A.electionTitle(latest)) + '</a><a class="btn ghost" href="' + A.pageHref("polls") + '">ארכיון הסקרים</a></div>' +
     '</div><a class="hero-chamber" href="' + A.electionHref(latest.key) + '" style="text-decoration:none;color:inherit">' + A.hemicycle(latest, { label: "הכנסת ה-" + latest.knesset + " כפי שנבחרה" }) +
     '<div class="cap"><b>הכנסת ה-' + esc(latest.knesset) + "</b><span>כפי שנבחרה, " + esc(A.fmtDate(latest.date)) + "</span></div></a>" +
     "</div></div></section>" +
@@ -143,7 +143,7 @@
     '<span class="N"><i></i>לא המליצו על אף אחד (2019)</span><span class="X"><i></i>לא נכנסו לכנסת</span></div>' +
     '<div class="bloc-rows">' + blocRows() + "</div>" +
     '<p class="small" style="margin-top:14px">השיוך לגוש נקבע לפי הרכב הממשלה הראשונה שהושבעה אחרי כל בחירות; באפריל ובספטמבר 2019 לא הוקמה ממשלה, ולכן לפי ההמלצות לנשיא. רשימה שהתפצלה אחרי הבחירות שויכה לפי רוב חבריה.</p>' +
-    '<p style="margin-top:18px"><a class="btn" href="polls.html">לארכיון הסקרים המלא</a></p>' +
+    '<p style="margin-top:18px"><a class="btn" href="' + A.pageHref("polls") + '">לארכיון הסקרים המלא</a></p>' +
     "</div></section>";
 
   // highlight one party's line

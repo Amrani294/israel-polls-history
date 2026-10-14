@@ -1,0 +1,10 @@
+# Clean addresses on Netlify: /election?e=2022 serves election.html (status 200 = rewrite,
+# the address in the browser stays clean; the query string is passed through).
+# The .html addresses keep working too. Do not add 301s from /x.html to /x: Netlify
+# serves both from the same file and such a rule can loop.
+/election   /election.html   200
+/party      /party.html      200
+/polls      /polls.html      200
+/accuracy   /accuracy.html   200
+/coalition  /coalition.html  200
+/about      /about.html      200
