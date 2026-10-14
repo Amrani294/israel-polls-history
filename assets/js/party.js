@@ -42,7 +42,7 @@
 
   var card =
     '<section class="id-wrap"><div class="wrap">' +
-    '<div class="crumbs"><a href="index.html">כל מערכות הבחירות</a> / <a href="' + A.electionHref(key) + '">' + esc(A.electionTitle(e)) + ", " + esc(A.shortWhen(e)) + "</a></div>" +
+    '<div class="crumbs"><a href="' + A.pageHref("index") + '">כל מערכות הבחירות</a> / <a href="' + A.electionHref(key) + '">' + esc(A.electionTitle(e)) + ", " + esc(A.shortWhen(e)) + "</a></div>" +
     '<article class="idcard" style="--pc:' + color + '">' +
     '<div class="face">' + A.slip(l, "xl") + '<div class="ballot-name">' + esc(l.ballot) + "</div></div>" +
     "<div><h1>" + esc(l.name) + '</h1><p class="sub">תעודת זהות, ' + esc(A.electionTitle(e)) + " (" + esc(A.fmtDate(e.date)) + ")</p>" +

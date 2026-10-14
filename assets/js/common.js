@@ -16,9 +16,9 @@
   }
   // Read a query parameter. Malformed escapes and oversized values are ignored;
   // the value is only ever used as a lookup key, never inserted as markup.
-  function qs(name) {
+  function qs(name, maxLen) {
     var m = new RegExp("[?&]" + name + "=([^&#]*)").exec(location.search);
-    if (!m || m[1].length > 100) return null;
+    if (!m || m[1].length > (maxLen || 100)) return null;
     try { return decodeURIComponent(m[1].replace(/\+/g, " ")); } catch (err) { return null; }
   }
   function parseISO(iso) {
@@ -75,9 +75,16 @@
   }
 
   /* ---------------------------------------------------------------- links */
-  function electionHref(key) { return "election.html?e=" + encodeURIComponent(key); }
-  function partyHref(key, id) { return "party.html?e=" + encodeURIComponent(key) + "&p=" + encodeURIComponent(id); }
-  function pollsHref(key) { return "polls.html" + (key ? "?e=" + encodeURIComponent(key) : ""); }
+  // Online the addresses are clean ("/election?e=2022"; Netlify serves election.html,
+  // see _redirects). Opened from the folder (file://) they must name the file.
+  var CLEAN = location.protocol === "http:" || location.protocol === "https:";
+  function pageHref(name, query) {
+    var base = CLEAN ? (name === "index" ? "/" : "/" + name) : name + ".html";
+    return base + (query ? "?" + query : "");
+  }
+  function electionHref(key) { return pageHref("election", "e=" + encodeURIComponent(key)); }
+  function partyHref(key, id) { return pageHref("party", "e=" + encodeURIComponent(key) + "&p=" + encodeURIComponent(id)); }
+  function pollsHref(key) { return pageHref("polls", key ? "e=" + encodeURIComponent(key) : ""); }
   function electionTitle(e) { return "הבחירות לכנסת ה-" + e.knesset; }
   function shortWhen(e) { return fmtMonth(e.date); }
 
@@ -189,19 +196,21 @@
   /* ---------------------------------------------------------------- page chrome */
   function header(active) {
     var nav = [
-      ["index.html", "מערכות הבחירות", "home"],
-      ["polls.html", "ארכיון הסקרים", "polls"],
-      ["about.html", "על האתר ומקורות", "about"]
+      ["index", "מערכות הבחירות", "home"],
+      ["polls", "ארכיון הסקרים", "polls"],
+      ["accuracy", "דיוק הסוקרים", "accuracy"],
+      ["coalition", "בונה קואליציות", "coalition"],
+      ["about", "על האתר", "about"]
     ].map(function (n) {
-      return '<a href="' + n[0] + '"' + (n[2] === active ? ' aria-current="page"' : "") + (n[2] === "polls" ? ' class="nav-polls"' : "") + ">" + n[1] + "</a>";
+      return '<a href="' + pageHref(n[0]) + '"' + (n[2] === active ? ' aria-current="page"' : "") + (n[2] === "polls" ? ' class="nav-polls"' : "") + ">" + n[1] + "</a>";
     }).join("");
-    return '<header class="site-head"><div class="wrap"><a class="brand" href="index.html">היסטוריית הסקרים של ישראל</a>' +
+    return '<header class="site-head"><div class="wrap"><a class="brand" href="' + pageHref("index") + '">היסטוריית הסקרים של ישראל</a>' +
       '<nav class="nav" aria-label="ניווט ראשי">' + nav + "</nav></div></header>";
   }
   function footer() {
     return '<footer class="site-foot"><div class="wrap">' +
       "<p>הנתונים נאספו מוויקיפדיה (העברית והאנגלית), מכתבות חדשות מליל הבחירות ומפרסומי ועדת הבחירות המרכזית, ונבדקו מול המקור. " +
-      'פירוט השיטה, המקורות וזכויות התמונות בעמוד <a href="about.html">על האתר ומקורות</a>.</p>' +
+      'פירוט השיטה, המקורות וזכויות התמונות בעמוד <a href="' + pageHref("about") + '">על האתר ומקורות</a>.</p>' +
       "<p>תמונות חברי הכנסת מוויקישיתוף, ברישיונות חופשיים; שם הצלם והרישיון מופיעים במעבר עכבר על כל תמונה.</p>" +
       '<div class="credit"><span>נבנה על ידי</span><b>יונתן עמרני</b>' +
       '<a class="ig" href="https://www.instagram.com/amrani_yonatan.18/" target="_blank" rel="noopener" aria-label="יונתן עמרני באינסטגרם">' +
@@ -214,14 +223,14 @@
   }
   function notFound(main, msg) {
     main.innerHTML = '<div class="wrap" style="padding:60px 16px"><h1>הדף לא נמצא</h1><p class="lede">' + esc(msg) +
-      '</p><p><a class="btn" href="index.html">לכל מערכות הבחירות</a></p></div>';
+      '</p><p><a class="btn" href="' + pageHref("index") + '">לכל מערכות הבחירות</a></p></div>';
   }
 
   window.App = {
     ELECTIONS: ELECTIONS, PEOPLE: PEOPLE, META: META, byKey: byKey,
     esc: esc, qs: qs, fmtDate: fmtDate, fmtMonth: fmtMonth, fmtInt: fmtInt, fmtSeats: fmtSeats, pctOf: pctOf, parseISO: parseISO,
     axisMid: axisMid, colorAt: colorAt, partyColor: partyColor, AXIS_HE: AXIS_HE, seatingOrder: seatingOrder,
-    electionHref: electionHref, partyHref: partyHref, pollsHref: pollsHref, electionTitle: electionTitle, shortWhen: shortWhen,
+    pageHref: pageHref, electionHref: electionHref, partyHref: partyHref, pollsHref: pollsHref, electionTitle: electionTitle, shortWhen: shortWhen,
     slip: slip, portrait: portrait, displayName: displayName, blocChip: blocChip, recText: recText,
     hemicycle: hemicycle, blocBar: blocBar, blocLegend: blocLegend,
     mount: mount, notFound: notFound

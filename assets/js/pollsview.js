@@ -270,5 +270,5 @@
     if (lastFocus) lastFocus.focus();
   }
 
-  window.PollsView = { render: render, open: openDrawer, outletName: outletName };
+  window.PollsView = { render: render, open: openDrawer, outletName: outletName, sourceLink: sourceLink };
 })();

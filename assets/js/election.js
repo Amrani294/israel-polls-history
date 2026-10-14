@@ -17,7 +17,7 @@
   var info = e.info;
   var head =
     '<section class="e-head"><div class="bg-num" aria-hidden="true">' + esc(e.knesset) + '</div><div class="wrap">' +
-    '<div class="crumbs"><a href="index.html">כל מערכות הבחירות</a></div>' +
+    '<div class="crumbs"><a href="' + A.pageHref("index") + '">כל מערכות הבחירות</a></div>' +
     "<h1>" + esc(A.electionTitle(e)) + "</h1>" +
     '<p class="lede" style="margin-top:6px">' + esc(A.fmtDate(e.date)) + "</p>" +
     '<dl class="facts">' +
