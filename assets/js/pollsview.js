@@ -14,9 +14,11 @@
     for (var i = 0; i < e.lists.length; i++) if (e.lists[i].name === name) return e.lists[i];
     return null;
   }
+  // size used for ordering: the result, or (before an election) the poll average
+  function size(l) { return l.seats != null ? l.seats : (l.polls && l.polls.overall) || 0; }
   function trackedLists(e) {
     return e.tracked.map(function (n) { return listByName(e, n); }).filter(Boolean)
-      .sort(function (a, b) { return b.seats - a.seats; });
+      .sort(function (a, b) { return size(b) - size(a); });
   }
   function outlets() { return Object.keys(A.META.outlets || {}); }
 
@@ -27,7 +29,7 @@
     var t0 = A.parseISO(e.windowStart).getTime(), t1 = A.parseISO(e.date).getTime();
     var maxV = 0;
     polls.forEach(function (p) { lists.forEach(function (l) { var v = p.values[l.name]; if (v != null && v > maxV) maxV = v; }); });
-    lists.forEach(function (l) { maxV = Math.max(maxV, l.seats, l.exitAvg || 0); });
+    lists.forEach(function (l) { maxV = Math.max(maxV, l.seats || 0, l.exitAvg || 0); });
     maxV = Math.ceil((maxV + 2) / 5) * 5;
     function x(t) { return m.l + (W - m.l - m.r) * (t - t0) / (t1 - t0); }
     function y(v) { return H - m.b - (H - m.t - m.b) * v / maxV; }
@@ -60,7 +62,13 @@
       });
     });
     var ends = [];
+    if (e.upcoming) {
+      var xa = x(A.parseISO(e.asOf).getTime());
+      g.push('<line x1="' + xa + '" x2="' + xa + '" y1="' + m.t + '" y2="' + (H - m.b) + '" stroke="#b9bfcc"/>');
+      g.push('<text x="' + xa + '" y="' + (m.t + 10) + '" font-size="11" fill="#6b7385" text-anchor="end" dx="-4">עדכון אחרון</text>');
+    }
     lists.forEach(function (l) {
+      if (l.seats == null) return;
       var c = A.partyColor(l), yy = y(l.seats);
       ends.push('<rect data-p="' + esc(l.id) + '" x="' + (xe - 6) + '" y="' + (yy - 6) + '" width="12" height="12" transform="rotate(45 ' + xe + " " + yy + ')" fill="' + c + '" stroke="#fff" stroke-width="1.5"><title>' +
         esc(l.name + ": תוצאה " + l.seats) + "</title></rect>");
@@ -74,20 +82,22 @@
     var legend = lists.map(function (l) { return '<button type="button" aria-pressed="false" data-p="' + esc(l.id) + '" style="--pc:' + A.partyColor(l) + '">' + esc(l.name) + "</button>"; }).join("");
     return '<figure class="tsc" style="margin:0"><svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="כל הסקרים בשלושת החודשים שלפני הבחירות, לפי מפלגה">' +
       g.join("") + pts.join("") + ends.join("") + "</svg>" +
-      '<div class="lg">' + legend + '</div><figcaption class="small" style="margin-top:6px">כל נקודה היא סקר; לחיצה על שם רשימה מבליטה אותה. ביום הבחירות: מעוין מלא = התוצאה, ריבוע חלול = ממוצע המדגמים.</figcaption></figure>';
+      '<div class="lg">' + legend + '</div><figcaption class="small" style="margin-top:6px">כל נקודה היא סקר; לחיצה על שם רשימה מבליטה אותה. ' +
+      (e.upcoming ? "הבחירות עוד לא התקיימו: הקו האפור הוא תאריך העדכון האחרון של הנתונים." : "ביום הבחירות: מעוין מלא = התוצאה, ריבוע חלול = ממוצע המדגמים.") + "</figcaption></figure>";
   }
 
   /* ------------------------------------------------------------ outlet table */
   function outletTable(e) {
     var lists = trackedLists(e), os = outlets();
     var head = "<tr><th>רשימה</th>" + os.map(function (o) { return '<th class="n">' + esc(outletName(e, o)) + "</th>"; }).join("") +
-      '<th class="n">ממוצע הגופים</th><th class="n">ממוצע המדגמים</th><th class="n">תוצאה</th></tr>';
+      '<th class="n">ממוצע הגופים</th>' + (e.upcoming ? "" : '<th class="n">ממוצע המדגמים</th><th class="n">תוצאה</th>') + "</tr>";
     var body = lists.map(function (l) {
       var p = l.polls || { outlets: {} };
       return "<tr><td><span class=\"party-cell\">" + A.slip(l, "sm") + esc(l.name) + "</span></td>" + os.map(function (o) {
         var d = p.outlets[o];
         return '<td class="n">' + (d && d.mean != null ? A.fmtSeats(d.mean) + ' <span class="small">(' + d.n + ")</span>" : "—") + "</td>";
-      }).join("") + '<td class="n"><b>' + A.fmtSeats(p.overall) + '</b></td><td class="n">' + A.fmtSeats(l.exitAvg) + '</td><td class="n"><b>' + l.seats + "</b></td></tr>";
+      }).join("") + '<td class="n"><b>' + A.fmtSeats(p.overall) + "</b></td>" +
+        (e.upcoming ? "" : '<td class="n">' + A.fmtSeats(l.exitAvg) + '</td><td class="n"><b>' + l.seats + "</b></td>") + "</tr>";
     }).join("");
     return '<div class="table-scroll"><table class="data"><thead>' + head + "</thead><tbody>" + body + "</tbody></table></div>" +
       '<p class="small" style="margin-top:6px">בסוגריים: מספר הסקרים בממוצע. ממוצע הגופים = ממוצע של ממוצעי הגופים (כל גוף במשקל שווה).</p>';
@@ -101,11 +111,14 @@
       return "<tr><td>" + esc(outletName(e, o)) + "</td>" + e.blocOrder.map(function (b) { return '<td class="n">' + A.fmtSeats(d[b]) + "</td>"; }).join("") + '<td class="n">' + d.n + "</td></tr>";
     }).join("");
     body += "<tr><td><b>ממוצע הגופים</b></td>" + e.blocOrder.map(function (b) { return '<td class="n"><b>' + A.fmtSeats(e.blocs.polls[b]) + "</b></td>"; }).join("") + '<td class="n">' + e.blocs.pollsUsed + "</td></tr>";
-    body += "<tr><td>ממוצע המדגמים</td>" + e.blocOrder.map(function (b) { return '<td class="n">' + A.fmtSeats(e.blocs.exit[b]) + "</td>"; }).join("") + '<td class="n">' + e.exitPolls.length + "</td></tr>";
-    body += "<tr><td>תוצאה</td>" + e.blocOrder.map(function (b) { return '<td class="n"><b>' + e.blocs.final[b] + "</b></td>"; }).join("") + "<td></td></tr>";
+    if (!e.upcoming) {
+      body += "<tr><td>ממוצע המדגמים</td>" + e.blocOrder.map(function (b) { return '<td class="n">' + A.fmtSeats(e.blocs.exit[b]) + "</td>"; }).join("") + '<td class="n">' + e.exitPolls.length + "</td></tr>";
+      body += "<tr><td>תוצאה</td>" + e.blocOrder.map(function (b) { return '<td class="n"><b>' + e.blocs.final[b] + "</b></td>"; }).join("") + "<td></td></tr>";
+    }
     return '<div class="table-scroll"><table class="data"><thead>' + head + "</thead><tbody>" + body + "</tbody></table></div>" +
       '<p class="small" style="margin-top:6px">בגושים נכללו רק סקרים שמסתכמים ב-120 מנדטים. השיוך לגוש לפי ' +
-      (e.kind === "rec" ? "ההמלצות לנשיא (לא הוקמה ממשלה)." : "הרכב הממשלה הראשונה שהושבעה אחרי הבחירות.") + "</p>";
+      (e.kind === "rec" ? "ההמלצות לנשיא (לא הוקמה ממשלה)." : e.kind === "pre" ? "מפלגות " + esc(e.outgoing.name) + " (הממשלה היוצאת) מול כל שאר הרשימות, עד שתקום ממשלה חדשה." :
+        "הרכב הממשלה הראשונה שהושבעה אחרי הבחירות.") + "</p>";
   }
 
   /* ------------------------------------------------------------ poll source link */
@@ -193,13 +206,14 @@
     var os = outlets().filter(function (o) { return all.some(function (p) { return p.outlet === o; }); });
     var h = opts.headingTag || "h2";
     root.innerHTML =
-      '<div class="panel-intro"><p>סקרי שלושת החודשים שלפני ' + esc(A.electionTitle(e)) + " (" + esc(A.fmtDate(e.windowStart)) + " – " + esc(A.fmtDate(e.date)) +
+      '<div class="panel-intro"><p>' + (e.upcoming ? "<b>לפני הבחירות.</b> הנתונים עודכנו ב-" + esc(A.fmtDate(e.asOf)) + "; הסקר האחרון שנכלל: " + esc(A.fmtDate(e.lastPoll)) + ". " : "") +
+      "סקרי שלושת החודשים שלפני " + esc(A.electionTitle(e)) + " (" + esc(A.fmtDate(e.windowStart)) + " – " + esc(A.fmtDate(e.date)) +
       "), של כאן 11, חדשות 12, חדשות 13, מעריב והארץ" + ((A.META.oldElections || []).indexOf(key) >= 0 ? " (ובמקום הערוצים: ערוץ 1, ערוץ 2 וערוץ 10)" : "") +
       ". כל סקר משויך לתאריך סיום העבודה עליו. " + all.length + ' סקרים. <a href="' + esc(e.pollSrc) + '" target="_blank" rel="noopener">מקור הטבלאות</a>.</p></div>' +
       "<" + h + ">כל הסקרים</" + h + ">" + '<div style="margin:12px 0 26px">' + chart(e, all) + "</div>" +
       "<" + h + ">ממוצע לפי גוף</" + h + '><div style="margin:12px 0 26px">' + outletTable(e) + "</div>" +
       "<" + h + ">גושים בסקרים</" + h + '><div style="margin:12px 0 26px">' + blocTable(e) + "</div>" +
-      "<" + h + ">מדגמי ליל הבחירות</" + h + '><div style="margin:12px 0 26px">' + exitTable(e) + "</div>" +
+      (e.upcoming ? "" : "<" + h + ">מדגמי ליל הבחירות</" + h + '><div style="margin:12px 0 26px">' + exitTable(e) + "</div>") +
       "<" + h + ">סקר אחר סקר</" + h + ">" +
       '<div class="filters"><label for="pf-' + key + '">גוף</label><select id="pf-' + key + '"><option value="">כל הגופים</option>' +
       os.map(function (o) { return '<option value="' + o + '">' + esc(outletName(e, o)) + "</option>"; }).join("") + "</select>" +

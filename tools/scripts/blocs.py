@@ -16,13 +16,14 @@ became, by the same majority rule.
 COALITION_LABELS = {"C": "קואליציה", "O": "אופוזיציה", "X": "לא נכנסו לכנסת"}
 REC_LABELS = {"C": "המליצו על נתניהו", "O": "המליצו על גנץ", "N": "לא המליצו על אף אחד",
               "X": "לא נכנסו לכנסת"}
-BLOC_ORDER = {"coalition": ["C", "O", "X"], "rec": ["C", "O", "N", "X"]}
-KIND = {"2022": "coalition", "2021": "coalition", "2020": "coalition", "2019b": "rec",
+PRE_LABELS = {"C": "הממשלה היוצאת", "O": "שאר הרשימות"}   # before an election (user decision, 2026)
+BLOC_ORDER = {"coalition": ["C", "O", "X"], "rec": ["C", "O", "N", "X"], "pre": ["C", "O"]}
+KIND = {"2026": "pre", "2022": "coalition", "2021": "coalition", "2020": "coalition", "2019b": "rec",
         "2019a": "rec", "2015": "coalition", "2013": "coalition", "2009": "coalition"}
 
 
 def labels(key):
-    return REC_LABELS if KIND[key] == "rec" else COALITION_LABELS
+    return {"rec": REC_LABELS, "pre": PRE_LABELS}.get(KIND[key], COALITION_LABELS)
 
 
 # ------------------------------------------------------------ official results
@@ -131,6 +132,14 @@ BLOC_COLS = {
              "UTJ": "C", "YisraelBeiteinu": "O", "RZP-OY": "C", "ReligiousZionist": "C",
              "OtzmaYehudit": "C", "Hadash–Ta'al": "O", "JointList": "O", "Meretz": "X",
              "Ra'am": "O", "Balad": "X"},
+    # 2026, before the election (user decision): the parties of the outgoing 37th government
+    # (Likud, Religious Zionism, Otzma Yehudit, Shas, UTJ; Zehut with Religious Zionism)
+    # against all the other lists.
+    "2026": {"Likud": "C", "RZP": "C", "Zehut": "C", "Otzma": "C", "Shas": "C", "UTJ": "C",
+             "Together": "O", "Blue & White": "O", "Yisrael Beiteinu": "O", "Ra'am": "O",
+             "Joint List": "O", "Hadash–Ta'al": "O", "Balad": "O", "Dems": "O", "Yashar": "O",
+             "Reserv.": "O", "NEP": "O", "Zionist Home": "O", "Unity": "O", "Amcha Yisrael": "O",
+             "Winter party": "O", "Haredi Public": "O"},
 }
 # Notes shown to the reader for column assignments that needed the majority rule.
 BLOC_COL_NOTES = {
@@ -144,6 +153,8 @@ BLOC_COL_NOTES = {
     "2019a": ["כחול לבן לפני האיחוד: יש עתיד + חוסן-תל\"ם - המליצו על גנץ",
               "הרשימה המשותפת לפני הפירוק (חד\"ש, בל\"ד, רע\"מ) ותע\"ל: שתי הרשימות שנוצרו לא המליצו"],
     "2022": ["הרשימה המשותפת לפני פרישת בל\"ד: לפי הרוב (חד\"ש-תע\"ל) - אופוזיציה"],
+    "2026": ["לפני הבחירות: מפלגות הממשלה ה-37 (הליכוד, הציונות הדתית וזהות, עוצמה יהודית, ש\"ס, יהדות התורה) מול כל שאר הרשימות (החלטתך)",
+             "זהות לפני האיחוד עם הציונות הדתית: עם הממשלה היוצאת (החלטתך)"],
 }
 # merged cells that span columns of different blocs -> bloc by majority rule
 MIXED_CELLS = {

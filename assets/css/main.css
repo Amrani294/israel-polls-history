@@ -524,3 +524,39 @@ section.block > .wrap > header::after {
   .co-total .big { font-size: 4rem; }
   .co-chips { grid-template-columns: 1fr; }
 }
+
+/* ================================================================== before election day (2026) */
+.chip.pre { background: var(--flag); border-color: #e9d48a; color: var(--ink); font-weight: 600; }
+.up-tag { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 6px; }
+.avg-bars { display: grid; gap: 6px; max-width: 900px; }
+.avg-row { display: grid; grid-template-columns: 3.8rem 13rem minmax(0, 1fr) 3.4rem; gap: 12px; align-items: center;
+  text-decoration: none; color: var(--ink); padding: 6px 8px; border-radius: 6px; }
+.avg-row:hover { background: var(--slip); }
+.avg-row > .slip { justify-self: start; }
+.avg-row .nm { font-weight: 600; line-height: 1.2; display: grid; }
+.avg-row .nm .small { font-weight: 400; font-size: 0.76rem; }
+.avg-row .track { position: relative; height: 18px; background: var(--rule-2); border-radius: 2px; }
+.avg-row .fill { position: absolute; inset-block: 0; inset-inline-start: 0; background: var(--pc); border-radius: 2px; }
+.avg-row .track i { position: absolute; top: -3px; bottom: -3px; width: 2px; margin-inline-start: -1px; background: var(--ink); opacity: .55; }
+.avg-row .v { font-family: var(--display); font-weight: 700; font-size: 1.9rem; line-height: 1; text-align: end; }
+.avg-bars.compact .avg-row { grid-template-columns: 3.8rem 10rem minmax(0, 1fr) 3rem; padding: 3px 6px; }
+.avg-bars.compact .avg-row .v { font-size: 1.6rem; }
+.up-blocs { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; max-width: 820px; }
+.up-blocs .side { display: grid; justify-items: center; font-size: var(--step--1); color: var(--ink-2); text-align: center; line-height: 1.2; }
+.up-blocs .side .big { font-family: var(--display); font-size: 3.4rem; font-weight: 700; line-height: 0.85; color: var(--ink); }
+.up-blocs .side.O .big { color: var(--mute); }
+.up-blocs .co-bar span:first-child { border-inline-end: 2px solid #fff; }
+.up-blocs.stack { grid-template-columns: auto minmax(0, 1fr) auto; margin-bottom: 10px; }
+.next-up { background: linear-gradient(180deg, rgba(240, 180, 0, 0.07), transparent 70%); }
+.next-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.next-side { background: var(--slip); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; box-shadow: var(--shadow-slip); }
+@media (max-width: 900px) { .next-grid { grid-template-columns: 1fr; } }
+@media (max-width: 620px) {
+  .avg-row, .avg-bars.compact .avg-row { grid-template-columns: 3.8rem minmax(0, 1fr) 2.8rem; }
+  .avg-row .track { grid-column: 1 / -1; grid-row: 2; }
+  .up-blocs .side .big { font-size: 2.6rem; }
+}
+@media (max-width: 620px) {
+  .leaders { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 8px; }
+  .leaders .seats { font-size: 1.3rem; }
+}

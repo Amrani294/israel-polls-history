@@ -31,6 +31,12 @@
 
   /* ---------------------------------------------------------------- numbers */
   var f = [];
+  if (e.upcoming) {
+    f.push(["ממוצע הסקרים", '<dd class="big">' + A.fmtSeats(Math.round(l.polls.overall * 10) / 10) + "</dd>"]);
+    f.push(["ראש הרשימה", "<dd>" + esc(A.displayName(l.leader)) + "</dd>"]);
+    f.push(["גוש לפני הבחירות", "<dd>" + A.blocChip(e, l.bloc) + "</dd>"]);
+    f.push(["מועמדים ברשימה (בוויקיפדיה)", "<dd>" + l.candidates.length + "</dd>"]);
+  } else {
   f.push(["מושבים", '<dd class="big">' + l.seats + "</dd>"]);
   f.push(["קולות", "<dd>" + A.fmtInt(l.votes) + "</dd>"]);
   f.push(["אחוז מהקולות הכשרים", "<dd>" + esc(l.pct) + "</dd>"]);
@@ -39,13 +45,15 @@
   f.push(["המלצה לנשיא", "<dd>" + esc(A.recText(l)) + "</dd>"]);
   f.push(["ממוצע הסקרים", "<dd>" + (l.polls ? A.fmtSeats(l.polls.overall) : "—") + "</dd>"]);
   f.push(["ממוצע המדגמים", "<dd>" + A.fmtSeats(l.exitAvg) + "</dd>"]);
+  }
 
   var card =
     '<section class="id-wrap"><div class="wrap">' +
     '<div class="crumbs"><a href="' + A.pageHref("index") + '">כל מערכות הבחירות</a> / <a href="' + A.electionHref(key) + '">' + esc(A.electionTitle(e)) + ", " + esc(A.shortWhen(e)) + "</a></div>" +
     '<article class="idcard" style="--pc:' + color + '">' +
     '<div class="face">' + A.slip(l, "xl") + '<div class="ballot-name">' + esc(l.ballot) + "</div></div>" +
-    "<div><h1>" + esc(l.name) + '</h1><p class="sub">תעודת זהות, ' + esc(A.electionTitle(e)) + " (" + esc(A.fmtDate(e.date)) + ")</p>" +
+    "<div><h1>" + esc(l.name) + '</h1><p class="sub">תעודת זהות, ' + esc(A.electionTitle(e)) + " (" + esc(A.fmtDate(e.date)) + ")" +
+    (e.upcoming ? ' <span class="chip pre">לפני הבחירות</span> <span class="small">עודכן ב-' + esc(A.fmtDate(e.asOf)) + "</span>" : "") + "</p>" +
     '<dl class="fields">' + f.map(function (x) { return "<div><dt>" + x[0] + "</dt>" + x[1] + "</div>"; }).join("") + "</dl>" +
     '<div class="axis"><div class="cap" style="margin-bottom:6px"><b>מיקום פוליטי:</b> ' + esc(l.position.he) +
     (l.position.en ? ' <span class="small" dir="ltr">(“' + esc(l.position.en) + '”)</span>' : "") + "</div>" + axis(l.position) +
@@ -53,12 +61,24 @@
     (l.position.url ? "התיאור לקוח מהערך הכללי על המפלגה או הברית, ואינו ספציפי למערכת זו." : "") + (l.position.note ? " " + esc(l.position.note) : "") + "</p></div>" +
     "</div>" +
     '<div class="leader">' + A.portrait(l.leader, color) + '<span class="role">ראש הרשימה</span><span class="name">' + esc(A.displayName(l.leader)) + "</span>" +
-    '<a class="small" href="' + esc((A.PEOPLE[l.leader] || {}).wiki || "#") + '" target="_blank" rel="noopener">בוויקיפדיה</a></div>' +
+    ((A.PEOPLE[l.leader] || {}).wiki ? '<a class="small" href="' + esc(A.PEOPLE[l.leader].wiki) + '" target="_blank" rel="noopener">בוויקיפדיה</a>' : "") + "</div>" +
     "</article></div></section>";
 
   /* ---------------------------------------------------------------- members */
   var members;
-  if (l.seats) {
+  if (e.upcoming) {
+    members =
+      '<section class="block"><div class="wrap"><header><h2>המועמדים</h2><p>לפי הסדר ברשימה, כפי שמופיע בוויקיפדיה העברית (' + l.candidates.length + " המקומות הראשונים)</p></header>" +
+      '<div class="members">' + l.candidates.map(function (m, i) {
+        var p = A.PEOPLE[m] || {};
+        var inner = A.portrait(m, color) + '<span class="nm">' + esc(A.displayName(m)) + '</span><span class="tag">מקום ' + (i + 1) + (i === 0 ? ", ראש הרשימה" : "") + "</span>";
+        return p.wiki ? '<a class="member' + (i === 0 ? " lead" : "") + '" style="--pc:' + color + '" href="' + esc(p.wiki) + '" target="_blank" rel="noopener">' + inner + "</a>" :
+          '<span class="member' + (i === 0 ? " lead" : "") + '" style="--pc:' + color + '">' + inner + "</span>";
+      }).join("") + "</div>" +
+      '<p class="small" style="margin-top:14px">מועמדים בלי ערך בוויקיפדיה העברית מוצגים בלי קישור ובלי תמונה.' +
+      (official ? ' לרשימה המלאה: <a href="' + esc(official.url) + '" target="_blank" rel="noopener">' + esc(official.label) + "</a>." : "") + "</p>" +
+      "</div></section>";
+  } else if (l.seats) {
     members =
       '<section class="block"><div class="wrap"><header><h2>נבחרי הרשימה</h2><p>' + l.seats + " חברי הכנסת שנכנסו מהרשימה בתחילת הכנסת ה-" + esc(e.knesset) + "</p></header>" +
       '<div class="members">' + l.members.map(function (m, i) {
@@ -81,7 +101,7 @@
   }
 
   /* ---------------------------------------------------------------- in the polls */
-  var rows = [], max = l.seats;
+  var rows = [], max = l.seats || 0;
   if (l.polls) {
     Object.keys(A.META.outlets).forEach(function (o) {
       var d = l.polls.outlets[o];
@@ -89,18 +109,21 @@
     });
     rows.push(["", "ממוצע הגופים", l.polls.overall]);
   }
-  rows.push(["sep"]);
-  e.exitPolls.forEach(function (x) { var v = x.seats[l.name]; rows.push(["exit", "מדגם " + x.actual, v]); max = Math.max(max, v || 0); });
-  rows.push(["exit", "ממוצע המדגמים", l.exitAvg]);
-  rows.push(["sep"]);
-  rows.push(["result", "תוצאה", l.seats]);
+  if (!e.upcoming) {
+    rows.push(["sep"]);
+    e.exitPolls.forEach(function (x) { var v = x.seats[l.name]; rows.push(["exit", "מדגם " + x.actual, v]); max = Math.max(max, v || 0); });
+    rows.push(["exit", "ממוצע המדגמים", l.exitAvg]);
+    rows.push(["sep"]);
+    rows.push(["result", "תוצאה", l.seats]);
+  }
   max = Math.max(max, 1);
   var bars = '<div class="mini-bars" style="--pc:' + color + '">' + rows.map(function (r) {
     if (r[0] === "sep") return '<div class="sep"></div>';
     return '<div class="row ' + r[0] + '"><span>' + esc(r[1]) + '</span><span class="track"><span class="fill" style="width:' + (100 * (r[2] || 0) / max).toFixed(2) + '%"></span></span><span class="v">' + A.fmtSeats(r[2]) + "</span></div>";
   }).join("") + "</div>";
   var pollsSec =
-    '<section class="block"><div class="wrap"><header><h2>בסקרים ובמדגמים</h2><p>ממוצע שלושת החודשים האחרונים לפי גוף (בסוגריים: מספר הסקרים), מדגמי ליל הבחירות והתוצאה</p></header>' +
+    '<section class="block"><div class="wrap"><header><h2>' + (e.upcoming ? "בסקרים" : "בסקרים ובמדגמים") + "</h2><p>" +
+    (e.upcoming ? "ממוצע הסקרים בחלון עד תאריך העדכון, לפי גוף (בסוגריים: מספר הסקרים)" : "ממוצע שלושת החודשים האחרונים לפי גוף (בסוגריים: מספר הסקרים), מדגמי ליל הבחירות והתוצאה") + "</p></header>" +
     (l.polls ? "" : '<p class="small">הרשימה לא נכללה במעקב הסקרים של האתר (נסקרו רק הרשימות המרכזיות בכל מערכת), ולכן מוצגים רק המדגמים והתוצאה.</p>') +
     bars + '<p style="margin-top:16px"><button class="btn" type="button" data-open-polls>פתיחת חלונית הסקרים של מערכת זו</button></p></div></section>';
 
@@ -113,16 +136,19 @@
     '<section class="block"><div class="wrap"><header><h2>אותה רשימה במערכות אחרות</h2><p>תעודת זהות נפרדת לכל מערכת בחירות</p></header><div class="history">' +
     others.map(function (pair) {
       var x = pair[0], m = pair[1];
-      return '<a href="' + A.partyHref(x.key, m.id) + '"' + (x.key === key ? ' aria-current="page"' : "") + "><span>" + esc(A.shortWhen(x)) + '</span><span class="s">' + m.seats + '</span><span class="small">' + esc(A.displayName(m.leader)) + "</span></a>";
+      var s = x.upcoming ? A.fmtSeats(Math.round(m.polls.overall * 10) / 10) : m.seats;
+      return '<a href="' + A.partyHref(x.key, m.id) + '"' + (x.key === key ? ' aria-current="page"' : "") + "><span>" + esc(A.shortWhen(x)) + '</span><span class="s">' + s + "</span>" +
+        (x.upcoming ? '<span class="small">בסקרים</span>' : "") + '<span class="small">' + esc(A.displayName(m.leader)) + "</span></a>";
     }).join("") + "</div></div></section>" : "";
 
   /* ---------------------------------------------------------------- sources */
   var src =
     '<section class="block"><div class="wrap"><header><h2>מקורות</h2></header><div class="sources">' +
-    '<a href="' + esc(l.heWiki) + '" target="_blank" rel="noopener">הערך על הרשימה בוויקיפדיה העברית</a>' +
+    '<a href="' + esc(l.heWiki) + '" target="_blank" rel="noopener">' + (e.upcoming ? "הפרק על הרשימה בערך על הבחירות (ויקיפדיה העברית)" : "הערך על הרשימה בוויקיפדיה העברית") + "</a>" +
     (l.position.url ? '<a href="' + esc(l.position.url) + '" target="_blank" rel="noopener">הערך בוויקיפדיה האנגלית (מיקום פוליטי)</a>' : "") +
-    '<a href="' + esc(e.heWiki) + '" target="_blank" rel="noopener">תוצאות הבחירות, אותיות וראש הרשימה (ויקיפדיה העברית)</a>' +
-    '<a href="' + esc(e.govSrc) + '" target="_blank" rel="noopener">הרכב הממשלה / ההמלצות</a>' +
+    (e.upcoming ? '<a href="' + esc(e.pollSrc) + '" target="_blank" rel="noopener">טבלאות הסקרים (ויקיפדיה האנגלית)</a>' :
+      '<a href="' + esc(e.heWiki) + '" target="_blank" rel="noopener">תוצאות הבחירות, אותיות וראש הרשימה (ויקיפדיה העברית)</a>' +
+      '<a href="' + esc(e.govSrc) + '" target="_blank" rel="noopener">הרכב הממשלה / ההמלצות</a>') +
     (official ? '<a href="' + esc(official.url) + '" target="_blank" rel="noopener">' + esc(official.label) + "</a>" : "") +
     "</div>" + (l.blocNote ? '<p class="small" style="margin-top:10px"><b>הערה על השיוך לגוש:</b> ' + esc(l.blocNote) + "</p>" : "") +
     (l.recNote ? '<p class="small"><b>הערה על ההמלצה:</b> ' + esc(l.recNote) + "</p>" : "") + "</div></section>";

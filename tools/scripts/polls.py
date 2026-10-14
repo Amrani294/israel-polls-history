@@ -42,12 +42,12 @@ def parse_end_date(text, default_year):
 def parse_value(raw):
     """Return (seats, note) for one cell; seats is None when not reported."""
     v = raw.strip()
-    if v in ("", "–", "—", "-", "~", "N/a", "—N/a", "–N/a"):
+    if v in ("", "–", "—", "-", "~", "N/a", "—N/a", "–N/a", "?"):
         return None, None
     m = re.fullmatch(r"(\d+)(\(\d+(\.\d+)?%\))?", v)                  # 4 or 4(3.9%)
     if m:
         return int(m.group(1)), None
-    if re.fullmatch(r"\(\d+(\.\d+)?%+\)", v):                         # (2.8%) below threshold
+    if re.fullmatch(r"\(<?\d+(\.\d+)?%+\)", v):                       # (2.8%) or (<1%) below threshold
         return 0, "below threshold %s = 0 seats" % v
     m = re.fullmatch(r"(\d+)-(\d+)", v)                               # 9-10 range
     if m:

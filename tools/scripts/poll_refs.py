@@ -14,7 +14,9 @@ def norm(s):
 
 def load():
     refs = {}
-    for line in open(os.path.join(DATA, "poll_refs_raw.txt"), encoding="utf-8"):
+    lines = open(os.path.join(DATA, "poll_refs_raw.txt"), encoding="utf-8").read().splitlines()
+    lines += open(os.path.join(DATA, "poll_refs_2026.txt"), encoding="utf-8").read().splitlines()
+    for line in lines:
         k, d, c1, c2, u = line.rstrip("\n").split("|", 4)
         if not u:
             continue

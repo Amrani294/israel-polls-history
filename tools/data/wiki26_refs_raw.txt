@@ -1,0 +1,133 @@
+2026|Fieldworkdate|Polling firm|Publisher|
+2026|12 Oct|SF+ND|Channel 14|ch10.co.il/en/news/1107207/
+2026|11 Oct|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1108256/
+2026|7–8 Oct|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1375198
+2026|7–8 Oct|Yossi Tatika|Zman Yisrael|www.zman.co.il/731622/
+2026|7–8 Oct|Kantar|Israel Hayom|www.israelhayom.co.il/news/politics/article/21444759
+2026|7 Oct|Direct Polls|i24 News|www.i24news.tv/he/news/israel-elections-2026/polls/artc-fa0f56f4
+2026|7 Oct|SF+ND|Channel 14|www.c14.co.il/article/1728516
+2026|7 Oct|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/survey-905386103/?pid=985778
+2026|5 Oct|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-d7459e0cc7c01a1026.htm
+2026|4 Oct|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1105927/
+2026|1 Oct|Direct Polls|i24 News|ch10.co.il/en/news/1105029/
+2026|1 Oct|SF+ND|Channel 14|www.c14.co.il/article/1720749
+2026|30 Sep – 1 Oct|Yossi Tatika|Zman Yisrael|www.zman.co.il/729422/
+2026|30 Sep – 1 Oct|LRI+P4A|Maariv|www.jpost.com/israel-election-2026/article-910396
+2026|30 Sep|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/survey-905376242/?pid=106628
+2026|29 Sep|Maagar Mochot|Channel 16|www.ch16.co.il/player/episode/6abc0121d203dfa22727649b
+2026|28 Sep|SF+ND|Channel 14|www.c14.co.il/article/1716250
+2026|27 Sep|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1103667/
+2026|24 Sep|Maagar Mochot|Channel 16|www.ch16.co.il/player/episode/6ab5727cc711a7bf85e73ac3
+2026|24 Sep|Direct Polls|i24 News|www.i24news.tv/he/news/israel-elections-2026/polls/artc-5d1d4577
+2026|23–24 Sep|Yossi Tatika|Zman Yisrael|www.timesofisrael.com/netanyahus-coalition-and-rival-change-bloc-draw-level-in-latest-toi-poll/
+2026|23–24 Sep|LRI+P4A|Maariv|www.jpost.com/israel-election-2026/article-909659
+2026|23 Sep|SF+ND|Channel 14|www.c14.co.il/article/1711606
+2026|23 Sep|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/hcp4l-905367553/?pid=98577
+2026|22 Sep|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-fad59e819c9c0a1027.htm
+2026|17 Sep|SF+ND|Channel 14|www.c14.co.il/article/1706627
+2026|17 Sep|Direct Polls|i24 News|www.i24news.tv/he/news/israel-elections-2026/polls/artc-5b0e5baa
+2026|16–17 Sep|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1368599
+2026|16–17 Sep|Kantar|Israel Hayom|www.israelhayom.co.il/news/politics/article/21444759
+2026|16–17 Sep|Yossi Tatika|Zman Yisrael|www.zman.co.il/725468//
+2026|16 Sep|Maagar Mochot|Channel 16|themadad.com/allpolls/
+2026|15 Sep|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/uo4p5-905360485/
+2026|15 Sep|SF+ND|Channel 14|ch10.co.il/en/news/1101859/
+2026|14 Sep|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-16f5b846bd3a0a1026.htm
+2026|14 Sep|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1099439/
+2026|9–10 Sep|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1365318
+2026|9–10 Sep|Yossi Tatika|Zman Yisrael|www.zman.co.il/723041/
+2026|9 Sep|Maagar Mochot|Channel 16|www.ch16.co.il/vod.html?id=aab4640f-335f-44c1-8f41-c4fbf4671081&title=%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94%20%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%AA%2009.09.2026
+2026|9 Sep|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/z10wm-905351997/
+2026|9 Sep|Direct Polls|i24 News|www.i24news.tv/he/news/israel-elections-2026/polls/artc-a92f58d0
+2026|9 Sep|SF+ND|Channel 14|www.c14.co.il/article/1697000
+2026|9 Sep|LRI+P4A|Walla|www.maariv.co.il/news/politics/article-1364694
+2026|9 Sep|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1098105/
+2026|9 Sep|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-c27dc00e8c680a1026.htm
+2026|7–8 Sep|LRI+P4A|Maariv|www.jpost.com/israel-election-2026/article-907949
+2026|7 Sep|S.M.L.T.|—N/a|www.gov.il/BlobFolder/dynamiccollectorresultitem/knesset_election59/he/Survey_4135.pdf
+2026|7 Sep|SF+ND|Channel 14|www.c14.co.il/article/1693697
+2026|7 Sep|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-067c7eb8e9c70a1026.htm
+2026|6 Sep|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1096840/
+2026|Fieldworkdate|Polling firm|Publisher|
+2026|3–4 Sep|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1362890
+2026|3 Sep|SF+ND|Channel 14|www.c14.co.il/article/1690265
+2026|2–3 Sep|Kantar|Israel Hayom|www.israelhayom.co.il/news/politics/article/21348438
+2026|2–3 Sep|Yossi Tatika|Zman Yisrael|www.zman.co.il/720592/
+2026|2 Sep|Maagar Mochot|Channel 16|www.ch16.co.il/vod.html?id=430a18f3-fe1e-498b-9587-218e51b73cbf&title=%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94%20%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%AA%2026.08.26
+2026|2 Sep|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/survey-905340911/
+2026|2 Sep|Direct Polls|i24 News|www.i24news.tv/he/news/israel-elections-2026/polls/artc-7cad3b3e
+2026|2 Sep|LRI+P4A|Walla|news.walla.co.il/item/3865040
+2026|31 Aug|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-15cb223b69850a1026.htm
+2026|30 Aug|SF+ND|Channel 14|www.c14.co.il/article/1683992
+2026|30 Aug|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1094245/
+2026|30 Aug|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1094245/
+2026|27 Aug|SF+ND|Channel 14|www.c14.co.il/article/1681141
+2026|26–27 Aug|Yossi Tatika|Zman Yisrael|www.zman.co.il/718546/
+2026|26–27 Aug|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1360437
+2026|26 Aug|Maagar Mochot|Channel 16|www.ch16.co.il/vod.html?id=430a18f3-fe1e-498b-9587-218e51b73cbf&title=%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94%20%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%AA%2026.08.26
+2026|26 Aug|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/ykep2-905329839/?pid=519
+2026|26 Aug|Direct Polls|i24 News|www.i24news.tv/he/news/israel-elections-2026/polls/artc-a44c587c
+2026|26 Aug|LRI+P4A|Walla|news.walla.co.il/item/3863376
+2026|Fieldworkdate|Polling firm|Publisher|
+2026|24 Aug|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-cb0dba3ba4430a1027.htm
+2026|24 Aug|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-cb0dba3ba4430a1027.htm
+2026|24 Aug|SF+ND|Channel 14|www.c14.co.il/article/1674991
+2026|23 Aug|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1092076/
+2026|19–20 Aug|Kantar|Israel Hayom|www.israelhayom.co.il/news/politics/article/21242587
+2026|19–20 Aug|Kantar|Israel Hayom|www.israelhayom.co.il/news/politics/article/21242587
+2026|19–20 Aug|Yossi Tatika|Zman Yisrael|www.timesofisrael.com/toi-poll-shows-bennett-gaining-ground-at-eisenkots-expense-but-deadlock-persists/
+2026|19–20 Aug|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1358140
+2026|19 Aug|Midgam Project|Channel 13|13tv.co.il/item/news/politics/politics/survey-905319423/?pid=106628
+2026|19 Aug|Maagar Mochot|Channel 16|www.ch16.co.il/vod.html?id=d28627d9-9978-4d62-b2ac-b3fefb1fb716&title=%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94%20%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%AA%2019.08.26
+2026|18–19 Aug|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1090501/
+2026|18 Aug|SF+ND|Channel 14|www.c14.co.il/article/1666708
+2026|18 Aug|Direct Polls|i24 News|www.i24news.tv/he/news/i24news-shows/%D7%94%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94-%D7%94%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%AA/artc-e0e93683
+2026|17 Aug|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-a1d50f8465010a1026.htm
+2026|17 Aug|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-a1d50f8465010a1026.htm
+2026|16 Aug|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1089536/
+2026|13 Aug|Direct Polls|i24 News|www.i24news.tv/he/news/israel-elections-2026/polls/artc-26c56d10
+2026|12–13 Aug|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1355736
+2026|12–13 Aug|Yossi Tatika|Zman Yisrael|www.zman.co.il/712748/
+2026|12 Aug|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/yj7o4-905308914/?pid=519
+2026|10 Aug|Maagar Mochot|Channel 16|www.ch16.co.il/vod.html?id=7e05a626-9b42-43d0-ba30-0f025d1def28&title=%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94%20%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%AA%2010.8.26
+2026|10 Aug|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-0ff4769123cef91027.htm
+2026|9 Aug|SF+ND|Channel 14|www.c14.co.il/article/1655982
+2026|9 Aug|Kantar|Kan 11|www.gov.il/BlobFolder/dynamiccollectorresultitem/knesset_election13/he/%D7%A1%D7%A7%D7%A8%20%D7%91%D7%97%D7%99%D7%A8%D7%95%D7%AA%20%D7%9E%D7%99%D7%95%D7%9D%2011.8.2026.pdf
+2026|9 Aug|Kantar|Kan 11|www.gov.il/BlobFolder/dynamiccollectorresultitem/knesset_election13/he/%D7%A1%D7%A7%D7%A8%20%D7%91%D7%97%D7%99%D7%A8%D7%95%D7%AA%20%D7%9E%D7%99%D7%95%D7%9D%2011.8.2026.pdf
+2026|6 Aug|Direct Polls|i24 News|www.i24news.tv/he/news/israel-elections-2026/polls/artc-432a427d
+2026|Fieldworkdate|Polling firm|Publisher|
+2026|6 Aug|Kantar|Israel Hayom|www.israelhayom.co.il/news/politics/article/21144095
+2026|5–6 Aug|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1353206
+2026|5–6 Aug|Yossi Tatika|Zman Yisrael|www.zman.co.il/710845/
+2026|5 Aug|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/r8iw1-905298096/?pid=106628/
+2026|4 Aug|SF+ND|Channel 14|www.c14.co.il/article/1646973
+2026|4 Aug|Maagar Mochot|Channel 16|www.israelnationalnews.com/news/431244
+2026|3 Aug|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-bf734bfa938cf91027.htm
+2026|2 Aug|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1084834/
+2026|29–30 Jul|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1350647
+2026|29–30 Jul|Yossi Tatika|Zman Yisrael|www.zman.co.il/708759/
+2026|29 Jul|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/pcmyp-905287233/
+2026|29 Jul|SF+ND|Channel 14|www.c14.co.il/article/1639107
+2026|27 Jul|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-d608a2f0354af91026.htm
+2026|27 Jul|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-d608a2f0354af91026.htm
+2026|27 Jul|Direct Polls|i24 News|www.i24news.tv/he/news/israel-elections-2026/polls/artc-02214cba
+2026|26 Jul|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1081690/
+2026|26 Jul|SF+ND|Channel 14|www.c14.co.il/article/1634621
+2026|23 Jul|Kantar|Israel Hayom|www.israelhayom.co.il/news/politics/article/21046119
+2026|22–23 Jul|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1348125
+2026|22–23 Jul|Yossi Tatika|Zman Yisrael|www.zman.co.il/706835/
+2026|21 Jul|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/dnxub-905274776/
+2026|20 Jul|Midgam R&C|HaHadashot 12|www.mako.co.il/news-politics/2026_q3/Article-4f6f15b9d308f91027.htm
+2026|19 Jul|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1078705/
+2026|17 Jul|Lazar|Maariv|www.israelnationalnews.com/news/430327
+2026|16 Jul|SF+ND|Channel 14|www.c14.co.il/article/1623285
+2026|16 Jul|Direct Polls|i24 News|www.i24news.tv/he/news/israel-elections-2026/artc-34cc4bf9
+2026|15–16 Jul|Yossi Tatika|Zman Yisrael|www.zman.co.il/704793/
+2026|15 Jul|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/p2sii-905266560/?pid=7&refc=902992383
+2026|13 Jul|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-5ef5c111dfb5f91027.htm
+2026|12 Jul|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1075317/
+2026|9 Jul|Kantar|Israel Hayom|www.israelhayom.co.il/news/politics/article/20948594
+2026|9 Jul|SF+ND|Channel 14|www.c14.co.il/article/1614743
+2026|9 Jul|Direct Polls|i24 News|www.i24news.tv/en/news/israel/politics/artc-i24news-poll-eisenkot-jumps-to-21-seats-gaining-on-netanyahu-s-majority-in-the-knesset
+2026|8–9 Jul|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1342801
+2026|8 Jul|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/survey-905256094/?pid=2822
