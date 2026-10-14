@@ -183,10 +183,10 @@
     if (opts.center !== false) {
       if (mode === "bloc") {
         var c = e.blocs.final.C, o = e.blocs.final.O;
-        label = '<text class="sum" x="0" y="-20" font-size="30" font-weight="900" direction="ltr">' + o + "–" + c + "</text>" +
+        label = '<text class="sum" x="0" y="-20" font-size="30" font-weight="900" text-anchor="middle" direction="ltr">' + o + "–" + c + "</text>" +
           '<text x="0" y="-2" text-anchor="middle" font-size="11" fill="#6b7385">' + esc(e.blocLabels.C) + " מול " + esc(e.blocLabels.O) + "</text>";
       } else {
-        label = '<text class="sum" x="0" y="-18" font-size="32" font-weight="900">120</text>' +
+        label = '<text class="sum" x="0" y="-18" font-size="32" font-weight="900" text-anchor="middle">120</text>' +
           '<text x="0" y="-2" text-anchor="middle" font-size="11" fill="#6b7385">מושבים</text>';
       }
     }

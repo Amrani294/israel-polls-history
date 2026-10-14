@@ -168,7 +168,7 @@ section.block > .wrap > header p { margin: 0; color: var(--mute); font-size: var
 .toggle { display: inline-flex; border: 1px solid var(--ink); border-radius: 999px; overflow: hidden; margin-bottom: 10px; }
 .toggle button { background: transparent; border: 0; padding: 5px 14px; cursor: pointer; font-size: var(--step--1); }
 .toggle button[aria-pressed="true"] { background: var(--ink); color: #fff; }
-.parl .sum { font-family: var(--display); text-anchor: middle; fill: var(--ink); }
+.parl .sum, .hero-chamber .sum { font-family: var(--display); text-anchor: middle; fill: var(--ink); }
 .parl .axis-note { font-size: var(--step--1); color: var(--mute); margin-top: 6px; }
 
 .seat-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
@@ -370,7 +370,7 @@ h3 { font-family: var(--sans); font-size: 1.08rem; font-weight: 700; line-height
 .rec-group h3 .n { font-size: 2.6rem; font-weight: 700; line-height: 0.8; }
 .history a .s { font-size: 2.2rem; font-weight: 700; line-height: 0.9; }
 .seat-legend .n { font-size: 1.6rem; line-height: 1; }
-.parl svg .sum { font-size: 46px; font-weight: 700; }
+.parl svg .sum, .hero-chamber svg .sum { font-size: 46px; font-weight: 700; }
 .idcard .ballot-name, .leader .name { font-family: var(--sans); }
 .leader .name { font-size: 1.1rem; font-weight: 700; }
 .mini-bars .v { font-family: var(--sans); font-weight: 700; }
@@ -560,3 +560,19 @@ section.block > .wrap > header::after {
   .leaders { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 8px; }
   .leaders .seats { font-size: 1.3rem; }
 }
+
+/* ================================================================== about: editor's note, AI notice, contact */
+.contact-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.contact-row .who { font-family: var(--display); font-size: 1.7rem; line-height: 1; font-weight: 700; }
+.ig.mail { direction: ltr; }
+.editor-note { position: relative; max-width: 72ch; margin: 22px 0 6px; background: var(--slip); border: 1px solid var(--rule);
+  border-radius: 10px; padding: 22px 24px 20px; box-shadow: var(--shadow-slip); }
+.editor-note::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: 6px; border-radius: 0 10px 10px 0;
+  background: linear-gradient(180deg, var(--left) 0 33%, #e9e7ef 33% 67%, var(--right) 67% 100%); }
+.editor-note h2 { margin: 0 0 10px; font-size: 2.2rem; }
+.editor-note p { margin: 0 0 0.7em; line-height: 1.75; }
+.editor-note .sig { font-family: var(--display); font-size: 1.6rem; line-height: 1; margin-top: 4px; }
+.ai-note { max-width: 72ch; margin: 16px 0 0; padding: 12px 16px; border-radius: 8px; background: var(--flag);
+  border: 1px solid #e9d48a; font-size: 0.95rem; }
+.ai-note p { margin: 0 0 6px; }
+.ai-note p:last-child { margin: 0; }
