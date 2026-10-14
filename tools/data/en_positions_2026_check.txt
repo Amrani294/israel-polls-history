@@ -1,0 +1,18 @@
+P|Likud|Likud|pos=Right-wing|lead=
+P|United Torah Judaism|United Torah Judaism|pos=Social:; Right-wing; Economic:; Centre-left|lead=Ya'akov Asher
+P|Shas|Shas|pos=Fiscal: Centre-left; Social: Right-wing|lead=Aryeh Deri
+P|Religious Zionist Party|Religious Zionist Party|pos=Far-right|lead=
+P|Zehut|Zehut|pos=Right-wing to far-right|lead=Moshe Feiglin
+P|Otzma Yehudit|Otzma Yehudit|pos=Far-right|lead=Itamar Ben-Gvir
+P|Blue and White (political party)|Blue and White (political party)|pos=Centre|lead=Benny Gantz
+P|Yisrael Beiteinu|Yisrael Beiteinu|pos=Right-wing|lead=Avigdor Lieberman
+P|Ra'am|Ra'am|pos=|lead=Mansour Abbas
+P|Joint List|Joint List|pos=Left-wing|lead=Yousef Jabareen
+P|Together (Israel)|Together (Israel)|pos=Centre to centre-right|lead=Naftali Bennett
+P|The Democrats (Israel)|The Democrats (Israel)|pos=Centre-left to left-wing|lead=
+P|Yashar (political party)|Yashar (political party)|pos=Centre|lead=Gadi Eisenkot
+P|The Reservists (political party)|The Reservists (political party)|pos=Centre-right|lead=Yoaz Hendel; Sandra Alon; Shlomi Damari
+P|New Economic Party|New Economic Party|pos=Centre-right[non-primary source needed]|lead=Yaron Zelekha
+P|Amcha Yisrael|Amcha Yisrael|pos=Right-wing|lead=Ofer Winter
+P|Haredi Public|Haredi Public|pos=|lead=Moti Leitner
+P|Unity (Israel)|Unity (Israel)|pos=Right-wing|lead=Gilad Erdan

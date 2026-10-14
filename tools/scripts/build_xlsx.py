@@ -81,6 +81,12 @@ SCEN_HE = {
     0: None,
 }
 COLNOTE_HE = {
+    "Religious Zionist Party alone: Zehut was not a separate column in this table (before the 1 Sep 2026 union)":
+        "הציונות הדתית בלבד: זהות לא הופיעה כעמודה נפרדת בטבלה זו (לפני האיחוד ב-1.9.2026)",
+    "Zionist Home (Hendel and Tropper, until 6 Sep 2026) counted as the Reservists by user decision":
+        "'הבית הציוני' (הנדל וטרופר, עד 6.9.2026) נספר כמילואימניקים (החלטתך)",
+    "listed as 'Winter party' before the name Amcha Yisrael (25 Aug 2026)":
+        "מופיע כ'מפלגת וינטר', לפני השם עמך ישראל (25.8.2026)",
     "Religious Zionist list incl. Otzma Yehudit, before Otzma's temporary separate run (15-26 Aug 2022)":
         "רשימת הציונות הדתית כולל עוצמה יהודית, לפני ההיפרדות הזמנית של עוצמה (15-26.8.2022)",
     "Blue and White-New Hope list, before Eisenkot joined and it was renamed National Unity (14 Aug 2022)":
@@ -126,6 +132,12 @@ def value_note_he(note):
 
 
 SCENARIO_HE = {
+    "2 scenario rows; kept the one with Hadash-Ta'al and Balad joint (the Joint List re-formed on 19 Aug 2026)":
+        "הסקר הציג 2 תרחישים; נבחר התרחיש עם חד\"ש-תע\"ל ובל\"ד יחד (הרשימה המשותפת שקמה מחדש ב-19.8.2026)",
+    "2 scenario rows; kept the one with Ofer Winter's party (it ran, as Amcha Yisrael)":
+        "הסקר הציג 2 תרחישים; נבחר התרחיש עם המפלגה של עופר וינטר (שרצה בפועל, כעמך ישראל)",
+    "2 scenario rows; kept the one with the Religious Zionist Party and Zehut joint (the union of 1 Sep 2026); most lists were not reported in it":
+        "הסקר הציג 2 תרחישים; נבחר התרחיש עם הציונות הדתית וזהות יחד (האיחוד של 1.9.2026). בתרחיש זה רוב הרשימות לא דווחו",
     "3 scenario rows; kept the one with New Right + National Union + United Jewish Home joint (the Yamina union that formed on 14-15 Jan 2020; it still included Otzma, which ran alone)":
         "הסקר הציג 3 תרחישים; נבחר התרחיש עם איחוד הימין החדש + האיחוד הלאומי + הבית היהודי המאוחד (האיחוד שקם כ'ימינה' ב-14-15.1.2020; בתרחיש נכללה גם עוצמה, שבפועל רצה לבד)",
     "2 scenario rows; neither shows a union that happened (the other joins National Union with United Jewish Home) - kept the base row":
@@ -553,6 +565,14 @@ def main():
 
 def election_notes(key):
     n = {
+        "2026": [
+            "אין סקרים של הארץ בחלון.",
+            "הציונות הדתית וזהות: לפני האיחוד ב-1.9.2026 נסכמו הרכיבים; בטבלאות שבהן זהות לא הופיעה בנפרד נספרה הציונות הדתית בלבד.",
+            "הרשימה המשותפת: לפני 19.8.2026 נסכמו חד\"ש-תע\"ל + בל\"ד.",
+            "המילואימניקים-המפלגה הכלכלית: לפני 6.9.2026 נספר 'הבית הציוני' (הנדל וטרופר), לפי החלטתך. ישר! לפני 6.9 נספרה כמו שהיא (בלי טרופר).",
+            "עמך ישראל: לפני 25.8.2026 מופיעה כ'מפלגת וינטר'.",
+            "בסקרים עם שני תרחישים נבחר התרחיש עם מה שקרה בפועל (פירוט בהערה של כל סקר).",
+        ],
         "2022": [
             "אין סקרים של הארץ בחלון.",
             "הציונות הדתית: לפני 26.8.2022 (ריצה נפרדת של עוצמה יהודית) נסכמו הציונות הדתית + עוצמה; לפני 15.8 מופיעה הרשימה המשותפת המקורית.",

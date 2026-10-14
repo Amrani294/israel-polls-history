@@ -8,6 +8,7 @@
   var e = A.byKey[key];
   if (!e) { A.notFound(main, "אין במאגר מערכת בחירות בשם “" + key + "”."); return; }
   document.title = A.electionTitle(e) + " (" + A.shortWhen(e) + ") | היסטוריית הסקרים של ישראל";
+  if (e.upcoming) { upcoming(); return; }
 
   var lists = e.lists.slice().sort(function (a, b) { return b.seats - a.seats || (b.votes - a.votes); });
   var inK = lists.filter(function (l) { return l.seats > 0; });
@@ -189,4 +190,108 @@
         '<td class="n"><b>' + A.fmtSeats(l.polls.overall) + '</b></td><td class="n">' + A.fmtSeats(l.exitAvg) + '</td><td class="n"><b>' + l.seats + "</b></td></tr>";
     }).join("") + "</tbody></table></div>";
   main.querySelector("[data-open-polls]").addEventListener("click", function () { window.PollsView.open(key); });
+
+  /* ================================================================ before election day */
+  function upcoming() {
+    var lists = e.lists.slice().sort(function (a, b) { return b.polls.overall - a.polls.overall; });
+    var os = Object.keys(A.META.outlets).filter(function (o) { return lists.some(function (l) { return l.polls.outlets[o] && l.polls.outlets[o].n; }); });
+    var nPolls = (window.POLLS || []).filter(function (p) { return p.e === key; }).length;
+    var days = Math.round((A.parseISO(e.date) - A.parseISO(new Date().toISOString().slice(0, 10))) / 864e5);
+    var when = days > 1 ? "בעוד " + days + " ימים" : days === 1 ? "מחר" : days === 0 ? "היום" : "הבחירות התקיימו; התוצאות עוד לא נוספו לאתר";
+    var maxAvg = 1;   // scale: the largest outlet mean, so every tick stays on the track
+    lists.forEach(function (l) { Object.keys(l.polls.outlets).forEach(function (o) { var d = l.polls.outlets[o]; if (d && d.n) maxAvg = Math.max(maxAvg, d.mean); }); });
+
+    var head =
+      '<section class="e-head"><div class="bg-num" aria-hidden="true">' + esc(e.knesset) + '</div><div class="wrap">' +
+      '<div class="crumbs"><a href="' + A.pageHref("index") + '">כל מערכות הבחירות</a></div>' +
+      '<p class="up-tag"><span class="chip pre">לפני הבחירות</span> <span class="small">עודכן ב-' + esc(A.fmtDate(e.asOf)) + ", הסקר האחרון: " + esc(A.fmtDate(e.lastPoll)) + "</span></p>" +
+      "<h1>" + esc(A.electionTitle(e)) + "</h1>" +
+      '<p class="lede" style="margin-top:6px">' + esc(A.fmtDate(e.date)) + " · " + esc(when) + "</p>" +
+      '<dl class="facts">' +
+      "<div><dt>רשימות שהגישו מועמדים</dt><dd>" + (e.lists.length + e.small.length) + "</dd></div>" +
+      "<div><dt>רשימות במעקב הסקרים</dt><dd>" + e.lists.length + "</dd></div>" +
+      "<div><dt>סקרים בחלון</dt><dd>" + nPolls + ' <span class="small">(מ-' + esc(A.fmtDate(e.windowStart, { day: "numeric", month: "long" })) + ")</span></dd></div>" +
+      "<div><dt>הממשלה היוצאת</dt><dd>" + esc(e.outgoing.name) + "</dd></div>" +
+      "</dl>" +
+      '<div class="leaders" style="--n:' + Math.min(lists.length, 8) + '">' + lists.slice(0, 8).map(function (l) {
+        return '<a href="' + A.partyHref(key, l.id) + '" style="--pc:' + A.partyColor(l) + '">' + A.portrait(l.leader, A.partyColor(l)) +
+          '<span class="row"><span><span class="nm">' + esc(A.displayName(l.leader)) + '</span><br><span class="party">' + esc(l.name) + '</span></span><span class="seats">' + A.fmtSeats(Math.round(l.polls.overall * 10) / 10) + "</span></span></a>";
+      }).join("") + "</div>" +
+      '<p class="small" style="margin-top:8px">המספר ליד כל ראש רשימה: ממוצע הסקרים (מושבים).</p>' +
+      '<nav class="e-switch" aria-label="מערכות בחירות אחרות">' + A.ELECTIONS.map(function (x) {
+        return '<a href="' + A.electionHref(x.key) + '"' + (x.key === key ? ' aria-current="page"' : "") + ">" + esc(A.shortWhen(x)) + "</a>";
+      }).join("") + "</nav></div></section>";
+
+    var avg =
+      '<section class="block"><div class="wrap"><header><h2>ממוצע הסקרים</h2><p>ממוצע הגופים לכל רשימה; הסימנים הקטנים הם הממוצע של כל גוף בנפרד</p></header>' +
+      '<div class="avg-bars">' + lists.map(function (l) {
+        var ticks = os.map(function (o) {
+          var d = l.polls.outlets[o];
+          if (!d || !d.n) return "";
+          return '<i style="inset-inline-start:' + (100 * d.mean / maxAvg).toFixed(2) + '%" title="' + esc(window.PollsView.outletName(e, o) + ": " + A.fmtSeats(d.mean) + " (" + d.n + " סקרים)") + '"></i>';
+        }).join("");
+        return '<a class="avg-row" href="' + A.partyHref(key, l.id) + '" style="--pc:' + A.partyColor(l) + '">' + A.slip(l, "sm") +
+          '<span class="nm">' + esc(l.name) + '<span class="small">' + esc(A.displayName(l.leader)) + "</span></span>" +
+          '<span class="track"><span class="fill" style="width:' + (100 * l.polls.overall / maxAvg).toFixed(2) + '%"></span>' + ticks + "</span>" +
+          '<span class="v">' + A.fmtSeats(Math.round(l.polls.overall * 10) / 10) + "</span></a>";
+      }).join("") + "</div>" +
+      '<p class="small" style="margin-top:8px">רשימה מתחת לאחוז החסימה בסקר נספרת כ-0 מושבים. לכן ממוצע נמוך מ-4 אינו תחזית למספר מושבים, אלא סימן שבחלק מהסקרים הרשימה לא עברה את אחוז החסימה.</p>' +
+      "</div></section>";
+
+    var table =
+      '<section class="block"><div class="wrap"><header><h2>הרשימות</h2><p>לחיצה על רשימה פותחת את תעודת הזהות שלה: אותיות, מועמדים, מיקום פוליטי וסקרים</p></header>' +
+      '<div class="table-scroll"><table class="data"><thead><tr><th>רשימה</th><th>ראש הרשימה</th>' +
+      os.map(function (o) { return '<th class="n">' + esc(window.PollsView.outletName(e, o)) + "</th>"; }).join("") +
+      '<th class="n">ממוצע הגופים</th><th>גוש</th></tr></thead><tbody>' +
+      lists.map(function (l) {
+        return '<tr><td><a class="rowlink party-cell" href="' + A.partyHref(key, l.id) + '">' + A.slip(l, "sm") + "<span>" + esc(l.name) + "</span></a></td><td>" + esc(A.displayName(l.leader)) + "</td>" +
+          os.map(function (o) { var d = l.polls.outlets[o]; return '<td class="n">' + (d && d.n ? A.fmtSeats(d.mean) + ' <span class="small">(' + d.n + ")</span>" : "—") + "</td>"; }).join("") +
+          '<td class="n"><b>' + A.fmtSeats(l.polls.overall) + "</b></td><td>" + A.blocChip(e, l.bloc) + "</td></tr>";
+      }).join("") + "</tbody></table></div>" +
+      '<p class="small" style="margin-top:6px">בסוגריים: מספר הסקרים של הגוף שבהם הרשימה הופיעה. ממוצע הגופים = ממוצע של ממוצעי הגופים.</p>' +
+      (e.small.length ? '<details class="more"><summary>עוד ' + e.small.length + " רשימות שהגישו מועמדים ואינן בטבלת הסקרים</summary>" +
+        '<div class="table-scroll" style="margin-top:8px"><table class="data"><thead><tr><th>אותיות</th><th>שם הרשימה</th><th>ראש הרשימה</th></tr></thead><tbody>' +
+        e.small.map(function (x) { return "<tr><td><b>" + esc(x.letters) + "</b></td><td>" + esc(x.name) + "</td><td>" + esc(x.leader || "—") + "</td></tr>"; }).join("") +
+        "</tbody></table></div></details>" : "") +
+      "</div></section>";
+
+    var C = e.blocs.polls.C, O = e.blocs.polls.O;
+    var blocs =
+      '<section class="block"><div class="wrap"><header><h2>' + esc(e.blocLabels.C) + " מול " + esc(e.blocLabels.O) + "</h2><p>" +
+      "מפלגות " + esc(e.outgoing.name) + " מול כל שאר הרשימות, בממוצע הסקרים</p></header>" +
+      '<div class="up-blocs"><div class="side C"><span class="big">' + A.fmtSeats(C) + "</span><span>" + esc(e.blocLabels.C) + "</span></div>" +
+      '<div class="co-bar" aria-hidden="true"><span style="width:' + (100 * C / 120).toFixed(2) + '%;--pc:var(--coal)"></span><span style="width:' + (100 * O / 120).toFixed(2) + '%;--pc:var(--opp)"></span><i class="line" style="inset-inline-start:' + (100 * 61 / 120).toFixed(3) + '%"></i></div>' +
+      '<div class="side O"><span class="big">' + A.fmtSeats(O) + "</span><span>" + esc(e.blocLabels.O) + "</span></div></div>" +
+      '<div class="table-scroll" style="margin-top:16px;max-width:620px"><table class="data"><thead><tr><th>גוף</th>' +
+      e.blocOrder.map(function (b) { return '<th class="n">' + esc(e.blocLabels[b]) + "</th>"; }).join("") + '<th class="n">סקרים</th></tr></thead><tbody>' +
+      Object.keys(e.blocs.pollsByOutlet).map(function (o) {
+        var d = e.blocs.pollsByOutlet[o];
+        return "<tr><td>" + esc(window.PollsView.outletName(e, o)) + "</td>" + e.blocOrder.map(function (b) { return '<td class="n">' + A.fmtSeats(d[b]) + "</td>"; }).join("") + '<td class="n">' + d.n + "</td></tr>";
+      }).join("") +
+      "<tr><td><b>ממוצע הגופים</b></td>" + e.blocOrder.map(function (b) { return '<td class="n"><b>' + A.fmtSeats(e.blocs.polls[b]) + "</b></td>"; }).join("") + '<td class="n">' + e.blocs.pollsUsed + "</td></tr>" +
+      "</tbody></table></div>" +
+      '<p class="small" style="margin-top:6px">הקו באמצע הפס: 61 מושבים. רק סקרים שמסתכמים ב-120. ' + esc(e.blocLabels.C) + ": " + esc(lists.filter(function (l) { return l.bloc === "C"; }).map(function (l) { return l.name; }).join(", ")) + ". " +
+      'אפשר לנסות צירופים אחרים ב<a href="' + A.pageHref("coalition", "e=" + encodeURIComponent(key) + "&m=polls") + '">בונה הקואליציות</a>.</p>' +
+      "</div></section>";
+
+    var polls =
+      '<section class="block"><div class="wrap"><header><h2>כל הסקרים</h2><p>כל סקר בחלון, לפי גוף, עם קישור לפרסום</p></header>' +
+      '<p style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" type="button" data-open-polls>פתיחת חלונית הסקרים</button>' +
+      '<a class="btn ghost" href="' + A.pollsHref(key) + '">לארכיון הסקרים</a></p></div></section>';
+
+    var sources =
+      '<section class="block"><div class="wrap"><header><h2>מקורות והערות</h2></header>' +
+      '<div class="two-col"><div><h3 style="margin-bottom:8px">פרסומים רשמיים</h3><div class="sources">' +
+      e.links.map(function (l) { return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a>"; }).join("") + "</div>" +
+      '<h3 style="margin:16px 0 8px">עוד מקורות</h3><div class="sources">' +
+      '<a href="' + esc(e.heWiki) + '" target="_blank" rel="noopener">הערך על הבחירות בוויקיפדיה העברית (רשימות, אותיות, מועמדים)</a>' +
+      '<a href="' + esc(e.enWiki) + '" target="_blank" rel="noopener">הערך על הבחירות בוויקיפדיה האנגלית</a>' +
+      '<a href="' + esc(e.outgoing.src) + '" target="_blank" rel="noopener">' + esc(e.outgoing.name) + " (הממשלה היוצאת)</a>" +
+      '<a href="' + esc(e.pollSrc) + '" target="_blank" rel="noopener">טבלאות הסקרים</a></div></div>' +
+      '<div><h3 style="margin-bottom:8px">הערות</h3><ul class="notes">' + e.notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + "</ul></div></div>" +
+      "</div></section>";
+
+    main.innerHTML = head + avg + table + blocs + polls + sources;
+    main.querySelector("[data-open-polls]").addEventListener("click", function () { window.PollsView.open(key); });
+  }
 })();

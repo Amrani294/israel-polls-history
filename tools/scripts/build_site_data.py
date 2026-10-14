@@ -138,7 +138,41 @@ def read_positions():
         pos[query] = (title, p)
     # read in the browser in a separate call (en infobox of the 2021 party)
     pos["Blue and White (political party)"] = ("Blue and White (political party)", "Centre")
+    # 2026: articles read on 14 Oct 2026 (only those not read before are added)
+    for line in open(os.path.join(DATA, "en_positions_2026_check.txt"), encoding="utf-8"):
+        parts = line.rstrip("\n").split("|")
+        if len(parts) > 3 and parts[1] not in pos:
+            pos[parts[1]] = (parts[2], re.sub(r"\[[^\]]*\]$", "", parts[3][len("pos="):]))
     return pos
+
+
+# ------------------------------------------------------------------ 2026 sources
+def read_candidates_2026():
+    """section -> (letters, [(name, he-wiki title or '')]) from the he-wiki infoboxes."""
+    out = {}
+    for line in open(os.path.join(DATA, "he26_candidates_raw.txt"), encoding="utf-8"):
+        line = line.rstrip("\n")
+        if not line or line.startswith("SOURCE|"):
+            continue
+        sec, letters, _box, cands = line.split("|", 3)
+        people = []
+        for c in cands.split(";") if cands else []:
+            bits = c.split("~")
+            if len(bits) > 2:
+                die("struck-out candidate at top level in %s" % sec)
+            people.append((bits[0], bits[1]))
+        out[sec] = (letters, people)
+    return out
+
+
+def read_img_2026():
+    images, meta = {}, {}
+    for line in open(os.path.join(DATA, "img26_raw.txt"), encoding="utf-8"):
+        p = line.rstrip("\n").split("|")
+        if p[0] == "I":
+            images[p[1]] = p[2]
+            meta[(p[1], p[2])] = (p[3], p[4])
+    return images, meta
 
 
 def en_url(title):
@@ -169,6 +203,10 @@ def main(site):
     self_check()
     knesset, images = read_mk()
     meta = read_img_meta()
+    im26, meta26 = read_img_2026()
+    for t, f in im26.items():
+        images.setdefault(t, f)
+    meta.update(meta26)
     results = read_results()
     positions = read_positions()
     polls = build()
@@ -181,7 +219,10 @@ def main(site):
 
     people = {}
 
-    def person(title):
+    def person(title, plain=False):
+        if plain:   # a candidate without a Hebrew Wikipedia article
+            people.setdefault(title, dict(img="", file="", page="", artist="", license="", wiki=""))
+            return title
         if title not in people:
             f = images.get(title)
             if f is None:
@@ -332,25 +373,11 @@ def main(site):
                        for e in EXIT_FULL[key]],
         ))
         # polls (one row per poll)
-        ptotal = {id(x["poll"]): x for x in pblocs}
-        rows = sorted([p for p in polls if p["election"] == key], key=lambda p: (p["end"], p["outlet"]))
-        for p in rows:
-            onote = X.OUTLET_NOTE_HE[p["outlet_note"]] if p["outlet_note"] else ""
-            if p.get("scenario_note"):
-                onote = (onote + "; " if onote else "") + X.SCENARIO_HE[p["scenario_note"]]
-            pb = ptotal[id(p)]
-            vals, vnotes = {}, {}
-            for party in [pp["name"] for pp in cfg["parties"]]:
-                v, note = p["values"][party]
-                vals[party] = v
-                if note:
-                    vnotes[party] = X.value_note_he(note)
-            all_polls.append(OrderedDict(
-                e=key, end=p["end"], dateText=p["date_text"], outlet=p["outlet"],
-                publisher=p["publisher"], firm=p["firm"] if cfg["fmt"] != "B" else "",
-                values=vals, valueNotes=vnotes, outletNote=onote,
-                blocs={b: pb["sums"][b] for b in order}, total=pb["total"],
-                blocNotes=pb["notes"], src=p["source"], ref=p["ref"]))
+        all_polls.extend(poll_rows(key, polls, pblocs, KIND[key]))
+
+    for key, up in S.UPCOMING.items():
+        elections.insert(0, upcoming(key, up, polls, summary, pblocs, positions, person))
+        all_polls[:0] = poll_rows(key, polls, pblocs, KIND[key])
 
     # credits for people actually shown
     for t, p in people.items():
@@ -370,6 +397,105 @@ def main(site):
     write_js(os.path.join(out, "meta.js"), "META", meta_out)
     print("elections", len(elections), "polls", len(all_polls), "people", len(people),
           "no photo", [t for t, p in people.items() if not p["file"]])
+
+
+def poll_rows(key, polls, pblocs, kind):
+    cfg = ELECTIONS[key]
+    order = ["C", "O", "N", "X"] if kind == "rec" else (["C", "O"] if kind == "pre" else ["C", "O", "X"])
+    ptotal = {id(x["poll"]): x for x in pblocs}
+    out = []
+    rows = sorted([p for p in polls if p["election"] == key], key=lambda p: (p["end"], p["outlet"]))
+    for p in rows:
+        onote = X.OUTLET_NOTE_HE[p["outlet_note"]] if p["outlet_note"] else ""
+        if p.get("scenario_note"):
+            onote = (onote + "; " if onote else "") + X.SCENARIO_HE[p["scenario_note"]]
+        pb = ptotal[id(p)]
+        vals, vnotes = {}, {}
+        for party in [pp["name"] for pp in cfg["parties"]]:
+            v, note = p["values"][party]
+            vals[party] = v
+            if note:
+                vnotes[party] = X.value_note_he(note)
+        out.append(OrderedDict(
+            e=key, end=p["end"], dateText=p["date_text"], outlet=p["outlet"],
+            publisher=p["publisher"], firm=p["firm"] if cfg["fmt"] != "B" else "",
+            values=vals, valueNotes=vnotes, outletNote=onote,
+            blocs={b: pb["sums"][b] for b in order}, total=pb["total"],
+            blocNotes=pb["notes"], src=p["source"], ref=p["ref"]))
+    return out
+
+
+def upcoming(key, up, polls, summary, pblocs, positions, person):
+    """An election that has not happened yet: lists, candidates and polls, no results."""
+    from blocs import BLOC_COLS, labels
+    cfg = ELECTIONS[key]
+    cands = read_candidates_2026()
+    tracked = [p["name"] for p in cfg["parties"]]
+    if [x[0] for x in up["lists"]] != tracked:
+        die("2026: site lists differ from the tracked poll lists")
+    bloc_of_col = BLOC_COLS[key]
+    lists, used_sections = [], set()
+    for name, slug, sec, en_art, pnote in up["lists"]:
+        if sec not in cands:
+            die("2026: no he-wiki section %s" % sec)
+        used_sections.add(sec)
+        letters, people_ = cands[sec]
+        if not people_:
+            die("2026: no candidates for %s" % sec)
+        names = []
+        for nm, title in people_:
+            names.append(person(title) if title else person(nm, plain=True))
+        party_cols = [pp for pp in cfg["parties"] if pp["name"] == name][0]["cols"]
+        blocs_ = {bloc_of_col[c] for c in party_cols}
+        if len(blocs_) != 1:
+            die("2026: list %s spans blocs" % name)
+        ptitle, ptext = positions[en_art]
+        exp = S.POSITION[en_art]
+        if exp[0] != ptext:
+            die("position text changed for %s: %r vs %r" % (en_art, ptext, exp[0]))
+        pos = dict(en=ptext, he=exp[1], lo=exp[2], hi=exp[3], note=" ".join(x for x in (exp[4], pnote) if x),
+                   article=ptitle, url=en_url(ptitle))
+        d = summary[key][name]
+        lists.append(OrderedDict(
+            id=slug, name=name, ballot=sec, letters=letters, leader=names[0],
+            seats=None, votes=None, pct=None, passed=None,
+            bloc=blocs_.pop(), blocNote="",
+            rec=None, recNote="",
+            members=[], memberNotes={}, candidates=names,
+            heWiki=he_url(up["he_article"]) + "#" + sec.replace(" ", "_"), position=pos,
+            polls=dict(overall=r1(d["overall"]),
+                       outlets={o: dict(mean=r1(v), n=n) for o, (v, n) in d["by_outlet"].items()}),
+            exits={}, exitAvg=None,
+        ))
+    lists.sort(key=lambda l: -(l["polls"]["overall"] or 0))
+    small = [dict(name=sec, letters=letters, leader=(ppl[0][0] if ppl else ""), votes=None, pct=None)
+             for sec, (letters, ppl) in cands.items() if sec not in used_sections and letters]
+    order = ["C", "O"]
+    items = [x for x in pblocs if x["poll"]["election"] == key and x["total"] == 120]
+    per_outlet = {}
+    for o in OUTLETS:
+        its = [x for x in items if x["poll"]["outlet"] == o]
+        if its:
+            per_outlet[o] = {b: sum(x["sums"][b] for x in its) / len(its) for b in order}
+            per_outlet[o]["n"] = len(its)
+    blocs_polls = {b: r1(sum(v[b] for v in per_outlet.values()) / len(per_outlet)) for b in order}
+    last = max(p["end"] for p in polls if p["election"] == key)
+    return OrderedDict(
+        key=key, label=cfg["label"], date=cfg["date"].isoformat(), knesset=up["knesset"],
+        windowStart=cfg["start"].isoformat(), upcoming=True, asOf=up["as_of"], lastPoll=last,
+        kind="pre", blocOrder=order, blocLabels={b: labels(key)[b] for b in order},
+        government=None, outgoing=dict(name=up["outgoing"][0], src=up["outgoing"][1]),
+        info={}, links=up["links"],
+        heWiki=he_url(up["he_article"]), enWiki=en_url(up["en_article"]),
+        resultsSrc="", govSrc="", recSrc="", recNote="",
+        pollSrc=cfg["source"], tracked=tracked,
+        notes=X.election_notes(key),
+        lists=lists, small=small,
+        blocs=dict(polls=blocs_polls, pollsByOutlet={o: {k: r1(v) for k, v in d.items()}
+                                                     for o, d in per_outlet.items()},
+                   pollsUsed=len(items), exit=None, final=None),
+        exitPolls=[],
+    )
 
 
 def write_js(path, var, obj):

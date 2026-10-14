@@ -18,7 +18,7 @@ def lacks(*names):
 def map_outlet(election, pub):
     """Return list of (outlet, note). Empty list = not a selected outlet."""
     p = pub.strip()
-    if election in ("2022", "2021", "2020", "2019b"):
+    if election in ("2026", "2022", "2021", "2020", "2019b"):
         table = [
             (r"^(HaHadashot 12|Channel 12)$", ["12"], None),
             (r"^Keshet$", ["12"], "published as 'Keshet' (counted as Channel 12 by user decision)"),
@@ -216,6 +216,30 @@ ELECTIONS = {
             dict(name="יהדות התורה", cols=["UTJ"]),
             dict(name="ישראל ביתנו", cols=["YisraelBeiteinu"]),
         ]),
+    "2026": dict(
+        label="אוקטובר 2026 (הכנסת ה-26)", date=date(2026, 10, 27), start=date(2026, 7, 27),
+        files=["raw_2026.txt"], fmt="A", upcoming=True,
+        source="https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+        parties=[
+            dict(name="הליכוד", cols=["Likud"]),
+            dict(name="ביחד", cols=["Together"]),
+            dict(name="הציונות הדתית וזהות", cols=["RZP", "Zehut"],
+                 col_notes={"RZP": "Religious Zionist Party alone: Zehut was not a separate column in this table (before the 1 Sep 2026 union)"}),
+            dict(name="עוצמה יהודית", cols=["Otzma"]),
+            dict(name="כחול לבן", cols=["Blue & White"]),
+            dict(name="ש\"ס", cols=["Shas"]),
+            dict(name="יהדות התורה", cols=["UTJ"]),
+            dict(name="ישראל ביתנו", cols=["Yisrael Beiteinu"]),
+            dict(name="רע\"ם", cols=["Ra'am"]),
+            dict(name="הרשימה המשותפת", cols=["Joint List", "Hadash–Ta'al", "Balad"]),
+            dict(name="הדמוקרטים", cols=["Dems"]),
+            dict(name="ישר!", cols=["Yashar"]),
+            dict(name="המילואימניקים-המפלגה הכלכלית", cols=["Reserv.", "NEP", "Zionist Home"],
+                 col_notes={"Zionist Home": "Zionist Home (Hendel and Tropper, until 6 Sep 2026) counted as the Reservists by user decision"}),
+            dict(name="עמך ישראל", cols=["Amcha Yisrael", "Winter party"],
+                 col_notes={"Winter party": "listed as 'Winter party' before the name Amcha Yisrael (25 Aug 2026)"}),
+            dict(name="הציבור החרדי", cols=["Haredi Public"]),
+        ]),
 }
 
 # Polls that print several scenario rows for the same publication.
@@ -223,6 +247,11 @@ ELECTIONS = {
 # row to keep, plus the reason. Decision rule from the user: keep the scenario
 # with the union that actually happened.
 SCENARIO_CHOICE = {
+    ("2026", "2026-07-27", "12"): (1, "2 scenario rows; kept the one with Hadash-Ta'al and Balad joint (the Joint List re-formed on 19 Aug 2026)"),
+    ("2026", "2026-08-09", "11"): (1, "2 scenario rows; kept the one with Ofer Winter's party (it ran, as Amcha Yisrael)"),
+    ("2026", "2026-08-17", "12"): (1, "2 scenario rows; kept the one with Ofer Winter's party (it ran, as Amcha Yisrael)"),
+    ("2026", "2026-08-24", "12"): (1, "2 scenario rows; kept the one with Ofer Winter's party (it ran, as Amcha Yisrael)"),
+    ("2026", "2026-08-30", "11"): (1, "2 scenario rows; kept the one with the Religious Zionist Party and Zehut joint (the union of 1 Sep 2026); most lists were not reported in it"),
     ("2020", "2020-01-13", "12"): (1, "3 scenario rows; kept the one with New Right + National Union + United Jewish Home joint (the Yamina union that formed on 14-15 Jan 2020; it still included Otzma, which ran alone)"),
     ("2020", "2020-01-02", "12"): (0, "2 scenario rows; neither shows a union that happened (the other joins National Union with United Jewish Home) - kept the base row"),
     ("2020", "2020-01-02", "13"): (1, "2 scenario rows; kept the one with Labor-Gesher + Democratic Union joint (the merger that formed on 13 Jan 2020)"),

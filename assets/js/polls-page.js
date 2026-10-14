@@ -10,7 +10,7 @@
   main.innerHTML =
     '<section class="e-head"><div class="wrap"><h1>ארכיון הסקרים</h1>' +
     '<p class="lede" style="margin-top:8px">כל הסקרים שפורסמו בשלושת החודשים שלפני כל מערכת בחירות בכאן 11, חדשות 12, חדשות 13, מעריב והארץ, ומדגמי ליל הבחירות של ערוצי הטלוויזיה.</p>' +
-    '<p style="margin-top:10px"><a class="btn ghost" href="downloads/polls-2009-2022.xlsx" download>הורדת כל הנתונים כקובץ אקסל</a></p>' +
+    '<p style="margin-top:10px"><a class="btn ghost" href="downloads/polls-2009-2022.xlsx" download>הורדת נתוני 2009–2022 כקובץ אקסל</a></p>' +
     '<nav class="e-switch" aria-label="בחירת מערכת">' + A.ELECTIONS.map(function (e) {
       return '<a href="' + A.pollsHref(e.key) + '" data-key="' + e.key + '">' + esc(A.shortWhen(e)) + "</a>";
     }).join("") + "</nav></div></section>" +

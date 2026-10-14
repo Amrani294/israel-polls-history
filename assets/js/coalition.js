@@ -72,14 +72,16 @@
     }).join("");
   }
   function presets(e) {
-    var hasC = e.lists.some(function (l) { return l.bloc === "C" && l.seats > 0; });
-    return (hasC ? '<button type="button" class="btn ghost" data-preset="C">' + esc(e.kind === "rec" ? e.blocLabels.C : "הקואליציה שקמה בפועל") + "</button>" : "") +
+    var hasC = e.lists.some(function (l) { return l.bloc === "C" && (e.upcoming || l.seats > 0); });
+    var label = e.upcoming ? e.blocLabels.C : e.kind === "rec" ? e.blocLabels.C : "הקואליציה שקמה בפועל";
+    return (hasC ? '<button type="button" class="btn ghost" data-preset="C">' + esc(label) + "</button>" : "") +
       '<button type="button" class="btn ghost" data-preset="none">ניקוי</button>';
   }
 
   function render() {
     var e = state.e, mode = state.mode, ms = modesOf(e);
-    var note = mode === "polls" ? "ממוצע הגופים של כל רשימה שבמעקב הסקרים, בשלושת החודשים שלפני הבחירות. רשימות שלא היו במעקב לא מופיעות." :
+    var note = e.upcoming ? "לפני הבחירות: ממוצע הגופים של כל רשימה, בסקרים עד " + A.fmtDate(e.asOf) + ". רשימות עם ממוצע 0 לא מופיעות." :
+      mode === "polls" ? "ממוצע הגופים של כל רשימה שבמעקב הסקרים, בשלושת החודשים שלפני הבחירות. רשימות שלא היו במעקב לא מופיעות." :
       mode === "exit" ? "ממוצע מדגמי ליל הבחירות של ערוצי הטלוויזיה." : "התוצאות הרשמיות של ועדת הבחירות המרכזית.";
     main.querySelector("[data-body]").innerHTML =
       '<div class="co-controls"><div class="toggle" role="group" aria-label="לפי מה לספור">' + ms.map(function (m) {
@@ -121,7 +123,7 @@
     } else {
       state.picked = Object.create(null);
       if (t.getAttribute("data-preset") === "C") {
-        state.e.lists.forEach(function (l) { if (l.bloc === "C" && l.seats > 0) state.picked[l.id] = true; });
+        state.e.lists.forEach(function (l) { if (l.bloc === "C" && (state.e.upcoming || l.seats > 0)) state.picked[l.id] = true; });
       }
     }
     writeState();

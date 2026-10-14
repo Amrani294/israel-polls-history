@@ -281,3 +281,56 @@ EXTRA_LINKS = {
          "url": "https://votes23.bechirot.gov.il/", "orig": ""},
     ],
 }
+
+
+# ================================================================== 2026 (before the election)
+# Built by build_site_data.upcoming(); no results yet. Sources:
+#   lists, ballot letters, candidates  -> data/he26_candidates_raw.txt (he-wiki rev 44066081,
+#                                          section per list, infobox list of candidates)
+#   political positions (new articles)  -> data/en_positions_2026_check.txt
+#   portraits of new candidates         -> data/img26_raw.txt (Wikidata P18 + Commons credits)
+#   polls                               -> data/raw_2026.txt (made by make_raw_2026.py)
+UPCOMING = {
+    "2026": dict(
+        knesset="26",
+        he_article="הבחירות לכנסת העשרים ושש",
+        en_article="2026 Israeli legislative election",
+        as_of="2026-10-14",            # the day the sources were read (shown as "updated")
+        outgoing=("הממשלה ה-37", "https://en.wikipedia.org/wiki/Thirty-seventh_government_of_Israel"),
+        links=[
+            {"label": "רשימות המועמדים לכנסת ה-26 (ועדת הבחירות המרכזית, gov.il)",
+             "url": "https://www.gov.il/he/pages/candidates-lists-26", "orig": ""},
+            {"label": "ועדת הבחירות המרכזית לכנסת ה-26 (gov.il)",
+             "url": "https://www.gov.il/he/departments/units/elections-26/govil-landing-page", "orig": ""},
+        ],
+        # poll list name -> (slug, he-wiki section, en article for the position, position note)
+        lists=[
+            ("הליכוד", "likud", "הליכוד", "Likud", ""),
+            ("ביחד", "together", "ביחד", "Together (Israel)", ""),
+            ("הציונות הדתית וזהות", "rzp", "הציונות הדתית וזהות", "Religious Zionist Party",
+             "רשימה משותפת של הציונות הדתית וזהות; מוצג המיקום של הציונות הדתית, שבראש הרשימה (זהות: Right-wing to far-right)."),
+            ("עוצמה יהודית", "otzma", "עוצמה יהודית", "Otzma Yehudit", ""),
+            ("כחול לבן", "blue-white", "כחול לבן", "Blue and White (political party)", ""),
+            ("ש\"ס", "shas", "מפלגת ש\"ס", "Shas", ""),
+            ("יהדות התורה", "utj", "יהדות התורה", "United Torah Judaism", ""),
+            ("ישראל ביתנו", "yb", "ישראל ביתנו", "Yisrael Beiteinu", ""),
+            ("רע\"ם", "raam", "הרשימה הערבית המאוחדת", "Ra'am", ""),
+            ("הרשימה המשותפת", "joint-list", "הרשימה המשותפת", "Joint List", ""),
+            ("הדמוקרטים", "democrats", "הדמוקרטים", "The Democrats (Israel)", ""),
+            ("ישר!", "yashar", "ישר!", "Yashar (political party)", ""),
+            ("המילואימניקים-המפלגה הכלכלית", "reservists-nep", "המילואימניקים-המפלגה הכלכלית",
+             "The Reservists (political party)",
+             "רשימה משותפת של המילואימניקים והמפלגה הכלכלית החדשה; מוצג המיקום של המילואימניקים, שבראש הרשימה (המפלגה הכלכלית: גם Centre-right)."),
+            ("עמך ישראל", "amcha-yisrael", "עמך ישראל", "Amcha Yisrael", ""),
+            ("הציבור החרדי", "haredi-public", "הציבור החרדי", "Haredi Public", ""),
+        ],
+    ),
+}
+POSITION.update({
+    "Together (Israel)": ("Centre to centre-right", "מרכז עד מרכז-ימין", 0, 1, ""),
+    "The Democrats (Israel)": ("Centre-left to left-wing", "מרכז-שמאל עד שמאל", -2, -1, ""),
+    "Yashar (political party)": ("Centre", "מרכז", 0, 0, ""),
+    "The Reservists (political party)": ("Centre-right", "מרכז-ימין", 1, 1, ""),
+    "Amcha Yisrael": ("Right-wing", "ימין", 2, 2, ""),
+    "Haredi Public": ("", "לא מצוין בתיבת המידע", None, None, ""),
+})
