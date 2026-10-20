@@ -55,3 +55,111 @@ P|2026|12|2026-10-05|0|src|https://www.mako.co.il/news-israel-elections/2026/Art
 P|2026|13|2026-10-07|0|src|https://13tv.co.il/item/news/politics/politics/survey-905386103/|text||
 P|2026|11|2026-10-11|0|src|https://www.kan.org.il/content/kan-news/politic/1108256/|img https://www.kan.org.il/media/4wgn0gdp/%D7%A1%D7%A7%D7%A8-%D7%9B%D7%90%D7%9F-%D7%97%D7%93%D7%A9%D7%95%D7%AA-1110.jpeg||
 P|2026|MAARIV|2026-10-15|0|src|https://www.maariv.co.il/news/elections-2026/article-1377736|infogram https://e.infogram.com/_/Ji7xCalOQXuw7DeGZeME||
+#
+# ================================================================== 2022 (read 20 Oct 2026)
+P|2022|13|2022-08-04|0|src|https://13tv.co.il/item/news/politics/politics/yeh4u-903204736/|text||
+P|2022|13|2022-08-08|0|src|https://13tv.co.il/item/news/politics/politics/u7frt-903213210/|text||
+P|2022|13|2022-08-14|0|src|https://13tv.co.il/item/news/politics/politics/g36iy-903223179/|text||
+P|2022|13|2022-08-24|0|src|https://13tv.co.il/item/news/politics/politics/euz4o-903238496/|text||
+P|2022|13|2022-09-01|0|src|https://13tv.co.il/item/news/politics/politics/kucgy-903249328/|text||
+P|2022|13|2022-09-14|0|src|https://13tv.co.il/item/news/politics/politics/ck8y6-903266562/|text||
+P|2022|13|2022-09-16|0|src|https://13tv.co.il/item/news/politics/politics/niq5a-903269410/?pid=98577&cid=903269410|text||
+P|2022|13|2022-09-22|0|src|https://13tv.co.il/item/news/politics/politics/m5dek-903277024/?pid=7&cid=903277024|text||
+P|2022|13|2022-10-02|0|src|https://13tv.co.il/item/news/politics/politics/djkm7-903285002/|text||
+P|2022|13|2022-10-13|0|src|https://13tv.co.il/item/news/politics/politics/v58n9-903294144/?pid=98577&|text||
+P|2022|13|2022-10-20|0|sec|https://elections.walla.co.il/item/3536051|text||הכתבה המקורית בחדשות 13 לא נמצאה; נקרא מהדיווח בוואלה.
+P|2022|13|2022-10-25|0|src|https://13tv.co.il/item/news/politics/politics/m47r5-903303576/?pid=517&cid=902986281|text||
+P|2022|13|2022-10-28|0|src|https://13tv.co.il/item/news/politics/politics/last-survey-903306114/?pid=7&cid=902992371|text||
+P|2022|12|2022-08-08|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-4085934896e7281027.htm|text||
+P|2022|12|2022-08-14|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-856bf22e61d9281027.htm|text||
+P|2022|12|2022-08-24|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-b48dd3751a0d281027.htm?sCh=31750a2610f26110&pId=173113802|text||
+P|2022|12|2022-08-31|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-b2988f09ba4f281027.htm|text||בכתבה אין מספר נפרד לש"ס וליהדות התורה (יחד 15 לפי גוש נתניהו); שאר הרשימות נבדקו.
+P|2022|12|2022-09-08|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-1ca4c418e172381027.htm|text||
+P|2022|12|2022-09-13|0|none|https://web.archive.org/web/20220913125609/https://makospecial.co.il/mako_election2022||| נמצא רק בארכיון האינטרנט, שלא היה נגיש לקריאה.
+P|2022|12|2022-09-16|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-53997660c374381027.htm?sCh=31750a2610f26110&pId=173113802|text||
+P|2022|12|2022-09-21|0|sec|https://www.srugim.co.il/714595-%d7%a1%d7%a7%d7%a8-%d7%94%d7%99%d7%9e%d7%99%d7%9f-%d7%9e%d7%aa%d7%a7%d7%a8%d7%91-%d7%a9%d7%a7%d7%93-%d7%9e%d7%aa%d7%97%d7%96%d7%a7%d7%aa-%d7%94%d7%93%d7%a8-%d7%9e%d7%95%d7%9b%d7%aa%d7%a8-%d7%a6|text||דיווח בסרוגים על סקר ערוץ הכנסת.
+P|2022|12|2022-09-22|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-1c0c8e087066381027.htm?sCh=7e6fbd1176581810&pId=18722235460&partner=lobby|text||
+P|2022|12|2022-09-28|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-4262db62dc48381027.htm|text||
+P|2022|12|2022-09-29|0|none|https://web.archive.org/web/20220930055116/https://makospecial.co.il/mako_election2022|||נמצא רק בארכיון האינטרנט, שלא היה נגיש לקריאה.
+P|2022|12|2022-10-04|0|src|https://www.gov.il/BlobFolder/generalpage/survey25/he/survey_knessetchannel_report_6.10.pdf|pdf||דוח הסקר שהוגש לוועדת הבחירות.
+P|2022|12|2022-10-11|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-d3f89620728c381026.htm|text||
+P|2022|12|2022-10-12|0|none|https://web.archive.org/web/20221014145930/https://makospecial.co.il/mako_election2022|||נמצא רק בארכיון האינטרנט, שלא היה נגיש לקריאה.
+P|2022|12|2022-10-18|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-caf7ecdd6cbe381027.htm?sCh=31750a2610f26110&pId=173113802|text||
+P|2022|12|2022-10-19|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-0285379d2d3f381027.htm|text||
+P|2022|12|2022-10-19|1|src|https://www.gov.il/BlobFolder/generalpage/survey25/he/survey_knessetchannel_report_19.10.pdf|pdf||דוח הסקר שהוגש לוועדת הבחירות.
+P|2022|12|2022-10-24|0|none|https://www.mako.co.il/news-israel-elections/2022_q4/Article-989f30b39aa0481027.htm|||הכתבה לא נטענה.
+P|2022|12|2022-10-25|0|none|https://web.archive.org/web/20221027182720/https://makospecial.co.il/mako_election2022|||נמצא רק בארכיון האינטרנט, שלא היה נגיש לקריאה.
+P|2022|12|2022-10-28|0|src|https://www.mako.co.il/news-israel-elections/election_2022/Article-afc48a535be1481026.htm?sCh=31750a2610f26110&pId=173113802|text||
+P|2022|MAARIV|2022-08-04|0|sec|https://www.jpost.com/israel-elections/article-714002|text||דיווח בג'רוזלם פוסט על סקר מעריב.
+P|2022|MAARIV|2022-08-11|0|src|https://www.maariv.co.il/elections-2022/Article-938364|text||בכתבה רק חלק מהרשימות (הליכוד, כחול לבן-תקווה חדשה, העבודה, המשותפת, ישראל ביתנו, רע"ם, הרוח הציונית, מרצ); הגרפיקה כבר לא זמינה.
+P|2022|MAARIV|2022-08-18|0|src|https://www.maariv.co.il/elections-2022/Article-939941|text||בכתבה רק חלק מהרשימות (עוצמה יהודית, הציונות הדתית, המשותפת, ישראל ביתנו, העבודה, מרצ, הרוח הציונית); הגרפיקה כבר לא זמינה.
+P|2022|MAARIV|2022-08-25|0|none|https://www.maariv.co.il/elections-2022/Article-941489|||הגרפיקה בכתבה כבר לא זמינה ובטקסט אין מספרים.
+P|2022|MAARIV|2022-09-02|0|none|https://www.maariv.co.il/elections-2022/Article-943050|||הגרפיקה בכתבה כבר לא זמינה ובטקסט אין מספרים.
+P|2022|MAARIV|2022-09-08|0|none|https://www.maariv.co.il/elections-2022/Article-943050|||ויקיפדיה מפנה לאותה כתבה של 2.9; הגרפיקה כבר לא זמינה.
+P|2022|MAARIV|2022-09-15|0|src|https://www.maariv.co.il/elections-2022/Article-946174|text||
+P|2022|MAARIV|2022-09-22|0|src|https://www.maariv.co.il/elections-2022/Article-947854|text||בכתבה רק חד"ש-תע"ל, רע"ם וסיכומי הגושים (60 מול 56), שמתאימים לוויקיפדיה; הגרפיקה כבר לא זמינה.
+P|2022|MAARIV|2022-09-29|0|src|https://www.maariv.co.il/elections-2022/Article-949083|text||
+P|2022|MAARIV|2022-10-06|0|src|https://www.maariv.co.il/elections-2022/Article-950320|text||
+P|2022|MAARIV|2022-10-13|0|src|https://www.gov.il/BlobFolder/generalpage/survey25-2/he/survey_maariv_seker-13_10.pdf|pdf||דוח הסקר שהוגש לוועדת הבחירות.
+P|2022|MAARIV|2022-10-20|0|src|https://www.maariv.co.il/elections-2022/Article-952955|text||בכתבה רק חד"ש-תע"ל וסיכומי הגושים (60 מול 56), שמתאימים לוויקיפדיה; הגרפיקה כבר לא זמינה.
+P|2022|MAARIV|2022-10-23|0|src|https://www.maariv.co.il/elections-2022/Article-953516|text||בכתבה אין מספר להציונות הדתית ולמחנה הממלכתי; שאר הרשימות נבדקו.
+P|2022|MAARIV|2022-10-27|0|none|https://www.maariv.co.il/elections-2022/Article-954614|||בכתבה רק סיכומי גושים; הגרפיקה כבר לא זמינה.
+P|2022|11|2022-08-08|0|src|https://www.gov.il/BlobFolder/generalpage/survey25/he/survey_kan11_seker-8-8.pdf|pdf||דוח הסקר שהוגש לוועדת הבחירות.
+P|2022|11|2022-08-14|0|none|https://www.kan.org.il/Item/?itemId=132762|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2022|11|2022-08-24|0|none|https://www.kan.org.il/item/?itemId=133385|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2022|11|2022-09-13|0|none|https://www.kan.org.il/item/?itemId=134573|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2022|11|2022-09-17|0|none|https://www.kan.org.il/Item/?itemId=134791|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2022|11|2022-10-01|0|none|https://www.kan.org.il/Item/?itemId=135533|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2022|11|2022-10-11|0|src|https://www.gov.il/BlobFolder/generalpage/survey25/he/survey_kan11_seker-11.10.pdf|pdf||דוח הסקר שהוגש לוועדת הבחירות.
+P|2022|11|2022-10-18|0|src|https://www.gov.il/BlobFolder/generalpage/survey25/he/survey_kan11_seker-18.10.pdf|pdf||דוח הסקר שהוגש לוועדת הבחירות.
+P|2022|11|2022-10-23|0|src|https://www.gov.il/BlobFolder/generalpage/survey25-2/he/survey_kan-reshetB_seker_24_10.pdf|pdf||דוח הסקר (רשת ב') שהוגש לוועדת הבחירות.
+P|2022|11|2022-10-27|0|src|https://www.gov.il/BlobFolder/generalpage/survey25/he/survey_kan11_seker27.10.pdf|pdf||דוח הסקר שהוגש לוועדת הבחירות.
+#
+# ================================================================== 2021 (read 20 Oct 2026)
+P|2021|MAARIV|2020-12-24|0|src|https://www.maariv.co.il/news/politics/Article-810809|text||
+P|2021|12|2020-12-27|0|sec|https://www.srugim.co.il/520912-סקר-מנדטים-הליכוד-נחלש-סער-מתחזק-וכמה|text||דיווח בסרוגים על סקר חדשות 12.
+P|2021|11|2020-12-30|0|none|https://www.kan.org.il/item/?itemId=97363|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2021|12|2020-12-30|0|src|https://www.mako.co.il/news-israel-elections/2021/Article-897427b9084b671027.htm|text||
+P|2021|13|2020-12-30|0|src|https://13news.co.il/item/news/politics/state-policy/elections-survey-1186841/|text||
+P|2021|MAARIV|2020-12-31|0|src|https://www.maariv.co.il/news/politics/Article-812195|text||בכתבה אין מספר ליש עתיד, ליהדות התורה ולתקווה חדשה; שאר הרשימות נבדקו.
+P|2021|12|2021-01-05|0|src|https://www.mako.co.il/news-israel-elections/2021_q1/Article-af506066da3d671027.htm|text||
+P|2021|MAARIV|2021-01-07|0|src|https://www.maariv.co.il/news/politics/Article-813744|text||
+P|2021|13|2021-01-08|0|src|https://13news.co.il/item/news/politics/state-policy/poll-01-08-1192663/|text||
+P|2021|12|2021-01-12|0|src|https://www.mako.co.il/news-israel-elections/2021_q1/Article-ccb7441ab67f671027.htm?sCh=31750a2610f26110&pId=173113802|text||
+P|2021|MAARIV|2021-01-14|0|src|https://www.maariv.co.il/news/politics/Article-815299|text||
+P|2021|12|2021-01-19|0|src|https://www.mako.co.il/news-israel-elections/2021_q1/Article-c44a5adf6cb1771026.htm?sCh=31750a2610f26110&pId=173113802|text||
+P|2021|MAARIV|2021-01-21|0|none|https://www.maariv.co.il/news/politics/Article-816850|||בטקסט הכתבה רק "סקר הסקרים" (ממוצע), לא הסקר עצמו.
+P|2021|13|2021-01-24|0|src|https://13news.co.il/item/news/politics/state-policy/elections-survey-1200338/|text||
+P|2021|12|2021-01-26|0|src|https://www.mako.co.il/news-israel-elections/2021_q1/Article-69a49c208af3771027.htm|text||
+P|2021|MAARIV|2021-01-28|0|none|https://www.maariv.co.il/news/politics/Article-818421|||בטקסט הכתבה אין מספרים.
+P|2021|12|2021-01-31|0|src|https://www.mako.co.il/news-israel-elections/2021-election_polls/Article-9ebff0e4d995771026.htm|text||ויקיפדיה מפנה לכתבה בישראל היום על סקר אחר. הכתבה של חדשות 12; השורה היא התרחיש שבו רע"ם רצה בנפרד.
+P|2021|13|2021-02-02|0|src|https://13news.co.il/item/news/politics/state-policy/elections-survey-1204745/|text||
+P|2021|MAARIV|2021-02-04|0|src|https://www.maariv.co.il/elections-2021/Article-819956|text|Blue &White=0|לפי הכתבה כחול לבן מתחת לאחוז החסימה.
+P|2021|12|2021-02-05|0|none|https://www.mako.co.il/news-politics/2021_q1/Article-02987a35ff27771026.htm|||הכתבה לא נטענה.
+P|2021|13|2021-02-05|0|src|https://13news.co.il/item/news/politics/state-policy/poll-elections-1206464/|text||
+P|2021|11|2021-02-09|0|none|https://www.kan.org.il/Item/?itemId=100042|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2021|12|2021-02-10|0|src|https://www.mako.co.il/news-israel-elections/2021_q1/Article-c39fe3cabbc8771026.htm?sCh=31750a2610f26110&pId=173113802|text||
+P|2021|MAARIV|2021-02-11|0|src|https://www.maariv.co.il/news/politics/Article-821428|text||
+P|2021|13|2021-02-15|0|src|https://13news.co.il/item/news/politics/state-policy/elections-survey-1210736/|text||
+P|2021|12|2021-02-16|0|src|https://www.mako.co.il/news-israel-elections/2021_q1/Article-b2d65c5c29ba771027.htm|text||
+P|2021|MAARIV|2021-02-18|0|none|https://www.maariv.co.il/elections-2021/Article-822896|||הכתבה לא נטענה.
+P|2021|11|2021-02-23|0|none|https://www.kan.org.il/Item/?itemId=100938|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2021|12|2021-02-23|0|src|https://www.mako.co.il/news-israel-elections/2021_q1/Article-10186dc76dfc771026.htm|text||
+P|2021|13|2021-02-25|0|src|https://13news.co.il/item/news/politics/state-policy/elections-survey-1216012/|text||
+P|2021|MAARIV|2021-02-25|0|src|https://www.maariv.co.il/elections-2021/Article-824391|text||בכתבה אין מספר לעבודה, למרצ ולציונות הדתית; שאר הרשימות נבדקו.
+P|2021|12|2021-03-02|0|src|https://www.mako.co.il/news-israel-elections/2021-election_polls/Article-0ef19cf03d3f771027.htm|text||
+P|2021|13|2021-03-02|0|src|https://13news.co.il/item/news/politics/state-policy/elections-survey-1218362/|text||
+P|2021|11|2021-03-04|0|none|https://www.kan.org.il/item/?itemId=101531|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2021|12|2021-03-04|0|src|https://www.mako.co.il/news-israel-elections/2021/Article-82f82bbadc90871027.htm|text||
+P|2021|MAARIV|2021-03-04|0|src|https://www.maariv.co.il/elections-2021/Article-825896|text||בכתבה רק חלק מהרשימות (ימינה, תקווה חדשה, העבודה, הציונות הדתית, כחול לבן, מרצ, רע"ם).
+P|2021|13|2021-03-09|0|src|https://13news.co.il/item/news/politics/state-policy/elections-survey-1221223/|text||
+P|2021|12|2021-03-10|0|src|https://www.mako.co.il/news-israel-elections/2021-election_polls/Article-40e76c2962d1871026.htm|text||
+P|2021|11|2021-03-11|0|none|https://www.kan.org.il/Item/?itemId=101950|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2021|MAARIV|2021-03-11|0|src|https://www.maariv.co.il/elections-2021/Article-827333|text||
+P|2021|13|2021-03-14|0|src|https://13news.co.il/item/news/politics/state-policy/survey-towards-elections-day-1223224/|text||
+P|2021|12|2021-03-16|0|none|https://www.mako.co.il/news-israel-elections/2021_q1/Article-7394d5f12bb3871027.htm|||הכתבה לא נטענה.
+P|2021|11|2021-03-18|0|none|https://www.kan.org.il/item/?itemId=102427|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2021|12|2021-03-18|0|none|https://www.mako.co.il/video-blogs-specials/Article-0a7cfc1d1d04871027.htm|||האתר חוסם קריאה אוטומטית של הכתבה.
+P|2021|MAARIV|2021-03-18|0|src|https://www.maariv.co.il/elections-2021/Article-828758|text||
+P|2021|12|2021-03-19|0|src|https://www.mako.co.il/news-israel-elections/2021/Article-3288575c4cb4871027.htm|text||
+P|2021|13|2021-03-19|0|src|https://13news.co.il/item/news/politics/state-policy/elections-survey-1225553/|text||
