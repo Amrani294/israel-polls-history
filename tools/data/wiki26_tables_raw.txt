@@ -1,163 +1,176 @@
-SOURCE|https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election
-H0|Fieldworkdate|Polling firm|Publisher|Samplesize|Likud|Together|Deadline for submission of surplus-vote agreements to the Central Elections Committee|Deadline for submission of surplus-vote agreements to the Central Elections Committee|Otzma|Blue & White|Shas|UTJ|Yisrael Beiteinu|Ra'am|Joint List|Dems|Yashar|Deadline for submission of surplus-vote agreements to the Central Elections Committee|Deadline for submission of surplus-vote agreements to the Central Elections Committee|Amcha Yisrael|Haredi Public
-R0|Fieldworkdate|Polling firm|Publisher|Samplesize|||||||||||||||||
-E0|16 Oct|Deadline for submission of surplus-vote agreements to the Central Elections Committee^c22
-R0|12 Oct|SF+ND|Channel 14|538|29|7|7^c2|7|(0.6%)|10|8|5|5|8|10|20|4^c2|(2.9%)|(0.6%)
-R0|11 Oct|Kantar|Kan 11|553|20|12|5^c2|9|—N/a|7|8|8|5|8|8|22|4^c2|4|—N/a
-E0|11 Oct|Shas and United Torah Judaism sign a surplus-vote agreement^c22
-R0|7–8 Oct|LRI+P4A|Maariv|700|20|13|6^c2|8|(1.9%)|7|7|9|5|7|9|21|4^c2|4|(0.8%)
-R0|7–8 Oct|Yossi Tatika|Zman Yisrael|500|20|13|5^c2|6|(1.2%)|8|8|10|5|9|8|24|(3.2%)^c2|4|—N/a
-R0|7–8 Oct|Kantar|Israel Hayom|555|21|13|6^c2|9|(1.2%)|7|8|8|5|8|8|22|5^c2|(2.9%)|—N/a
-R0|7 Oct|Direct Polls|i24 News|504|26|11|6^c2|9|(<1%)|7|8|7|5|7|10|20|2.3%^c2|4|(<1%)
-R0|7 Oct|SF+ND|Channel 14|2175|31|8|6^c2|8|(1.3%)|10|8|5|5|7|9|23|(1.8%)^c2|(2.2%)|(0.4%)
-R0|7 Oct|MP+TM+SN+A|Channel 13|1013|20|12|7^c2|8|(0.8%)|7|8|8|6|9|10|20|(2.9%)^c2|5|(1.1%)
-E0|6 Oct|Likud and RZP-Zehut sign a surplus-vote agreement^c22
-R0|5 Oct|Midgam R&C|HaHadashot 12|501|21|13|6^c2|7|(0.5%)|7|8|9|5|8|9|23|4^c2|(1.5%)|(0.6%)
-R0|4 Oct|Kantar|Kan 11|553|21|12|6^c2|8|(1.3%)|8|8|9|5|8|8|23|4^c2|(2.6%)|(0.9%)
-E0|2 Oct|The Supreme Court overturns the decision to disqualify Joint List, Ra'am and Ofer Cassif^c22
-E0|2 Oct|Sami Abu Shehadeh submits his withdrawal to the Central Elections Committee after being advised to do so by the Supreme Court^c22
-R0|1 Oct|Direct Polls|i24 News|504|28|9|5^c2|8|—N/a|7|8|7|5|8|9|22|(1.81%)^c2|4|—N/a
-R0|1 Oct|SF+ND|Channel 14|2175|32|8|7^c2|7|(0.4%)|10|8|6|5|7|9|21|(1.2%)^c2|(1.7%)|(0.2%)
-R0|30 Sep – 1 Oct|Yossi Tatika|Zman Yisrael|500|21|10|5^c2|6|(1.4%)|9|8|10|5|8|8|21|5^c2|4|—N/a
-R0|30 Sep – 1 Oct|LRI+P4A|Maariv|602|19|13|5^c2|9|(0.7%)|7|7|9|5|7|10|21|4^c2|4|(0.6%)
-R0|30 Sep|MP+TM+SN+A|Channel 13|1013|19|11|7^c2|8|(0.9%)|7|8|9|5|9|11|21|(2.5%)^c2|5|(1.3%)
-R0|29 Sep|Maagar Mochot|Channel 16|550|19|14|6^c2|8|(0.4%)|8|7|7|5|7|9|21|4^c2|5|(0.6%)
-R0|28 Sep|SF+ND|Channel 14|573|31|9|7^c2|7|(0.6%)|10|8|6|5|7|9|21|(2.1%)^c2|(1.6%)|(0.2%)
-R0|27 Sep|Kantar|Kan 11|552|21|11|6^c2|7|—N/a|7|7|9|5|7|9|23|4^c2|4|—N/a
-R0|24 Sep|Maagar Mochot|Channel 16|553|19|13|5^c2|9|(1.0%)|8|7|8|5|7|8|23|4^c2|4|(0.4%)
-R0|24 Sep|Direct Polls|i24 News|537|27|9|6^c2|8|(<1%)|7|8|7|6|7|9|22|(1.6%)^c2|4|(<1%)
-E0|24 Sep|The Central Elections Committee decides not to disqualify The Democrats, Otzma Yehudit and Religious Zionism^c22
-R0|23–24 Sep|Yossi Tatika|Zman Yisrael|500|21|12|4^c2|6|—N/a|10|8|10|6|8|8|23|—N/a^c2|4|—N/a
-R0|23–24 Sep|LRI+P4A|Maariv|610|18|13|6^c2|9|(1.3%)|6|6|9|5|7|11|22|4^c2|4|(0.9%)
-R0|23 Sep|SF+ND|Channel 14|647|32|7|7^c2|6|(0.3%)|11|7|7|5|7|9|22|(2.2%)^c2|(1.9%)|(0.5%)
-R0|23 Sep|MP+TM+SN+A|Channel 13|1503|18|11|6^c2|7|(<1.0%)|8|7|8|5|8|11|22|4^c2|5|—N/a
-E0|23 Sep|The Central Elections Committee disqualifies Ra'am and Joint List (alongside its candidates Ofer Cassif and Sami Abu Shehadeh), pending review by the Supreme Court^c22
-R0|22 Sep|Midgam R&C|HaHadashot 12|501|20|13|5^c2|6|(0.7%)|7|8|9|5|7|9|23|4^c2|4|(0.3%)
-R0|17 Sep|SF+ND|Channel 14|817|31|9|7^c2|8|(0.4%)|10|8|7|5|7|8|20|(2.2%)^c2|(2.6%)|(0.3%)
-R0|17 Sep|Direct Polls|i24 News|519|27|9|6^c2|7|(<1%)|7|8|8|5|7|10|21|(2.2%)^c2|5|(<1%)
-R0|16–17 Sep|LRI+P4A|Maariv|600|18|13|6^c2|8|(1.1%)|7|7|9|5|7|9|23|4^c2|4|(0.6%)
-R0|16–17 Sep|Kantar|Israel Hayom|551|20|13|6^c2|8|(1.2%)|7|7|8|5|7|9|22|4^c2|4|(0.8%)
-R0|16–17 Sep|Yossi Tatika|Zman Yisrael|500|22|14|4^c2|7|(2.0%)|9|9|9|6|8|8|24|(2.2%)^c2|(3.0%)|—N/a
-R0|16 Sep|Maagar Mochot|Channel 16|500|18|16|5^c2|9|—N/a|9|7|7|5|6|9|21|4^c2|4|—N/a
-R0|15 Sep|MP+TM+SN+A|Channel 13|886|18|12|8^c2|8|(0.8%)|7|7|8|6|8|10|22|(3.1%)^c2|6|(1.8%)
-R0|15 Sep|SF+ND|Channel 14|483|30|8|8^c2|8|(0.4%)|10|8|6|5|7|9|21|(2.1%)^c2|(2.3%)|(0.2%)
-R0|14 Sep|Midgam R&C|HaHadashot 12|—N/a|20|13|5^c2|6|(0.5%)|7|8|8|4|8|10|23|4^c2|4|—N/a
-R0|14 Sep|Kantar|Kan 11|—N/a|20|12|6^c2|8|—N/a|7|7|8|5|7|8|24|4^c2|4|—N/a
-E0|12 Sep|Joint List and Ra'am sign a surplus-vote agreement^c22
-E0|10 Sep|The following pairs of parties sign surplus-vote agreements: Yashar and The Democrats, Together and Yisrael Beiteinu^c22
-R0|9–10 Sep|LRI+P4A|Maariv|601|19|14|5^c2|8|(1.1%)|7|7|9|5|7|10|25|(3.0%)^c2|4|(0.4%)
-R0|9–10 Sep|Yossi Tatika|Zman Yisrael|500|23|15|4^c2|6|(1.4%)|10|9|10|5|7|8|23|(2.8%)^c2|(2.8%)|—N/a
-R0|9 Sep|Maagar Mochot|Channel 16|—N/a|20|16|4^c2|9|(1%)|9|7|7|5|7|9|23|(2%)^c2|4|(0.7%)
-R0|9 Sep|MP+TM+SN+A|Channel 13|1,119|19|13|6^c2|9|(1.1%)|7|8|8|6|8|10|22|(3.2%)^c2|4|(1.1%)
-R0|9 Sep|Direct Polls|i24 News|1,054|27|10|6^c2|8|(1.1%)|7|8|7|5|7|9|22|(1.4%)^c2|4|(<1%)
-R0|9 Sep|SF+ND|Channel 14|537|31|7|8^c2|8|(0.2%)|10|7|7|6|6|8|22|(1.4%)^c2|(2.1%)|(0.1%)
-R0|9 Sep|LRI+P4A|Walla|506|21|14|5^c2|7|(0.9%)|7|7|9|5|7|9|25|(2.8%)^c2|4|(0.2%)
-R0|9 Sep|Kantar|Kan 11|554|21|12|5^c2|7|(0.8%)|7|8|7|5|7|9|24|4^c2|4|(0.9%)
-R0|9 Sep|Midgam R&C|HaHadashot 12|504|21|13|5^c2|6|(1.4%)|7|8|9|4|7|10|25|(2.9%)^c2|5|(1.0%)
-E0|8 Sep|Final day of submission of candidate lists to the Central Elections Committee^c22
-R0|7–8 Sep|LRI+P4A|Maariv|600|20|13|5^c2|8|(1.3%)|7|7|9|5|7|10|25|4^c2|(2.8%)|(0.4%)
-R0|7 Sep|S.M.L.T.|—N/a|2,185|25|9|8^c2|9|4|10|7|7|5|7|9|20|(1.79%)^c2|(2.08%)|(0.24%)
-R0|7 Sep|SF+ND|Channel 14|1,057|30|6|8^c2|8|(0.4%)|10|7|6|5|8|10|22|(2.1%)^c2|(3.0%)|(0.3%)
-R0|7 Sep|Midgam R&C|HaHadashot 12|503|21|13|6^c2|6|(1.0%)|7|8|8|4|7|11|25|(2.7%)^c2|4|(1.2%)
-E0|7 Sep|First day of submission of candidate lists to the Central Elections Committee^c22
-R0|6 Sep|Kantar|Kan 11|551|20|13|6^c2|7|—N/a|7|8|7|6|7|8|23|4^c2|4|—N/a
-E0|6 Sep|Zionist Home leader Hili Tropper announces he is running with Yashar, dissolving his alliance with The Reservists, which then runs together with the New Economic Party^c22
-E0|4 Sep|Unity withdraws from the election^c22
-H1|Fieldworkdate|Polling firm|Publisher|Samplesize|Likud|Together|RZP|Zehut|Otzma|Blue & White|Shas|UTJ|Yisrael Beiteinu|Ra'am|Joint List|Dems|Yashar|Zionist Home|Unity|Amcha Yisrael
-R1|Fieldworkdate|Polling firm|Publisher|Samplesize||||||||||||||||
-R1|3–4 Sep|LRI+P4A|Maariv|600|20|15|5^c2|8|(0.7%)|7|7|9|5|7|10|23|(2.1%)|(1.1%)|4
-R1|3 Sep|SF+ND|Channel 14|865|31|9|7^c2|7|(1.2%)|10|8|6|5|7|8|22|(1.3%)|(0.1%)|(2.7%)
-E1|3 Sep|Likud MK Tally Gotliv announces she is running with Otzma Yehudit^c21
-R1|2–3 Sep|Kantar|Israel Hayom|555|21|13|6^c2|7|(1.7%)|7|8|9|5|7|9|24|(2.7%)|(0.7%)|4
-R1|2–3 Sep|Yossi Tatika|Zman Yisrael|500|22|15|5^c2|6|(1.4%)|9|8|10|5|6|8|22|4|(0.2%)|(2.4%)
-R1|2 Sep|Maagar Mochot|Channel 16|552|19|18|5^c2|9|(1%)|9|7|7|4|7|10|20|(2%)|(1%)|5
-R1|2 Sep|MP+TM+SN+A|Channel 13|940|21|12|6^c2|7|(1.2%)|7|8|8|5|9|11|22|(2.2%)|(0.6%)|4
-R1|2 Sep|Direct Polls|i24 News|522|27|9|6^c2|7|(<1%)|7|8|8|5|7|10|23|(<1%)|(<1%)|5
-R1|2 Sep|LRI+P4A|Walla|500|22|15|5^c2|7|(0.7%)|7|8|9|5|8|10|24|(3.0%)|(0.7%)|(2.3%)
-E1|1 Sep|The Religious Zionist Party and Zehut agree to run together as a technical bloc^c21
-E1|31 Aug|Former Yesh Atid MK Yoav Segalovitz announces he will run with Ra'am as a technical bloc^c21
-R1|31 Aug|Midgam R&C|HaHadashot 12|506|23|15|(2.6%)|(2.1%)|8|(0.9%)|7|8|9|4|7|11|24|(2.6%)|(0.5%)|4
-R1|30 Aug|SF+ND|Channel 14|666|31|6|4|(2.3%)|7|(0.5%)|10|7|7|5|7|8|24|(0.9%)|(0.6%)|4
-R1|30 Aug|Kantar|Kan 11|552|21|14|5|—N/a|7|(1.5%)|7|8|8|5|8|9|24|(2.4%)|(0.7%)|4
-R1|30 Aug|Kantar|Kan 11|552|21|?|7^c2|7|—N/a|?|?|?|5|8|?|24|—N/a|—N/a|(3.0%)
-R1|27 Aug|SF+ND|Channel 14|981|31|7|4|(1.7%)|7|(0.4%)|10|7|6|5|7|9|23|(1.1%)|(0.3%)|4
-R1|26–27 Aug|Yossi Tatika|Zman Yisrael|500|22|14|(2.8%)|—N/a|6|(2.4%)|9|8|10|5|6|8|26|(2.4%)|(0.8%)|6
-R1|26–27 Aug|LRI+P4A|Maariv|506|20|15|(3.0%)|—N/a|8|(0.6%)|7|8|9|5|8|10|25|(2.0%)|(0.6%)|5
-R1|26 Aug|Maagar Mochot|Channel 16|552|21|16|(3)|(1)|9|(1)|9|7|8|4|7|11|21|(3)|(2)|7
-R1|26 Aug|MP+TM+SN+A|Channel 13|1,407|19|13|5|(1.1%)|8|(1.8%)|8|8|9|5|10|11|24|(2.0%)|(0.8%)|(2.2%)
-R1|26 Aug|Direct Polls|i24 News|532|26|8|4|(1.3%)|6|(<1%)|8|7|8|6|6|10|23|(<1%)|(<1%)|8
-R1|26 Aug|LRI+P4A|Walla|500|21|15|(2.6%)|—N/a|8|(1.2%)|7|7|9|5|7|10|25|(2.1%)|(0.3%)|6
-E1|25 Aug|Ofer Winter forms a new political party, called Amcha Yisrael^c21
-H2|Fieldworkdate|Polling firm|Publisher|Samplesize|Likud|Together|RZP|Otzma|Blue & White|Shas|UTJ|Yisrael Beiteinu|Ra'am|Hadash–Ta'al|Balad|Dems|Yashar|Zionist Home|Unity|Winter party
-R2|Fieldworkdate|Polling firm|Publisher|Samplesize||||||||||||||||
-R2|24 Aug|Midgam R&C|HaHadashot 12|500|22|15|4|9|(0.4%)|7|8|9|4|7^c2|11|24|(2.9%)|(0.8%)|—N/a
-R2|24 Aug|Midgam R&C|HaHadashot 12|500|21|16|(2.4%)|9|(0.4%)|7|8|9|4|7^c2|11|24|(2.8%)|(0.8%)|4
-R2|24 Aug|SF+ND|Channel 14|486|32|7|5|8|(1.0%)|10|8|7|5|5^c2|9|24|(1.3%)|(0.2%)|(2.1%)
-R2|23 Aug|Kantar|Kan 11|552|22|14|5|9|(1.8%)|7|8|9|5|7^c2|10|24|(2.8%)|(1.6%)|(2.5%)
-E2|22 Aug|Ra'am conducts a primary to select candidates for the election^c21
-R2|19–20 Aug|Kantar|Israel Hayom|553|22|13|5|9|(2.1%)|7|8|10|5|8^c2|10|23|(2.5%)|(1.7%)|—N/a
-R2|19–20 Aug|Kantar|Israel Hayom|553|21|13|4|7|(1.3%)|7|8|10|5|8^c2|10|23|(1.5%)|(1.2%)|4
-R2|19–20 Aug|Yossi Tatika|Zman Yisrael|500|21|15|6|7|(2.4%)|9|8|11|5|7^c2|8|23|(3.0%)|(0.8%)|—N/a
-R2|19–20 Aug|LRI+P4A|Maariv|501|20|14|5|9|(1.1%)|7|8|10|5|6|(1.2%)|10|26|(2.9%)|(1.1%)|(1.5%)
-E2|19 Aug|Hadash, Ta'al and Balad re-form the Joint List^c21
-R2|19 Aug|Midgam Project|Channel 13|1,247|23|13|5|8|(1.8%)|7|8|9|5|5|(1.0%)|11|26|(1.6%)|(1.2%)|—N/a
-R2|19 Aug|Maagar Mochot|Channel 16|551|22|16|4|9|—N/a|9|7|9|4|5|—N/a|10|25|—N/a|—N/a|—N/a
-R2|18–19 Aug|Kantar|Kan 11|558|23|14|5|9|(1.4%)|7|8|9|5|6|(2.1%)|10|24|(2.9%)|(1.6%)|—N/a
-R2|18 Aug|SF+ND|Channel 14|636|32|6|6|8|(0.4%)|10|7|7|6|5|(2.1%)|9|24|(1.2%)|(0.1%)|(0.9%)
-R2|18 Aug|Direct Polls|i24 News|522|31|9|5|6|(<1%)|8|8|8|5|5|(1.4%)|11|24|(1.1%)|(<1%)|—N/a
-E2|17 Aug|Likud conducts a primary to select candidates for the election^c21
-R2|17 Aug|Midgam R&C|HaHadashot 12|501|22|15|5|8|(1.4%)|7|8|10|5|5|(1.8%)|11|24|(1.5%)|(1.7%)|—N/a
-R2|17 Aug|Midgam R&C|HaHadashot 12|501|24|16|(2.7%)|8|(1.5%)|7|8|10|5|5|(1.8%)|11|26|(1.5%)|(1.1%)|(2.5%)
-R2|16 Aug|Kantar|Kan 11|1,103|23|14|4|10|(1.4%)|7|8|10|5|6|(1.9%)|10|23|(3.0%)|(1.3%)|—N/a
-R2|13 Aug|Direct Polls|i24 News|512|30|8|5|7|(<1%)|8|9|9|5|6|(1.1%)|10|23|(2.0%)|(1.1%)|—N/a
-R2|12–13 Aug|LRI+P4A|Maariv|506|21|14|4|8|(1.9%)|7|8|10|5|6|(1.5%)|10|23|4|(1.9%)|—N/a
-R2|12–13 Aug|Yossi Tatika|Zman Yisrael|500|21|13|6|7|(2.0%)|8|8|11|6|6^c2|9|25|(3.0%)|(1.0%)|—N/a
-R2|12 Aug|MP+TM+SN+A|Channel 13|1,240|21|12|5|8|(1.0%)|7|8|10|5|6|(1.2%)|11|23|4|(1.0%)|—N/a
-R2|10 Aug|Maagar Mochot|Channel 16|—N/a|22|16|4|9|(2.2%)|10|7|9|4|5|(3.0%)|12|22|(2.6%)|(2.7%)|—N/a
-R2|10 Aug|Midgam R&C|HaHadashot 12|502|22|15|5|8|(0.8%)|7|8|10|5|5|(1.6%)|11|24|(2.7%)|(1.3%)|—N/a
-E2|9 Aug|Ta'al withdraws from Joint List negotiations after being given the fewest seats on the proposed list^c21
-R2|9 Aug|SF+ND|Channel 14|741|33|7|6|6|(0.4%)|10|7|8|5|5|(2.3%)|10|23|(1.2%)|(0.9%)|(0.6%)
-R2|9 Aug|Kantar|Kan 11|551|24|13|5|8|(1.3%)|8|8|10|6|5|(2.1%)|10|23|(3.0%)|(1.9%)|—N/a
-R2|9 Aug|Kantar|Kan 11|551|24|13|5|8|(1.4%)|8|8|10|6|5|(1.5%)|10|23|(2.8%)|(1.7%)|(3.0%)
-E2|6 Aug|Gilad Erdan and Yuli Edelstein form a new political party, named Unity^c21
-R2|6 Aug|Direct Polls|i24 News|535|28|7|5|8|(1.1%)|8|9|8|5|8^c2|10|23|(2.1%)|(1.6%)|—N/a
-H3|Fieldworkdate|Polling firm|Publisher|Samplesize|Likud|Together|RZP|Otzma|Blue & White|Shas|UTJ|Yisrael Beiteinu|Ra'am|Hadash–Ta'al|Balad|Dems|Yashar|Zionist Home
-R3|Fieldworkdate|Polling firm|Publisher|Samplesize||||||||||||||
-R3|6 Aug|Kantar|Israel Hayom|552|23|13|4|9|(0.7%)|7|8|9|6|5|(1.6%)|10|23|4
-R3|5–6 Aug|LRI+P4A|Maariv|502|22|15|4|8|(1.2%)|7|8|10|5|5|(1.4%)|9|23|4
-R3|5–6 Aug|Yossi Tatika|Zman Yisrael|500|21|15|6|8|—N/a|8|8|11|6|6^c2|8|23|—N/a
-R3|5 Aug|MP+TM+SN+A|Channel 13|961|22|13|5|9|(1.4%)|7|8|11|5|6|(1.2%)|11|23|(3.0%)
-R3|4 Aug|SF+ND|Channel 14|588|31|8|6|6|(0.5%)|11|8|8|5|5|(2.9%)|10|22|(1.9%)
-R3|4 Aug|Maagar Mochot|Channel 16|—N/a|21|14|4|9|—N/a|9|8|9|4|5|—N/a|11|22|4
-R3|3 Aug|Midgam R&C|HaHadashot 12|503|23|14|5|7|(1.4%)|7|8|9|5|5|(1.0%)|10|23|4
-R3|2 Aug|Kantar|Kan 11|551|23|13|4|9|(1.4%)|8|8|9|5|6|(2.2%)|8|23|4
-R3|29–30 Jul|LRI+P4A|Maariv|501|22|15|5|7|(1.2%)|7|8|10|5|5|(1.8%)|9|23|4
-R3|29–30 Jul|Yossi Tatika|Zman Yisrael|500|20|13|6|7|4|8|8|10|5|6^c2|8|21|4
-R3|29 Jul|MP+TM+SN+A|Channel 13|956|23|13|4|8|(2.3%)|7|9|10|5|4|(1.8%)|9|23|5
-R3|29 Jul|SF+ND|Channel 14|539|32|7|5|7|(1.1%)|10|8|8|5|6|(2.1%)|10|22|(2.1%)
-R3|27 Jul|Midgam R&C|HaHadashot 12|509|22|14|4|8|(1.6%)|8|8|9|5|5|(1.2%)|10|23|4
-R3|27 Jul|Midgam R&C|HaHadashot 12|509|21|14|4|9|—N/a|8|8|9|4|6^c2|10|23|4
-R3|27 Jul|Direct Polls|i24 News|525|29|9|5|8|—N/a|9|8|9|5|7^c2|10|21|—N/a
-R3|26 Jul|Kantar|Kan 11|551|22|14|5|9|(2.6%)|8|8|9|5|5|(2.1%)|10|21|4
-R3|26 Jul|SF+ND|Channel 14|878|32|7|6|8|(0.9%)|10|7|6|5|5|(1.9%)|12|23|(2.1%)
-R3|23 Jul|Kantar|Israel Hayom|—N/a|23|14|5|9|(2.4%)|8|8|9|5|5|(2.0%)|10|23|(3.0%)
-R3|22–23 Jul|LRI+P4A|Maariv|500|20|17|5|8|(1.6%)|8|8|10|5|5|(1.7%)|11|23|(2.9%)
-R3|22–23 Jul|Yossi Tatika|Zman Yisrael|500|21|13|5|8|(2.0%)|9|8|10|5|6^c2|10|25|(2.6%)
-R3|21 Jul|MP+TM+SN+A|Channel 13|988|21|14|5|7|(1.0%)|8|8|10|5|6|(1.9%)|11|21|4
-E3|20 Jul|The Democrats conduct a primary to select candidates for the election^c19
-R3|20 Jul|Midgam R&C|HaHadashot 12|507|23|15|4|8|(1.3%)|8|8|9|5|5|(1.7%)|11|24|(2.7%)
-R3|19 Jul|Kantar|Kan 11|551|21|15|4|10|(2.2%)|8|8|9|5|5|(1.9%)|9|22|4
-E3|17 Jul|The Knesset approves its dissolution^c19
-R3|17 Jul|Lazar|Maariv|500|22|16|4|7|(1.7%)|7|8|9|5|5|(2.0%)|11|22|4
-R3|16 Jul|SF+ND|Channel 14|—N/a|32|8|6|7|(0.9%)|10|8|7|5|5|(2.1%)|11|21|(2.5%)
-R3|16 Jul|Direct Polls|i24 News|550|28|9|6|7|(1.9%)|9|8|8|5|7^c2|11|22|(2.1%)
-R3|15–16 Jul|Yossi Tatika|Zman Yisrael|500|21|15|5|7|4|9|8|10|4|6^c2|8|23|(2.4%)
-R3|15 Jul|MP+TM+SN+A|Channel 13|—N/a|22|15|6|7|(0.8%)|7|8|10|4|5|(2.0%)|11|21|4
-R3|13 Jul|Midgam R&C|HaHadashot 12|509|22|16|5|8|(1.4%)|8|8|10|5|5|(0.9%)|10|23|(2.9%)
-R3|12 Jul|Kantar|Kan 11|551|23|15|5|8|(2.7%)|8|8|10|5|5|(2.0%)|9|24|(3.1%)
-R3|9 Jul|Kantar|Israel Hayom|—N/a|24|14|4|8|(2.1%)|8|9|8|5|5|(2.2%)|8|23|4
-R3|9 Jul|SF+ND|Channel 14|752|33|8|5|7|(0.8%)|10|8|8|5|5^c2|10|21|(1.6%)
-R3|9 Jul|Direct Polls|i24 News|527|29|9|5|8|—N/a|9|8|9|5|7^c2|10|21|—N/a
-R3|8–9 Jul|LRI+P4A|Maariv|500|21|18|4|8|(1.4%)|8|8|10|5|6|(1.8%)|10|22|(2.9%)
-R3|8 Jul|MP+TM+SN+A|Channel 13|—N/a|22|15|5|8|(2.1%)|8|8|10|5|6|—N/a|10|23|(2.2%)
-E3|7 Jul|Yoaz Hendel of The Reservists runs jointly with Hili Tropper under the eventual name "Zionist Home – The Reservists"^c19
+SOURCE|https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election|rev 1381105359
+H01|Fieldworkdate^r2|Polling firm^r2|Publisher^r2|Samplesize^r2|Likud|Together|RZP-Zehut^c2|Otzma|Shas|UTJ|Yisrael Beiteinu|Ra'am|Joint List|Dems|Yashar|Reserv.-NEP^c2|Amcha Yisrael|Haredi Public|Others^r2|Gov.
+H02|||||||||||||||||
+E0|19 Oct|Blue & White withdraws from race^c21
+H11|Fieldworkdate^r2|Polling firm^r2|Publisher^r2|Samplesize^r2|Likud|Together|RZP-Zehut^c2|Otzma|Blue & White|Shas|UTJ|Yisrael Beiteinu|Ra'am|Joint List|Dems|Yashar|Reserv.-NEP^c2|Amcha Yisrael|Haredi Public|Others^r2|Gov.
+H12||||||||||||||||||
+R1|18 Oct|SF+ND|Channel 14|538|29|10|7^c2|7|(0.9%)|10|8|6|6|7|8|22|(2.4%)^c2|(2.4%)|(0.5%)|(1.0%)|61
+R1|18 Oct|Kantar|Kan 11|554|21|12|7^c2|8|—N/a|8|7|8|5|8|9|23|4^c2|(3.1%)|—N/a|—N/a|51
+E1|16 Oct|Deadline for submission of surplus-vote agreements to the Central Elections Committee^c22
+R1|14–15 Oct|LRI+P4A|Maariv|700|18|13|6^c2|8|(1.1%)|7|8|8|6|8|9|21|4^c2|4|(0.5%)|0.7%|47
+R1|14–15 Oct|Yossi Tatika|Zman Yisrael|500|20|11|6^c2|7|(1.2%)|8|8|9|5|8|8|26|4^c2|(2.8%)|—N/a|—N/a|49
+R1|14 Oct|MP+TM+SN+A|Channel 13|1018|18|12|6^c2|8|(1.2%)|7|8|9|6|9|9|20|4^c2|4|(1.1%)|—N/a|47
+R1|13 Oct|Maagar Mochot|Channel 16|2099|18|13|6^c2|9|(1.2%)|7|8|7|5|8|9|21|5^c2|4|(1.1%)|0.7%|48
+R1|12 Oct|LRI+P4A|Walla|601|20|13|6^c2|8|(1.1%)|7|8|9|5|8|10|22|4^c2|—N/a|(1.0%)|0.2%|49
+R1|12 Oct|SF+ND|Channel 14|538|29|7|7^c2|7|(0.6%)|10|8|5|5|8|10|20|4^c2|(2.9%)|(0.6%)|—N/a|61
+R1|12 Oct|Midgam R&C|HaHadashot 12|509|20|13|6^c2|8|(0.9%)|8|7|9|5|8|9|23|4^c2|(1.8%)|(0.1%)|0.5%|49
+R1|11 Oct|Kantar|Kan 11|553|20|12|5^c2|9|—N/a|7|8|8|5|8|8|22|4^c2|4|—N/a|—N/a|49
+E1|11 Oct|Shas and United Torah Judaism sign a surplus-vote agreement^c22
+R1|7–8 Oct|LRI+P4A|Maariv|700|20|13|6^c2|8|(1.9%)|7|7|9|5|7|9|21|4^c2|4|(0.8%)|0.9%|48
+R1|7–8 Oct|Yossi Tatika|Zman Yisrael|500|20|13|5^c2|6|(1.2%)|8|8|10|5|9|8|24|(3.2%)^c2|4|—N/a|—N/a|47
+R1|7–8 Oct|Kantar|Israel Hayom|555|21|13|6^c2|9|(1.2%)|7|8|8|5|8|8|22|5^c2|(2.9%)|—N/a|—N/a|51
+R1|7 Oct|Direct Polls|i24 News|504|26|11|6^c2|9|(<1%)|7|8|7|5|7|10|20|(2.3%)^c2|4|(<1%)|(<4%)|56
+R1|7 Oct|SF+ND|Channel 14|2175|31|8|6^c2|8|(1.3%)|10|8|5|5|7|9|23|(1.8%)^c2|(2.2%)|(0.4%)|1.0%|63
+R1|7 Oct|MP+TM+SN+A|Channel 13|1013|20|12|7^c2|8|(0.8%)|7|8|8|6|9|10|20|(2.9%)^c2|5|(1.1%)|—N/a|50
+E1|6 Oct|Likud and RZP-Zehut sign a surplus-vote agreement^c22
+R1|5 Oct|Midgam R&C|HaHadashot 12|501|21|13|6^c2|7|(0.5%)|7|8|9|5|8|9|23|4^c2|(1.5%)|(0.6%)|—N/a|49
+R1|4 Oct|Kantar|Kan 11|553|21|12|6^c2|8|(1.3%)|8|8|9|5|8|8|23|4^c2|(2.6%)|(0.9%)|(1.3%)|51
+E1|2 Oct|The Supreme Court overturns the decision to disqualify Joint List, Ra'am and Ofer Cassif^c22
+E1|2 Oct|Sami Abu Shehadeh submits his withdrawal to the Central Elections Committee after being advised to do so by the Supreme Court^c22
+R1|1 Oct|Direct Polls|i24 News|504|28|9|5^c2|8|—N/a|7|8|7|5|8|9|22|(1.81%)^c2|4|—N/a|—N/a|56
+R1|1 Oct|SF+ND|Channel 14|2175|32|8|7^c2|7|(0.4%)|10|8|6|5|7|9|21|(1.2%)^c2|(1.7%)|(0.2%)|0.2%|64
+R1|30 Sep – 1 Oct|Yossi Tatika|Zman Yisrael|500|21|10|5^c2|6|(1.4%)|9|8|10|5|8|8|21|5^c2|4|—N/a|—N/a|49
+R1|30 Sep – 1 Oct|LRI+P4A|Maariv|602|19|13|5^c2|9|(0.7%)|7|7|9|5|7|10|21|4^c2|4|(0.6%)|0.7%|47
+R1|30 Sep|MP+TM+SN+A|Channel 13|1013|19|11|7^c2|8|(0.9%)|7|8|9|5|9|11|21|(2.5%)^c2|5|(1.3%)|—N/a|49
+R1|29 Sep|Maagar Mochot|Channel 16|550|19|14|6^c2|8|(0.4%)|8|7|7|5|7|9|21|4^c2|5|(0.6%)|0.8%|48
+R1|28 Sep|SF+ND|Channel 14|573|31|9|7^c2|7|(0.6%)|10|8|6|5|7|9|21|(2.1%)^c2|(1.6%)|(0.2%)|0.2%|63
+R1|27 Sep|Kantar|Kan 11|552|21|11|6^c2|7|—N/a|7|7|9|5|7|9|23|4^c2|4|—N/a|—N/a|48
+R1|24 Sep|Maagar Mochot|Channel 16|553|19|13|5^c2|9|(1.0%)|8|7|8|5|7|8|23|4^c2|4|(0.4%)|0.3%|48
+R1|24 Sep|Direct Polls|i24 News|537|27|9|6^c2|8|(<1%)|7|8|7|6|7|9|22|(1.6%)^c2|4|(<1%)|<3%|56
+E1|24 Sep|The Central Elections Committee decides not to disqualify The Democrats, Otzma Yehudit and Religious Zionism^c22
+R1|23–24 Sep|Yossi Tatika|Zman Yisrael|500|21|12|4^c2|6|—N/a|10|8|10|6|8|8|23|—N/a|4|—N/a|—N/a|49
+R1|23–24 Sep|LRI+P4A|Maariv|610|18|13|6^c2|9|(1.3%)|6|6|9|5|7|11|22|4^c2|4|(0.9%)|0.7%|45
+R1|23 Sep|SF+ND|Channel 14|647|32|7|7^c2|6|(0.3%)|11|7|7|5|7|9|22|(2.2%)^c2|(1.9%)|(0.5%)|0.1%|63
+R1|23 Sep|MP+TM+SN+A|Channel 13|1503|18|11|6^c2|7|(<1.0%)|8|7|8|5|8|11|22|4^c2|5|—N/a|—N/a|46
+E1|23 Sep|The Central Elections Committee disqualifies Ra'am and Joint List (alongside its candidates Ofer Cassif and Sami Abu Shehadeh), pending review by the Supreme Court^c22
+R1|22 Sep|Midgam R&C|HaHadashot 12|501|20|13|5^c2|6|(0.7%)|7|8|9|5|7|9|23|4^c2|4|(0.3%)|0.1%|46
+R1|17 Sep|SF+ND|Channel 14|817|31|9|7^c2|8|(0.4%)|10|8|7|5|7|8|20|(2.2%)^c2|(2.6%)|(0.3%)|0.1%|64
+R1|17 Sep|Direct Polls|i24 News|519|27|9|6^c2|7|(<1%)|7|8|8|5|7|10|21|(2.2%)^c2|5|(<1%)|<1%|55
+R1|16–17 Sep|LRI+P4A|Maariv|600|18|13|6^c2|8|(1.1%)|7|7|9|5|7|9|23|4^c2|4|(0.6%)|1.8%|46
+R1|16–17 Sep|Kantar|Israel Hayom|551|20|13|6^c2|8|(1.2%)|7|7|8|5|7|9|22|4^c2|4|(0.8%)|0.9%|48
+R1|16–17 Sep|Yossi Tatika|Zman Yisrael|500|22|14|4^c2|7|(2.0%)|9|9|9|6|8|8|24|(2.2%)^c2|(3.0%)|—N/a|—N/a|51
+R1|16 Sep|Maagar Mochot|Channel 16|500|18|16|5^c2|9|—N/a|9|7|7|5|6|9|21|4^c2|4|—N/a|—N/a|48
+R1|15 Sep|MP+TM+SN+A|Channel 13|886|18|12|8^c2|8|(0.8%)|7|7|8|6|8|10|22|(3.1%)^c2|6|(1.8%)|—N/a|48
+R1|15 Sep|SF+ND|Channel 14|483|30|8|8^c2|8|(0.4%)|10|8|6|5|7|9|21|(2.1%)^c2|(2.3%)|(0.2%)|0.3%|63
+R1|14 Sep|Midgam R&C|HaHadashot 12|—N/a|20|13|5^c2|6|(0.5%)|7|8|8|4|8|10|23|4^c2|4|—N/a|—N/a|46
+R1|14 Sep|Kantar|Kan 11|—N/a|20|12|6^c2|8|—N/a|7|7|8|5|7|8|24|4^c2|4|—N/a|—N/a|48
+E1|12 Sep|Joint List and Ra'am sign a surplus-vote agreement^c22
+E1|10 Sep|The following pairs of parties sign surplus-vote agreements: Yashar and The Democrats, Together and Yisrael Beiteinu^c22
+R1|9–10 Sep|LRI+P4A|Maariv|601|19|14|5^c2|8|(1.1%)|7|7|9|5|7|10|25|(3.0%)^c2|4|(0.4%)|0.7%|46
+R1|9–10 Sep|Yossi Tatika|Zman Yisrael|500|23|15|4^c2|6|(1.4%)|10|9|10|5|7|8|23|(2.8%)^c2|(2.8%)|—N/a|—N/a|52
+R1|9 Sep|Maagar Mochot|Channel 16|—N/a|20|16|4^c2|9|(1%)|9|7|7|5|7|9|23|(2%)^c2|4|(0.7%)|—N/a|49
+R1|9 Sep|MP+TM+SN+A|Channel 13|1,119|19|13|6^c2|9|(1.1%)|7|8|8|6|8|10|22|(3.2%)^c2|4|(1.1%)|—N/a|49
+R1|9 Sep|Direct Polls|i24 News|1,054|27|10|6^c2|8|(1.1%)|7|8|7|5|7|9|22|(1.4%)^c2|4|(<1%)|<6%|56
+R1|9 Sep|SF+ND|Channel 14|537|31|7|8^c2|8|(0.2%)|10|7|7|6|6|8|22|(1.4%)^c2|(2.1%)|(0.1%)|0.1%|64
+R1|9 Sep|LRI+P4A|Walla|506|21|14|5^c2|7|(0.9%)|7|7|9|5|7|9|25|(2.8%)^c2|4|(0.2%)|1.3%|47
+R1|9 Sep|Kantar|Kan 11|554|21|12|5^c2|7|(0.8%)|7|8|7|5|7|9|24|4^c2|4|(0.9%)|0.5%|48
+R1|9 Sep|Midgam R&C|HaHadashot 12|504|21|13|5^c2|6|(1.4%)|7|8|9|4|7|10|25|(2.9%)^c2|5|(1.0%)|0.5%|47
+E1|8 Sep|Final day of submission of candidate lists to the Central Elections Committee^c22
+R1|7–8 Sep|LRI+P4A|Maariv|600|20|13|5^c2|8|(1.3%)|7|7|9|5|7|10|25|4^c2|(2.8%)|(0.4%)|0.6%|47
+R1|7 Sep|S.M.L.T.|—N/a|2,185|25|9|8^c2|9|4|10|7|7|5|7|9|20|(1.79%)^c2|(2.08%)|(0.24%)|1.00%|59
+R1|7 Sep|SF+ND|Channel 14|1,057|30|6|8^c2|8|(0.4%)|10|7|6|5|8|10|22|(2.1%)^c2|(3.0%)|(0.3%)|0.2%|63
+R1|7 Sep|Midgam R&C|HaHadashot 12|503|21|13|6^c2|6|(1.0%)|7|8|8|4|7|11|25|(2.7%)^c2|4|(1.2%)|0.4%|48
+E1|7 Sep|First day of submission of candidate lists to the Central Elections Committee^c22
+R1|6 Sep|Kantar|Kan 11|551|20|13|6^c2|7|—N/a|7|8|7|6|7|8|23|4^c2|4|—N/a|—N/a|48
+E1|6 Sep|Zionist Home leader Hili Tropper announces he is running with Yashar, dissolving his alliance with The Reservists, which then runs together with the New Economic Party^c22
+E1|4 Sep|Unity withdraws from the election^c22
+H21|Fieldworkdate^r2|Polling firm^r2|Publisher^r2|Samplesize^r2|Likud|Together|RZP|Zehut|Otzma|Blue & White|Shas|UTJ|Yisrael Beiteinu|Ra'am|Joint List|Dems|Yashar|Zionist Home|Unity|Amcha Yisrael|Others^r2|Gov.
+H22|||||||||||||||||
+R2|3–4 Sep|LRI+P4A|Maariv|600|20|15|5^c2|8|(0.7%)|7|7|9|5|7|10|23|(2.1%)|(1.1%)|4|1.9%|47
+R2|3 Sep|SF+ND|Channel 14|865|31|9|7^c2|7|(1.2%)|10|8|6|5|7|8|22|(1.3%)|(0.1%)|(2.7%)|0.3%|63
+E2|3 Sep|Likud MK Tally Gotliv announces she is running with Otzma Yehudit^c21
+R2|2–3 Sep|Kantar|Israel Hayom|555|21|13|6^c2|7|(1.7%)|7|8|9|5|7|9|24|(2.7%)|(0.7%)|4|—N/a|49
+R2|2–3 Sep|Yossi Tatika|Zman Yisrael|500|22|15|5^c2|6|(1.4%)|9|8|10|5|6|8|22|4|(0.2%)|(2.4%)|—N/a|50
+R2|2 Sep|Maagar Mochot|Channel 16|552|19|18|5^c2|9|(1%)|9|7|7|4|7|10|20|(2%)|(1%)|5|3%|49
+R2|2 Sep|MP+TM+SN+A|Channel 13|940|21|12|6^c2|7|(1.2%)|7|8|8|5|9|11|22|(2.2%)|(0.6%)|4|0.8%|49
+R2|2 Sep|Direct Polls|i24 News|522|27|9|6^c2|7|(<1%)|7|8|8|5|7|10|23|(<1%)|(<1%)|5|<8%|55
+R2|2 Sep|LRI+P4A|Walla|500|22|15|5^c2|7|(0.7%)|7|8|9|5|8|10|24|(3.0%)|(0.7%)|(2.3%)|3.1%|49
+E2|1 Sep|The Religious Zionist Party and Zehut agree to run together as a technical bloc^c21
+E2|31 Aug|Former Yesh Atid MK Yoav Segalovitz announces he will run with Ra'am as a technical bloc^c21
+R2|31 Aug|Midgam R&C|HaHadashot 12|506|23|15|(2.6%)|(2.1%)|8|(0.9%)|7|8|9|4|7|11|24|(2.6%)|(0.5%)|4|2.2%|46
+R2|30 Aug|SF+ND|Channel 14|666|31|6|4|(2.3%)|7|(0.5%)|10|7|7|5|7|8|24|(0.9%)|(0.6%)|4|2.3%|59
+R2|30 Aug^r2|Kantar^r2|Kan 11^r2|552^r2|21|14|5|—N/a|7|(1.5%)|7|8|8|5|8|9|24|(2.4%)|(0.7%)|4|—N/a|48
+R2|21|?|7^c2|7|—N/a|?|?|?|5|8|?|24|—N/a|—N/a|(3.0%)|—N/a|48
+R2|27 Aug|SF+ND|Channel 14|981|31|7|4|(1.7%)|7|(0.4%)|10|7|6|5|7|9|23|(1.1%)|(0.3%)|4|0.3%|59
+R2|26–27 Aug|Yossi Tatika|Zman Yisrael|500|22|14|(2.8%)|—N/a|6|(2.4%)|9|8|10|5|6|8|26|(2.4%)|(0.8%)|6|—N/a|45
+R2|26–27 Aug|LRI+P4A|Maariv|506|20|15|(3.0%)|—N/a|8|(0.6%)|7|8|9|5|8|10|25|(2.0%)|(0.6%)|5|1.9%|43
+R2|26 Aug|Maagar Mochot|Channel 16|552|21|16|(3)|(1)|9|(1)|9|7|8|4|7|11|21|(3)|(2)|7|(1)|46
+R2|26 Aug|MP+TM+SN+A|Channel 13|1,407|19|13|5|(1.1%)|8|(1.8%)|8|8|9|5|10|11|24|(2.0%)|(0.8%)|(2.2%)|—N/a|48
+R2|26 Aug|Direct Polls|i24 News|532|26|8|4|(1.3%)|6|(<1%)|8|7|8|6|6|10|23|(<1%)|(<1%)|8|>1.1%|51
+R2|26 Aug|LRI+P4A|Walla|500|21|15|(2.6%)|—N/a|8|(1.2%)|7|7|9|5|7|10|25|(2.1%)|(0.3%)|6|1.5%|43
+E2|25 Aug|Ofer Winter forms a new political party, called Amcha Yisrael^c21
+H31|Fieldworkdate^r4|Polling firm^r4|Publisher^r4|Samplesize^r4|Likud^r3|Together^r3|RZP^r3|Otzma^r3|Blue & White^r3|Shas^r3|UTJ^r3|Yisrael Beiteinu^r3|Ra'am^r3|Joint List^c2|Dems^r3|Yashar^r3|Zionist Home^r3|Unity^r3|Winter party^r3|Others^r4|Gov.^r3
+H32|^c2
+X3|Hadash–Ta'al|Balad
+R3|24 Aug^r2|Midgam R&C^r2|HaHadashot 12^r2|500^r2|22|15|4|9|(0.4%)|7|8|9|4|7^c2|11|24|(2.9%)|(0.8%)|—N/a|—N/a|50
+R3|21|16|(2.4%)|9|(0.4%)|7|8|9|4|7^c2|11|24|(2.8%)|(0.8%)|4|—N/a|45
+R3|24 Aug|SF+ND|Channel 14|486|32|7|5|8|(1.0%)|10|8|7|5|5^c2|9|24|(1.3%)|(0.2%)|(2.1%)|1.7%|63
+R3|23 Aug|Kantar|Kan 11|552|22|14|5|9|(1.8%)|7|8|9|5|7^c2|10|24|(2.8%)|(1.6%)|(2.5%)|—N/a|51
+E3|22 Aug|Ra'am conducts a primary to select candidates for the election^c21
+R3|19–20 Aug^r2|Kantar^r2|Israel Hayom^r2|553^r2|22|13|5|9|(2.1%)|7|8|10|5|8^c2|10|23|(2.5%)|(1.7%)|—N/a|—N/a|51
+R3|21|13|4|7|(1.3%)|7|8|10|5|8^c2|10|23|(1.5%)|(1.2%)|4|—N/a|47
+R3|19–20 Aug|Yossi Tatika|Zman Yisrael|500|21|15|6|7|(2.4%)|9|8|11|5|7^c2|8|23|(3.0%)|(0.8%)|—N/a|—N/a|51
+R3|19–20 Aug|LRI+P4A|Maariv|501|20|14|5|9|(1.1%)|7|8|10|5|6|(1.2%)|10|26|(2.9%)|(1.1%)|(1.5%)|1.7%|49
+E3|19 Aug|Hadash, Ta'al and Balad re-form the Joint List^c21
+R3|19 Aug|MP+TM+SN+A|Channel 13|1,247|23|13|5|8|(1.8%)|7|8|9|5|5|(1.0%)|11|26|(1.6%)|(1.2%)|—N/a|—N/a|51
+R3|19 Aug|Maagar Mochot|Channel 16|551|22|16|4|9|—N/a|9|7|9|4|5|—N/a|10|25|—N/a|—N/a|—N/a|—N/a|51
+R3|18–19 Aug|Kantar|Kan 11|558|23|14|5|9|(1.4%)|7|8|9|5|6|(2.1%)|10|24|(2.9%)|(1.6%)|—N/a|—N/a|52
+R3|18 Aug|SF+ND|Channel 14|636|32|6|6|8|(0.4%)|10|7|7|6|5|(2.1%)|9|24|(1.2%)|(0.1%)|(0.9%)|1.2%|63
+R3|18 Aug|Direct Polls|i24 News|522|31|9|5|6|(<1%)|8|8|8|5|5|(1.4%)|11|24|(1.1%)|(<1%)|—N/a|>3.3%|58
+E3|17 Aug|Likud conducts a primary to select candidates for the election^c21
+R3|17 Aug^r2|Midgam R&C^r2|HaHadashot 12^r2|501^r2|22|15|5|8|(1.4%)|7|8|10|5|5|(1.8%)|11|24|(1.5%)|(1.7%)|—N/a|—N/a|50
+R3|24|16|(2.7%)|8|(1.5%)|7|8|10|5|5|(1.8%)|11|26|(1.5%)|(1.1%)|(2.5%)|—N/a|50
+R3|16 Aug|Kantar|Kan 11|1,103|23|14|4|10|(1.4%)|7|8|10|5|6|(1.9%)|10|23|(3.0%)|(1.3%)|—N/a|—N/a|52
+R3|13 Aug|Direct Polls|i24 News|512|30|8|5|7|(<1%)|8|9|9|5|6|(1.1%)|10|23|(2.0%)|(1.1%)|—N/a|>3.4%|59
+R3|12–13 Aug|LRI+P4A|Maariv|506|21|14|4|8|(1.9%)|7|8|10|5|6|(1.5%)|10|23|4|(1.9%)|—N/a|3.1%|48
+R3|12–13 Aug|Yossi Tatika|Zman Yisrael|500|21|13|6|7|(2.0%)|8|8|11|6|6^c2|9|25|(3.0%)|(1.0%)|—N/a|—N/a|50
+R3|12 Aug|MP+TM+SN+A|Channel 13|1,240|21|12|5|8|(1.0%)|7|8|10|5|6|(1.2%)|11|23|4|(1.0%)|—N/a|—N/a|49
+R3|10 Aug|Maagar Mochot|Channel 16|—N/a|22|16|4|9|(2.2%)|10|7|9|4|5|(3.0%)|12|22|(2.6%)|(2.7%)|—N/a|1.5%|51
+R3|10 Aug|Midgam R&C|HaHadashot 12|502|22|15|5|8|(0.8%)|7|8|10|5|5|(1.6%)|11|24|(2.7%)|(1.3%)|—N/a|—N/a|50
+E3|9 Aug|Ta'al withdraws from Joint List negotiations after being given the fewest seats on the proposed list^c21
+R3|9 Aug|SF+ND|Channel 14|741|33|7|6|6|(0.4%)|10|7|8|5|5|(2.3%)|10|23|(1.2%)|(0.9%)|(0.6%)|1.3%|62
+R3|9 Aug^r2|Kantar^r2|Kan 11^r2|551^r2|24|13|5|8|(1.3%)|8|8|10|6|5|(2.1%)|10|23|(3.0%)|(1.9%)|—N/a|—N/a|53
+R3|24|13|5|8|(1.4%)|8|8|10|6|5|(1.5%)|10|23|(2.8%)|(1.7%)|(3.0%)|—N/a|53
+E3|6 Aug|Gilad Erdan and Yuli Edelstein form a new political party, named Unity^c21
+R3|6 Aug|Direct Polls|i24 News|535|28|7|5|8|(1.1%)|8|9|8|5|8^c2|10|23|(2.1%)|(1.6%)|—N/a|>1.5%|58
+H41|Fieldworkdate^r4|Polling firm^r4|Publisher^r4|Samplesize^r4|Likud^r3|Together^r3|RZP^r3|Otzma^r3|Blue & White^r3|Shas^r3|UTJ^r3|Yisrael Beiteinu^r3|Ra'am^r3|Joint List^c2|Dems^r3|Yashar^r3|Zionist Home^r3|Others^r4|Gov.^r3
+H42|^c2
+X4|Hadash–Ta'al|Balad
+R4|6 Aug|Kantar|Israel Hayom|552|23|13|4|9|(0.7%)|7|8|9|6|5|(1.6%)|10|23|4|—N/a|51
+R4|5–6 Aug|LRI+P4A|Maariv|502|22|15|4|8|(1.2%)|7|8|10|5|5|(1.4%)|9|23|4|—N/a|49
+R4|5–6 Aug|Yossi Tatika|Zman Yisrael|500|21|15|6|8|—N/a|8|8|11|6|6^c2|8|23|—N/a|—N/a|51
+R4|5 Aug|MP+TM+SN+A|Channel 13|961|22|13|5|9|(1.4%)|7|8|11|5|6|(1.2%)|11|23|(3.0%)|—N/a|51
+R4|4 Aug|SF+ND|Channel 14|588|31|8|6|6|(0.5%)|11|8|8|5|5|(2.9%)|10|22|(1.9%)|3.2%|62
+R4|4 Aug|Maagar Mochot|Channel 16|—N/a|21|14|4|9|—N/a|9|8|9|4|5|—N/a|11|22|4|—N/a|51
+R4|3 Aug|Midgam R&C|HaHadashot 12|503|23|14|5|7|(1.4%)|7|8|9|5|5|(1.0%)|10|23|4|—N/a|50
+R4|2 Aug|Kantar|Kan 11|551|23|13|4|9|(1.4%)|8|8|9|5|6|(2.2%)|8|23|4|—N/a|52
+R4|29–30 Jul|LRI+P4A|Maariv|501|22|15|5|7|(1.2%)|7|8|10|5|5|(1.8%)|9|23|4|—N/a|49
+R4|29–30 Jul|Yossi Tatika|Zman Yisrael|500|20|13|6|7|4|8|8|10|5|6^c2|8|21|4|—N/a|49
+R4|29 Jul|MP+TM+SN+A|Channel 13|956|23|13|4|8|(2.3%)|7|9|10|5|4|(1.8%)|9|23|5|—N/a|51
+R4|29 Jul|SF+ND|Channel 14|539|32|7|5|7|(1.1%)|10|8|8|5|6|(2.1%)|10|22|(2.1%)|1.3%|62
+R4|27 Jul^r2|Midgam R&C^r2|HaHadashot 12^r2|509^r2|22|14|4|8|(1.6%)|8|8|9|5|5|(1.2%)|10|23|4|—N/a|50
+R4|21|14|4|9|—N/a|8|8|9|4|6^c2|10|23|4|—N/a|50
+R4|27 Jul|Direct Polls|i24 News|525|29|9|5|8|—N/a|9|8|9|5|7^c2|10|21|—N/a|—N/a|59
+R4|26 Jul|Kantar|Kan 11|551|22|14|5|9|(2.6%)|8|8|9|5|5|(2.1%)|10|21|4|—N/a|52
+R4|26 Jul|SF+ND|Channel 14|878|32|7|6|8|(0.9%)|10|7|6|5|5|(1.9%)|12|23|(2.1%)|1.9%|62
+R4|23 Jul|Kantar|Israel Hayom|—N/a|23|14|5|9|(2.4%)|8|8|9|5|5|(2.0%)|10|23|(3.0%)|—N/a|53
+R4|22–23 Jul|LRI+P4A|Maariv|500|20|17|5|8|(1.6%)|8|8|10|5|5|(1.7%)|11|23|(2.9%)|—N/a|49
+R4|22–23 Jul|Yossi Tatika|Zman Yisrael|500|21|13|5|8|(2.0%)|9|8|10|5|6^c2|10|25|(2.6%)|—N/a|51
+R4|21 Jul|MP+TM+SN+A|Channel 13|988|21|14|5|7|(1.0%)|8|8|10|5|6|(1.9%)|11|21|4|0.5%|50
+E4|20 Jul|The Democrats conduct a primary to select candidates for the election^c19
+R4|20 Jul|Midgam R&C|HaHadashot 12|507|23|15|4|8|(1.3%)|8|8|9|5|5|(1.7%)|11|24|(2.7%)|—N/a|51
+R4|19 Jul|Kantar|Kan 11|551|21|15|4|10|(2.2%)|8|8|9|5|5|(1.9%)|9|22|4|—N/a|51
+E4|17 Jul|The Knesset approves its dissolution^c19
+R4|17 Jul|Lazar|Maariv|500|22|16|4|7|(1.7%)|7|8|9|5|5|(2.0%)|11|22|4|—N/a|48
+R4|16 Jul|SF+ND|Channel 14|—N/a|32|8|6|7|(0.9%)|10|8|7|5|5|(2.1%)|11|21|(2.5%)|1.5%|63
+R4|16 Jul|Direct Polls|i24 News|550|28|9|6|7|(1.9%)|9|8|8|5|7^c2|11|22|(2.1%)|2.8%|58
+R4|15–16 Jul|Yossi Tatika|Zman Yisrael|500|21|15|5|7|4|9|8|10|4|6^c2|8|23|(2.4%)|—N/a|50
+R4|15 Jul|MP+TM+SN+A|Channel 13|—N/a|22|15|6|7|(0.8%)|7|8|10|4|5|(2.0%)|11|21|4|0.8%|50
+R4|13 Jul|Midgam R&C|HaHadashot 12|509|22|16|5|8|(1.4%)|8|8|10|5|5|(0.9%)|10|23|(2.9%)|—N/a|51
+R4|12 Jul|Kantar|Kan 11|551|23|15|5|8|(2.7%)|8|8|10|5|5|(2.0%)|9|24|(3.1%)|—N/a|52
+R4|9 Jul|Kantar|Israel Hayom|—N/a|24|14|4|8|(2.1%)|8|9|8|5|5|(2.2%)|8|23|4|—N/a|53
+R4|9 Jul|SF+ND|Channel 14|752|33|8|5|7|(0.8%)|10|8|8|5|5^c2|10|21|(1.6%)|1.8%|63
+R4|9 Jul|Direct Polls|i24 News|527|29|9|5|8|—N/a|9|8|9|5|7^c2|10|21|—N/a|—N/a|59
+R4|8–9 Jul|LRI+P4A|Maariv|500|21|18|4|8|(1.4%)|8|8|10|5|6|(1.8%)|10|22|(2.9%)|—N/a|49
+R4|8 Jul|MP+TM+SN+A|Channel 13|—N/a|22|15|5|8|(2.1%)|8|8|10|5|6|—N/a|10|23|(2.2%)|—N/a|51
+E4|7 Jul|Yoaz Hendel of The Reservists runs jointly with Hili Tropper under the eventual name "Zionist Home – The Reservists"^c19

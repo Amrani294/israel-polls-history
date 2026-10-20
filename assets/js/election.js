@@ -231,7 +231,7 @@
           return '<i style="inset-inline-start:' + (100 * d.mean / maxAvg).toFixed(2) + '%" title="' + esc(window.PollsView.outletName(e, o) + ": " + A.fmtSeats(d.mean) + " (" + d.n + " סקרים)") + '"></i>';
         }).join("");
         return '<a class="avg-row" href="' + A.partyHref(key, l.id) + '" style="--pc:' + A.partyColor(l) + '">' + A.slip(l, "sm") +
-          '<span class="nm">' + esc(l.name) + '<span class="small">' + esc(A.displayName(l.leader)) + "</span></span>" +
+          '<span class="nm">' + esc(l.name) + '<span class="small">' + esc(A.displayName(l.leader)) + (l.withdrawn ? " · פרשה ב-" + esc(A.fmtDate(l.withdrawn.date, { day: "numeric", month: "numeric" })) : "") + "</span></span>" +
           '<span class="track"><span class="fill" style="width:' + (100 * l.polls.overall / maxAvg).toFixed(2) + '%"></span>' + ticks + "</span>" +
           '<span class="v">' + A.fmtSeats(Math.round(l.polls.overall * 10) / 10) + "</span></a>";
       }).join("") + "</div>" +
@@ -244,11 +244,14 @@
       os.map(function (o) { return '<th class="n">' + esc(window.PollsView.outletName(e, o)) + "</th>"; }).join("") +
       '<th class="n">ממוצע הגופים</th><th>גוש</th></tr></thead><tbody>' +
       lists.map(function (l) {
-        return '<tr><td><a class="rowlink party-cell" href="' + A.partyHref(key, l.id) + '">' + A.slip(l, "sm") + "<span>" + esc(l.name) + "</span></a></td><td>" + esc(A.displayName(l.leader)) + "</td>" +
+        return '<tr><td><a class="rowlink party-cell" href="' + A.partyHref(key, l.id) + '">' + A.slip(l, "sm") + "<span>" + esc(l.name) + "</span></a>" + (l.withdrawn ? ' <span class="chip out">פרשה</span>' : "") + "</td><td>" + esc(A.displayName(l.leader)) + "</td>" +
           os.map(function (o) { var d = l.polls.outlets[o]; return '<td class="n">' + (d && d.n ? A.fmtSeats(d.mean) + ' <span class="small">(' + d.n + ")</span>" : "—") + "</td>"; }).join("") +
           '<td class="n"><b>' + A.fmtSeats(l.polls.overall) + "</b></td><td>" + A.blocChip(e, l.bloc) + "</td></tr>";
       }).join("") + "</tbody></table></div>" +
-      '<p class="small" style="margin-top:6px">בסוגריים: מספר הסקרים של הגוף שבהם הרשימה הופיעה. ממוצע הגופים = ממוצע של ממוצעי הגופים.</p>' +
+      '<p class="small" style="margin-top:6px">בסוגריים: מספר הסקרים של הגוף שבהם הרשימה הופיעה. ממוצע הגופים = ממוצע של ממוצעי הגופים.' +
+      lists.filter(function (l) { return l.withdrawn; }).map(function (l) {
+        return " " + esc(l.name) + " הודיעה ב-" + esc(A.fmtDate(l.withdrawn.date)) + ' על פרישה מהמרוץ (<a href="' + esc(l.withdrawn.src) + '" target="_blank" rel="noopener">מקור</a>); הסקרים שלה עד אז נשארים.';
+      }).join("") + "</p>" +
       (e.small.length ? '<details class="more"><summary>עוד ' + e.small.length + " רשימות שהגישו מועמדים ואינן בטבלת הסקרים</summary>" +
         '<div class="table-scroll" style="margin-top:8px"><table class="data"><thead><tr><th>אותיות</th><th>שם הרשימה</th><th>ראש הרשימה</th></tr></thead><tbody>' +
         e.small.map(function (x) { return "<tr><td><b>" + esc(x.letters) + "</b></td><td>" + esc(x.name) + "</td><td>" + esc(x.leader || "—") + "</td></tr>"; }).join("") +

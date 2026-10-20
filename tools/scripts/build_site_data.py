@@ -433,6 +433,9 @@ def upcoming(key, up, polls, summary, pblocs, positions, person):
     tracked = [p["name"] for p in cfg["parties"]]
     if [x[0] for x in up["lists"]] != tracked:
         die("2026: site lists differ from the tracked poll lists")
+    for name in up.get("withdrawn", {}):
+        if name not in tracked:
+            die("2026: withdrawn list %s is not a tracked list" % name)
     bloc_of_col = BLOC_COLS[key]
     lists, used_sections = [], set()
     for name, slug, sec, en_art, pnote in up["lists"]:
@@ -466,6 +469,7 @@ def upcoming(key, up, polls, summary, pblocs, positions, person):
             polls=dict(overall=r1(d["overall"]),
                        outlets={o: dict(mean=r1(v), n=n) for o, (v, n) in d["by_outlet"].items()}),
             exits={}, exitAvg=None,
+            withdrawn=up.get("withdrawn", {}).get(name),
         ))
     lists.sort(key=lambda l: -(l["polls"]["overall"] or 0))
     small = [dict(name=sec, letters=letters, leader=(ppl[0][0] if ppl else ""), votes=None, pct=None)

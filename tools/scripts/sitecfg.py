@@ -286,7 +286,11 @@ EXTRA_LINKS = {
 # ================================================================== 2026 (before the election)
 # Built by build_site_data.upcoming(); no results yet. Sources:
 #   lists, ballot letters, candidates  -> data/he26_candidates_raw.txt (he-wiki rev 44066081,
-#                                          section per list, infobox list of candidates)
+#                                          section per list, infobox list of candidates;
+#                                          checked again against rev 44093533 on 20 Oct 2026:
+#                                          same, except that rev 44093533 lists Sami Abu Shehadeh
+#                                          3rd on the Joint List although its text says he withdrew
+#                                          on 2 Oct - kept without him, user decision)
 #   political positions (new articles)  -> data/en_positions_2026_check.txt
 #   portraits of new candidates         -> data/img26_raw.txt (Wikidata P18 + Commons credits)
 #   polls                               -> data/raw_2026.txt (made by make_raw_2026.py)
@@ -295,7 +299,7 @@ UPCOMING = {
         knesset="26",
         he_article="הבחירות לכנסת העשרים ושש",
         en_article="2026 Israeli legislative election",
-        as_of="2026-10-14",            # the day the sources were read (shown as "updated")
+        as_of="2026-10-20",            # the day the sources were read (shown as "updated")
         outgoing=("הממשלה ה-37", "https://en.wikipedia.org/wiki/Thirty-seventh_government_of_Israel"),
         links=[
             {"label": "רשימות המועמדים לכנסת ה-26 (ועדת הבחירות המרכזית, gov.il)",
@@ -303,6 +307,14 @@ UPCOMING = {
             {"label": "ועדת הבחירות המרכזית לכנסת ה-26 (gov.il)",
              "url": "https://www.gov.il/he/departments/units/elections-26/govil-landing-page", "orig": ""},
         ],
+        # Lists that announced their withdrawal after submitting candidates (user decision: keep
+        # them on the site, polls included, with a notice). poll list name -> date, source.
+        withdrawn={
+            "כחול לבן": dict(
+                date="2026-10-19",
+                src="https://www.timesofisrael.com/blue-and-whites-benny-gantz-pulls-out-of-race-sealing-precipitous-political-fall/",
+                label="Times of Israel: גנץ מסיר את מועמדות כחול לבן"),
+        },
         # poll list name -> (slug, he-wiki section, en article for the position, position note)
         lists=[
             ("הליכוד", "likud", "הליכוד", "Likud", ""),

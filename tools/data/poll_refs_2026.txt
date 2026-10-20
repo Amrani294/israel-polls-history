@@ -1,4 +1,12 @@
+2026|18 Oct|SF+ND|Channel 14|www.c14.co.il/article/1743088
+2026|18 Oct|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1110393/
+2026|14–15 Oct|LRI+P4A|Maariv|www.jpost.com/israel-election-2026/article-911902
+2026|14–15 Oct|Yossi Tatika|Zman Yisrael|www.timesofisrael.com/toi-poll-eisenkot-opens-up-big-lead-on-netanyahu-but-both-blocs-short-of-majority/
+2026|14 Oct|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/survey-905396904/?pid=106628
+2026|13 Oct|Maagar Mochot|Channel 16|www.ch16.co.il/player/episode/6ace7ddac544041ace194b0b
+2026|12 Oct|LRI+P4A|Walla|www.walla.co.il/news/politics/383957251
 2026|12 Oct|SF+ND|Channel 14|ch10.co.il/en/news/1107207/
+2026|12 Oct|Midgam R&C|HaHadashot 12|www.mako.co.il/news-israel-elections/2026/Article-cc91389788031a1026.htm
 2026|11 Oct|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1108256/
 2026|7–8 Oct|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1375198
 2026|7–8 Oct|Yossi Tatika|Zman Yisrael|www.zman.co.il/731622/
@@ -74,7 +82,7 @@
 2026|19–20 Aug|Kantar|Israel Hayom|www.israelhayom.co.il/news/politics/article/21242587
 2026|19–20 Aug|Yossi Tatika|Zman Yisrael|www.timesofisrael.com/toi-poll-shows-bennett-gaining-ground-at-eisenkots-expense-but-deadlock-persists/
 2026|19–20 Aug|LRI+P4A|Maariv|www.maariv.co.il/news/politics/article-1358140
-2026|19 Aug|Midgam Project|Channel 13|13tv.co.il/item/news/politics/politics/survey-905319423/?pid=106628
+2026|19 Aug|MP+TM+SN+A|Channel 13|13tv.co.il/item/news/politics/politics/survey-905319423/?pid=106628
 2026|19 Aug|Maagar Mochot|Channel 16|www.ch16.co.il/vod.html?id=d28627d9-9978-4d62-b2ac-b3fefb1fb716&title=%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94%20%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%AA%2019.08.26
 2026|18–19 Aug|Kantar|Kan 11|www.kan.org.il/content/kan-news/politic/1090501/
 2026|18 Aug|SF+ND|Channel 14|www.c14.co.il/article/1666708
