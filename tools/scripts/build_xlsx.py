@@ -205,10 +205,19 @@ def main():
                 if p.get("scenario_note"):
                     onote = (onote + "; " if onote else "") + SCENARIO_HE[p["scenario_note"]]
                 actual = p["publisher"] if ELECTIONS[key]["fmt"] != "B" else p["publisher"]
+                chk = p.get("check") or {}
+                pcols = [pp["cols"] for pp in ELECTIONS[key]["parties"] if pp["name"] == party][0]
+                vnote = value_note_he(note)
+                for cols, old_raw, new_raw in chk.get("diffs", []):
+                    if set(cols.split("+")) & set(pcols):
+                        vnote = (vnote + "; " if vnote else "") + "לפי הפרסום המקורי %s (בוויקיפדיה %s)" % (new_raw, old_raw)
+                if chk.get("new"):
+                    onote = (onote + "; " if onote else "") + "הסקר עוד לא בוויקיפדיה; נוסף מהפרסום המקורי"
+                src = chk["url"] if chk.get("url") and chk.get("kind") in ("src", "sec") else p["source"]
                 vals = [SHEET[key], p["end"], p["date_text"],
                         OUTLET_LABEL[p["outlet"]], actual, p["firm"] if ELECTIONS[key]["fmt"] != "B" else "",
-                        party, val, "כן" if val is not None else "לא", value_note_he(note), onote,
-                        p["source"], ptotal[id(p)]]
+                        party, val, "כן" if val is not None else "לא", vnote, onote,
+                        src, ptotal[id(p)]]
                 if ptotal[id(p)] != 120:
                     vals[10] = (vals[10] + "; " if vals[10] else "") + "סכום הסקר %s ולא 120 - כנראה ערך חסר או שגוי במקור; הערך נשאר בממוצע (החלטתך)" % fmt_num(ptotal[id(p)])
                 for ci, v in enumerate(vals, 1):
@@ -648,8 +657,9 @@ def write_readme(ws, polls, top4):
         ("נספרו לפי החלטתך ומסומנים: פרסומים משותפים של מעריב; סקר משותף הארץ/ערוץ 10 (לשניהם); רדיו ציבורי (רשת ב', קול ישראל, רדיו כאן) ככאן 11/ערוץ 1; 'קשת', Mako ו-Nana 10 כערוץ שלהם.", F),
         ("", F),
         ("היקף ומגבלות", FB),
-        ("הסקרים נלקחו מטבלאות ויקיפדיה האנגלית (Opinion polling for the ... Israeli legislative election); כל טבלה הועתקה ונבדקה מול גיבוב (hash) של הנתונים בדף.", F),
-        ("ויקיפדיה היא אוסף משני: ייתכן שחסרים בה סקרים, וייתכנו בה טעויות שלא ניתן לאתר בלי ארכיוני המקור.", F),
+        ("רשימת הסקרים נלקחה מטבלאות ויקיפדיה האנגלית (Opinion polling for the ... Israeli legislative election); כל טבלה הועתקה ונבדקה מול גיבוב (hash) של הנתונים בדף.", F),
+        ("המספרים נבדקו מול הפרסום המקורי של הגוף (כתבה, גרפיקה, דוח לוועדת הבחירות) ככל שנמצא, ואם לא – מול דיווח אחר על הסקר. כשהמקור שונה מוויקיפדיה, נלקח המקור (הערה בעמודת ההערה). עמודת 'מקור' מפנה לפרסום שממנו נקראו המספרים; אם לא נבדק – לטבלת ויקיפדיה.", F),
+        ("בבחירות הישנות (2009-2015) נבדק רק חלק קטן מהסקרים, כי רוב הכתבות המקוריות כבר לא זמינות.", F),
         ("לפני 2009 לא נמצא תיעוד מסודר של סקרים לפי גוף לאורך 3 חודשים (ל-2006 יש רק את השבוע האחרון, בלי ציון הגוף), ולכן הקובץ מתחיל ב-2009.", F),
         ("בחירות 2026 (27.10.2026) עדיין לא התקיימו.", F),
         ("המדגמים אומתו מול כתבות חדשות מליל הבחירות (קישור לכל ערך). ערכי ויקיפדיה למדגמים הם לרוב גרסת 22:00, ולכן לא נלקחו ממנה כשנמצא עדכון.", F),
