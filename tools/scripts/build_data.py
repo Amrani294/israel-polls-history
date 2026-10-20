@@ -90,6 +90,16 @@ def build():
                             firm=firm, publisher=pub, outlet=outlet,
                             outlet_note=onote, values=values, header=header,
                             raw=row, group_index=idx, source=cfg["source"], check=check))
+    # a poll added from its publication that Wikipedia now has too: make it a P record
+    for rec in new:
+        same = [p for p in polls if p["election"] == rec["election"] and p["check"] is not None
+                and not p["check"]["new"] and p["firm"] == rec["firm"] and p["publisher"] == rec["publisher"]
+                and p["date_text"] == rec["date_text"]]
+        same += [p for p in polls if p["election"] == rec["election"] and p.get("check") is None
+                 and p["firm"] == rec["firm"] and p["publisher"] == rec["publisher"] and p["date_text"] == rec["date_text"]]
+        if same:
+            raise SystemExit("primary_polls.txt: %s is now in Wikipedia too - replace the N record with a P record "
+                             "(and compare the numbers)" % rec["where"])
     stale = [r["where"] for r in list(checks.values()) + new if not r.get("used")]
     if stale:
         raise SystemExit("primary_polls.txt: records that match no poll: " + ", ".join(stale))

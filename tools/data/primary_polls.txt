@@ -163,3 +163,154 @@ P|2021|12|2021-03-18|0|none|https://www.mako.co.il/video-blogs-specials/Article-
 P|2021|MAARIV|2021-03-18|0|src|https://www.maariv.co.il/elections-2021/Article-828758|text||
 P|2021|12|2021-03-19|0|src|https://www.mako.co.il/news-israel-elections/2021/Article-3288575c4cb4871027.htm|text||
 P|2021|13|2021-03-19|0|src|https://13news.co.il/item/news/politics/state-policy/elections-survey-1225553/|text||
+#
+# ================================================================== 2020 (read 20 Oct 2026)
+P|2020|12|2019-12-05|0|src|https://www.mako.co.il/news-israel-elections/elections_2019-2019_q4/Article-1e1addec6dbde61027.htm|text||
+P|2020|11|2019-12-08|0|sec|https://knessetjeremy.com/2019/12/09/18th-poll-of-possible-3rd-election-blue-white-35-likud-34-joint-list-13-shas-8-utj-8-yisrael-beitenu-7-hayamin-hehadash-6/|text||דיווח ב-Knesset Jeremy על סקר כאן (רשת ב').
+P|2020|13|2019-12-10|0|src|https://13news.co.il/item/news/politics/state-policy/left-center-block-getting-stronger-957440/|text||
+P|2020|12|2019-12-12|0|sec|https://knessetjeremy.com/2019/12/12/1st-poll-of-2020-election-blue-white-35-likud-32-joint-list-13-yisrael-beitenu-8-utj-8-shas-8-hayamin-hehadash-6/|text||דיווח ב-Knesset Jeremy על סקר חדשות 12.
+P|2020|MAARIV|2019-12-12|0|src|https://www.maariv.co.il/news/politics/Article-735018|text||בכתבה רק כחול לבן, הליכוד וישראל ביתנו.
+P|2020|11|2019-12-15|0|sec|https://knessetjeremy.com/2019/12/16/4th-poll-of-2020-election-blue-white-35-likud-31-joint-list-13-shas-9-yisrael-beitenu-8-utj-7/|text||דיווח ב-Knesset Jeremy על סקר כאן.
+P|2020|12|2019-12-29|0|sec|https://knessetjeremy.com/2019/12/29/7th-poll-of-2020-election-blue-white-34-likud-32-joint-list-13-shas-8-yisrael-beitenu-8-utj-7/|text||דיווח ב-Knesset Jeremy על סקר חדשות 12.
+P|2020|MAARIV|2020-01-01|0|src|https://www.maariv.co.il/elections2020/polls/Article-738905|text||
+P|2020|11|2020-01-02|0|sec|https://knessetjeremy.com/2020/01/03/8th-poll-of-2020-election-channel-11-blue-white-35-likud-33-joint-list-13-utj-8-shas-7-yisrael-beitenu-7/|text||דיווח ב-Knesset Jeremy על סקר כאן.
+P|2020|12|2020-01-02|0|src|https://bechirot23.bechirot.gov.il/election/Decisions/Documents/כנסת%2023/סקרים/seker_midgam_2_1.pdf|pdf||דוח הסקר שהוגש לוועדת הבחירות.
+P|2020|13|2020-01-02|1|src|https://13news.co.il/item/news/politics/state-policy/2020-elections/election-poll-immunity-974591/|text||תרחיש האיחוד של העבודה-גשר ומרצ; בכתבה כתוב שהליכוד "34", אבל לפי ירידת מנדט והסכום של 120 – 33, כמו בוויקיפדיה.
+P|2020|12|2020-01-13|1|none|https://bechirot23.bechirot.gov.il/election/Decisions/Documents/כנסת%2023/סקרים/seker_hadashut_13_1_20.pdf|||הדוח באתר ועדת הבחירות כבר לא זמין.
+P|2020|11|2020-01-16|0|sec|https://knessetjeremy.com/2020/01/17/18th-poll-of-2020-election-blue-white-36-likud-31-joint-list-13-shas-9-labor-gesher-meretz-9-utj-8-yamina-7-yisrael-beitenu-7/|text||דיווח ב-Knesset Jeremy על סקר כאן.
+P|2020|12|2020-01-16|0|src|https://img.mako.co.il/2020/01/16/sekercon.pdf|pdf||דוח הסקר שפורסם ב-mako.
+P|2020|13|2020-01-16|0|sec|https://knessetjeremy.com/2020/01/17/19th-poll-of-2020-election-blue-white-34-likud-31-joint-list-14-labor-gesher-meretz-9-yisrael-beitenu-8-yamina-7-utj-7-shas-6-otzma-4/|text||דיווח ב-Knesset Jeremy על סקר חדשות 13.
+P|2020|13|2020-01-19|0|src|https://bechirot23.bechirot.gov.il/election/Decisions/Documents/כנסת%2023/סקרים/seker_channel13_19_1.pdf|pdf||דוח הסקר שהוגש לוועדת הבחירות.
+P|2020|11|2020-01-21|0|none|https://bechirot23.bechirot.gov.il/election/Decisions/Documents/כנסת%2023/סקרים/seker_kan_20_1.pdf|||הדוח באתר ועדת הבחירות כבר לא זמין.
+P|2020|11|2020-01-29|0|sec|https://knessetjeremy.com/2020/01/29/26th-poll-of-2020-election-blue-white-34-likud-33-joint-list-14-shas-8-utj-8-yisrael-beitenu-8-labor-gesher-meretz-8-yamina-7/|text||דיווח ב-Knesset Jeremy על סקר כאן.
+P|2020|12|2020-01-29|0|sec|https://knessetjeremy.com/2020/01/29/28th-poll-of-2020-election-blue-white-35-likud-33-joint-list-13-yamina-8-shas-8-yisrael-beitenu-8-labor-gesher-meretz-8-utj-7/|text||דיווח ב-Knesset Jeremy על סקר חדשות 12.
+P|2020|13|2020-01-29|0|sec|https://knessetjeremy.com/2020/01/29/27th-poll-of-2020-election-blue-white-35-likud-34-joint-list-12-labor-gesher-meretz-10-yisrael-beitenu-8-yamina-7-shas-7-utj-7/|text||דיווח ב-Knesset Jeremy על סקר חדשות 13.
+P|2020|MAARIV|2020-01-29|0|src|https://www.maariv.co.il/elections2020/polls/Article-744323|text||בכתבה רק כחול לבן והליכוד.
+P|2020|MAARIV|2020-02-05|0|none|https://www.maariv.co.il/elections2020/polls/Article-746662|||בטקסט הכתבה אין מספרים.
+P|2020|13|2020-02-07|0|src|https://13news.co.il/item/news/politics/state-policy/2020-elections/elections-survey-1001961/|text||
+P|2020|12|2020-02-13|0|none|https://www.mako.co.il/news-israel-elections/2020-2020_q1/Article-8a485854d8f3071027.htm|||הכתבה לא נטענה.
+P|2020|MAARIV|2020-02-13|0|src|https://www.maariv.co.il/elections2020/polls/Article-748077|text||
+P|2020|13|2020-02-17|0|src|https://13news.co.il/item/news/politics/state-policy/2020-elections/election-poll-1008508/|text||
+P|2020|12|2020-02-19|0|sec|https://knessetjeremy.com/2020/02/21/43rd-poll-of-2020-election-blue-white-35-likud-33-joint-list-13-labor-gesher-meretz-9-shas-8-utj-8-yamina-7-yisrael-beitenu-7/|text||דיווח ב-Knesset Jeremy על סקר חדשות 12.
+P|2020|MAARIV|2020-02-19|0|sec|https://knessetjeremy.com/2020/02/21/45th-poll-of-2020-election-blue-white-36-likud-32-joint-list-14-shas-9-labor-gesher-meretz-8-yisrael-beitenu-8-yamina-7-utj-7/|text||דיווח ב-Knesset Jeremy על סקר מעריב.
+P|2020|11|2020-02-23|0|none|https://web.archive.org/web/20200224013555/https://www.haaretz.com/israel-news/elections/a-week-to-election-polls-show-netanyahu-pulls-ahead-of-gantz-for-first-time-1.8567410|||נמצא רק בארכיון האינטרנט, שלא היה נגיש לקריאה.
+P|2020|12|2020-02-23|0|src|https://www.mako.co.il/news-israel-elections/2020/Article-4cb6d4000237071027.htm|text||
+P|2020|11|2020-02-24|0|sec|https://knessetjeremy.com/2020/02/27/50th-poll-of-2020-election-likud-34-blue-white-33-joint-list-14-labor-gesher-meretz-10-shas-8-yamina-7-utj-7-yisrael-beitenu-7/|text||דיווח ב-Knesset Jeremy על סקר כאן.
+P|2020|13|2020-02-24|0|sec|https://knessetjeremy.com/2020/02/27/49th-poll-of-2020-election-likud-33-blue-white-32-joint-list-14-labor-gesher-meretz-10-yamina-8-shas-8-yisrael-beitenu-8-utj-7/|text||דיווח ב-Knesset Jeremy על סקר חדשות 13.
+P|2020|11|2020-02-27|0|sec|https://knessetjeremy.com/2020/02/27/54th-poll-of-2020-election-likud-35-blue-white-34-joint-list-14-labor-gesher-meretz-8-shas-8-utj-8-yamina-7-yisrael-beitenu-6/|text||דיווח ב-Knesset Jeremy על סקר כאן.
+P|2020|MAARIV|2020-02-27|0|sec|https://knessetjeremy.com/2020/02/28/57th-poll-of-2020-election-likud-34-blue-white-34-joint-list-13-shas-9-labor-gesher-meretz-9-yamina-7-utj-7-yisrael-beitenu-7/|text||דיווח ב-Knesset Jeremy על סקר מעריב.
+P|2020|12|2020-02-28|0|none|https://www.mako.co.il/news-israel-elections/2020_q1/Article-186f5a0448c8071027.htm|||הכתבה לא נטענה.
+P|2020|13|2020-02-28|0|src|https://13news.co.il/item/news/politics/state-policy/2020-elections/2020-election-survey-1016506/|text||
+P|2020|MAARIV|2020-02-28|0|sec|https://knessetjeremy.com/2020/02/28/56th-poll-of-2020-election-likud-35-blue-white-34-joint-list-14-shas-9-labor-gesher-meretz-8-yamina-7-utj-7-yisrael-beitenu-6/|text||דיווח ב-Knesset Jeremy על סקר מעריב.
+#
+# ================================================================== 2019b (read 20 Oct 2026)
+P|2019b|13|2019-06-26|0|sec|https://www.israelnationalnews.com/News/News.aspx/265149|text||דיווח בערוץ 7 על סקר חדשות 13.
+P|2019b|12|2019-07-03|0|sec|https://www.timesofisrael.com/tv-surveys-show-liberman-holds-balance-of-power-as-likud-blue-and-white-slip/|text||דיווח בטיימס אוף ישראל על סקר חדשות 12.
+P|2019b|13|2019-07-03|0|sec|https://www.timesofisrael.com/tv-surveys-show-liberman-holds-balance-of-power-as-likud-blue-and-white-slip/|text||דיווח בטיימס אוף ישראל על סקר חדשות 13.
+P|2019b|MAARIV|2019-07-12|0|sec|https://www.jpost.com/Israel-News/Without-Yisrael-Beiteinu-no-majority-for-ultra-Orthodox-right-wing-bloc-595436|text||דיווח בג'רוזלם פוסט; רק הליכוד וכחול לבן.
+P|2019b|12|2019-07-16|0|sec|https://knessetjeremy.com/2019/07/17/channel-12-poll-likud-31-blue-white-30-joint-list-11-scenario-polls-united-left-list-15-united-right-list-led-by-shaked-12/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|MAARIV|2019-07-19|0|sec|https://knessetjeremy.com/2019/07/19/maariv-103-fm-radio-poll-likud-32-blue-white-29-joint-list-10-scenario-poll-labormeretz-13/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|11|2019-07-21|0|none|https://www.kan.org.il/Item/?itemId=55800|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2019b|12|2019-07-21|0|src|https://www.mako.co.il/news-israel-elections/elections_2019-q3_2019/Article-eb1a64058951c61026.htm|text||
+P|2019b|11|2019-07-25|0|sec|https://knessetjeremy.com/2019/07/25/channel-11-poll-likud-30-blue-white-30-joint-list-10-yb-9-shaked-9-scenario-poll-united-right-15-united-left-14/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|12|2019-07-25|0|sec|https://knessetjeremy.com/2019/07/25/channel-12-poll-likud-29-blue-white-28-joint-list-11-yb-10-democratic-union-10-shaked-9-scenario-polls-united-left-list-15-united-right-list-14/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|13|2019-07-25|0|sec|https://knessetjeremy.com/2019/07/25/channel-13-poll-likud-28-blue-white-23-democratic-union-12-joint-list-11-yb-10-shaked-10-scenario-poll-united-right-list-14/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|MAARIV|2019-07-26|0|sec|https://knessetjeremy.com/2019/07/26/103-fm-radio-poll-likud-30-blue-white-28-joint-list-11-yisrael-beitenu-9-democratic-union-9/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|12|2019-07-30|0|sec|https://knessetjeremy.com/2019/07/30/channel-12-poll-likud-30-blue-white-30-united-right-12-joint-list-11-yisrael-beitenu-10/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|13|2019-08-01|0|sec|https://knessetjeremy.com/2019/08/01/channel-13-poll-likud-30-blue-white-29-united-right-11-yisrael-beitenu-11-joint-list-11/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|12|2019-08-02|0|src|https://www.mako.co.il/news-israel-elections/elections_2019-q3_2019/Article-d716f286d185c61026.htm|text||
+P|2019b|11|2019-08-04|0|sec|https://knessetjeremy.com/2019/08/04/reshet-bet-poll-blue-white-30-likud-29-united-right-11-yisrael-beitenu-11-joint-list-11/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|13|2019-08-05|0|sec|https://knessetjeremy.com/2019/08/06/channel-13-poll-likud-30-blue-white-29-united-right-11-joint-list-11-yisrael-beitenu-10/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|12|2019-08-13|0|sec|https://knessetjeremy.com/2019/08/13/channel-12-poll-likud-30-blue-white-29-yamina-11-joint-list-11-yisrael-beitenu-10/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|13|2019-08-15|0|sec|https://www.israelnationalnews.com/News/News.aspx/267471|text||דיווח בערוץ 7 על סקר חדשות 13.
+P|2019b|12|2019-08-22|0|sec|https://knessetjeremy.com/2019/08/25/channel-12-poll-likud-30-blue-white-30-yamina-11-joint-list-11-yisrael-beitenu-10/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|11|2019-08-25|0|none|https://www.kan.org.il/Item/?itemId=57792|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2019b|12|2019-08-28|0|src|https://www.mako.co.il/news-israel-elections/elections_2019-q3_2019/Article-fe0ebe50e7edc61026.htm|text||
+P|2019b|MAARIV|2019-08-28|0|src|https://www.maariv.co.il/elections2019/polls/Article-716309|text||בכתבה רק כחול לבן, המחנה הדמוקרטי, העבודה-גשר והמשותפת.
+P|2019b|11|2019-09-01|0|none|https://www.kan.org.il/Item/?itemId=58120|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2019b|13|2019-09-01|0|src|https://13news.co.il/item/news/politics/state-policy/reelection-2019/survey-347047/|text||
+P|2019b|12|2019-09-05|0|sec|https://knessetjeremy.com/2019/09/05/channel-12-poll-likud-32-blue-white-32-joint-list-10-yamina-9-yisrael-beitenu-9/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|13|2019-09-05|0|sec|https://knessetjeremy.com/2019/09/05/channel-13-poll-likud-32-blue-white-32-yisrael-beitenu-11-yamina-10-joint-list-10/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|MAARIV|2019-09-05|0|sec|https://knessetjeremy.com/2019/09/06/103-fm-maariv-poll-likud-32-blue-white-32-yisrael-beitenu-10-yamina-9-joint-list-9/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|11|2019-09-09|0|sec|https://knessetjeremy.com/2019/09/10/channel-11-poll-blue-white-32-likud-31-joint-list-10-yamina-9-yisrael-beitenu-9/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|12|2019-09-10|0|src|https://www.mako.co.il/news-israel-elections/elections_2019-q3_2019/Article-f891a9579fb1d61027.htm|text||בכתבה אין מספר למשותפת, לימינה ולישראל ביתנו; שאר הרשימות נבדקו.
+P|2019b|13|2019-09-10|0|src|https://13news.co.il/item/news/politics/state-policy/reelection-2019/survey-election-355016/|text||
+P|2019b|11|2019-09-12|0|sec|https://www.maariv.co.il/elections2019/polls/Article-718849|text||דיווח במעריב על סקר כאן; רק חלק מהרשימות.
+P|2019b|MAARIV|2019-09-12|0|src|https://www.maariv.co.il/elections2019/polls/Article-718968|text||
+P|2019b|12|2019-09-13|0|sec|https://knessetjeremy.com/2019/09/14/channel-12-poll-likud-32-blue-white-32-joint-list-10-yamina-8-utj-8-yisrael-beitenu-8/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019b|13|2019-09-13|0|sec|https://knessetjeremy.com/2019/09/14/channel-13-poll-likud-32-blue-white-32-joint-list-12-yamina-9-yisrael-beitenu-9/|text||דיווח ב-Knesset Jeremy על הסקר.
+#
+# ================================================================== 2019a (read 20 Oct 2026)
+P|2019a|11|2019-01-16|0|none|https://www.kan.org.il/item/?itemId=45787|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2019a|12|2019-01-16|0|sec|https://www.timesofisrael.com/liveblog_entry/latest-poll-shows-likud-in-comfortable-lead-hatnua-and-jewish-home-erased/|text||דיווח בטיימס אוף ישראל על סקר חדשות 12.
+P|2019a|11|2019-01-24|0|sec|https://knessetjeremy.com/2019/01/24/reshet-bet-radio-poll-likud-31-israel-resilience-15-yesh-atid-11-labor-9-hayamin-hehadash-8/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|11|2019-01-30|0|sec|https://knessetjeremy.com/2019/01/31/kan-poll-likud-31-israel-resilience-23-yesh-atid-9-hayamin-hehadash-8-labor-8/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|12|2019-01-30|0|sec|https://knessetjeremy.com/2019/01/31/channel-12-poll-likud-30-israel-resilience-21-yesh-atid-11-hayamin-hehadash-7-utj-7/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|13|2019-01-30|0|sec|https://knessetjeremy.com/2019/01/31/channel-13-poll-likud-30-israel-resilience-24-yesh-atid-9-taal-8-4-tied-at-6/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|MAARIV|2019-02-01|0|sec|https://knessetjeremy.com/2019/02/01/maariv-poll-likud-31-israel-resilience-20-yesh-atid-12-utj-7-3-tied-at-6/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|HAARETZ|2019-02-04|0|none|https://www.haaretz.com/israel-news/elections/2019-02-04/ty-article/.premium/haaretz-poll-gantz-keeps-momentum-but-netanyahu-still-comes-out-on-top/0000017f-e046-df7c-a5ff-e27ee4220000|||הכתבה בהארץ חסומה (מנויים).
+P|2019a|11|2019-02-06|0|sec|https://knessetjeremy.com/2019/02/07/kan-poll-likud-30-israel-resilience-22-yesh-atid-11-hayamin-hehadash-7-taal-7/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|12|2019-02-07|0|sec|https://knessetjeremy.com/2019/02/09/189667/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|13|2019-02-07|0|sec|https://knessetjeremy.com/2019/02/08/channel-13-poll-likud-32-israel-resilience-24-yesh-atid-10-hayamin-hehadash-9-joint-list-7/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|13|2019-02-12|0|sec|https://knessetjeremy.com/2019/02/13/channel-13-poll-likud-32-israel-resilience-21-yesh-atid-11-hayamin-hehadash-8-labor-8/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|11|2019-02-13|0|none|https://www.kan.org.il/item/?itemid=47101|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2019a|11|2019-02-16|0|sec|https://knessetjeremy.com/2019/02/18/kan-poll-likud-30-israel-resilience-20-labor-10-yesh-atid-10-hayamin-hehadash-8/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|12|2019-02-17|0|sec|https://knessetjeremy.com/2019/02/18/channel-12-poll-likud-30-israel-resilience-18-yesh-atid-12-labor-10-3-tied-at-7/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|13|2019-02-17|0|sec|https://www.maariv.co.il/elections2019/polls/Article-685441|text||דיווח במעריב: ש"ס 6 ("אחד פחות מהמשותפת"), בוויקיפדיה ש"ס 4 ויהדות התורה 6; יהדות התורה לא מופיעה בכתבה. לא שונה – לבירור.
+P|2019a|11|2019-02-21|0|none|https://www.kan.org.il/Item/?itemId=47550|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2019a|12|2019-02-21|0|src|https://www.mako.co.il/news-israel-elections/elections_2019-q1_2019/Article-5007e8894211961004.htm|text||בכתבה חד"ש-בל"ד-רע"ם 6 ותע"ל 6 (לפני הפיצול ל"חד"ש-תע"ל" ו"רע"ם-בל"ד"); בוויקיפדיה 6 ו-6 בעמודות החדשות.
+P|2019a|13|2019-02-21|0|none|https://web.archive.org/web/20190222153316/https://www.10.tv/news/182436|||נמצא רק בארכיון האינטרנט, שלא היה נגיש לקריאה.
+P|2019a|MAARIV|2019-02-21|0|src|https://www.maariv.co.il/elections2019/Article-686216|text||בכתבה רק כחול לבן, הליכוד, הימין החדש ואיחוד מפלגות הימין.
+P|2019a|MAARIV|2019-02-28|0|sec|https://knessetjeremy.com/2019/03/02/maariv-poll-blue-white-35-likud-29-hadash-taal-11-utj-7-url-7-right-religious-bloc-63/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|11|2019-03-01|0|none|https://www.kan.org.il/Item/?itemId=47958|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2019a|13|2019-03-01|0|none|https://web.archive.org/web/20190302150723/https://www.10.tv/news/182747|||נמצא רק בארכיון האינטרנט, שלא היה נגיש לקריאה.
+P|2019a|MAARIV|2019-03-01|0|sec|https://knessetjeremy.com/2019/03/01/103-fm-maariv-poll-blue-white-37-likud-25-united-right-list-10-hayamin-hehadash-8-2-tied-at-7/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|12|2019-03-03|0|sec|https://knessetjeremy.com/2019/03/03/channel-12-poll-blue-white-38-likud-30-hadash-taal-9-labor-8-2-tied-at-7/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|11|2019-03-05|0|none|https://www.kan.org.il/Item/?itemId=48160|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2019a|12|2019-03-05|0|sec|https://knessetjeremy.com/2019/03/06/channel-12-poll-blue-white-36-likud-30-labor-9-hadash-taal-8-utj-7-right-religious-bloc-59/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|HAARETZ|2019-03-07|0|none|https://www.haaretz.com/israel-news/elections/2019-03-11/ty-article/.premium/haaretz-election-poll-support-for-gantz-drops-dramatically-right-wing-bloc-leads/0000017f-e2c4-d75c-a7ff-fecdf8c60000|||הכתבה בהארץ חסומה (מנויים).
+P|2019a|13|2019-03-11|0|sec|https://www.timesofisrael.com/new-poll-shows-small-right-wing-parties-clearing-threshold-bolstering-bloc/|text||דיווח בטיימס אוף ישראל על סקר חדשות 13.
+P|2019a|12|2019-03-14|0|src|https://www.mako.co.il/news-israel-elections/elections_2019-q1_2019/Article-e0820f2be4d7961004.htm|text||
+P|2019a|11|2019-03-17|0|sec|https://www.inn.co.il/News/News.aspx/396756|text||דיווח בערוץ 7 על סקר כאן.
+P|2019a|12|2019-03-20|0|sec|https://knessetjeremy.com/2019/03/20/channel-12-poll-blue-white-32-likud-27-labor-10-hadash-taal-8-utj-7-hayamin-hehadash-6-right-religious-bloc-62/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|13|2019-03-20|0|sec|https://knessetjeremy.com/2019/03/20/channel-13-poll-blue-white-31-likud-29-labor-9-3-tied-at-7-right-religious-bloc-64/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|MAARIV|2019-03-22|0|sec|https://knessetjeremy.com/2019/03/22/maariv-poll-likud-31-blue-white-30-labor-9-hadash-taal-9-utj-7-right-religious-bloc-66/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|12|2019-03-24|0|sec|https://knessetjeremy.com/2019/03/25/channel-12-poll-blue-white-32-likud-28-labor-10-hadash-taal-7-utj-7-right-religious-bloc-59/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|13|2019-03-24|0|none|https://13news.co.il/news/183747|||הכתבה באתר חדשות 13 כבר לא זמינה.
+P|2019a|11|2019-03-26|0|none|https://www.kan.org.il/item/?itemid=49303|||הכתבה באתר הישן של כאן כבר לא זמינה.
+P|2019a|13|2019-03-28|0|sec|https://knessetjeremy.com/2019/03/29/channel-13-poll-likud-30-blue-white-30-labor-10-4-tied-at-7-right-religious-bloc-64/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|MAARIV|2019-03-28|0|sec|https://www.jpost.com/Israel-Elections/Poll-shows-Likud-gains-two-seats-585095|text||דיווח בג'רוזלם פוסט; רק כחול לבן.
+P|2019a|12|2019-03-31|0|src|https://www.mako.co.il/tv-morning-news/articles/Article-caa965cb707d961006.htm|text||
+P|2019a|12|2019-03-31|1|src|https://www.mako.co.il/news-israel-elections/elections_2019-q1_2019/Article-2afad7fadb4d961004.htm|text||בכתבה אין מספר לש"ס; שאר הרשימות נבדקו.
+P|2019a|13|2019-04-02|0|none|https://13news.co.il/item/news/politics/elections-2019/seker-election-2019-33786/|||הכתבה באתר חדשות 13 כבר לא זמינה.
+P|2019a|HAARETZ|2019-04-03|0|none|https://www.haaretz.co.il/news/elections/.premium-1.7085782|||הכתבה בהארץ חסומה (מנויים).
+P|2019a|11|2019-04-04|0|sec|https://knessetjeremy.com/2019/04/05/channel-11-poll-likud-31-blue-white-30-labor-8-hadash-taal-8-5-tied-at-6-right-religious-bloc-64/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|12|2019-04-04|0|sec|https://knessetjeremy.com/2019/04/05/channel-12-poll-blue-white-30-likud-26-labor-10-utj-7-hadash-taal-7-right-religious-bloc-64/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2019a|13|2019-04-05|0|none|https://13news.co.il/item/news/politics/elections-2019/election-survey-2019-149970/|||הכתבה באתר חדשות 13 כבר לא זמינה.
+P|2019a|MAARIV|2019-04-05|0|src|https://www.maariv.co.il/elections2019/polls/Article-692912|text||בכתבה רק כחול לבן, הליכוד, העבודה, כולנו וזהות.
+#
+# ================================================================== 2015 (read 20 Oct 2026; only these polls were checked)
+P|2015|11|2015-03-13|0|sec|https://www.israelnationalnews.com/News/News.aspx/192588#.VQMsPI6GMg4|text||דיווח בערוץ 7 על סקר רשת ב'.
+P|2015|11|2015-03-13|1|sec|https://knessetjeremy.com/2015/03/12/telesekerchannel-1-poll-zionist-union-25-likud-22-yesh-atid-12-the-joint-arab-list-12-bayit-yehudi-11-kulanu-9-shas-8/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2015|12|2015-03-13|0|sec|https://www.timesofisrael.com/final-polls-before-elections-give-herzog-4-point-lead/|text||דיווח בטיימס אוף ישראל על סקר ערוץ 2.
+P|2015|13|2015-03-13|0|sec|https://www.timesofisrael.com/final-polls-before-elections-give-herzog-4-point-lead/|text||דיווח בטיימס אוף ישראל על סקר ערוץ 10.
+P|2015|MAARIV|2015-03-12|0|sec|https://knessetjeremy.com/2015/03/12/panelsmaariv-103-fm-poll-zionist-union-24-lkud-21-yesh-atid-13-the-joint-arab-list-13-bayit-yehudi-12-kulanu-9/|text||דיווח ב-Knesset Jeremy על הסקר.
+#
+# ================================================================== 2013 (read 20 Oct 2026; only these polls were checked)
+P|2013|11|2013-01-10|0|sec|https://knessetjeremy.com/2013/01/10/saridreshet-bet-poll-likud-beitenu-34-labor-17-bayit-yehudi-14-shas-9-yesh-atid-9/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2013|12|2013-01-10|0|sec|https://knessetjeremy.com/2013/01/10/panels-poll-likud-beitenu-33-labor-16-bayit-yehudi-15-shas-10-yesh-atid-10-movement-8/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2013|MAARIV|2013-01-11|0|sec|https://knessetjeremy.com/2013/01/11/maarivmaagar-mochot-poll-likud-beitenu-38-labor-16-bayit-yehudi-13-shas-12-yesh-atid-8-movement-7/|text||דיווח ב-Knesset Jeremy על הסקר.
+P|2013|11|2013-01-12|0|sec|https://knessetjeremy.com/2013/01/12/channel-1-poll-likud-beitenu-33-labor-16-bayit-yehudi-15-shas-10-yesh-atid-10-movement-9/|text||דיווח ב-Knesset Jeremy על הסקר.
+#
+# ================================================================== 2009 (read 20 Oct 2026; only these polls were checked)
+P|2009|12|2008-12-01|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=8a0d59b0681fd110VgnVCM2000002a0c10acRCRD|text||בכתבה יהדות התורה 4 (הסכום 119), אבל הגושים שבאותה כתבה (68 מול 52) מתאימים ל-5, כמו בוויקיפדיה; לא שונה.
+P|2009|12|2008-12-15|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=cc0385343893e110VgnVCM100000290c10acRCRD|text||
+P|2009|12|2008-12-18|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=2c53cf0fbca4e110VgnVCM100000290c10acRCRD|text||בכתבה אין מספר למפלגות הערביות, ליהדות התורה ולירוקים; שאר הרשימות נבדקו.
+P|2009|12|2008-12-22|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=7a3359237ad5e110VgnVCM100000290c10acRCRD|text||בכתבה אין מספר ליהדות התורה; שאר הרשימות נבדקו.
+P|2009|12|2008-12-25|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=86d374a723f6e110VgnVCM100000290c10acRCRD|text||
+P|2009|12|2008-12-29|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=1320b4902c38e110VgnVCM100000290c10acRCRD|text||בכתבה הבית היהודי 4 (בוויקיפדיה 3, והאיחוד הלאומי 3) וחד"ש 5; לא במעקב ולא שונה – לבירור.
+P|2009|12|2009-01-01|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=982d83305d39e110VgnVCM100000290c10acRCRD|text||בכתבה רק שבע הרשימות שבמעקב; כולן תואמות.
+P|2009|12|2009-01-15|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=847251be9bade110VgnVCM2000002a0c10acRCRD|text||
+P|2009|12|2009-01-19|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=e5963efdeaeee110VgnVCM100000290c10acRCRD|text||
+P|2009|12|2009-01-22|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=5ee7e734f8efe110VgnVCM2000002a0c10acRCRD|text||
+P|2009|12|2009-01-29|0|src|https://www.mako.co.il/news/elections-2009/polls/Articles/itemId=16c04d640922f110VgnVCM100000290c10acRCRD|text||בכתבה אין מספר ליהדות התורה ולרע"ם-תע"ל; שאר הרשימות נבדקו.

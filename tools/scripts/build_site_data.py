@@ -386,7 +386,18 @@ def main(site):
             die("missing license for " + t)
     out = os.path.join(site, "data")
     os.makedirs(out, exist_ok=True)
+    checks = OrderedDict()                      # per election: how the poll numbers were checked
+    for p in all_polls:
+        c = checks.setdefault(p["e"], OrderedDict(n=0, src=0, sec=0, none=0, wiki=0, diffs=0, added=0))
+        c["n"] += 1
+        k = p["check"]["k"] if p["check"] else "wiki"
+        c[k] += 1
+        if p["check"] and p["check"]["diffs"]:
+            c["diffs"] += 1
+        if p["check"] and p["check"]["added"]:
+            c["added"] += 1
     meta_out = OrderedDict(
+        pollChecks=checks,
         outlets=OrderedDict((o, X.OUTLET_LABEL[o]) for o in OUTLETS),
         predecessors=X.PRED, oldElections=sorted(X.OLD),
         candidates=S.CANDIDATES,

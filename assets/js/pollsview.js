@@ -122,9 +122,20 @@
   }
 
   /* ------------------------------------------------------------ poll source link */
-  // The citation Wikipedia gives for the poll: the outlet's own article when it exists,
-  // otherwise a secondary report (marked). Falls back to the Wikipedia table.
+  // The numbers' source (tools/data/primary_polls.txt): read from the outlet's own publication
+  // ("במקור"), from another report of the poll ("דיווח משני"), or only from Wikipedia. Without a
+  // check record: the citation Wikipedia gives for the poll, marked "ויקיפדיה".
+  var CHECK_TAG = { src: ["src-tag ok", "נבדק במקור", "המספרים נקראו מהפרסום של הגוף עצמו"],
+    sec: ["src-tag sec", "נבדק בדיווח משני", "הפרסום המקורי לא נמצא; המספרים נבדקו מול דיווח אחר על הסקר"],
+    none: ["src-tag", "ויקיפדיה", "לא נמצא פרסום זמין לבדיקה; המספרים מוויקיפדיה"] };
   function sourceLink(p) {
+    var c = p.check;
+    if (c) {
+      var t = CHECK_TAG[c.k], url = c.url || (p.ref && /^https?:\/\//i.test(p.ref.url) ? p.ref.url : p.src);
+      var host = url.replace(/^https?:\/\/(www\.)?/i, "").split("/")[0];
+      return '<a href="' + esc(url) + '" target="_blank" rel="noopener" title="' + esc(t[2]) + '">' + esc(p.publisher) + '</a> <span class="src-host">' + esc(host) + "</span>" +
+        ' <span class="' + t[0] + '" title="' + esc(t[2]) + '">' + t[1] + "</span>" + (c.added ? ' <span class="src-tag sec">עוד לא בוויקיפדיה</span>' : "");
+    }
     var r = p.ref;
     if (r && !/^https?:\/\//i.test(r.url)) r = null;   // only plain web links
     if (!r) return '<a href="' + esc(p.src) + '" target="_blank" rel="noopener">' + esc(p.publisher) + '</a> <span class="src-tag">ויקיפדיה</span>';
@@ -143,11 +154,17 @@
       var notes = [];
       var cells = lists.map(function (l) {
         var v = p.values[l.name], n = p.valueNotes[l.name];
+        var d = p.check && p.check.diffs.filter(function (x) { return x[0] === l.name; })[0];
+        if (d) return '<td class="n flag" title="' + esc("לפי הפרסום המקורי; בוויקיפדיה " + A.fmtSeats(d[1])) + '">' + A.fmtSeats(v) + '<span class="note-mark">*</span></td>';
         if (n) { notes.push(l.name + ": " + n); return '<td class="n flag" title="' + esc(n) + '">' + A.fmtSeats(v) + '<span class="note-mark">*</span></td>'; }
         return '<td class="n">' + A.fmtSeats(v) + "</td>";
       }).join("");
       if (p.outletNote) notes.push(p.outletNote);
       (p.blocNotes || []).forEach(function (n) { notes.push(n); });
+      if (p.check) {
+        p.check.diffs.forEach(function (d) { notes.push(d[0] + ": לפי הפרסום המקורי " + A.fmtSeats(d[2]) + ", בוויקיפדיה " + A.fmtSeats(d[1])); });
+        if (p.check.note) notes.push(p.check.note);
+      }
       var off = p.total !== 120;
       if (off) notes.push("הסכום אינו 120 – הסקר לא נכלל במפת הגושים");
       return "<tr><td>" + esc(A.fmtDate(p.end, { day: "numeric", month: "numeric", year: "2-digit" })) + "</td><td>" + esc(outletName(e, p.outlet)) +
@@ -185,7 +202,7 @@
       if (p.outletNote) notes.push(p.outletNote);
       rows.push([A.electionTitle(e), p.end, p.dateText, outletName(e, p.outlet), p.publisher, p.firm]
         .concat(lists.map(function (l) { var v = p.values[l.name]; return v == null ? "" : v; }))
-        .concat(e.blocOrder.map(function (b) { return p.blocs[b]; })).concat([p.total, notes.join("; "), p.ref ? p.ref.url : p.src]));
+        .concat(e.blocOrder.map(function (b) { return p.blocs[b]; })).concat([p.total, notes.join("; "), p.check && p.check.url ? p.check.url : p.ref ? p.ref.url : p.src]));
     });
     return "﻿" + rows.map(function (r) {
       return r.map(function (c) {
