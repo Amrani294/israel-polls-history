@@ -527,6 +527,8 @@ section.block > .wrap > header::after {
 
 /* ================================================================== before election day (2026) */
 .chip.pre { background: var(--flag); border-color: #e9d48a; color: var(--ink); font-weight: 600; }
+.chip.out { background: var(--slip); border-color: var(--left); color: var(--left-deep); font-weight: 600; }
+.withdrawn { margin: 8px 0 0; font-size: var(--step--1); color: var(--ink-2); }
 .up-tag { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 6px; }
 .avg-bars { display: grid; gap: 6px; max-width: 900px; }
 .avg-row { display: grid; grid-template-columns: 3.8rem 13rem minmax(0, 1fr) 3.4rem; gap: 12px; align-items: center;

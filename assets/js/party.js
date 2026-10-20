@@ -54,6 +54,8 @@
     '<div class="face">' + A.slip(l, "xl") + '<div class="ballot-name">' + esc(l.ballot) + "</div></div>" +
     "<div><h1>" + esc(l.name) + '</h1><p class="sub">תעודת זהות, ' + esc(A.electionTitle(e)) + " (" + esc(A.fmtDate(e.date)) + ")" +
     (e.upcoming ? ' <span class="chip pre">לפני הבחירות</span> <span class="small">עודכן ב-' + esc(A.fmtDate(e.asOf)) + "</span>" : "") + "</p>" +
+    (l.withdrawn ? '<p class="withdrawn"><span class="chip out">פרשה מהמרוץ</span> הרשימה הודיעה ב-' + esc(A.fmtDate(l.withdrawn.date)) +
+      ' על פרישה מהמרוץ (<a href="' + esc(l.withdrawn.src) + '" target="_blank" rel="noopener">מקור</a>). המועמדים והסקרים שלה עד אז נשארים באתר.</p>' : "") +
     '<dl class="fields">' + f.map(function (x) { return "<div><dt>" + x[0] + "</dt>" + x[1] + "</div>"; }).join("") + "</dl>" +
     '<div class="axis"><div class="cap" style="margin-bottom:6px"><b>מיקום פוליטי:</b> ' + esc(l.position.he) +
     (l.position.en ? ' <span class="small" dir="ltr">(“' + esc(l.position.en) + '”)</span>' : "") + "</div>" + axis(l.position) +

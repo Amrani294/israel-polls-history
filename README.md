@@ -25,7 +25,7 @@
 | `assets/js/home.js`, `election.js`, `party.js`, `polls-page.js`, `accuracy.js`, `coalition.js`, `about.js` | קוד לכל עמוד |
 | `assets/img/og.png` | תמונת התצוגה המקדימה בשיתוף (נוצרת ב-`tools/scripts/make_og_image.py`) |
 | `data/elections.js` | מערכות, רשימות, נבחרים, מיקום פוליטי, גושים, מדגמים |
-| `data/polls.js` | כל הסקרים (418 רשומות סקר-גוף, מהן 46 של 2026) |
+| `data/polls.js` | כל הסקרים (422 רשומות סקר-גוף, מהן 50 של 2026) |
 | `data/people.js` | תמונות (קישור לוויקישיתוף), צלם ורישיון |
 | `data/meta.js` | שמות הגופים ומועמדי ההמלצות |
 | `downloads/polls-2009-2022.xlsx` | קובץ האקסל עם הגרפים ומפת הגושים (2009–2022) |
