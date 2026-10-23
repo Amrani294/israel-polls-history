@@ -219,6 +219,7 @@
       ["polls", "ארכיון הסקרים", "polls"],
       ["accuracy", "דיוק הסוקרים", "accuracy"],
       ["coalition", "בונה קואליציות", "coalition"],
+      ["axes", "מפת הצירים", "axes"],
       ["about", "על האתר", "about"]
     ].map(function (n) {
       return '<a href="' + pageHref(n[0]) + '"' + (n[2] === active ? ' aria-current="page"' : "") + (n[2] === "polls" ? ' class="nav-polls"' : "") + ">" + n[1] + "</a>";

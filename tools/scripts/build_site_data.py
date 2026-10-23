@@ -407,6 +407,10 @@ def main(site):
     write_js(os.path.join(out, "polls.js"), "POLLS", all_polls)
     write_js(os.path.join(out, "people.js"), "PEOPLE", people)
     write_js(os.path.join(out, "meta.js"), "META", meta_out)
+    import axes
+    axes.self_check()
+    e26 = [e for e in elections if e["key"] == "2026"][0]
+    write_js(os.path.join(out, "axes.js"), "AXES", axes.load([l["id"] for l in e26["lists"]]))
     print("elections", len(elections), "polls", len(all_polls), "people", len(people),
           "no photo", [t for t, p in people.items() if not p["file"]])
 
