@@ -1,5 +1,5 @@
 """Turn the browser extract of the 2026 Wikipedia poll tables (data/wiki26_tables_raw.txt,
-djb2 hash 913108821, checked in the browser; Wikipedia revision 1381105359, read 20 Oct 2026)
+djb2 hash 242455336, checked in the browser; Wikipedia revision 1381577859, read 24 Oct 2026)
 into the regular extract format (data/raw_2026.txt).
 
 Extract format (one line per table row, cells separated by '|'):
@@ -23,8 +23,8 @@ import os
 import re
 
 DATA = os.path.join(os.path.dirname(__file__), "..", "data")
-TABLES_HASH = 913108821
-REFS_HASH = 470552066
+TABLES_HASH = 242455336
+REFS_HASH = 931941298
 # Two-column headings, written out from the table as shown on Wikipedia.
 SPLIT = {"RZP-Zehut": ["RZP", "Zehut"], "Reserv.-NEP": ["Reserv.", "NEP"]}
 DROP = {"Samplesize", "Others", "Gov."}
@@ -39,12 +39,8 @@ REF_FIX = {
 
 
 # Rows corrected by hand: key = line in wiki26_tables_raw.txt, value = the line used instead.
-ROW_FIX = {
-    # The 'Reserv.-NEP' cell lost its colspan in revision 1381105359, so the row is one cell
-    # short. The earlier extract had it spanning both columns ('—N/a^c2'); not a tracked outlet.
-    "R1|23–24 Sep|Yossi Tatika|Zman Yisrael|500|21|12|4^c2|6|—N/a|10|8|10|6|8|8|23|—N/a|4|—N/a|—N/a|49":
-    "R1|23–24 Sep|Yossi Tatika|Zman Yisrael|500|21|12|4^c2|6|—N/a|10|8|10|6|8|8|23|—N/a^c2|4|—N/a|—N/a|49",
-}
+# (Empty since revision 1381577859: the Zman Yisrael row of 23-24 Sep has its colspan back.)
+ROW_FIX = {}
 
 
 def djb2(s):

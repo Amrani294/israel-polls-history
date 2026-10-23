@@ -13,7 +13,7 @@
   --right-deep: #16337a;
   --left: #c42a3c;
   --left-deep: #8e1628;
-  --centre: #7d7398;
+  --centre: #7b3fa8;
   --none: #a7adb7;
   --coal: #18203a;
   --opp: #b9bfcc;
@@ -60,7 +60,7 @@ button { font: inherit; color: inherit; }
   background: var(--ink);
   color: #fff;
   border-bottom: 6px solid transparent;
-  border-image: linear-gradient(90deg, var(--left) 0 33%, #e9e7ef 33% 67%, var(--right) 67% 100%) 1;
+  border-image: linear-gradient(90deg, var(--left) 0 33%, var(--centre) 33% 67%, var(--right) 67% 100%) 1;
 }
 .site-head .wrap { display: flex; align-items: center; gap: 24px; min-height: 64px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
 .brand { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 900; font-size: var(--step-2); line-height: 1.1; letter-spacing: -0.01em; }
@@ -571,7 +571,7 @@ section.block > .wrap > header::after {
 .editor-note { position: relative; max-width: 72ch; margin: 22px 0 6px; background: var(--slip); border: 1px solid var(--rule);
   border-radius: 10px; padding: 22px 24px 20px; box-shadow: var(--shadow-slip); }
 .editor-note::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: 6px; border-radius: 0 10px 10px 0;
-  background: linear-gradient(180deg, var(--left) 0 33%, #e9e7ef 33% 67%, var(--right) 67% 100%); }
+  background: linear-gradient(180deg, var(--left) 0 33%, var(--centre) 33% 67%, var(--right) 67% 100%); }
 .editor-note h2 { margin: 0 0 10px; font-size: 2.2rem; }
 .editor-note p { margin: 0 0 0.7em; line-height: 1.75; }
 .editor-note .sig { font-family: var(--display); font-size: 1.6rem; line-height: 1; margin-top: 4px; }

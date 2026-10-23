@@ -39,9 +39,11 @@
 
   /* ---------------------------------------------------------------- political colour */
   // Axis from the English Wikipedia infobox: -3 far-left ... 3 far-right.
+  // Red -> purple -> blue (Yonatan, 24.10.2026: the centre is purple, not grey, so it reads as a
+  // mix of the two sides; grey stays reserved for lists with no position in the source).
   var STOPS = [
-    [-3, [142, 22, 40]], [-2, [196, 42, 60]], [-1, [223, 116, 128]], [0, [125, 115, 152]],
-    [1, [111, 147, 216]], [2, [35, 80, 184]], [3, [22, 51, 122]]
+    [-3, [142, 22, 40]], [-2, [196, 42, 60]], [-1, [160, 52, 114]], [0, [123, 63, 168]],
+    [1, [79, 72, 176]], [2, [35, 80, 184]], [3, [22, 51, 122]]
   ];
   function axisMid(pos) { return pos && pos.lo != null ? (pos.lo + pos.hi) / 2 : null; }
   function colorAt(x) {
