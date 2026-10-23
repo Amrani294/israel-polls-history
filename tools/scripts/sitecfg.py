@@ -299,7 +299,7 @@ UPCOMING = {
         knesset="26",
         he_article="הבחירות לכנסת העשרים ושש",
         en_article="2026 Israeli legislative election",
-        as_of="2026-10-20",            # the day the sources were read (shown as "updated")
+        as_of="2026-10-24",            # the day the sources were read (shown as "updated")
         outgoing=("הממשלה ה-37", "https://en.wikipedia.org/wiki/Thirty-seventh_government_of_Israel"),
         links=[
             {"label": "רשימות המועמדים לכנסת ה-26 (ועדת הבחירות המרכזית, gov.il)",
