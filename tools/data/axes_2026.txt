@@ -1,0 +1,202 @@
+# The three-axis map of the 2026 lists. Format and rules: tools/scripts/axes.py.
+# Scores proposed from the sources below and reviewed one by one by Yonatan (23-24 Oct 2026).
+# U|key|url   N|list|note   I|list|indicator|score|sources|text
+#
+# ------------------------------------------------------------------ sources
+U|idi_hadash|https://en.idi.org.il/media/7065/hadash_19platform.pdf
+U|jstreet|https://jstreet.org/arab-israeli-politics-and-society-ahead-of-the-2026-israeli-election/
+U|deathpen|https://en.wikipedia.org/wiki/Death_Penalty_for_Terrorists_Law
+U|toi_conv2020|https://www.timesofisrael.com/liveblog_entry/joint-lists-abbas-said-to-warn-about-arab-alliances-future-after-some-mks-vote-to-bar-conversion-therapy/
+U|jpost_marriage|https://m.jpost.com/diplomacy-and-politics/knesset-rejects-marriage-equality-bill
+U|wiki_raam|https://en.wikipedia.org/wiki/Ra%27am
+U|ywn_raam|https://www.theyeshivaworld.com/news/israel-news/2046008/islamist-raam-party-saves-the-day-giyur-reform-law-delayed-for-2-weeks.html
+U|ynet_raam|https://www.ynetnews.com/article/Sy8JBCp4d
+U|wiki_dems|https://en.wikipedia.org/wiki/The_Democrats_(Israel)
+U|idi_dems|https://en.idi.org.il/israeli-elections-and-parties/parties/the-democrats/
+U|wiki_meretz|https://en.wikipedia.org/wiki/Meretz
+U|clingendael|https://www.clingendael.org/sites/default/files/2026-07/PB%20Israels%202026%20Elections.pdf
+U|maariv_eisenkot|https://maariv.co.il/news/politics/article-1358508
+U|jns_eisenkot|https://jns.org/news/israel-news/eisenkot-two-state-solution-delusional-after-oct-7
+U|wiki_yashar|https://en.wikipedia.org/wiki/Yashar_(political_party)
+U|ynet_eisenkot|https://www.ynetnews.com/article/hyqxryz4mx
+U|hewiki_utj|https://he.wikipedia.org/wiki/%D7%99%D7%94%D7%93%D7%95%D7%AA_%D7%94%D7%AA%D7%95%D7%A8%D7%94
+U|toi_annex|https://www.timesofisrael.com/2-west-bank-annexation-bills-get-initial-nod-with-mks-rebelling-against-pm-as-vance-visits/
+U|ywn_goldknopf|https://www.theyeshivaworld.com/news/israel-news/2154725/coalition-test-goldknopf-demands-end-to-chillul-shabbos-on-railway.html
+U|ynet_pindrus|https://www.ynetnews.com/article/hkujkmgun
+U|cjn_courts|https://www.columbusjewishnews.com/news/world_news/knesset-passes-law-enabling-rabbinical-courts-to-arbitrate-civil-disputes/article_ec0b49f8-83c9-5d92-813f-af0b5c0bd9bf.amp.html
+U|rackman|https://rackmancenter.com/en/the-knesset-approved-the-expansion-of-rabbinical-court-jurisdiction/
+U|toi_deri|https://www.timesofisrael.com/liveblog_entry/deri-says-shas-wont-join-next-government-unless-haredi-draft-exemptions-are-enshrined-in-law/
+U|wiki_shas|https://en.wikipedia.org/wiki/Shas
+U|toi_minimarket|https://www.timesofisrael.com/shas-leader-lauds-mini-market-law-as-victory-for-silent-majority/
+U|libnanews|https://live.libnanews.com/event/ev-1785156079700-6d90
+U|wiki_together|https://en.wikipedia.org/wiki/Together_(Israel)
+U|toi_bennett|https://www.timesofisrael.com/liveblog_entry/ex-pm-bennett-backs-public-transport-on-shabbat-civil-marriage-sparking-haredi-backlash/
+U|ynet_bennett|https://www.ynetnews.com/article/bjvkbbsfmx
+U|toi_byachad|https://www.timesofisrael.com/hoping-to-put-wind-back-in-sails-byachad-tacks-toward-liberal-zionist-center/
+U|themarker|https://www.themarker.com/news/politics/2026-05-18/ty-article/.premium/0000019e-3477-d2ac-a1fe-b77fd3a00000
+U|wiki_yb|https://en.wikipedia.org/wiki/Yisrael_Beiteinu
+U|jpost_yb|https://jpost.com/israel-election-2026/article-906447
+U|wiki_reservists|https://en.wikipedia.org/wiki/The_Reservists_(political_party)
+U|inn_zelekha|https://www.israelnationalnews.com/news/434699
+U|wiki_hendel|https://en.wikipedia.org/wiki/Yoaz_Hendel
+U|jpost_likud|https://www.jpost.com/israel-election-2026/article-911432
+U|ynet_draftlaw|https://www.ynetnews.com/business/article/byqcgcqemg
+U|jns_vat|https://www.jns.org/israel-raises-vat-to-18-as-part-of-effort-to-rein-in-deficit/
+U|telegraph_pride|https://www.pressreader.com/uk/the-daily-telegraph/20221203/281870122464222
+U|amcha_security|https://amchaisrael.co.il/security
+U|amcha_found|https://amchaisrael.co.il/foundations
+U|ynet_winter|https://ynetnews.com/article/r1xkosjpzl
+U|toi_winter|https://timesofisrael.com/winter-launches-new-nationalist-people-of-israel-party-pm-warns-it-will-split-vote-on-right/
+U|kipa_winter|https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1233396-0/
+U|jpost_rzp|https://www.jpost.com/israel-election-2026/article-910585
+U|jta_smotrich|https://www.jta.org/2019/08/06/israel/israeli-right-wing-lawmaker-wants-nation-to-be-governed-by-jewish-law-he-acknowledges-it-wont-happen-any-time-soon
+U|jp_lightrail|https://www.jewishpress.com/news/israel/the-knesset/former-transportation-ministry-smotrich-slams-successor-for-plan-to-run-tel-aviv-light-rail-on-shabbat/2022/08/24/
+U|globes_budget|https://en.globes.co.il/en/article-smotrichs-2025-budget-plan-tough-measures-to-pay-for-war-1001488319
+U|itv_bengvir|https://www.itv.com/news/2026-08-16/israels-ben-gvir-suggests-killing-30-to-40-people-in-gaza-nightly-on-podcast
+U|wiki_otzma|https://en.wikipedia.org/wiki/Otzma_Yehudit
+U|gs_otzma|https://www.globalsecurity.org/military/world/israel/political-parties-otzma-yehudit.htm
+U|wiki_lehava|https://en.wikipedia.org/wiki/Lehava
+U|ynet_beast|https://www.ynetnews.com/articles/0,7340,L-3326208,00.html
+U|toi_bengvir|https://www.timesofisrael.com/liveblog_entry/ben-gvir-on-haredi-draft-i-dont-think-coercion-will-help/
+#
+# ------------------------------------------------------------------ הרשימה המשותפת
+N|joint-list|הציון לפי חד"ש, הסיעה הדומיננטית ברשימה. תע"ל ובל"ד שמרניות יותר בנושאי להט"ב, ובל"ד תומכת במדינה דו-לאומית.
+I|joint-list|state|0|@idi_hadash @jstreet|המצע של חד"ש דורש לפנות את "כל השטחים שנכבשו ביוני 1967" ולהקים מדינה פלסטינית לצד ישראל. בל"ד תומכת במדינה דו-לאומית.
+I|joint-list|settle|0|@idi_hadash|חד"ש מתארת את עצמה כמי שהייתה "הראשונה והעקבית ביותר" בהתנגדות להתנחלויות.
+I|joint-list|force|0|@deathpen @jstreet|הרשימה הצביעה נגד חוק עונש המוות למחבלים (2026) ומתמקדת בסיום הכיבוש.
+I|joint-list|marriage|2|@jpost_marriage|חד"ש הצביעה בעד הצעת החוק של ניצן הורוביץ לשוויון בנישואים. לא 1, כי תע"ל ובל"ד שמרניות יותר.
+I|joint-list|lgbt|4|@toi_conv2020|עודה הצביע ב-2020 בעד האיסור על טיפולי המרה; חלק משותפיו לרשימה התנגדו.
+I|joint-list|welfare|2|@idi_hadash|המצע מתנגד לקיצוצים בחינוך, בבריאות, ברווחה ובדיור ולקיצוץ בקצבאות הביטוח הלאומי.
+I|joint-list|market|2|@idi_hadash|המצע מתנגד להפרטה ("תעמיק את העוני והפערים") ולהעברת שירותים כמו הדואר, החשמל והרכבת לידיים פרטיות. אין בו דרישה מפורשת להלאמה.
+I|joint-list|labor|2|@idi_hadash|תמיכה בזכות ההתארגנות ובחוקים שמגינים על מארגני עובדים מפיטורים.
+#
+# ------------------------------------------------------------------ רע"ם
+N|raam|יואב סגלוביץ', שהצטרף לרשימה ב-2026, חילוני-ליברלי; הציון לפי רע"ם.
+I|raam|state|1|@wiki_raam|תומכת בשתי מדינות: מדינה פלסטינית בגדה ובעזה, עם מזרח ירושלים כבירתה.
+I|raam|settle|2|@wiki_raam|לפי חוקרים, רע"ם "לא מדגישה" את הצורך לסיים את הכיבוש.
+I|raam|force|2|@deathpen @wiki_raam|ישבה בממשלת בנט-לפיד והצביעה נגד חוק עונש המוות למחבלים (2026).
+I|raam|marriage|6|@ywn_raam|בדצמבר 2021 עבאס סירב לתמוך בחוק הגיור הליברלי של מלינובסקי, והחוק נדחה.
+I|raam|lgbt|8|@ynet_raam @toi_conv2020|ב-2021 דרשה "חופש הצבעה בנושאי להט"ב" כתנאי לקואליציה. ב-2020 עבאס איים לפרק את הרשימה המשותפת אחרי שחבריה הצביעו בעד האיסור על טיפולי המרה.
+#
+# ------------------------------------------------------------------ הדמוקרטים
+I|democrats|state|3|@wiki_dems|תומכים בשתי מדינות ומתארים את עצמם כמפלגה הציונית היחידה שמתנגדת לכיבוש.
+I|democrats|settle|2|@wiki_dems|מתנגדים לכיבוש הגדה, לכיבוש עזה ולהתיישבות בה.
+I|democrats|force|3|@wiki_dems @deathpen|רוצים שהרשות הפלסטינית תשלוט בעזה ביום שאחרי, והצביעו נגד חוק עונש המוות. לא נמוך יותר, כי גולן תומך בכוח צבאי כשמותקפים.
+I|democrats|marriage|1|@idi_dems @jpost_marriage|מתחייבים "לקדם נישואים אזרחיים". מרצ והעבודה הצביעו בעד הצעת החוק לשוויון בנישואים.
+I|democrats|shabbat|3|@idi_dems|תומכים בתחבורה ציבורית בשבת "במתכונת מצומצמת ביישובים חילוניים".
+I|democrats|lgbt|1|@wiki_meretz @jpost_marriage|מרצ "קידמה את זכויות הלהט"ב" והגישה את הצעת החוק לשוויון בנישואים.
+I|democrats|draft|0|@clingendael|גולן קרא לכלוא משתמטים ותקף את המפלגות החרדיות על עידוד ההשתמטות.
+I|democrats|welfare|2|@wiki_dems|הסכם האיחוד (2024): מדינת רווחה חזקה ודיור בר השגה.
+I|democrats|market|3|@wiki_dems|הסכם האיחוד: התנגדות להפרטת הבריאות והחינוך.
+I|democrats|labor|2|@wiki_dems|הסכם האיחוד: חיזוק האיגודים המקצועיים.
+#
+# ------------------------------------------------------------------ ישר!
+I|yashar|state|5|@maariv_eisenkot @wiki_yashar|איזנקוט: "בממשלה שנקים לא תקום מדינה פלסטינית" (22.8.2026). המצע מדבר על שמירת רוב יהודי ועל הרחבת הסכמי השלום.
+I|yashar|settle|4|@jns_eisenkot|איזנקוט התנגד למכרזי הבנייה ב-E1 (אוגוסט 2026).
+I|yashar|force|5|@wiki_yashar|המצע: אסטרטגיית ביטחון לאומי שמחזקת את צה"ל ומאבטחת את הגבולות, לצד הרחבת הסכמי השלום.
+I|yashar|shabbat|4|@wiki_yashar|המצע: "יהדות מכילה" שמאפשרת לכל אזרח לשמור על אורח חייו, במדינה יהודית ודמוקרטית.
+I|yashar|lgbt|3|@ynet_eisenkot|איזנקוט נאם בכנס חוקי שגיא של "שוויון בחיים" (יולי 2026) ותקף את ההתנגדות למינוי של שרון אפק.
+I|yashar|draft|1|@wiki_yashar|המצע: שילוב חרדים וערבים בשירות, "שוויון בנטל".
+I|yashar|welfare|3|@wiki_yashar|המצע: השקעה ציבורית בתחבורה, בחינוך, בבריאות ובפריפריה.
+I|yashar|market|5|@wiki_yashar|המצע: שילוב כל המגזרים בשוק העבודה ותמריצים למי שנושא בנטל. אין בו הפרטה או הלאמה.
+#
+# ------------------------------------------------------------------ יהדות התורה
+I|utj|state|6|@hewiki_utj|המפלגה התחייבה לא לתמוך בנסיגות משטחי ארץ ישראל.
+I|utj|settle|6|@hewiki_utj @toi_annex|ההתחייבות שלא לתמוך בנסיגות. בהצבעה על הסיפוח (אוקטובר 2025) אגודת ישראל הצביעה בעד ודגל התורה נגד.
+I|utj|force|5|@deathpen|על חוק עונש המוות (2026) דגל התורה הצביעה בעד ואגודת ישראל נגד.
+I|utj|marriage|10|@hewiki_utj @cjn_courts|דוגלת במדינת הלכה. גפני יזם את החוק שמרחיב את סמכויות בתי הדין הרבניים לדיני ממונות (2026).
+I|utj|shabbat|9|@ywn_goldknopf|גולדקנופף דרש לעצור את עבודות הרכבת בשבת (2023).
+I|utj|lgbt|10|@ynet_pindrus|ח"כ פינדרוס על הקהילה הגאה: "זה מסוכן יותר מכל נשק בצה"ל" (2023).
+I|utj|draft|10|@toi_deri|המפלגה מתנה את השתתפותה בממשלה בעיגון הפטור לבני ישיבות בחוק (אוקטובר 2026).
+I|utj|welfare|3|@hewiki_utj|גישה סוציאל-דמוקרטית בנושאים כלכליים.
+I|utj|market|3|@hewiki_utj|ב-2013 הגיש גפני תוכנית כלכלית אלטרנטיבית יחד עם זהבה גלאון.
+#
+# ------------------------------------------------------------------ ש"ס
+I|shas|state|6|@wiki_shas|התנגדה להקפאת הבנייה בהתנחלויות והייתה ספקנית כלפי תהליך השלום; תומכת ב"ירושלים המאוחדת".
+I|shas|settle|6|@wiki_shas @toi_annex|התנגדה להקפאת הבנייה; לא השתתפה בהצבעה על הצעת הסיפוח (אוקטובר 2025).
+I|shas|force|7|@deathpen|הצביעה בעד חוק עונש המוות למחבלים (2026).
+I|shas|marriage|10|@cjn_courts|יזמה יחד עם יהדות התורה את החוק שמרחיב את סמכויות בתי הדין הרבניים לדיני ממונות (65 מול 41, 2026).
+I|shas|shabbat|8|@toi_minimarket|חוק המרכולים (2018) נתן לדרעי, כשר הפנים, סמכות לבטל חוקי עזר שמתירים פתיחת עסקים בשבת. דרעי: "ניצחון הרוב השקט".
+I|shas|lgbt|9|@wiki_shas|מתנגדת למצעדי הגאווה; ח"כ שלה קרא להומוסקסואליות "מגפה".
+I|shas|draft|10|@toi_deri|דרעי: "לא תהיה ממשלה בישראל בתמיכת ש"ס או בהשתתפותה אלא אם יוסדר מעמד בני הישיבות" (14.10.2026).
+I|shas|welfare|3|@wiki_shas|מגדירה את עצמה סוציאל-דמוקרטית ומתמקדת בשכבות החלשות.
+I|shas|market|3|@wiki_shas|ב-2006 ניהלה קמפיין נגד המדיניות הכלכלית הניאו-שמרנית.
+#
+# ------------------------------------------------------------------ ביחד
+N|together|הציון לפי בנט, שעומד בראש הרשימה. יש עתיד של לפיד מושכת אותה למרכז.
+I|together|state|7|@libnanews|בנט: "לא אאפשר הקמת מדינה פלסטינית", גם במחיר הנורמליזציה עם סעודיה (יולי 2026).
+I|together|settle|5|@toi_annex|יש עתיד הצביעה בעד הצעת החוק להחלת ריבונות על מעלה אדומים (אוקטובר 2025). לא נמצאה התחייבות של בנט לסיפוח ב-2026.
+I|together|force|6|@wiki_together @clingendael|מבקרים את ניהול המלחמה ("נלחמים טוב ומנוהלים רע") ומציעים גיוס של 20 אלף חיילים.
+I|together|marriage|3|@toi_bennett @ynet_bennett|נישואים אזרחיים; ברית זוגיות אזרחית "בלי קשר לדת, למגדר או לנטייה מינית", עם הזכויות של נישואים.
+I|together|shabbat|3|@toi_bennett|תחבורה ציבורית בשבת לפי החלטת כל רשות מקומית.
+I|together|lgbt|2|@ynet_bennett|ברית זוגיות לזוגות חד-מיניים ותמיכה בחוקי שגיא (ספטמבר 2026).
+I|together|draft|1|@wiki_together @toi_byachad|גיוס חובה לחרדים, ביטול המימון למי שלא משרת ועדת חקירה ל"חבלה בגיוס".
+I|together|tax|6|@wiki_together|הטבות מס לפריפריה (הגולן והנגב). אין הצעה להורדת מסים כללית.
+I|together|welfare|3|@wiki_together|הכפלת הפנסיה למי שהפנסיה שלו נמוכה מ-6,000 ש"ח, הרחבת הדיור להשכרה לטווח ארוך, יום לימודים ארוך עם ארוחות.
+I|together|market|6|@wiki_together @themarker|פירוק מונופולים וקרטלים, פתיחת השווקים והסרת רגולציה, כולל בכשרות.
+I|together|labor|7|@themarker|החלשת כוחה של ההסתדרות ושל התערבות הממשלה.
+#
+# ------------------------------------------------------------------ ישראל ביתנו
+I|yb|state|4|@wiki_yb|המצע מכיר בשתי מדינות לפי תוכנית ליברמן: חילופי שטחים ואוכלוסייה (המשולש וואדי עארה תמורת הגושים).
+I|yb|settle|7|@jpost_yb @toi_annex|הגישה הצעות להחלת ריבונות על מעלה אדומים (עברה בקריאה טרומית, 2025) ועל בקעת הירדן, ותומכת בהרחבת הבנייה.
+I|yb|force|8|@jpost_yb @deathpen|היעד שלה: הכרעת איראן, חיזבאללה וחמאס. הצביעה בעד חוק עונש המוות.
+I|yb|marriage|3|@jpost_yb|תומכת בנישואים אזרחיים ובהרחבת אפשרויות הגיור.
+I|yb|shabbat|2|@jpost_yb @wiki_yb|תחבורה ציבורית בשבת, התנגדות לחוק המרכולים ופחות הגבלות על פתיחת עסקים בשבת.
+I|yb|lgbt|3|@wiki_yb|ב-2019 הודיעה שתקים שדולה גאה בכנסת.
+I|yb|draft|0|@jpost_yb|גיוס לכולם; לא תשב בקואליציה עם ש"ס ויהדות התורה.
+I|yb|tax|6|@wiki_yb|המצע מתנגד להעלאת מסים.
+I|yb|welfare|4|@wiki_yb|הדגל הכלכלי: קצבת זקנה בגובה 70% משכר המינימום; תמיכה בהגדלת ההוצאה על בריאות.
+I|yb|market|7|@wiki_yb|פחות רגולציה ותמיכה בעסקים קטנים.
+#
+# ------------------------------------------------------------------ המילואימניקים-המפלגה הכלכלית
+N|reservists-nep|בביטחון ובחברה לפי המילואימניקים (הנדל), שבראש הרשימה. בכלכלה לפי התוכנית הכלכלית של הרשימה, שהציג זליכה. על נישואים, שבת ולהט"ב לא נמצאה עמדה, ולכן הציר החברתי לא ידוע.
+I|reservists-nep|state|7|@wiki_reservists|הנדל מתאר את הסכסוך כ"התנגשות ציוויליזציות" ואומר שאין סיכוי לשלום בלי שינויים שייקחו דורות.
+I|reservists-nep|force|7|@wiki_reservists|הנדל רואה בגישת "השקעה ומעורבות" טעות שתרמה ל-7 באוקטובר.
+I|reservists-nep|draft|0|@wiki_reservists|גיוס לכולם, עם סנקציות על מי שלא משרת: שלילת זכות הבחירה, ההטבות והרישיון ואיסור יציאה מהארץ.
+I|reservists-nep|tax|9|@inn_zelekha|הורדת המע"מ בהדרגה ל-12%, מס הכנסה מקסימלי של 40% וביטול מס היסף.
+I|reservists-nep|welfare|6|@inn_zelekha|הקפאת הפנסיה התקציבית לעובדי מדינה וביטול הכספים הקואליציוניים.
+I|reservists-nep|market|9|@inn_zelekha @wiki_hendel|ביטול מכסים ומכסות, פירוק מועצות הייצור והקמה והפעלה פרטית של תשתיות. כשר תקשורת, הנדל פתח את הדואר לתחרות.
+#
+# ------------------------------------------------------------------ הליכוד
+I|likud|state|7|@jpost_likud|נתניהו: "לא תהיה מדינה פלסטינית ממערב לירדן" (ספטמבר 2025).
+I|likud|settle|7|@jpost_likud @toi_annex|הממשלה הרחיבה את ההתנחלויות ודחפה להטבות מס להן. מנגד, הליכוד החרים את ההצבעות על החלת ריבונות (אוקטובר 2025) בגלל היחסים עם ארה"ב.
+I|likud|force|8|@jpost_likud|פירוק חמאס, רצועת ביטחון בלבנון, והפלת המשטר באיראן כיעד שעוד לא הושג.
+I|likud|marriage|8|@rackman @jpost_likud|הקואליציה העבירה את הרחבת סמכויות בתי הדין הרבניים לדיני ממונות (2026); שמירה על הסטטוס קוו בנישואים ובגיור.
+I|likud|shabbat|6|@jpost_likud|הרקורד: שמירה על הסטטוס קוו בתחבורה בשבת, בלי ליברליזציה.
+I|likud|lgbt|5|@telegraph_pride @ynet_eisenkot|עמדה מעורבת: נתניהו התנגד לאיסור על מצעד הגאווה, ואמיר אוחנה בכיר במפלגה; שותפיו לקואליציה מתנגדים לחקיקה.
+I|likud|draft|8|@ynet_draftlaw @jpost_likud|הקואליציה העבירה את הקפאת המעצרים של משתמטים (58 מול 54, יולי 2026). הליכוד תומך בעיגון לימוד תורה בחוק יסוד. אדלשטיין ואילוז הצביעו נגד.
+I|likud|tax|5|@jpost_likud @jns_vat|מצהיר על מסים נמוכים, אבל הממשלה העלתה את המע"מ ל-18%.
+I|likud|welfare|5|@jpost_likud|הסבסוד למעונות יום הורחב, אבל מעונות חינם עד גיל 3 לא הגיעו.
+I|likud|market|6|@jpost_likud|מצהיר על תחרות והורדת מכסים על מזון.
+#
+# ------------------------------------------------------------------ עמך ישראל
+I|amcha-yisrael|state|8|@amcha_security @ynet_winter|"לא תקום כאן לעולם מדינה פלסטינית"; התוכנית דורשת לפרק את הרשות מנשק ולהשאיר לה רק נשק קל לשיטור.
+I|amcha-yisrael|settle|8|@amcha_security|"העמקת ההתיישבות" ביהודה ושומרון ושליטה של המדינה בכל השטח. אין דרישה מפורשת להחלת ריבונות.
+I|amcha-yisrael|force|9|@amcha_security @toi_winter|"אין הכרעה בלי הגירה" בעזה, מחיר טריטוריאלי בלבנון והפלת המשטר באיראן. ההגירה מוגדרת "וולונטרית", ולכן לא 10.
+I|amcha-yisrael|shabbat|5|@amcha_found|"יהדות מזמינה ולא כופה", במדינה "יהודית, ציונית וריבונית".
+I|amcha-yisrael|draft|3|@kipa_winter @amcha_found|חוק יסוד השירות, מכסה של 25% לפטור ושמירה על מסלולים ללימוד תורה.
+I|amcha-yisrael|market|7|@amcha_found|שוק חופשי, פירוק מונופולים, הורדת חסמי יבוא והסרת חסמים רגולטוריים לעסקים קטנים ובינוניים.
+#
+# ------------------------------------------------------------------ הציונות הדתית וזהות
+N|rzp|הציון לפי הציונות הדתית, שבראש הרשימה. זהות ליברטריאנית בכלכלה ובחלק מנושאי החברה.
+I|rzp|state|10|@clingendael @jpost_rzp|דרישה לבטל את הסכמי אוסלו וסיפוח. פייגלין, מספר 2 ברשימה: "אני רוצה לראות את עזה ריקה".
+I|rzp|settle|10|@clingendael @jpost_rzp|הרחבת ההתנחלויות וסיפוח של יהודה ושומרון ושל עזה.
+I|rzp|force|10|@jpost_rzp|פייגלין: לרוקן את עזה מתושביה; אף אחד לא יוכל להישאר.
+I|rzp|marriage|9|@jta_smotrich|סמוטריץ': "כולנו היינו רוצים שהמדינה תתנהל לפי התורה וההלכה" (2019).
+I|rzp|shabbat|8|@jp_lightrail|סמוטריץ' האשים את מיכאלי שהיא "רומסת את השבת" כשבדקה הפעלה של הרכבת הקלה בשבת (2022).
+I|rzp|lgbt|10|@jta_smotrich|סמוטריץ' כינה את עצמו "הומופוב גאה" ואת מצעד הגאווה "מצעד תועבה".
+I|rzp|draft|6|@clingendael|סמוטריץ' דורש לגייס מיד חרדים שאינם לומדים תורה במשרה מלאה.
+I|rzp|tax|4|@globes_budget @jns_vat|כשר אוצר העלה את המע"מ ל-18%, הקפיא את מדרגות מס ההכנסה ואיחד את שתי המדרגות הנמוכות.
+I|rzp|welfare|6|@globes_budget|בתקציב 2025 הקפיא את עדכון הקצבאות והפנסיות לפי המדד.
+I|rzp|market|7|@jpost_rzp|זהות תומכת בכלכלה ליברטריאנית.
+#
+# ------------------------------------------------------------------ עוצמה יהודית
+I|otzma|state|10|@wiki_otzma|מדינה אחת, סיפוח של יהודה ושומרון והתנגדות למדינה פלסטינית.
+I|otzma|settle|10|@wiki_otzma|סיפוח, ביטול הסכמי אוסלו וריבונות על הר הבית.
+I|otzma|force|10|@itv_bengvir @deathpen|יזמה את חוק עונש המוות (2026). בן גביר הציע "להרוג 30 עד 40" אנשים בעזה בכל לילה (אוגוסט 2026).
+I|otzma|marriage|8|@gs_otzma @wiki_lehava|החוקה של המפלגה: מדינה "יהודית באופייה... ובערכיה המשפטיים". המפלגה קשורה ל"להב"ה", שנאבקת בנישואים מעורבים. מקור עקיף, ולכן לא יותר.
+I|otzma|shabbat|7|@gs_otzma @wiki_otzma|מדינה יהודית בסמליה ובערכיה, והגברת הזהות היהודית בבתי הספר.
+I|otzma|lgbt|8|@ynet_beast|בן גביר השתתף ב-2006 ב"מצעד הבהמות" נגד מצעד הגאווה בירושלים.
+I|otzma|draft|7|@toi_bengvir|בן גביר על גיוס חרדים: "אני לא חושב שכפייה תעזור" (2024).
+I|otzma|welfare|4|@wiki_otzma|המצע (2019): סיוע ל"אוכלוסיות חלשות", לקשישים ולנכים.
+I|otzma|market|7|@wiki_otzma|המצע (2019): "קפיטליזם יהודי", פחות בירוקרטיה ורגולציה.

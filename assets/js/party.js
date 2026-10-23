@@ -155,6 +155,9 @@
     "</div>" + (l.blocNote ? '<p class="small" style="margin-top:10px"><b>הערה על השיוך לגוש:</b> ' + esc(l.blocNote) + "</p>" : "") +
     (l.recNote ? '<p class="small"><b>הערה על ההמלצה:</b> ' + esc(l.recNote) + "</p>" : "") + "</div></section>";
 
-  main.innerHTML = card + members + pollsSec + hist + src;
+  var axesSec = window.AxesView ? window.AxesView.listSection(e, l, color) : "";
+
+  main.innerHTML = card + axesSec + members + pollsSec + hist + src;
+  if (axesSec && location.hash === "#axes") document.getElementById("axes").scrollIntoView();
   main.querySelector("[data-open-polls]").addEventListener("click", function () { window.PollsView.open(key); });
 })();
