@@ -7,6 +7,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(__file__))
 from polls import read_extract, cells_of, party_value, parse_end_date, OUTLETS  # noqa: E402
 from config import ELECTIONS, map_outlet, SCENARIO_CHOICE  # noqa: E402
+import primary  # noqa: E402
 
 DATA = os.path.join(os.path.dirname(__file__), "..", "data")
 
@@ -24,13 +25,21 @@ def row_fields(fmt, row):
 
 def build():
     polls = []          # every selected poll (one entry per outlet it counts for)
+    checks, new = primary.load()
     for key, cfg in ELECTIONS.items():
         seen = set()
         group_counter = defaultdict(int)
         for fname in cfg["files"]:
-            for table in read_extract(os.path.join(DATA, fname)):
+            for t_i, table in enumerate(read_extract(os.path.join(DATA, fname))):
                 header = table["header"]
-                for row in table["rows"]:
+                rows = [(row, None) for row in table["rows"]]
+                for rec in new:
+                    if (rec["election"], rec["file"], rec["table"]) == (key, fname, t_i):
+                        if cfg["fmt"] != "A":
+                            raise SystemExit("primary_polls.txt: %s new polls only in format A" % rec["where"])
+                        rec["used"] = True
+                        rows.append((primary.new_row(rec, header, 3), rec))
+                for row, newrec in rows:
                     dtext, firm, pub, first = row_fields(cfg["fmt"], row)
                     is_exit = "exit poll" in pub.lower() or "election result" in pub.lower()
                     if is_exit or pub.strip() in ("–", "Election Results", "Election results"):
@@ -47,11 +56,31 @@ def build():
                     if sig in seen:                       # same row in two extracts
                         continue
                     seen.add(sig)
-                    cells = cells_of(row, header, first)
+                    # the publication's own numbers (primary_polls.txt) win over Wikipedia's
+                    idxs = []
                     for outlet, onote in outlets:
                         gkey = (key, end.isoformat(), outlet)
-                        idx = group_counter[gkey]
+                        idxs.append(group_counter[gkey])
                         group_counter[gkey] += 1
+                    check = None
+                    if newrec:
+                        check = dict(kind=newrec["kind"], url=newrec["url"], read=newrec["read"],
+                                     note=newrec["note"], diffs=[], new=True)
+                    else:
+                        recs = [checks.get((key, outlet, end.isoformat(), i))
+                                for (outlet, _), i in zip(outlets, idxs)]
+                        recs = [r for r in recs if r]
+                        if len(recs) > 1:
+                            raise SystemExit("primary_polls.txt: two records for one row: %s, %s" % (
+                                recs[0]["where"], recs[1]["where"]))
+                        if recs:
+                            rec = recs[0]
+                            rec["used"] = True
+                            row, diffs = primary.apply(rec, row, header, first, cells_of)
+                            check = dict(kind=rec["kind"], url=rec["url"], read=rec["read"],
+                                         note=rec["note"], diffs=diffs, new=False)
+                    cells = cells_of(row, header, first)
+                    for (outlet, onote), idx in zip(outlets, idxs):
                         values = {}
                         for party in cfg["parties"]:
                             val, note = party_value(cells, header, party)
@@ -60,7 +89,20 @@ def build():
                             election=key, date_text=dtext, end=end.isoformat(),
                             firm=firm, publisher=pub, outlet=outlet,
                             outlet_note=onote, values=values, header=header,
-                            raw=row, group_index=idx, source=cfg["source"]))
+                            raw=row, group_index=idx, source=cfg["source"], check=check))
+    # a poll added from its publication that Wikipedia now has too: make it a P record
+    for rec in new:
+        same = [p for p in polls if p["election"] == rec["election"] and p["check"] is not None
+                and not p["check"]["new"] and p["firm"] == rec["firm"] and p["publisher"] == rec["publisher"]
+                and p["date_text"] == rec["date_text"]]
+        same += [p for p in polls if p["election"] == rec["election"] and p.get("check") is None
+                 and p["firm"] == rec["firm"] and p["publisher"] == rec["publisher"] and p["date_text"] == rec["date_text"]]
+        if same:
+            raise SystemExit("primary_polls.txt: %s is now in Wikipedia too - replace the N record with a P record "
+                             "(and compare the numbers)" % rec["where"])
+    stale = [r["where"] for r in list(checks.values()) + new if not r.get("used")]
+    if stale:
+        raise SystemExit("primary_polls.txt: records that match no poll: " + ", ".join(stale))
     # scenario choice: keep only the chosen row where a group has several rows
     groups = defaultdict(list)
     for p in polls:

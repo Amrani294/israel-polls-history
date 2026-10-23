@@ -212,8 +212,9 @@ def main(site):
     polls = build()
     import poll_refs
     matched = poll_refs.match(polls, {k: c["fmt"] for k, c in ELECTIONS.items()})
-    if matched != len(polls):
-        die("poll citations matched %d of %d" % (matched, len(polls)))
+    unsourced = [p for p in polls if not p["ref"] and not (p["check"] and p["check"]["url"])]
+    if unsourced:
+        die("polls without a citation: %d (matched %d of %d)" % (len(unsourced), matched, len(polls)))
     summary = summarize(polls)
     pblocs = poll_blocs(polls)
 
@@ -385,7 +386,18 @@ def main(site):
             die("missing license for " + t)
     out = os.path.join(site, "data")
     os.makedirs(out, exist_ok=True)
+    checks = OrderedDict()                      # per election: how the poll numbers were checked
+    for p in all_polls:
+        c = checks.setdefault(p["e"], OrderedDict(n=0, src=0, sec=0, none=0, wiki=0, diffs=0, added=0))
+        c["n"] += 1
+        k = p["check"]["k"] if p["check"] else "wiki"
+        c[k] += 1
+        if p["check"] and p["check"]["diffs"]:
+            c["diffs"] += 1
+        if p["check"] and p["check"]["added"]:
+            c["added"] += 1
     meta_out = OrderedDict(
+        pollChecks=checks,
         outlets=OrderedDict((o, X.OUTLET_LABEL[o]) for o in OUTLETS),
         predecessors=X.PRED, oldElections=sorted(X.OLD),
         candidates=S.CANDIDATES,
@@ -421,8 +433,24 @@ def poll_rows(key, polls, pblocs, kind):
             publisher=p["publisher"], firm=p["firm"] if cfg["fmt"] != "B" else "",
             values=vals, valueNotes=vnotes, outletNote=onote,
             blocs={b: pb["sums"][b] for b in order}, total=pb["total"],
-            blocNotes=pb["notes"], src=p["source"], ref=p["ref"]))
+            blocNotes=pb["notes"], src=p["source"], ref=p["ref"], check=check_out(cfg, p["check"])))
     return out
+
+
+def check_out(cfg, c):
+    """What the site shows about the publication check (primary_polls.txt), or None."""
+    if not c:
+        return None
+    from polls import parse_value
+    diffs = []
+    for cols, old, new in c["diffs"]:
+        label = cols
+        for party in cfg["parties"]:
+            if set(cols.split("+")) & set(party["cols"]):
+                label = party["name"]
+        diffs.append([label, parse_value(old)[0], parse_value(new)[0]])
+    url = c["url"] if re.match(r"https?://", c["url"] or "") else ""
+    return OrderedDict(k=c["kind"], url=url, note=c["note"], diffs=diffs, added=c["new"])
 
 
 def upcoming(key, up, polls, summary, pblocs, positions, person):
