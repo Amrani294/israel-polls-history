@@ -148,6 +148,11 @@ def src_line(D, e):
     return "מקור: סקרי " + (", ".join(names[:-1]) + " ו" + names[-1] if len(names) > 1 else names[0]) + "; ועדת הבחירות"
 
 
+def seats(v):
+    """"1 מנדטים" is wrong Hebrew."""
+    return "מנדט אחד" if round(v, 1) == 1 else fmt(v) + " מנדטים"
+
+
 def le(name):
     """Hebrew prefix "to": ל + ה at the start of a name merges (לליכוד, not להליכוד)."""
     return "ל" + (name[1:] if name.startswith("ה") else name)
@@ -311,11 +316,11 @@ def post_accuracy(D, fd, key):
         '<div class="unit">המספר = מנדטים שהוזזו (חצי מסכום הפערים בכל הרשימות). פחות = מדויק יותר.</div>'
     html = post_shell(fd, "הכנסת ה-%s · %s" % (e["knesset"], when(e)), body, "החישוב המלא בעמוד \"דיוק הסוקרים\"", "#7b3fa8")
     worst = rows[-1]
-    lead = ("הסקר האחרון של %s היה הכי קרוב: %s מנדטים מהתוצאה." % (tied[0], fmt(best["moved"]))) if len(tied) == 1 else \
-        ("הכי קרובים היו %s, %s מנדטים מהתוצאה." % (joined(tied), fmt(best["moved"]))) if len(tied) < len(rows) else \
+    lead = ("הסקר האחרון של %s היה הכי קרוב: %s מהתוצאה." % (tied[0], seats(best["moved"]))) if len(tied) == 1 else \
+        ("הכי קרובים היו %s, %s מהתוצאה." % (joined(tied), seats(best["moved"]))) if len(tied) < len(rows) else \
         ("הסקר האחרון של כל אחד מהגופים (%s) היה במרחק של %s מנדטים מהתוצאה. תיקו מושלם." % (joined(tied), fmt(best["moved"])))
     if worst["moved"] > best["moved"]:
-        lead += " הכי רחוק: %s, %s מנדטים." % (outlet_name(e, worst["o"]), fmt(worst["moved"]))
+        lead += " הכי רחוק: %s, %s." % (outlet_name(e, worst["o"]), seats(worst["moved"]))
     cap = ("מי צדק בבחירות של %s?\n\n%s\n\nהמדד: כמה מנדטים צריך להזיז בסקר כדי לקבל את מה שקרה בקלפי. "
            "הטבלה המלאה, לכל מערכות הבחירות מ-2009, בעמוד \"דיוק הסוקרים\" באתר. הקישור בביו 📊\n\n%s" % (when(e), lead, TAGS))
     return html, cap
@@ -358,9 +363,9 @@ tr.sc td:first-child{font-family:Plex;font-size:22px;text-align:right;padding-in
     sub = '<p class="sub">הגרסה האחרונה של כל מדגם באותו לילה, מול התוצאה הרשמית</p>'
     body = ("<style>%s</style>" % css) + title + sub + "<table>" + head + "".join(trs) + score + "</table>"
     html = post_shell(fd, "הכנסת ה-%s · %s" % (e["knesset"], when(e)), body, "מקור: כתבות החדשות מליל הבחירות; ועדת הבחירות", "#7b3fa8")
-    cap = ("ליל הבחירות, %s: כמה קרובים היו המדגמים?\n\n%s, %s מנדטים מהתוצאה. "
+    cap = ("ליל הבחירות, %s: כמה קרובים היו המדגמים?\n\n%s, %s מהתוצאה. "
            "בטבלה: חמש הרשימות הגדולות, הגרסה האחרונה של כל מדגם באותו לילה, מול התוצאה הרשמית.\n\n"
-           "כל המדגמים והתוצאות מ-2009 באתר. הקישור בביו 🗳️\n\n%s" % (when(e), ("המדגם של %s היה הכי מדויק" % tied[0]) if len(tied) == 1 else ("המדגמים של %s היו הכי מדויקים" % joined(tied)), fmt(best["moved"]), TAGS))
+           "כל המדגמים והתוצאות מ-2009 באתר. הקישור בביו 🗳️\n\n%s" % (when(e), ("המדגם של %s היה הכי מדויק" % tied[0]) if len(tied) == 1 else ("המדגמים של %s היו הכי מדויקים" % joined(tied)), seats(best["moved"]), TAGS))
     return html, cap
 
 
