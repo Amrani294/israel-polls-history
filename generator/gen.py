@@ -579,10 +579,11 @@ def reel_gap(D, fd, key):
     rr = [{"l": r["l"], "a": r["avg"], "b": r["res"]} for r in rows]
     title = "מה חזו הסקרים<br>ב%s?" % ("בחירות של " + when(e))
     call = "<b>%s</b>: %s בממוצע הסקרים, <b>%s</b> בקלפי" % (esc(big["l"]["name"]), fmt(big["avg"]), fmt(big["res"]))
-    nel = len(D.results())
+    # same totals as the site and the intro post: every election incl. 2026, every poll
+    nel = len(D.E)
     html, T = reel_html(fd, "הכנסת ה-%s · %s" % (e["knesset"], when(e)), title, "ממוצע הסקרים", "ובקלפי...",
                              rr, mx, True, hot, call, "ומה קרה<br>בשאר הבחירות?",
-                             "%d מערכות בחירות, %d סקרים, כל אחד עם המקור שלו" % (nel, sum(1 for p in D.P if p["e"] != "2026")),
+                             "%d מערכות בחירות, %d סקרים, כל אחד עם המקור שלו" % (nel, len(D.P)),
                              party_color(big["l"]))
     cap = ("%s: ככה נראה ממוצע הסקרים... ומה קרה בקלפי.\n\n%s: %s מנדטים בממוצע הסקרים, %s בפועל.\n\n"
            "כל הסקרים של כל מערכות הבחירות מ-2009 באתר. הקישור בביו 🗳️\n\n%s"
