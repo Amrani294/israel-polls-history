@@ -1,16 +1,17 @@
 """Sound effects for the reels: no music, only effects synced to the animation.
 
 Every sound is synthesized here (sine, noise, filters); nothing is sampled.
+Only ONE whoosh per reel (Yonatan, 25.10.2026: too many whooshes): the riser into the
+reveal, or into the end card when the reel has no reveal.
 Timeline (gen.py reel timings, passed in as T):
-  0.0          whoosh as the title comes in
   0.2 + 0.07i  a soft pop as each ballot slip appears (T["rows"] slips)
   1.0 .. grow  counter ticks, rising in pitch, as the bars count up to the poll average
   morph - 0.8  a short alert "ding" as the label changes to "ובקלפי..."
   morph - 1    a riser whoosh into the reveal
-  morph        a thump + whoosh as the bars jump to the result, then ticks while they move
+  morph        a thump as the bars jump to the result, then ticks while they move
   morph + 3    a pop for each difference chip
   focus        a low "spotlight" hit as the biggest miss is highlighted
-  end          a swoosh and a two-note chime on the end card
+  end          a thump and a two-note chime on the end card
 A reel without a reveal (the 2026 average) gets the title, slips, counter and end card.
 The reel id seeds small variations (pitch, timing jitter), so reels don't sound identical.
 """
@@ -112,7 +113,6 @@ def write_sfx(path, length, T, seed_text):
     final = T["morph"] < length
     rows = int(T.get("rows", 9))
 
-    put(_whoosh(rng, 0.55, 500, 6000, True), 0.0, 0.22)
     for i in range(rows):
         put(_pop(rng, 620 * pitch * (1 + 0.04 * i)), 0.22 + 0.07 * i, 0.16, (i % 2 - 0.5) * 0.3)
     for tt, f in _counter_ticks(1.0, T["grow"], 22, 900 * pitch, 1700 * pitch):
@@ -122,15 +122,14 @@ def write_sfx(path, length, T, seed_text):
         put(_chime(988 * pitch, 1319 * pitch, 0.1, 0.9), T["morph"] - 0.8, 0.18)
         put(_whoosh(rng, 1.0, 200, 7000, True), T["morph"] - 1.0, 0.26)
         put(_thump(rng), T["morph"], 0.7)
-        put(_whoosh(rng, 0.6, 3000, 300, False), T["morph"], 0.2)
         for tt, f in _counter_ticks(T["morph"], T["morph"] + 3, 16, 1500 * pitch, 800 * pitch):
             put(_tick(f), tt, 0.08)
         for i in range(rows):
             put(_pop(rng, 900 * pitch), T["morph"] + 3.05 + 0.04 * i, 0.10, (i % 2 - 0.5) * 0.4)
         put(_thump(rng), T["focus"], 0.45)
-        put(_whoosh(rng, 0.8, 2500, 250, False), T["focus"], 0.14)
 
-    put(_whoosh(rng, 0.7, 400, 8000, True), T["end"] - 0.35, 0.28)
+    if not final:                                  # the one whoosh of a reel without a reveal
+        put(_whoosh(rng, 0.9, 300, 7000, True), T["end"] - 0.6, 0.24)
     put(_thump(rng), T["end"], 0.4)
     put(_chime(784 * pitch, 1175 * pitch, 0.16, 1.8), T["end"] + 0.15, 0.25)
 

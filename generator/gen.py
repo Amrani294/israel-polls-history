@@ -28,7 +28,7 @@ MONTHS = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יו�
 BAN_NOTE = ("הסקרים פורסמו עד 23.10.2026, לפני תקופת איסור הפרסום. הם אינם עדכניים, "
             "ואין ללמוד מהם על דפוסי הצבעה או על עמדות הציבור ביום הפרסום.")
 TAGS = "#סקרים #בחירות #פוליטיקה #ישראל #כנסת"
-REEL_AUDIO = "silent"   # "silent" or "sfx" (generator/sfx.py)
+REEL_AUDIO = "sfx"   # "silent" or "sfx" (generator/sfx.py)
 
 
 # ------------------------------------------------------------------ data
@@ -673,8 +673,7 @@ def render(items, ids, fd, out):
                 if errs:
                     raise SystemExit("js error in %s: %s" % (iid, errs))
                 mp4 = os.path.join(out, iid + ".mp4")
-                # Silent audio track for now: Yonatan found the synthesized effects (sfx.py) too
-                # artificial (25.10.2026). To switch them back on, set REEL_AUDIO = "sfx".
+                # sound effects only (sfx.py), no music: Yonatan's choice, 25.10.2026
                 if REEL_AUDIO == "sfx":
                     import sfx
                     wav = os.path.join(tmp, iid + ".wav")
