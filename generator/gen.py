@@ -28,6 +28,7 @@ MONTHS = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יו�
 BAN_NOTE = ("הסקרים פורסמו עד 23.10.2026, לפני תקופת איסור הפרסום. הם אינם עדכניים, "
             "ואין ללמוד מהם על דפוסי הצבעה או על עמדות הציבור ביום הפרסום.")
 TAGS = "#סקרים #בחירות #פוליטיקה #ישראל #כנסת"
+REEL_AUDIO = "silent"   # "silent" or "sfx" (generator/sfx.py)
 
 
 # ------------------------------------------------------------------ data
@@ -672,12 +673,16 @@ def render(items, ids, fd, out):
                 if errs:
                     raise SystemExit("js error in %s: %s" % (iid, errs))
                 mp4 = os.path.join(out, iid + ".mp4")
-                # synthesized sound effects (no music), timed to the animation
-                import sfx
-                wav = os.path.join(tmp, iid + ".wav")
-                sfx.write_sfx(wav, length, res[4], iid)
-                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(fps), "-i", os.path.join(fdir, "%04d.jpg"),
-                                "-i", wav,
+                # Silent audio track for now: Yonatan found the synthesized effects (sfx.py) too
+                # artificial (25.10.2026). To switch them back on, set REEL_AUDIO = "sfx".
+                if REEL_AUDIO == "sfx":
+                    import sfx
+                    wav = os.path.join(tmp, iid + ".wav")
+                    sfx.write_sfx(wav, length, res[4], iid)
+                    audio = ["-i", wav]
+                else:
+                    audio = ["-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100"]
+                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(fps), "-i", os.path.join(fdir, "%04d.jpg")] + audio + [
                                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(fps),
                                 "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", mp4], check=True)
                 # still frame for checking the layout
