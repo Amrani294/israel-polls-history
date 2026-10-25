@@ -555,6 +555,7 @@ def reel_html(fd, tag, title, ph1, ph2, rows, mx, final, hot, call, end_title, e
                    % (party_color(r["l"]), slip(r["l"]), esc(r["l"]["name"]), dl))
     T = {"grow": 4.0, "morph": 6.6, "focus": 10.8, "end": 13.4, "len": 16.0} if final else \
         {"grow": 4.6, "morph": 99, "focus": 99, "end": 10.6, "len": 13.2}
+    T["rows"] = len(rows)                         # for the sound effects (one pop per slip)
     data = {"rows": [{"a": r["a"], "b": r["b"]} for r in rows], "max": mx, "final": final, "hot": hot, "T": T}
     body = ('<div class="band"><span class="logo">%s</span><span class="brand">היסטוריית הסקרים של ישראל</span><span class="tag">%s</span></div>'
             '<div class="top"><h1>%s</h1><div class="phase"><span id="ph1">%s</span>%s</div></div>'
@@ -671,11 +672,10 @@ def render(items, ids, fd, out):
                 if errs:
                     raise SystemExit("js error in %s: %s" % (iid, errs))
                 mp4 = os.path.join(out, iid + ".mp4")
-                # original synthesized score, timed to the animation; the reel id seeds it,
-                # so each reel gets its own tempo, key and pattern
-                import music
+                # synthesized sound effects (no music), timed to the animation
+                import sfx
                 wav = os.path.join(tmp, iid + ".wav")
-                music.write_score(wav, length, res[4], iid)
+                sfx.write_sfx(wav, length, res[4], iid)
                 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(fps), "-i", os.path.join(fdir, "%04d.jpg"),
                                 "-i", wav,
                                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(fps),
