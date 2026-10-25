@@ -565,7 +565,7 @@ def reel_html(fd, tag, title, ph1, ph2, rows, mx, final, hot, call, end_title, e
         ('<div class="ban">⚠ %s</div>' % esc(BAN_NOTE)) if ban else "", LOGO, end_title, end_text, SITE_URL)
     html = shell(fd, 1080, 1920, REEL_CSS + ":root{--hl:%s}" % hl, body,
                  "window.__D=%s;%s" % (json.dumps(data), REEL_JS))
-    return html, T["len"]
+    return html, T
 
 
 def reel_gap(D, fd, key):
@@ -578,21 +578,21 @@ def reel_gap(D, fd, key):
     title = "מה חזו הסקרים<br>ב%s?" % ("בחירות של " + when(e))
     call = "<b>%s</b>: %s בממוצע הסקרים, <b>%s</b> בקלפי" % (esc(big["l"]["name"]), fmt(big["avg"]), fmt(big["res"]))
     nel = len(D.results())
-    html, length = reel_html(fd, "הכנסת ה-%s · %s" % (e["knesset"], when(e)), title, "ממוצע הסקרים", "ובקלפי...",
+    html, T = reel_html(fd, "הכנסת ה-%s · %s" % (e["knesset"], when(e)), title, "ממוצע הסקרים", "ובקלפי...",
                              rr, mx, True, hot, call, "ומה קרה<br>בשאר הבחירות?",
                              "%d מערכות בחירות, %d סקרים, כל אחד עם המקור שלו" % (nel, sum(1 for p in D.P if p["e"] != "2026")),
                              party_color(big["l"]))
     cap = ("%s: ככה נראה ממוצע הסקרים... ומה קרה בקלפי.\n\n%s: %s מנדטים בממוצע הסקרים, %s בפועל.\n\n"
            "כל הסקרים של כל מערכות הבחירות מ-2009 באתר. הקישור בביו 🗳️\n\n%s"
            % ("הבחירות לכנסת ה-" + e["knesset"] + ", " + when(e), big["l"]["name"], fmt(big["avg"]), fmt(big["res"]), TAGS))
-    return html, cap, length, 12000
+    return html, cap, T["len"], 12000, T
 
 
 def reel_2026(D, fd):
     e = D.by["2026"]
     ls = sorted((l for l in e["lists"] if (l.get("polls") or {}).get("overall")), key=lambda l: -l["polls"]["overall"])
     rr = [{"l": l, "a": l["polls"]["overall"], "b": l["polls"]["overall"]} for l in ls]
-    html, length = reel_html(fd, "הכנסת ה-26 · אוקטובר 2026", "ככה נראו<br>הסקרים לכנסת ה-26", "ממוצע %d סקרים" % sum(1 for p in D.P if p["e"] == "2026"),
+    html, T = reel_html(fd, "הכנסת ה-26 · אוקטובר 2026", "ככה נראו<br>הסקרים לכנסת ה-26", "ממוצע %d סקרים" % sum(1 for p in D.P if p["e"] == "2026"),
                              None, rr, rr[0]["a"], False, 0, None, "ביום שלישי<br>נדע מי צדק",
                              "וכבר עכשיו אפשר לבדוק מי צדק בכל הבחירות מאז 2009", "#7b3fa8", ban=True)
     # 13 lists: compact rows so the chart ends above the ban note
@@ -601,7 +601,7 @@ def reel_2026(D, fd):
     cap = ("הממוצע של כל הסקרים לכנסת ה-26, מסוף יולי ועד 23.10.\n\n⚠️ %s\n\n"
            "ביום שלישי בלילה נדע כמה הם צדקו. באתר אפשר לראות מה קרה לסקרים בכל מערכת בחירות מאז 2009. הקישור בביו 📊\n\n%s"
            % (BAN_NOTE, "#בחירות2026 " + TAGS))
-    return html, cap, length, 6000
+    return html, cap, T["len"], 6000, T
 
 
 # ------------------------------------------------------------------ catalog
@@ -671,10 +671,15 @@ def render(items, ids, fd, out):
                 if errs:
                     raise SystemExit("js error in %s: %s" % (iid, errs))
                 mp4 = os.path.join(out, iid + ".mp4")
+                # original synthesized score, timed to the animation; the reel id seeds it,
+                # so each reel gets its own tempo, key and pattern
+                import music
+                wav = os.path.join(tmp, iid + ".wav")
+                music.write_score(wav, length, res[4], iid)
                 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(fps), "-i", os.path.join(fdir, "%04d.jpg"),
-                                "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100",
+                                "-i", wav,
                                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(fps),
-                                "-c:a", "aac", "-b:a", "64k", "-shortest", "-movflags", "+faststart", mp4], check=True)
+                                "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", mp4], check=True)
                 # still frame for checking the layout
                 shutil.copy(os.path.join(fdir, "%04d.jpg" % int(res[3] / 1000 * fps)), os.path.join(out, iid + ".cover.jpg"))
             pg.close()
