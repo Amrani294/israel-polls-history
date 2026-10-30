@@ -39,10 +39,10 @@
   } else {
   f.push(["מושבים", '<dd class="big">' + l.seats + "</dd>"]);
   f.push(["קולות", "<dd>" + A.fmtInt(l.votes) + "</dd>"]);
-  f.push(["אחוז מהקולות הכשרים", "<dd>" + esc(l.pct) + "</dd>"]);
+  f.push(["אחוז מהקולות הכשרים", "<dd>" + esc(l.pct || "—") + "</dd>"]);
   f.push(["ראש הרשימה", "<dd>" + esc(A.displayName(l.leader)) + "</dd>"]);
-  f.push(["מעמד אחרי הבחירות", "<dd>" + A.blocChip(e, l.bloc) + "</dd>"]);
-  f.push(["המלצה לנשיא", "<dd>" + esc(A.recText(l)) + "</dd>"]);
+  f.push([e.kind === "pre" ? "גוש (עד שתקום ממשלה)" : "מעמד אחרי הבחירות", "<dd>" + A.blocChip(e, l.bloc) + "</dd>"]);
+  f.push(["המלצה לנשיא", "<dd>" + esc(e.kind === "pre" && l.seats ? "ההמלצות עוד לא נמסרו" : A.recText(l)) + "</dd>"]);
   f.push(["ממוצע הסקרים", "<dd>" + (l.polls ? A.fmtSeats(l.polls.overall) : "—") + "</dd>"]);
   f.push(["ממוצע המדגמים", "<dd>" + A.fmtSeats(l.exitAvg) + "</dd>"]);
   }
@@ -80,6 +80,19 @@
       '<p class="small" style="margin-top:14px">מועמדים בלי ערך בוויקיפדיה העברית מוצגים בלי קישור ובלי תמונה.' +
       (official ? ' לרשימה המלאה: <a href="' + esc(official.url) + '" target="_blank" rel="noopener">' + esc(official.label) + "</a>." : "") + "</p>" +
       "</div></section>";
+  } else if (l.seats && e.membersByList) {
+    members =
+      '<section class="block"><div class="wrap"><header><h2>נבחרי הרשימה</h2><p>' + l.seats + " המקומות הראשונים ברשימה, לפי תוצאות האמת (לפני השבעת הכנסת ה-" + esc(e.knesset) + ")</p></header>" +
+      '<div class="members">' + l.members.map(function (m, i) {
+        var p = A.PEOPLE[m] || {};
+        var inner = A.portrait(m, color) + '<span class="nm">' + esc(A.displayName(m)) + '</span><span class="tag">מקום ' + (i + 1) + (i === 0 ? ", ראש הרשימה" : "") + "</span>";
+        return p.wiki ? '<a class="member' + (i === 0 ? " lead" : "") + '" style="--pc:' + color + '" href="' + esc(p.wiki) + '" target="_blank" rel="noopener">' + inner + "</a>" :
+          '<span class="member' + (i === 0 ? " lead" : "") + '" style="--pc:' + color + '">' + inner + "</span>";
+      }).join("") + "</div>" +
+      '<p class="small" style="margin-top:14px">לפי הסדר ברשימה, כפי שמופיע בוויקיפדיה העברית; נבדק מול רשימת הנבחרים שפורסמה אחרי תוצאות האמת. ' +
+      "נבחרים בלי ערך בוויקיפדיה העברית מוצגים בלי קישור ובלי תמונה." +
+      (official ? ' לרשימה המלאה: <a href="' + esc(official.url) + '" target="_blank" rel="noopener">' + esc(official.label) + "</a>." : "") + "</p>" +
+      "</div></section>";
   } else if (l.seats) {
     members =
       '<section class="block"><div class="wrap"><header><h2>נבחרי הרשימה</h2><p>' + l.seats + " חברי הכנסת שנכנסו מהרשימה בתחילת הכנסת ה-" + esc(e.knesset) + "</p></header>" +
@@ -97,7 +110,8 @@
   } else {
     members =
       '<section class="block"><div class="wrap"><header><h2>נבחרי הרשימה</h2></header>' +
-      '<p class="lede">הרשימה לא עברה את אחוז החסימה (' + esc(e.info.threshold.replace(/\s*\(.*\)/, "")) + ") ולא נכנסה לכנסת.</p>" +
+      '<p class="lede">' + (l.withdrawn ? "הרשימה פרשה מהמרוץ לפני יום הבחירות ולא נכנסה לכנסת." :
+        "הרשימה לא עברה את אחוז החסימה (" + esc(e.info.threshold.replace(/\s*\(.*\)/, "")) + ") ולא נכנסה לכנסת.") + "</p>" +
       (official ? '<p class="small"><a href="' + esc(official.url) + '" target="_blank" rel="noopener">' + esc(official.label) + "</a></p>" : "") +
       "</div></section>";
   }
@@ -150,7 +164,7 @@
     (l.position.url ? '<a href="' + esc(l.position.url) + '" target="_blank" rel="noopener">הערך בוויקיפדיה האנגלית (מיקום פוליטי)</a>' : "") +
     (e.upcoming ? '<a href="' + esc(e.pollSrc) + '" target="_blank" rel="noopener">טבלאות הסקרים (ויקיפדיה האנגלית)</a>' :
       '<a href="' + esc(e.heWiki) + '" target="_blank" rel="noopener">תוצאות הבחירות, אותיות וראש הרשימה (ויקיפדיה העברית)</a>' +
-      '<a href="' + esc(e.govSrc) + '" target="_blank" rel="noopener">הרכב הממשלה / ההמלצות</a>') +
+      '<a href="' + esc(e.govSrc) + '" target="_blank" rel="noopener">' + (e.kind === "pre" ? esc(e.outgoing.name) + " (הממשלה היוצאת)" : "הרכב הממשלה / ההמלצות") + "</a>") +
     (official ? '<a href="' + esc(official.url) + '" target="_blank" rel="noopener">' + esc(official.label) + "</a>" : "") +
     "</div>" + (l.blocNote ? '<p class="small" style="margin-top:10px"><b>הערה על השיוך לגוש:</b> ' + esc(l.blocNote) + "</p>" : "") +
     (l.recNote ? '<p class="small"><b>הערה על ההמלצה:</b> ' + esc(l.recNote) + "</p>" : "") + "</div></section>";
