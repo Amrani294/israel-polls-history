@@ -614,7 +614,8 @@ def catalog(D):
     for k in keys:
         items["reel-gap-" + k] = ("reel", lambda fd, k=k: reel_gap(D, fd, k))
         items["post-gap-" + k] = ("post", lambda fd, k=k: post_gap(D, fd, k))
-        items["post-acc-" + k] = ("post", lambda fd, k=k: post_accuracy(D, fd, k))
+        if last_polls(D, D.by[k]):  # no comparable last poll (e.g. a tracked list missing) = no item
+            items["post-acc-" + k] = ("post", lambda fd, k=k: post_accuracy(D, fd, k))
         if D.by[k]["exitPolls"]:
             items["post-exit-" + k] = ("post", lambda fd, k=k: post_exits(D, fd, k))
     items["post-alltime"] = ("post", lambda fd: post_alltime(D, fd))
