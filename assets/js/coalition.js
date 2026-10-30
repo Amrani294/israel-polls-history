@@ -73,7 +73,7 @@
   }
   function presets(e) {
     var hasC = e.lists.some(function (l) { return l.bloc === "C" && (e.upcoming || l.seats > 0); });
-    var label = e.upcoming ? e.blocLabels.C : e.kind === "rec" ? e.blocLabels.C : "הקואליציה שקמה בפועל";
+    var label = e.upcoming || e.kind === "rec" || e.kind === "pre" ? e.blocLabels.C : "הקואליציה שקמה בפועל";
     return (hasC ? '<button type="button" class="btn ghost" data-preset="C">' + esc(label) + "</button>" : "") +
       '<button type="button" class="btn ghost" data-preset="none">ניקוי</button>';
   }

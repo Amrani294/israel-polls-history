@@ -8,6 +8,8 @@
   var E = A.ELECTIONS.filter(function (e) { return !e.upcoming; });              // with results, newest first
   var CHRONO = E.slice().reverse();          // oldest first
   var latest = E[0];
+  var COUNT_HE = { 8: "שמונה", 9: "תשע", 10: "עשר", 11: "אחת עשרה", 12: "שתים עשרה" };
+  var countText = (COUNT_HE[E.length] || String(E.length)) + " מערכות בחירות";
 
   function axisLegend() {
     var stops = [-3, -2, -1, 0, 1, 2, 3];
@@ -31,7 +33,7 @@
       '<span><span class="when">' + esc(A.shortWhen(e)) + '</span><br><span class="kn">הכנסת ה-' + esc(e.knesset) + "</span></span>" +
       "<span></span>" + A.hemicycle(e, { center: false, label: "חלוקת המושבים, " + A.electionTitle(e) }) +
       '<span class="winner">' + A.slip(top, "sm") + "<span>הגדולה: <b>" + esc(top.name) + "</b>, " + top.seats + " מושבים<br>" +
-      (e.government ? esc(e.government.name) + ": " + esc(e.government.pm) : "לא הוקמה ממשלה") + "</span></span></a>";
+      (e.government ? esc(e.government.name) + ": " + esc(e.government.pm) : e.kind === "pre" ? "טרם הוקמה ממשלה" : "לא הוקמה ממשלה") + "</span></span></a>";
   }
 
   /* ---------------------------------------------------------------- party trajectories */
@@ -112,7 +114,7 @@
     return E.map(function (e) {
       var rows = [["סקרים", e.blocs.polls], ["מדגמים", e.blocs.exit], ["תוצאה", e.blocs.final]];
       return '<div class="bloc-row"><div class="who"><a href="' + A.electionHref(e.key) + '">' + esc(A.shortWhen(e)) + "</a><br>" +
-        '<span class="small">' + (e.kind === "rec" ? "לפי ההמלצות לנשיא" : "לפי הממשלה שהושבעה") + "</span></div>" +
+        '<span class="small">' + (e.kind === "rec" ? "לפי ההמלצות לנשיא" : e.kind === "pre" ? "הממשלה היוצאת מול השאר" : "לפי הממשלה שהושבעה") + "</span></div>" +
         '<div class="bars">' + rows.map(function (r) {
           return '<div class="bar-wrap"><span class="bar-label">' + r[0] + "</span>" + A.blocBar(e, r[1]) + "</div>";
         }).join("") + "</div></div>";
@@ -146,7 +148,7 @@
   main.innerHTML =
     '<section class="hero"><div class="wrap"><div class="hero-grid"><div>' +
     "<h1>היסטוריית הסקרים של ישראל</h1>" +
-    '<p class="lede" style="margin-top:14px">שמונה מערכות בחירות לכנסת, מ-2009 ועד 2022: מי נבחר, איך התחלקה הכנסת בין ימין לשמאל ובין קואליציה לאופוזיציה, ומה אמרו הסקרים לפני כן. ' +
+    '<p class="lede" style="margin-top:14px">' + countText + " לכנסת, מ-" + esc(CHRONO[0].date.slice(0, 4)) + " ועד " + esc(latest.date.slice(0, 4)) + ': מי נבחר, איך התחלקה הכנסת בין ימין לשמאל ובין קואליציה לאופוזיציה, ומה אמרו הסקרים לפני כן. ' +
     (UP.length ? "ולצידן הבחירות הקרובות, לכנסת ה-" + esc(UP[0].knesset) + ": הרשימות והסקרים עד היום." : "") + "</p>" +
     axisLegend() +
     '<div class="kicker-row"><a class="btn" href="' + A.electionHref(latest.key) + '">' + esc(A.electionTitle(latest)) + '</a><a class="btn ghost" href="' + A.pageHref("polls") + '">ארכיון הסקרים</a></div>' +
@@ -155,7 +157,8 @@
     "</div></div></section>" +
     UP.map(next).join("") +
 
-    '<section class="block"><div class="wrap"><header><h2>שמונה מערכות בחירות</h2><p>לחיצה על מערכת פותחת את התוצאות, הרשימות והסקרים שלה</p></header>' +
+    '<section class="block"><div class="wrap"><header><h2>' + countText + "</h2>" +
+    '<p>לחיצה על מערכת פותחת את התוצאות, הרשימות והסקרים שלה</p></header>' +
     '<div class="strip" style="margin-top:0">' + E.map(card).join("") + "</div></div></section>" +
 
     '<section class="block traj"><div class="wrap"><header><h2>מסלול המפלגות</h2><p>מושבים בכל מערכת, לרשימות שחזרו שוב ושוב</p></header>' +
@@ -169,7 +172,8 @@
     '<div class="legend"><span class="C"><i></i>קואליציה (2019: המליצו על נתניהו)</span><span class="O"><i></i>אופוזיציה (2019: המליצו על גנץ)</span>' +
     '<span class="N"><i></i>לא המליצו על אף אחד (2019)</span><span class="X"><i></i>לא נכנסו לכנסת</span></div>' +
     '<div class="bloc-rows">' + blocRows() + "</div>" +
-    '<p class="small" style="margin-top:14px">השיוך לגוש נקבע לפי הרכב הממשלה הראשונה שהושבעה אחרי כל בחירות; באפריל ובספטמבר 2019 לא הוקמה ממשלה, ולכן לפי ההמלצות לנשיא. רשימה שהתפצלה אחרי הבחירות שויכה לפי רוב חבריה.</p>' +
+    '<p class="small" style="margin-top:14px">השיוך לגוש נקבע לפי הרכב הממשלה הראשונה שהושבעה אחרי כל בחירות; באפריל ובספטמבר 2019 לא הוקמה ממשלה, ולכן לפי ההמלצות לנשיא. רשימה שהתפצלה אחרי הבחירות שויכה לפי רוב חבריה.' +
+    (E.some(function (e) { return e.kind === "pre"; }) ? " ב-2026, עד שתושבע ממשלה: מפלגות הממשלה היוצאת (בצבע הקואליציה) מול כל שאר הרשימות." : "") + "</p>" +
     '<p style="margin-top:18px"><a class="btn" href="' + A.pageHref("polls") + '">לארכיון הסקרים המלא</a></p>' +
     "</div></section>";
 

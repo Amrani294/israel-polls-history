@@ -376,8 +376,8 @@ def main(site):
         # polls (one row per poll)
         all_polls.extend(poll_rows(key, polls, pblocs, KIND[key]))
 
-    for key, up in S.UPCOMING.items():
-        elections.insert(0, upcoming(key, up, polls, summary, pblocs, positions, person))
+    for key, up in S.E2026.items():
+        elections.insert(0, election_2026(key, up, polls, summary, pblocs, positions, person))
         all_polls[:0] = poll_rows(key, polls, pblocs, KIND[key])
 
     # credits for people actually shown
@@ -457,18 +457,47 @@ def check_out(cfg, c):
     return OrderedDict(k=c["kind"], url=url, note=c["note"], diffs=diffs, added=c["new"])
 
 
-def upcoming(key, up, polls, summary, pblocs, positions, person):
-    """An election that has not happened yet: lists, candidates and polls, no results."""
+def norm_name(s):
+    return re.sub(r"[\s\"'׳״\-–]", "", s)
+
+
+def read_mk26():
+    """list name -> [names in list order] from data/mk26_raw.txt (the 120 elected)."""
+    out = defaultdict(list)
+    for line in open(os.path.join(DATA, "mk26_raw.txt"), encoding="utf-8"):
+        line = line.rstrip("\n")
+        if not line or line.startswith("#") or line.startswith("SOURCE|"):
+            continue
+        lst, place, name = line.split("|")
+        if int(place) != len(out[lst]) + 1:
+            die("mk26_raw: %s place %s out of order" % (lst, place))
+        out[lst].append(name)
+    if sum(len(v) for v in out.values()) != 120:
+        die("mk26_raw: %d elected" % sum(len(v) for v in out.values()))
+    return out
+
+
+def election_2026(key, up, polls, summary, pblocs, positions, person):
+    """2026 after election day: results, the elected, exit polls; no government yet.
+
+    Same shape as the other elections (upcoming=False), with kind "pre": blocs = the outgoing
+    government against all the other lists (user decision, 30 Oct 2026). Votes per list stay
+    None until the committee's table is read (results_2026.py).
+    """
     from blocs import BLOC_COLS, labels
+    import results_2026 as R
     cfg = ELECTIONS[key]
     cands = read_candidates_2026()
     tracked = [p["name"] for p in cfg["parties"]]
+    R.self_check(tracked)
     if [x[0] for x in up["lists"]] != tracked:
         die("2026: site lists differ from the tracked poll lists")
     for name in up.get("withdrawn", {}):
         if name not in tracked:
             die("2026: withdrawn list %s is not a tracked list" % name)
+    elected = read_mk26()
     bloc_of_col = BLOC_COLS[key]
+    exits_all = R.EXIT
     lists, used_sections = [], set()
     for name, slug, sec, en_art, pnote in up["lists"]:
         if sec not in cands:
@@ -477,9 +506,19 @@ def upcoming(key, up, polls, summary, pblocs, positions, person):
         letters, people_ = cands[sec]
         if not people_:
             die("2026: no candidates for %s" % sec)
-        names = []
-        for nm, title in people_:
-            names.append(person(title) if title else person(nm, plain=True))
+        seats = R.SEATS[name]
+        if len(people_) < seats:
+            die("2026: %s has %d seats but %d candidates in the extract" % (name, seats, len(people_)))
+        # the elected = the first `seats` candidates; check them against the published list
+        mk_list = R.MK_LIST.get(sec, name)
+        got = elected.get(mk_list, [])
+        if len(got) != seats:
+            die("2026: %s: %d elected in mk26_raw.txt, %d seats" % (name, len(got), seats))
+        for i, (nm, _title) in enumerate(people_[:seats]):
+            if norm_name(nm) != norm_name(got[i]) and (mk_list, i + 1) not in R.SPELLING:
+                die("2026: %s place %d: candidate %r, elected list %r" % (name, i + 1, nm, got[i]))
+        names = [person(t) if t else person(nm, plain=True) for nm, t in people_]
+        members = names[:seats]
         party_cols = [pp for pp in cfg["parties"] if pp["name"] == name][0]["cols"]
         blocs_ = {bloc_of_col[c] for c in party_cols}
         if len(blocs_) != 1:
@@ -491,19 +530,25 @@ def upcoming(key, up, polls, summary, pblocs, positions, person):
         pos = dict(en=ptext, he=exp[1], lo=exp[2], hi=exp[3], note=" ".join(x for x in (exp[4], pnote) if x),
                    article=ptitle, url=en_url(ptitle))
         d = summary[key][name]
+        votes = R.VOTES[name] if R.VOTES else None
+        exits = {e["channel"]: e["seats"][name] for e in exits_all}
         lists.append(OrderedDict(
             id=slug, name=name, ballot=sec, letters=letters, leader=names[0],
-            seats=None, votes=None, pct=None, passed=None,
+            seats=seats, votes=votes,
+            pct=("%.2f%%" % (100.0 * votes / R.TOTALS["valid"])) if votes is not None else None,
+            passed=seats > 0,
             bloc=blocs_.pop(), blocNote="",
             rec=None, recNote="",
-            members=[], memberNotes={}, candidates=names,
+            members=members, memberNotes={}, candidates=names,
             heWiki=he_url(up["he_article"]) + "#" + sec.replace(" ", "_"), position=pos,
             polls=dict(overall=r1(d["overall"]),
                        outlets={o: dict(mean=r1(v), n=n) for o, (v, n) in d["by_outlet"].items()}),
-            exits={}, exitAvg=None,
+            exits=exits, exitAvg=r1(sum(exits.values()) / len(exits)),
             withdrawn=up.get("withdrawn", {}).get(name),
         ))
-    lists.sort(key=lambda l: -(l["polls"]["overall"] or 0))
+    if sum(l["seats"] for l in lists) != 120 or sum(len(l["members"]) for l in lists) != 120:
+        die("2026: seats or members do not add up to 120")
+    lists.sort(key=lambda l: (-l["seats"], -(l["polls"]["overall"] or 0)))
     small = [dict(name=sec, letters=letters, leader=(ppl[0][0] if ppl else ""), votes=None, pct=None)
              for sec, (letters, ppl) in cands.items() if sec not in used_sections and letters]
     order = ["C", "O"]
@@ -515,23 +560,44 @@ def upcoming(key, up, polls, summary, pblocs, positions, person):
             per_outlet[o] = {b: sum(x["sums"][b] for x in its) / len(its) for b in order}
             per_outlet[o]["n"] = len(its)
     blocs_polls = {b: r1(sum(v[b] for v in per_outlet.values()) / len(per_outlet)) for b in order}
+    bloc_of = {l["name"]: l["bloc"] for l in lists}
+    blocs_exit = {b: r1(sum(sum(s for p, s in e["seats"].items() if bloc_of[p] == b) for e in exits_all)
+                        / len(exits_all)) for b in order}
+    blocs_final = {b: sum(l["seats"] for l in lists if l["bloc"] == b) for b in order}
     last = max(p["end"] for p in polls if p["election"] == key)
+    t = R.TOTALS
+    info = dict(threshold=t["threshold"], seats_total=120, valid=t["valid"], eligible=t["eligible"],
+                valid_share=None, voters=t["voters"], invalid=t["invalid"], turnout=t["turnout"])
     return OrderedDict(
         key=key, label=cfg["label"], date=cfg["date"].isoformat(), knesset=up["knesset"],
-        windowStart=cfg["start"].isoformat(), upcoming=True, asOf=up["as_of"], lastPoll=last,
+        windowStart=cfg["start"].isoformat(), upcoming=False, asOf=up["as_of"], lastPoll=last,
+        finalAsOf=R.FINAL_AS_OF, votesPending=R.VOTES is None, membersByList=True,
         kind="pre", blocOrder=order, blocLabels={b: labels(key)[b] for b in order},
         government=None, outgoing=dict(name=up["outgoing"][0], src=up["outgoing"][1]),
-        info={}, links=up["links"],
+        info=info, links=R.RESULTS_LINKS + up["links"],
         heWiki=he_url(up["he_article"]), enWiki=en_url(up["en_article"]),
-        resultsSrc="", govSrc="", recSrc="", recNote="",
+        resultsSrc=R.RESULTS_SRC, govSrc=up["outgoing"][1], recSrc="", recNote="",
         pollSrc=cfg["source"], tracked=tracked,
-        notes=X.election_notes(key),
+        notes=X.election_notes(key) + NOTES_2026,
         lists=lists, small=small,
         blocs=dict(polls=blocs_polls, pollsByOutlet={o: {k: r1(v) for k, v in d.items()}
                                                      for o, d in per_outlet.items()},
-                   pollsUsed=len(items), exit=None, final=None),
-        exitPolls=[],
+                   pollsUsed=len(items), exit=blocs_exit, final=blocs_final),
+        exitPolls=[dict(channel=e["channel"], actual=e["actual"], version=e["version"],
+                        time=e["time"], source=e["source"], note=e["note"], seats=e["seats"],
+                        more=R.EXIT_SRC_EXTRA.get(e["channel"], []))
+                   for e in exits_all],
     )
+
+
+NOTES_2026 = [
+    "התוצאות: תוצאות האמת הסופיות שפרסמה ועדת הבחירות המרכזית בליל 29–30.10.2026, בכפוף לתיקונים קלים; "
+    "הן יוגשו לנשיא ב-4.11.2026.",
+    "מספר הקולות לכל רשימה יתווסף כשטבלת הוועדה תיקרא; בינתיים מוצגים המושבים וסכומי הקולות שהוועדה הודיעה עליהם.",
+    "הנבחרים: המקומות הראשונים בכל רשימה לפי מספר המושבים, לפני השבעת הכנסת; נבדקו מול רשימת 120 הנבחרים שפורסמה.",
+    "גושים: עד שתושבע ממשלה – מפלגות הממשלה ה-37 (הממשלה היוצאת) מול כל שאר הרשימות (החלטתך, 30.10.2026).",
+    "מדגמים: הגרסה המאוחרת ביותר באותו לילה של כאן 11, חדשות 12 וחדשות 13 (החלטתך: בלי ערוץ 14 ו-i24NEWS).",
+]
 
 
 def write_js(path, var, obj):

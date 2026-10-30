@@ -22,12 +22,18 @@
     "<h1>" + esc(A.electionTitle(e)) + "</h1>" +
     '<p class="lede" style="margin-top:6px">' + esc(A.fmtDate(e.date)) + "</p>" +
     '<dl class="facts">' +
-    "<div><dt>בעלי זכות בחירה</dt><dd>" + A.fmtInt(info.eligible) + "</dd></div>" +
-    "<div><dt>קולות כשרים</dt><dd>" + A.fmtInt(info.valid) + ' <span class="small">(' + A.pctOf(info.valid, info.eligible) + " מבעלי זכות הבחירה)</span></dd></div>" +
+    (info.eligible != null ?
+      "<div><dt>בעלי זכות בחירה</dt><dd>" + A.fmtInt(info.eligible) + "</dd></div>" +
+      "<div><dt>קולות כשרים</dt><dd>" + A.fmtInt(info.valid) + ' <span class="small">(' + A.pctOf(info.valid, info.eligible) + " מבעלי זכות הבחירה)</span></dd></div>" :
+      "<div><dt>שיעור ההצבעה</dt><dd>" + esc(info.turnout) + "</dd></div>" +
+      "<div><dt>קולות כשרים</dt><dd>" + A.fmtInt(info.valid) + ' <span class="small">(מתוך ' + A.fmtInt(info.voters) + " מצביעים)</span></dd></div>") +
     "<div><dt>אחוז החסימה</dt><dd>" + esc(info.threshold.replace(/\s*\(.*\)/, "")) + "</dd></div>" +
     "<div><dt>רשימות שהתמודדו</dt><dd>" + (e.lists.length + e.small.length) + "</dd></div>" +
-    "<div><dt>הממשלה שהוקמה</dt><dd>" + (e.government ? esc(e.government.name) + ", " + esc(A.fmtDate(e.government.date)) : "לא הוקמה ממשלה; נקבעו בחירות חוזרות") + "</dd></div>" +
+    (e.kind === "pre" ? "<div><dt>הממשלה</dt><dd>טרם הוקמה; " + esc(e.outgoing.name) + " ממשיכה לכהן</dd></div>" :
+      "<div><dt>הממשלה שהוקמה</dt><dd>" + (e.government ? esc(e.government.name) + ", " + esc(A.fmtDate(e.government.date)) : "לא הוקמה ממשלה; נקבעו בחירות חוזרות") + "</dd></div>") +
     "</dl>" +
+    (e.finalAsOf ? '<p class="small result-note"><span class="chip pre">תוצאות האמת</span> תוצאות האמת הסופיות של ועדת הבחירות המרכזית (' + esc(A.fmtDate(e.finalAsOf)) +
+      "), בכפוף לתיקונים קלים לפני ההגשה לנשיא." + (e.votesPending ? " מספר הקולות לכל רשימה עוד לא נכלל באתר." : "") + "</p>" : "") +
     '<div class="leaders" style="--n:' + inK.length + '">' + inK.map(function (l) {
       return '<a href="' + A.partyHref(key, l.id) + '" style="--pc:' + A.partyColor(l) + '">' + A.portrait(l.leader, A.partyColor(l)) +
         '<span class="row"><span><span class="nm">' + esc(A.displayName(l.leader)) + '</span><br><span class="party">' + esc(l.name) + '</span></span><span class="seats">' + l.seats + "</span></span></a>";
@@ -46,11 +52,12 @@
     '<section class="block"><div class="wrap"><header><h2>הכנסת שנבחרה</h2><p>כל עיגול הוא מושב. הרשימות מסודרות משמאל לימין לפי המיקום הפוליטי שלהן</p></header>' +
     '<div class="parl"><figure><div class="toggle" role="group" aria-label="צביעת המושבים">' +
     '<button type="button" aria-pressed="true" data-mode="position">לפי ימין-שמאל</button>' +
-    '<button type="button" aria-pressed="false" data-mode="bloc">' + (e.kind === "rec" ? "לפי ההמלצות לנשיא" : "לפי קואליציה ואופוזיציה") + "</button></div>" +
+    '<button type="button" aria-pressed="false" data-mode="bloc">' + (e.kind === "rec" ? "לפי ההמלצות לנשיא" : e.kind === "pre" ? "לפי הממשלה היוצאת" : "לפי קואליציה ואופוזיציה") + "</button></div>" +
     '<div data-hemi>' + A.hemicycle(e) + "</div>" +
     '<figcaption class="axis-note">המיקום הפוליטי לקוח מתיבת המידע של כל רשימה בוויקיפדיה האנגלית. רשימה בלי מיקום במקור מוצגת באפור, בקצה השמאלי של הקשת.' +
     " בתצוגה השנייה המושבים מקובצים לפי גוש (" + esc(e.blocLabels.C) + " מימין), ובתוך כל גוש לפי המיקום הפוליטי." +
-    (e.kind === "rec" ? " במערכת זו לא הוקמה ממשלה, ולכן החלוקה השנייה היא לפי ההמלצות לנשיא." : "") + "</figcaption></figure>" +
+    (e.kind === "rec" ? " במערכת זו לא הוקמה ממשלה, ולכן החלוקה השנייה היא לפי ההמלצות לנשיא." :
+      e.kind === "pre" ? " עוד לא הוקמה ממשלה, ולכן החלוקה השנייה היא מפלגות " + esc(e.outgoing.name) + " מול כל שאר הרשימות." : "") + "</figcaption></figure>" +
     '<div><ul class="seat-legend">' + legend + "</ul>" +
     '<p class="small" style="margin-top:10px">עיגול מלא בצבע: ' + esc(e.blocLabels.C) + ". עיגול עם טבעת: " + esc(e.blocLabels.O) + (e.blocOrder.indexOf("N") >= 0 ? " או " + esc(e.blocLabels.N) : "") + ".</p></div>" +
     "</div></div></section>";
@@ -60,7 +67,7 @@
     var p = l.polls ? l.polls.overall : null;
     var diff = p != null ? Math.round((l.seats - p) * 10) / 10 : null;
     return "<tr" + (l.seats ? "" : ' class="below"') + '><td><a class="rowlink party-cell" href="' + A.partyHref(key, l.id) + '">' + A.slip(l, "sm") + "<span>" + esc(l.name) + "</span></a></td>" +
-      "<td>" + esc(A.displayName(l.leader)) + '</td><td class="n"><b>' + l.seats + '</b></td><td class="n">' + A.fmtInt(l.votes) + '</td><td class="n">' + esc(l.pct) + "</td>" +
+      "<td>" + esc(A.displayName(l.leader)) + '</td><td class="n"><b>' + l.seats + '</b></td><td class="n">' + A.fmtInt(l.votes) + '</td><td class="n">' + esc(l.pct || "—") + "</td>" +
       '<td class="n">' + A.fmtSeats(p) + '</td><td class="n">' + A.fmtSeats(l.exitAvg) + "</td>" +
       '<td class="n ' + (diff == null ? "" : diff > 0 ? "delta-pos" : diff < 0 ? "delta-neg" : "") + '">' + (diff == null ? "—" : '<span dir="ltr">' + (diff > 0 ? "+" : diff < 0 ? "−" : "") + A.fmtSeats(Math.abs(diff)) + "</span>") + "</td>" +
       "<td>" + A.blocChip(e, l.bloc) + "</td></tr>";
@@ -76,14 +83,16 @@
     (e.small.length ? '<details class="more"><summary>עוד ' + e.small.length + " רשימות שהתמודדו ולא עברו את אחוז החסימה</summary>" +
       '<div class="table-scroll" style="margin-top:8px"><table class="data"><thead><tr><th>אותיות</th><th>שם הרשימה בפתק</th><th>ראש הרשימה</th><th class="n">קולות</th><th class="n">אחוז</th></tr></thead><tbody>' +
       e.small.map(function (s) {
-        return "<tr><td><b>" + esc(s.letters) + '</b></td><td class="wrapcell">' + esc(s.name) + "</td><td>" + esc(s.leader) + '</td><td class="n">' + A.fmtInt(s.votes) + '</td><td class="n">' + esc(s.pct) + "</td></tr>";
+        return "<tr><td><b>" + esc(s.letters) + '</b></td><td class="wrapcell">' + esc(s.name) + "</td><td>" + esc(s.leader) + '</td><td class="n">' + A.fmtInt(s.votes) + '</td><td class="n">' + esc(s.pct || "—") + "</td></tr>";
       }).join("") + "</tbody></table></div></details>" : "") +
     "</div></section>";
 
   /* ---------------------------------------------------------------- blocs */
   var blocs =
-    '<section class="block"><div class="wrap"><header><h2>' + (e.kind === "rec" ? "גושי ההמלצות: סקרים, מדגמים ותוצאה" : "קואליציה ואופוזיציה: סקרים, מדגמים ותוצאה") + "</h2>" +
-    "<p>" + (e.kind === "rec" ? "לפי ההמלצות לנשיא אחרי הבחירות" : "לפי הרכב " + esc(e.government.name) + " בהשבעתה") + "</p></header>" +
+    '<section class="block"><div class="wrap"><header><h2>' + (e.kind === "rec" ? "גושי ההמלצות: סקרים, מדגמים ותוצאה" :
+      e.kind === "pre" ? "הממשלה היוצאת מול השאר: סקרים, מדגמים ותוצאה" : "קואליציה ואופוזיציה: סקרים, מדגמים ותוצאה") + "</h2>" +
+    "<p>" + (e.kind === "rec" ? "לפי ההמלצות לנשיא אחרי הבחירות" : e.kind === "pre" ? "מפלגות " + esc(e.outgoing.name) + " מול כל השאר, עד שתושבע ממשלה חדשה" :
+      "לפי הרכב " + esc(e.government.name) + " בהשבעתה") + "</p></header>" +
     A.blocLegend(e) +
     '<div class="bars" style="max-width:820px">' +
     [["סקרים", e.blocs.polls], ["מדגמים", e.blocs.exit], ["תוצאה", e.blocs.final]].map(function (r) {
@@ -95,7 +104,8 @@
       return "<tr><td>" + r[0] + "</td>" + e.blocOrder.map(function (b) { return '<td class="n">' + A.fmtSeats(r[1][b]) + "</td>"; }).join("") + "</tr>";
     }).join("") + "</tbody></table></div>" +
     '<p class="small" style="margin-top:6px">ממוצע הסקרים: סכום הגוש בכל סקר, ממוצע לכל גוף, ואז ממוצע הגופים; רק סקרים שמסתכמים ב-120. ' +
-    "“לא נכנסו לכנסת” = מנדטים שהסקרים והמדגמים נתנו לרשימות שבסוף לא עברו את אחוז החסימה.</p>" +
+    (e.blocOrder.indexOf("X") >= 0 ? "“לא נכנסו לכנסת” = מנדטים שהסקרים והמדגמים נתנו לרשימות שבסוף לא עברו את אחוז החסימה." :
+      "“" + esc(e.blocLabels.O) + "” כולל גם רשימות שלא עברו את אחוז החסימה.") + "</p>" +
     (lists.some(function (l) { return l.blocNote; }) ? '<ul class="notes" style="margin-top:10px">' + lists.filter(function (l) { return l.blocNote; }).map(function (l) {
       return "<li><b>" + esc(l.name) + ":</b> " + esc(l.blocNote) + "</li>";
     }).join("") + "</ul>" : "") +
@@ -109,7 +119,8 @@
     var sa = groups[a].reduce(function (s, l) { return s + l.seats; }, 0), sb = groups[b].reduce(function (s, l) { return s + l.seats; }, 0);
     return sb - sa;
   });
-  var recs =
+  var hasRec = inK.some(function (l) { return l.rec; });
+  var recs = !hasRec ? "" :
     '<section class="block"><div class="wrap"><header><h2>ההמלצות לנשיא</h2><p>על מי המליצה כל רשימה להטיל את הרכבת הממשלה</p></header>' +
     '<div class="rec-groups">' + recOrder.map(function (r) {
       var seats = groups[r].reduce(function (s, l) { return s + l.seats; }, 0);
@@ -138,8 +149,8 @@
     e.links.map(function (l) { return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a>"; }).join("") + "</div>" +
     '<h3 style="margin:16px 0 8px">עוד מקורות</h3><div class="sources">' +
     '<a href="' + esc(e.heWiki) + '" target="_blank" rel="noopener">הערך על הבחירות בוויקיפדיה העברית (תוצאות, אותיות, ראשי רשימות)</a>' +
-    '<a href="' + esc(e.resultsSrc) + '" target="_blank" rel="noopener">הערך על הבחירות בוויקיפדיה האנגלית</a>' +
-    '<a href="' + esc(e.govSrc) + '" target="_blank" rel="noopener">הרכב הממשלה / ההמלצות</a>' +
+    '<a href="' + esc(e.enWiki || e.resultsSrc) + '" target="_blank" rel="noopener">הערך על הבחירות בוויקיפדיה האנגלית</a>' +
+    '<a href="' + esc(e.govSrc) + '" target="_blank" rel="noopener">' + (e.kind === "pre" ? esc(e.outgoing.name) + " (הממשלה היוצאת)" : "הרכב הממשלה / ההמלצות") + "</a>" +
     '<a href="' + esc(e.pollSrc) + '" target="_blank" rel="noopener">טבלאות הסקרים</a></div></div>' +
     '<div><h3 style="margin-bottom:8px">הערות</h3><ul class="notes">' + e.notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + "</ul></div></div>" +
     "</div></section>";

@@ -283,23 +283,25 @@ EXTRA_LINKS = {
 }
 
 
-# ================================================================== 2026 (before the election)
-# Built by build_site_data.upcoming(); no results yet. Sources:
+# ================================================================== 2026
+# Built by build_site_data.election_2026(). Results, exit polls and the elected list are in
+# tools/scripts/results_2026.py (sources there). Sources of the rest:
 #   lists, ballot letters, candidates  -> data/he26_candidates_raw.txt (he-wiki rev 44066081,
 #                                          section per list, infobox list of candidates;
 #                                          checked again against rev 44093533 on 20 Oct 2026:
 #                                          same, except that rev 44093533 lists Sami Abu Shehadeh
 #                                          3rd on the Joint List although its text says he withdrew
 #                                          on 2 Oct - kept without him, user decision)
+#   elected (first N candidates)        -> checked against data/mk26_raw.txt
 #   political positions (new articles)  -> data/en_positions_2026_check.txt
 #   portraits of new candidates         -> data/img26_raw.txt (Wikidata P18 + Commons credits)
 #   polls                               -> data/raw_2026.txt (made by make_raw_2026.py)
-UPCOMING = {
+E2026 = {
     "2026": dict(
         knesset="26",
         he_article="הבחירות לכנסת העשרים ושש",
         en_article="2026 Israeli legislative election",
-        as_of="2026-10-24",            # the day the sources were read (shown as "updated")
+        as_of="2026-10-24",            # the day the poll sources were last read
         outgoing=("הממשלה ה-37", "https://en.wikipedia.org/wiki/Thirty-seventh_government_of_Israel"),
         links=[
             {"label": "רשימות המועמדים לכנסת ה-26 (ועדת הבחירות המרכזית, gov.il)",

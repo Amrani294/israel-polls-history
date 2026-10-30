@@ -187,7 +187,8 @@
     var foot = e.exitPolls.map(function (x) {
       var flag = x.version.indexOf("עדכון לילי") !== 0;
       return "<li><b>" + esc(x.actual) + "</b>: " + esc(x.version) + (x.time ? ", " + esc(x.time) : "") + (x.note ? ". " + esc(x.note) : "") +
-        ' <a href="' + esc(x.source) + '" target="_blank" rel="noopener">מקור</a>' + (flag ? ' <span class="chip" style="background:var(--flag)">לא העדכון הלילי</span>' : "") + "</li>";
+        ' <a href="' + esc(x.source) + '" target="_blank" rel="noopener">מקור</a>' +
+        (x.more || []).map(function (u, i) { return ' <a href="' + esc(u) + '" target="_blank" rel="noopener">מקור ' + (i + 2) + "</a>"; }).join("") + (flag ? ' <span class="chip" style="background:var(--flag)">לא העדכון הלילי</span>' : "") + "</li>";
     }).join("");
     return '<div class="table-scroll"><table class="data"><thead>' + head + "</thead><tbody>" + body + '</tbody></table></div><ul class="notes" style="margin-top:10px">' + foot + "</ul>";
   }
