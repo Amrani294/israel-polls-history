@@ -94,11 +94,11 @@ NO_EN = ("", "אין ערך בוויקיפדיה האנגלית", None, None, ""
 # Ra'am was grey everywhere). slug -> (Hebrew text, lo, hi, note). Applies to every election
 # where the slug appears; the page says it is the site's decision, not Wikipedia's.
 SITE_POSITION = {
-    "raam": ("שמאל עד שמאל קיצוני", -3, -2,
+    "raam": ("שמאל", -2, -2,
              "בתיבת המידע בוויקיפדיה האנגלית אין שדה מיקום פוליטי; המיקום הוא החלטה של האתר."),
-    "raam-balad": ("שמאל עד שמאל קיצוני", -3, -2,
+    "raam-balad": ("שמאל", -2, -2,
                    "אין ערך לרשימה בוויקיפדיה האנגלית; המיקום הוא החלטה של האתר, כמו לרע\"ם."),
-    "raam-taal": ("שמאל עד שמאל קיצוני", -3, -2,
+    "raam-taal": ("שמאל", -2, -2,
                   "אין ערך לרשימה בוויקיפדיה האנגלית, ובערך של רע\"ם אין שדה מיקום; המיקום הוא החלטה של האתר, כמו לרע\"ם."),
 }
 

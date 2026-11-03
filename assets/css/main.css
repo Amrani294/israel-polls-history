@@ -693,6 +693,7 @@ section.block > .wrap > header::after {
 .cp-all li b { font-family: var(--display); font-size: 1.35rem; text-align: end; }
 .cp-all li .small { grid-column: 1 / -1; color: var(--mute); margin: 0; }
 .cp-all li.few a, .cp-all li.few b { color: var(--mute); }
+.cp-all li.few .small { color: var(--left-deep); }
 .cp-meter { display: block; height: 10px; border-radius: 3px; background: var(--rule-2); overflow: hidden; }
 .cp-meter span { display: block; height: 100%; background: var(--pc); }
 .cp-all li.few .cp-meter span { opacity: 0.4; }
