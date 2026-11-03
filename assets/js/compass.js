@@ -52,6 +52,12 @@
   function answered() { return ans.filter(function (a) { return a != null; }).length; }
 
   /* ------------------------------------------------------------ the match */
+  // The answers sit on the anchors, but a list's score can sit between them (a 6). The answer
+  // nearest to the list's score counts as full agreement, so the closest possible answers give
+  // 100%; each point beyond that costs 10%.
+  function nearest(s) {
+    return AT.reduce(function (m, a) { return Math.min(m, Math.abs(a - s)); }, 10);
+  }
   function compute() {
     var user = [];
     ans.forEach(function (a, k) { if (a != null) user.push({ q: Q[k], v: AT[a] }); });
@@ -60,13 +66,12 @@
       user.forEach(function (u) {
         var s = p.sc[u.q.ind];
         if (s == null) return;
-        dist += Math.abs(u.v - s); n++;
+        dist += Math.max(0, Math.abs(u.v - s) - nearest(s)); n++;
       });
       return { p: p, n: n, cover: user.length ? n / user.length : 0, match: n ? 1 - dist / (10 * n) : null };
     });
     rows.forEach(function (r) { r.ok = r.match != null && r.cover >= MIN_COVER; });
-    // the full list is ordered by the match alone; a list with too few scores keeps its place
-    // there (marked), and only the top three skip it
+    // ordered by the match; lists with too few scores are shown apart, below the ranking
     rows.sort(function (a, b) {
       if (a.match == null || b.match == null) return (a.match == null) - (b.match == null);
       return (b.match - a.match) || (b.cover - a.cover) || (b.p.poll - a.p.poll);
@@ -91,9 +96,9 @@
     '<ol class="ax-rules">' +
     "<li>" + esc(AX.compass.intro) + "</li>" +
     "<li>כל תשובה מקבלת את הציון של העוגן שלה (0, 3, 5, 7 או 10), בדיוק כמו שדורגו הרשימות. בכל שאלה התשובות מסודרות מקצה לקצה; הכיוון מתחלף משאלה לשאלה, כדי שהמיקום על המסך לא ימשוך לצד אחד.</li>" +
-    "<li>ההתאמה לרשימה: 100% פחות המרחק הממוצע בין התשובה שלכם לציון של הרשימה, על השאלות שעניתם ושיש לרשימה עליהן ציון. מרחק של 10 נקודות (קצה מול קצה) = 0% בשאלה הזו. כל שאלה שווה.</li>" +
-    "<li>100% כמעט לא קורה: חלק מהציונים של הרשימות נמצאים בין העוגנים (למשל 6), והתשובות הן רק על העוגנים, כך שגם התשובה הכי קרובה רחוקה מהם בנקודה.</li>" +
-    "<li>רשימה שיש לה ציון על פחות מחצי מהשאלות שעניתם לא נכנסת לשלוש הראשונות, כי ההתאמה שלה מבוססת על מעט מדי. היא מופיעה ברשימה המלאה במקום שלה לפי ההתאמה, עם סימון.</li>" +
+    "<li>ההתאמה לרשימה מחושבת על השאלות שעניתם ושיש לרשימה עליהן ציון. בכל שאלה, התשובה הקרובה ביותר לציון של הרשימה היא התאמה מלאה, וכל נקודה מעבר לזה מורידה 10%. ההתאמה היא הממוצע על השאלות, וכל שאלה שווה.</li>" +
+    "<li>כך מי שבוחר בכל שאלה את התשובה הקרובה ביותר לרשימה מקבל 100%. למשל, לרשימה עם ציון 6 גם 5 וגם 7 הם התאמה מלאה, ו-3 רחוק ממנה בשתי נקודות נוספות (80% בשאלה הזו).</li>" +
+    "<li>רשימה שיש לה ציון על פחות מחצי מהשאלות שעניתם לא נכנסת לשלוש הראשונות, כי ההתאמה שלה מבוססת על מעט מדי. היא מופיעה ברשימה נפרדת מתחת לדירוג.</li>" +
     "<li>המיקום שלכם על כל ציר הוא ממוצע התשובות בציר, ונדרשות לפחות שתי תשובות בציר (כמו במפה).</li>" +
     "<li>החישוב משתמש רק בתשובות. אין שאלות על מגזר, גיל או מקום מגורים: שני אנשים שעונים אותו דבר מקבלים אותה תוצאה.</li>" +
     "<li>התשובות לא נשלחות לשום מקום ולא נשמרות. בעמוד התוצאה הן נכנסות לכתובת בדפדפן, כדי שאפשר יהיה לשתף; מי שמקבל את הקישור רואה את התשובות.</li>" +
@@ -154,18 +159,23 @@
         "<span>" + esc(a.hi) + "</span></div>" +
         (v == null ? '<p class="small">צריך לפחות שתי תשובות בציר הזה.</p>' : "") + "</div>";
     }).join("");
-    var all = res.rows.map(function (r) {
+    function row(r) {
       var w = r.match == null ? 0 : 100 * r.match;
       return '<li class="' + (r.ok ? "" : "few") + '"><a href="' + esc(r.p.href) + '">' + esc(r.p.l.name) + "</a>" +
         '<span class="cp-meter"><span style="width:' + w.toFixed(1) + "%;--pc:" + r.p.color + '"></span></span>' +
         "<b>" + (r.match == null ? "—" : pct(r.match)) + "</b>" +
-        (r.ok ? "" : '<span class="small">' + (r.match == null ? "אין ציון על אף אחת מהשאלות שעניתם" : "יש ציון רק על " + r.n + " מתוך " + res.user.length + " השאלות שעניתם, ולכן לא בשלוש הראשונות") + "</span>") + "</li>";
-    }).join("");
+        (r.ok ? "" : '<span class="small">' + (r.match == null ? "אין ציון על אף אחת מהשאלות שעניתם" : "נפסלה: יש לה ציון רק על " + r.n + " מתוך " + nq + " השאלות שעניתם") + "</span>") + "</li>";
+    }
+    var all = res.rows.filter(function (r) { return r.ok; }).map(row).join("");
+    var few = res.rows.filter(function (r) { return !r.ok; });
     return '<h2 class="cp-q" tabindex="-1">הרשימות הכי קרובות אליכם</h2>' +
       (top.length ? '<div class="cp-cards">' + cards + "</div>" : "<p>אין מספיק תשובות שיש עליהן ציון לרשימות. נסו לענות על עוד שאלות.</p>") +
       '<p class="small cp-warn">לא המלצת הצבעה: ההתאמה מבוססת רק על ' + nq + " תשובות ועל הערכה של האתר לעמדות הרשימות.</p>" +
       '<h3 class="cp-sub">המיקום שלכם על הצירים</h3><div class="ax-cards">' + pos + "</div>" +
       '<h3 class="cp-sub">כל הרשימות</h3><ol class="cp-all">' + all + "</ol>" +
+      (few.length ? '<h3 class="cp-sub">נפסלו מהדירוג</h3>' +
+        '<p class="small">לרשימות האלה יש ציון על פחות מחצי מהשאלות שעניתם, ולכן הן נפסלו מהדירוג: האחוז מוצג, אבל הוא מבוסס על מעט מדי שאלות.</p>' +
+        '<ul class="cp-all">' + few.map(row).join("") + "</ul>" : "") +
       '<div class="cp-nav"><button type="button" class="btn ghost" data-go="edit">חזרה לשאלות</button>' +
       '<button type="button" class="btn ghost" data-go="reset">להתחיל מחדש</button>' +
       '<button type="button" class="btn" data-go="copy">העתקת קישור לתוצאה</button><span class="small" data-copied role="status"></span></div>';
