@@ -19,16 +19,17 @@
 | `accuracy.html` | דיוק הסוקרים: הסקר האחרון של כל גוף מול התוצאה, וגם מדגמי ליל הבחירות |
 | `coalition.html?e=2022&m=result&l=likud,shas` | בונה קואליציות (הבחירה נשמרת בכתובת לשיתוף) |
 | `axes.html` | מפת הצירים של 2026: קובייה מסתובבת, שלושה מבטים שטוחים, טבלה, והשיטה עם העוגנים |
+| `compass.html?a=…` | מצפן פוליטי: 11 שאלות (אחת לכל מדד), ובסוף שלוש הרשימות הכי קרובות באחוזי התאמה (התשובות בכתובת לשיתוף) |
 | `about.html` | שיטה, מקורות וזכויות תמונות |
 | `assets/css/main.css` | עיצוב |
 | `assets/js/common.js` | פונקציות משותפות: צבעים, פתקים, קשת המושבים, כותרת |
 | `assets/js/pollsview.js` | חלונית/עמוד הסקרים |
 | `assets/js/axesview.js` | מפת הצירים: חלקים משותפים לעמוד המפה ולתעודת הזהות |
-| `assets/js/home.js`, `election.js`, `party.js`, `polls-page.js`, `accuracy.js`, `coalition.js`, `axes.js`, `about.js` | קוד לכל עמוד |
+| `assets/js/home.js`, `election.js`, `party.js`, `polls-page.js`, `accuracy.js`, `coalition.js`, `axes.js`, `compass.js`, `about.js` | קוד לכל עמוד |
 | `assets/img/og.png` | תמונת התצוגה המקדימה בשיתוף (נוצרת ב-`tools/scripts/make_og_image.py`) |
 | `data/elections.js` | מערכות, רשימות, נבחרים, מיקום פוליטי, גושים, מדגמים |
 | `data/polls.js` | כל הסקרים (430 רשומות סקר-גוף, מהן 58 של 2026), כל אחת עם מצב הבדיקה מול הפרסום המקורי |
-| `data/axes.js` | מפת הצירים: הציונים, המדדים, הנימוקים והמקורות (נבנה מ-`tools/data/axes_2026.txt`) |
+| `data/axes.js` | מפת הצירים: הציונים, המדדים, הנימוקים והמקורות (נבנה מ-`tools/data/axes_2026.txt`), ושאלות המצפן |
 | `data/people.js` | תמונות (קישור לוויקישיתוף), צלם ורישיון |
 | `data/meta.js` | שמות הגופים, מועמדי ההמלצות וסיכום בדיקת הסקרים מול המקור |
 | `downloads/polls-2009-2022.xlsx` | קובץ האקסל עם הגרפים ומפת הגושים (2009–2022) |

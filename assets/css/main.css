@@ -617,7 +617,7 @@ section.block > .wrap > header::after {
   background: linear-gradient(90deg, #e9ecf2, #d3d8e2); margin-top: 6px; }
 .ax-track.unknown { background: repeating-linear-gradient(90deg, #d3d8e2 0 6px, transparent 6px 11px); }
 .ax-dot { position: absolute; top: -4px; width: 14px; height: 14px; border-radius: 50%; background: var(--pc); border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.12); }
-[dir="rtl"] .ax-track, .ax-track { direction: ltr; }
+/* 0 sits at the start (right), next to the low-end label (יוני / ליברלי / סוציאליסטי) */
 .ax-table td.ax-cell { min-width: 8rem; }
 .ax-table td.ax-cell b { font-family: var(--display); font-size: 1.35rem; font-weight: 700; }
 .ax-table td.ax-cell.unk b { font-family: inherit; font-size: var(--step--1); color: var(--mute); font-weight: 500; }
@@ -648,3 +648,50 @@ section.block > .wrap > header::after {
 .ax-ind .src { white-space: normal; }
 .ax-ind .src a { color: var(--mute); font-size: 0.8rem; }
 .ax-ind li.none .nm, .ax-ind li.none .sc, .ax-ind li.none .tx { color: var(--mute); font-weight: 400; }
+
+/* ------------------------------------------------------------------ political compass (compass.js) */
+.cp { max-width: 760px; }
+.cp-prog { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: var(--step--1); color: var(--mute); margin-bottom: 12px; }
+.cp-bar { flex: 1 1 100%; height: 5px; border-radius: 999px; background: var(--rule-2); overflow: hidden; }
+.cp-bar span { display: block; height: 100%; background: var(--ink); }
+.cp-q { font-size: clamp(1.7rem, 4.4vw, 2.3rem); margin-bottom: 14px; }
+.cp-q:focus { outline: none; }
+.cp-opts { display: grid; gap: 8px; }
+.cp-opt { text-align: start; background: var(--slip); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; cursor: pointer; line-height: 1.45; box-shadow: var(--shadow-slip); }
+.cp-opt:hover { border-color: var(--ink-2); }
+.cp-opt[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: #fff; }
+.cp-imp { margin-top: 12px; background: transparent; border: 1px dashed var(--ink-2); border-radius: 999px; padding: 5px 14px; font-size: var(--step--1); cursor: pointer; }
+.cp-imp[aria-pressed="true"] { background: var(--flag); border-style: solid; border-color: var(--ink); font-weight: 600; }
+.cp-imp:disabled { opacity: 0.45; cursor: default; }
+.cp-nav { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 18px; }
+.cp-nav .btn:disabled { opacity: 0.45; cursor: default; }
+.cp-link { background: none; border: 0; padding: 4px 2px; color: var(--right-deep); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-size: var(--step--1); }
+.cp-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 820px) { .cp-cards { grid-template-columns: 1fr; } }
+.cp-card { position: relative; background: var(--slip); border: 1px solid var(--rule); border-top: 5px solid var(--pc); border-radius: 10px; padding: 14px 16px; box-shadow: var(--shadow-slip); min-width: 0; }
+.cp-rank { position: absolute; inset-inline-end: 14px; top: 8px; font-family: var(--display); font-size: 2rem; color: var(--rule); line-height: 1; }
+.cp-who { display: flex; align-items: center; gap: 10px; font-weight: 600; padding-inline-end: 28px; }
+.cp-who a { color: var(--ink); text-decoration: none; }
+.cp-pct { font-family: var(--display); font-size: 3.2rem; font-weight: 700; line-height: 1; margin: 10px 0 4px; }
+.cp-warn { margin-top: 12px; }
+.cp-sub { font-size: 1.7rem; margin: 26px 0 10px; }
+.cp-cmp summary { cursor: pointer; font-size: var(--step--1); font-weight: 600; }
+.cp-cmp ul { list-style: none; margin: 8px 0 0; padding: 0; }
+.cp-cmp li { display: grid; gap: 2px; padding: 8px 0; border-top: 1px solid var(--rule-2); }
+.cp-cmp .nm { font-weight: 600; font-size: 0.9rem; }
+.cp-cmp .tx { font-size: 0.8rem; color: var(--mute); }
+.cp-scale { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--mute); }
+.cp-track { position: relative; display: block; height: 6px; border-radius: 999px; background: var(--rule-2); min-width: 60px; margin: 6px 8px; }
+.cp-you, .cp-them { position: absolute; top: -5px; width: 16px; height: 16px; border-radius: 50%; }
+.cp-them { background: var(--pc); border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.12); }
+.cp-you { border: 3px solid var(--ink); background: transparent; }
+.cp-all { list-style: none; margin: 0; padding: 0; max-width: 760px; }
+.cp-all li { display: grid; grid-template-columns: minmax(7rem, 12rem) minmax(0, 1fr) 3rem; gap: 2px 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--rule-2); }
+.cp-all li a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.92rem; }
+.cp-all li b { font-family: var(--display); font-size: 1.35rem; text-align: end; }
+.cp-all li .small { grid-column: 1 / -1; color: var(--mute); margin: 0; }
+.cp-all li.few a, .cp-all li.few b { color: var(--mute); }
+.cp-meter { display: block; height: 10px; border-radius: 3px; background: var(--rule-2); overflow: hidden; }
+.cp-meter span { display: block; height: 100%; background: var(--pc); }
+.cp-all li.few .cp-meter span { opacity: 0.4; }
+@media (max-width: 620px) { .cp-all li { grid-template-columns: minmax(0, 1fr) 3rem; } .cp-all li .cp-meter { grid-column: 1 / -1; grid-row: 2; } }
