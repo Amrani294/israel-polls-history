@@ -146,6 +146,16 @@ def read_positions():
     return pos
 
 
+def site_position(slug, pos):
+    """The site's own position (sitecfg.SITE_POSITION) replaces a missing Wikipedia one."""
+    if slug not in S.SITE_POSITION:
+        return pos
+    if pos["lo"] is not None:
+        die("site position for %s, but Wikipedia now gives one (%r): ask Yonatan" % (slug, pos["en"]))
+    he, lo, hi, note = S.SITE_POSITION[slug]
+    return dict(en="", he=he, lo=lo, hi=hi, note=note, article="", url="", site=True)
+
+
 # ------------------------------------------------------------------ 2026 sources
 def read_candidates_2026():
     """section -> (letters, [(name, he-wiki title or '')]) from the he-wiki infoboxes."""
@@ -305,6 +315,7 @@ def main(site):
                 pos = dict(en="", he=S.NO_EN[1], lo=None, hi=None, note="", article="", url="")
             if S.EN_NOTE.get(slug):
                 pos["note"] = (pos["note"] + " " if pos["note"] else "") + S.EN_NOTE[slug]
+            pos = site_position(slug, pos)
             # polls and exit polls
             tracked = name in [p["name"] for p in cfg["parties"]]
             pavg = None
@@ -529,6 +540,7 @@ def election_2026(key, up, polls, summary, pblocs, positions, person):
             die("position text changed for %s: %r vs %r" % (en_art, ptext, exp[0]))
         pos = dict(en=ptext, he=exp[1], lo=exp[2], hi=exp[3], note=" ".join(x for x in (exp[4], pnote) if x),
                    article=ptitle, url=en_url(ptitle))
+        pos = site_position(slug, pos)
         d = summary[key][name]
         votes = R.VOTES[name] if R.VOTES else None
         exits = {e["channel"]: e["seats"][name] for e in exits_all}

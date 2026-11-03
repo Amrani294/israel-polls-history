@@ -90,6 +90,18 @@ POSITION = {
 }
 NO_EN = ("", "אין ערך בוויקיפדיה האנגלית", None, None, "")
 
+# A position set by the site where the English Wikipedia infobox gives none (Yonatan, 3.11.2026:
+# Ra'am was grey everywhere). slug -> (Hebrew text, lo, hi, note). Applies to every election
+# where the slug appears; the page says it is the site's decision, not Wikipedia's.
+SITE_POSITION = {
+    "raam": ("שמאל עד שמאל קיצוני", -3, -2,
+             "בתיבת המידע בוויקיפדיה האנגלית אין שדה מיקום פוליטי; המיקום הוא החלטה של האתר."),
+    "raam-balad": ("שמאל עד שמאל קיצוני", -3, -2,
+                   "אין ערך לרשימה בוויקיפדיה האנגלית; המיקום הוא החלטה של האתר, כמו לרע\"ם."),
+    "raam-taal": ("שמאל עד שמאל קיצוני", -3, -2,
+                  "אין ערך לרשימה בוויקיפדיה האנגלית, ובערך של רע\"ם אין שדה מיקום; המיקום הוא החלטה של האתר, כמו לרע\"ם."),
+}
+
 # slug -> (Hebrew Wikipedia article, English Wikipedia article or None)
 PARTY = {
     "likud": ("הליכוד", "Likud"),
@@ -133,8 +145,6 @@ PARTY = {
 EN_OVERRIDE = {("2021", "blue-white"): "Blue and White (political party)"}
 EN_NOTE = {
     "otzma-leisrael": "בוויקיפדיה האנגלית 'עוצמה לישראל' מפנה לערך של עוצמה יהודית (אותה מפלגה, ששינתה את שמה).",
-    "raam-taal": "אין ערך נפרד לרשימה בוויקיפדיה האנגלית; בערך של רע\"מ אין שדה מיקום פוליטי.",
-    "raam-balad": "אין ערך נפרד לרשימה בוויקיפדיה האנגלית.",
     "am-shalem": "בוויקיפדיה האנגלית 'עם שלם' מפנה לרשימת מפלגות קטנות, בלי שדה מיקום פוליטי.",
 }
 

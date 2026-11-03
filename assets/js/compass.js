@@ -65,9 +65,10 @@
       return { p: p, n: n, cover: user.length ? n / user.length : 0, match: n ? 1 - dist / (10 * n) : null };
     });
     rows.forEach(function (r) { r.ok = r.match != null && r.cover >= MIN_COVER; });
+    // the full list is ordered by the match alone; a list with too few scores keeps its place
+    // there (marked), and only the top three skip it
     rows.sort(function (a, b) {
-      if (a.ok !== b.ok) return a.ok ? -1 : 1;
-      if (a.match == null || b.match == null) return a.match == null ? 1 : -1;
+      if (a.match == null || b.match == null) return (a.match == null) - (b.match == null);
       return (b.match - a.match) || (b.cover - a.cover) || (b.p.poll - a.p.poll);
     });
     // the respondent's place on each axis: mean of the answers on it; fewer than two = unknown, as on the map
@@ -92,7 +93,7 @@
     "<li>כל תשובה מקבלת את הציון של העוגן שלה (0, 3, 5, 7 או 10), בדיוק כמו שדורגו הרשימות. בכל שאלה התשובות מסודרות מקצה לקצה; הכיוון מתחלף משאלה לשאלה, כדי שהמיקום על המסך לא ימשוך לצד אחד.</li>" +
     "<li>ההתאמה לרשימה: 100% פחות המרחק הממוצע בין התשובה שלכם לציון של הרשימה, על השאלות שעניתם ושיש לרשימה עליהן ציון. מרחק של 10 נקודות (קצה מול קצה) = 0% בשאלה הזו. כל שאלה שווה.</li>" +
     "<li>100% כמעט לא קורה: חלק מהציונים של הרשימות נמצאים בין העוגנים (למשל 6), והתשובות הן רק על העוגנים, כך שגם התשובה הכי קרובה רחוקה מהם בנקודה.</li>" +
-    "<li>רשימה שיש לה ציון על פחות מחצי מהשאלות שעניתם לא נכנסת לשלוש הראשונות, כי ההתאמה שלה מבוססת על מעט מדי. היא מופיעה ברשימה המלאה עם סימון.</li>" +
+    "<li>רשימה שיש לה ציון על פחות מחצי מהשאלות שעניתם לא נכנסת לשלוש הראשונות, כי ההתאמה שלה מבוססת על מעט מדי. היא מופיעה ברשימה המלאה במקום שלה לפי ההתאמה, עם סימון.</li>" +
     "<li>המיקום שלכם על כל ציר הוא ממוצע התשובות בציר, ונדרשות לפחות שתי תשובות בציר (כמו במפה).</li>" +
     "<li>החישוב משתמש רק בתשובות. אין שאלות על מגזר, גיל או מקום מגורים: שני אנשים שעונים אותו דבר מקבלים אותה תוצאה.</li>" +
     "<li>התשובות לא נשלחות לשום מקום ולא נשמרות. בעמוד התוצאה הן נכנסות לכתובת בדפדפן, כדי שאפשר יהיה לשתף; מי שמקבל את הקישור רואה את התשובות.</li>" +
@@ -158,7 +159,7 @@
       return '<li class="' + (r.ok ? "" : "few") + '"><a href="' + esc(r.p.href) + '">' + esc(r.p.l.name) + "</a>" +
         '<span class="cp-meter"><span style="width:' + w.toFixed(1) + "%;--pc:" + r.p.color + '"></span></span>' +
         "<b>" + (r.match == null ? "—" : pct(r.match)) + "</b>" +
-        (r.ok ? "" : '<span class="small">' + (r.match == null ? "אין ציון על אף אחת מהשאלות שעניתם" : "יש ציון רק על " + r.n + " מהשאלות שעניתם") + "</span>") + "</li>";
+        (r.ok ? "" : '<span class="small">' + (r.match == null ? "אין ציון על אף אחת מהשאלות שעניתם" : "יש ציון רק על " + r.n + " מתוך " + res.user.length + " השאלות שעניתם, ולכן לא בשלוש הראשונות") + "</span>") + "</li>";
     }).join("");
     return '<h2 class="cp-q" tabindex="-1">הרשימות הכי קרובות אליכם</h2>' +
       (top.length ? '<div class="cp-cards">' + cards + "</div>" : "<p>אין מספיק תשובות שיש עליהן ציון לרשימות. נסו לענות על עוד שאלות.</p>") +
