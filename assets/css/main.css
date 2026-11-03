@@ -650,7 +650,7 @@ section.block > .wrap > header::after {
 .ax-ind li.none .nm, .ax-ind li.none .sc, .ax-ind li.none .tx { color: var(--mute); font-weight: 400; }
 
 /* ------------------------------------------------------------------ political compass (compass.js) */
-.cp { max-width: 760px; }
+.cp { max-width: 768px; }
 .cp-prog { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: var(--step--1); color: var(--mute); margin-bottom: 12px; }
 .cp-bar { flex: 1 1 100%; height: 5px; border-radius: 999px; background: var(--rule-2); overflow: hidden; }
 .cp-bar span { display: block; height: 100%; background: var(--ink); }
@@ -660,9 +660,11 @@ section.block > .wrap > header::after {
 .cp-opt { text-align: start; background: var(--slip); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; cursor: pointer; line-height: 1.45; box-shadow: var(--shadow-slip); }
 .cp-opt:hover { border-color: var(--ink-2); }
 .cp-opt[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: #fff; }
-.cp-imp { margin-top: 12px; background: transparent; border: 1px dashed var(--ink-2); border-radius: 999px; padding: 5px 14px; font-size: var(--step--1); cursor: pointer; }
-.cp-imp[aria-pressed="true"] { background: var(--flag); border-style: solid; border-color: var(--ink); font-weight: 600; }
-.cp-imp:disabled { opacity: 0.45; cursor: default; }
+.cp-stage { position: relative; overflow: hidden; touch-action: pan-y; padding: 4px; margin: -4px; }
+.cp-slide { will-change: transform; }
+.cp-slide.out { position: absolute; top: 4px; inset-inline: 4px; pointer-events: none; }
+.cp-hint { margin-top: 10px; }
+@media (hover: hover) and (pointer: fine) { .cp-hint { display: none; } }
 .cp-nav { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 18px; }
 .cp-nav .btn:disabled { opacity: 0.45; cursor: default; }
 .cp-link { background: none; border: 0; padding: 4px 2px; color: var(--right-deep); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-size: var(--step--1); }
