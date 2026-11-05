@@ -698,3 +698,82 @@ section.block > .wrap > header::after {
 .cp-meter span { display: block; height: 100%; background: var(--pc); }
 .cp-all li.few .cp-meter span { opacity: 0.4; }
 @media (max-width: 620px) { .cp-all li { grid-template-columns: minmax(0, 1fr) 3rem; } .cp-all li .cp-meter { grid-column: 1 / -1; grid-row: 2; } }
+
+/* ================================================================== home page (5.11.2026)
+   Centered hero: the latest chamber large with "120" in the middle, the two blocs on its sides
+   (each in the seat-weighted colour of its lists), the red-purple-blue axis bar under it. */
+.hero.hero-c { text-align: center; padding: 48px 0 36px; }
+.hero-c .eyebrow { margin: 0 auto; font-size: var(--step--1); font-weight: 700; letter-spacing: 0.06em; color: var(--ink-2); }
+.hero-c h1 { margin: 8px auto 0; max-width: 16ch; font-size: clamp(3.2rem, 8.5vw, 6.6rem); }
+.hero-c .lede { margin: 16px auto 0; max-width: 62ch; }
+.hc-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px) minmax(0, 1fr); gap: 24px; align-items: end; margin-top: 34px; }
+.hc-chamber { display: block; text-decoration: none; color: inherit; }
+.hc-chamber svg { width: 100%; height: auto; display: block; }
+.hc-chamber .sum { font-family: var(--display); text-anchor: middle; fill: var(--ink); }
+.hero-c .hc-chamber svg .sum { font-size: 52px; font-weight: 700; }
+.hc-bloc { display: grid; justify-items: center; gap: 4px; padding-bottom: 14px; }
+.hc-bloc .big { font-family: var(--display); font-weight: 700; font-size: clamp(4.6rem, 9vw, 7rem); line-height: 0.8; color: var(--bc); }
+.hc-bloc .lbl { font-size: var(--step-0); color: var(--ink-2); }
+.hero-c .axis-legend { margin: 22px auto 0 !important; max-width: 640px !important; }
+.hc-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 640px; margin: 26px auto 0; }
+.hc-stats > div { display: grid; gap: 2px; background: var(--slip); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 10px; }
+.hc-stats > div.final { border: 2px solid var(--ink); padding: 11px 9px; }
+.hc-stats .k { font-size: var(--step--1); color: var(--mute); }
+.hc-stats .v { font-family: var(--display); font-weight: 700; font-size: 2.8rem; line-height: 1; }
+.hc-cap { margin: 8px auto 0; }
+.hero-c .kicker-row { justify-content: center; }
+
+/* recommendations to the President (latest election) */
+.rec-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.rec-card { display: grid; gap: 4px; align-content: start; background: var(--slip); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; box-shadow: var(--shadow-slip); }
+.rec-card .n { font-family: var(--display); font-weight: 700; font-size: 4rem; line-height: 0.85; }
+.rec-card .who { font-weight: 700; font-size: 1.1rem; }
+.rec-card .of { font-size: var(--step--1); color: var(--mute); }
+.rec-card.none .n { color: var(--mute); }
+.rec-card .lists { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.rec-card .lists a { text-decoration: none; }
+.rec-card .lists a:hover { border-color: var(--ink); color: var(--ink); }
+
+/* scoreboard (latest election) */
+.scores { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+.score { display: grid; gap: 4px; align-content: start; background: var(--slip); border: 1px solid var(--rule); border-top: 4px solid var(--pc);
+  border-radius: 10px; padding: 12px 14px 14px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow-slip);
+  transition: border-color .15s ease, transform .15s ease; }
+.score:hover { border-color: var(--ink); border-top-color: var(--pc); transform: translateY(-2px); color: var(--ink); }
+.score .top { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; margin-bottom: 4px; }
+.score .n { font-family: var(--display); font-weight: 700; font-size: 3.4rem; line-height: 0.8; }
+.score .nm { font-weight: 600; }
+.score .d { font-size: var(--step--1); font-weight: 700; color: var(--mute); }
+.score .d.up { color: var(--right-deep); } .score .d.down { color: var(--left-deep); }
+.score .rec { font-size: var(--step--1); color: var(--ink-2); }
+
+/* nine elections: three by three on wide screens */
+@media (min-width: 981px) { .strip { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* the three largest poll surprises, large; the next six, three to a row */
+@media (min-width: 981px) { .surprises:not(.top3) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.surprises.top3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-bottom: 14px; }
+.surprise.big { grid-template-columns: auto 1fr; grid-template-areas: "d d" "slip txt"; row-gap: 14px; padding: 20px; }
+.surprise.big .d { grid-area: d; font-size: 5rem; justify-self: start; }
+.surprise.big .slip { grid-area: slip; }
+.surprise.big .txt { grid-area: txt; }
+
+/* political compass call to action */
+.cta-band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 28px;
+  background: var(--ink); color: #fff; border-radius: 14px; padding: 26px 30px; }
+.cta-band h2 { color: #fff; }
+.cta-band p { margin: 6px 0 0; color: #d3d8e5; }
+.cta-band .kicker-row { margin-top: 0; }
+.btn.light { background: #fff; color: var(--ink); }
+.btn.light:hover { background: var(--focus); color: var(--ink); }
+.btn.ghost.light { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5); }
+.btn.ghost.light:hover { background: #fff; color: var(--ink); }
+
+@media (max-width: 620px) {
+  .hc-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; margin-top: 24px; }
+  .hc-chamber { grid-column: 1 / -1; grid-row: 1; }
+  .hc-bloc { padding-bottom: 0; }
+  .hc-stats .v { font-size: 2.2rem; }
+  .cta-band { padding: 22px 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .score { transition: none; } }

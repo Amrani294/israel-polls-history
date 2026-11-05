@@ -1,4 +1,5 @@
-/* Home: the chamber today, the eight elections, party trajectories, poll surprises, blocs. */
+/* Home: the latest chamber (hero), recommendations, scoreboard, the elections, party trajectories,
+   poll surprises, blocs, and a call to the political compass. */
 (function () {
   "use strict";
   var A = window.App, esc = A.esc;
@@ -102,9 +103,9 @@
       });
     });
     all.sort(function (a, b) { return Math.abs(b.d) - Math.abs(a.d); });
-    return all.slice(0, 8).map(function (s) {
+    return all.slice(0, 9).map(function (s, i) {
       var up = s.d > 0;
-      return '<a class="surprise" style="--pc:' + A.partyColor(s.l) + '" href="' + A.partyHref(s.e.key, s.l.id) + '">' + A.slip(s.l, "sm") +
+      return (i === 3 ? '</div><div class="surprises">' : "") + '<a class="surprise' + (i < 3 ? " big" : "") + '" style="--pc:' + A.partyColor(s.l) + '" href="' + A.partyHref(s.e.key, s.l.id) + '">' + A.slip(s.l, "sm") +
         '<span class="txt"><span class="t">' + esc(s.l.name) + '</span><span class="s">' + esc(A.shortWhen(s.e)) + '</span><span class="s">סקרים ' + A.fmtSeats(s.l.polls.overall) +
         " | קלפי " + s.l.seats + '</span></span><span class="d ' + (up ? "up" : "down") + '">' + (up ? "+" : "−") + A.fmtSeats(Math.abs(s.d)) + "</span></a>";
     }).join("");
@@ -119,6 +120,94 @@
           return '<div class="bar-wrap"><span class="bar-label">' + r[0] + "</span>" + A.blocBar(e, r[1]) + "</div>";
         }).join("") + "</div></div>";
     }).join("");
+  }
+
+  /* ---------------------------------------------------------------- hero: the latest chamber */
+  // seat-weighted mean of the lists' axis positions in a bloc (null if none has a position)
+  function blocMeanPos(e, b) {
+    var sum = 0, n = 0;
+    e.lists.forEach(function (l) {
+      var m = A.axisMid(l.position);
+      if (l.bloc === b && l.seats > 0 && m != null) { sum += m * l.seats; n += l.seats; }
+    });
+    return n ? sum / n : null;
+  }
+  function heroBloc(e, b) {
+    var m = blocMeanPos(e, b);
+    return '<div class="hc-bloc" style="--bc:' + (m == null ? "var(--ink)" : A.colorAt(m)) + '"><span class="big num">' + A.fmtSeats(e.blocs.final[b]) +
+      '</span><span class="lbl">' + esc(e.blocLabels[b]) + "</span></div>";
+  }
+  function hero(e) {
+    // the bloc whose lists sit further right goes on the right side of the page, next to its seats
+    var mc = blocMeanPos(e, "C"), mo = blocMeanPos(e, "O");
+    var rightFirst = mc == null || mo == null || mc >= mo;
+    var sideR = heroBloc(e, rightFirst ? "C" : "O"), sideL = heroBloc(e, rightFirst ? "O" : "C");
+    var stats = [["ממוצע הסקרים", e.blocs.polls.C], ["ממוצע המדגמים", e.blocs.exit.C], ["התוצאה", e.blocs.final.C]];
+    return '<section class="hero hero-c"><div class="wrap">' +
+      '<p class="eyebrow">הכנסת ה-' + esc(e.knesset) + " כפי שנבחרה · " + esc(A.fmtDate(e.date)) + "</p>" +
+      "<h1>מה אמרו הסקרים, ומה אמרה הקלפי</h1>" +
+      '<p class="lede">' + countText + " לכנסת, מ-" + esc(CHRONO[0].date.slice(0, 4)) + " ועד " + esc(e.date.slice(0, 4)) +
+      ": מי נבחר, איך התחלקה הכנסת בין ימין לשמאל ובין קואליציה לאופוזיציה, ומה אמרו הסקרים לפני כן.</p>" +
+      '<div class="hc-row">' + sideR +
+      '<a class="hc-chamber" href="' + A.electionHref(e.key) + '">' + A.hemicycle(e, { label: "הכנסת ה-" + e.knesset + " כפי שנבחרה, משמאל לימין" }) + "</a>" +
+      sideL + "</div>" +
+      axisLegend() +
+      '<div class="hc-stats">' + stats.map(function (s, i) {
+        return '<div class="' + (i === 2 ? "final" : "") + '"><span class="k">' + s[0] + '</span><span class="v num">' + A.fmtSeats(s[1]) + "</span></div>";
+      }).join("") + "</div>" +
+      '<p class="small hc-cap">מושבים ל' + esc(e.blocLabels.C) + "</p>" +
+      '<div class="kicker-row"><a class="btn" href="' + A.electionHref(e.key) + '">' + esc(A.electionTitle(e)) + '</a><a class="btn ghost" href="' + A.pageHref("polls") + '">ארכיון הסקרים</a></div>' +
+      "</div></section>";
+  }
+
+  /* ---------------------------------------------------------------- recommendations (latest) */
+  function recs(e) {
+    var inK = e.lists.filter(function (l) { return l.seats > 0; });
+    if (!inK.some(function (l) { return l.rec; })) return "";
+    var groups = {};
+    inK.forEach(function (l) { (groups[l.rec] = groups[l.rec] || []).push(l); });
+    function seatsOf(r) { return groups[r].reduce(function (s, l) { return s + l.seats; }, 0); }
+    var order = Object.keys(groups).sort(function (a, b) {
+      if (a === "-") return 1; if (b === "-") return -1;
+      return seatsOf(b) - seatsOf(a);
+    });
+    return '<section class="block"><div class="wrap"><header><h2>ההמלצות לנשיא</h2><p>על מי המליצה כל רשימה להטיל את הרכבת הממשלה</p></header>' +
+      '<div class="rec-cards">' + order.map(function (r) {
+        var n = seatsOf(r);
+        return '<div class="rec-card' + (r === "-" ? " none" : "") + '"><span class="n num">' + n + '</span><span class="who">' +
+          esc(r === "-" ? "לא המליצו על אף מועמד" : (A.META.candidates || {})[r]) + "</span>" +
+          '<span class="of">' + (n >= 61 ? "רוב של 61 ומעלה" : "מתוך 120") + "</span><span class=\"lists\">" +
+          groups[r].map(function (l) { return '<a class="chip" href="' + A.partyHref(e.key, l.id) + '">' + esc(l.name) + " " + l.seats + "</a>"; }).join("") +
+          "</span></div>";
+      }).join("") + "</div>" +
+      (e.recNote ? '<p class="small" style="margin-top:10px">' + esc(e.recNote) + "</p>" : "") +
+      "</div></section>";
+  }
+
+  /* ---------------------------------------------------------------- scoreboard (latest) */
+  function scoreboard(e) {
+    var inK = e.lists.filter(function (l) { return l.seats > 0; }).sort(function (a, b) { return b.seats - a.seats; });
+    return '<section class="block"><div class="wrap"><header><h2>לוח התוצאות</h2><p>מושבים בכנסת ה-' + esc(e.knesset) +
+      ", ומול ממוצע הסקרים בשלושת החודשים האחרונים</p></header>" +
+      '<div class="scores">' + inK.map(function (l) {
+        var d = l.polls && l.polls.overall != null ? l.seats - l.polls.overall : null;
+        var dTxt = d == null ? "" : Math.abs(d) < 0.05 ? "כמו בסקרים" :
+          (d > 0 ? "▲ " : "▼ ") + A.fmtSeats(Math.abs(d)) + " מול הסקרים";
+        return '<a class="score" href="' + A.partyHref(e.key, l.id) + '" style="--pc:' + A.partyColor(l) + '">' +
+          '<span class="top">' + A.slip(l, "md") + '<span class="n num">' + l.seats + "</span></span>" +
+          '<span class="nm">' + esc(l.name) + "</span>" +
+          (dTxt ? '<span class="d ' + (d > 0 ? "up" : d < 0 ? "down" : "") + '">' + dTxt + "</span>" : "") +
+          (l.rec ? '<span class="rec">' + esc(A.recText(l)) + "</span>" : "") + "</a>";
+      }).join("") + "</div></div></section>";
+  }
+
+  /* ---------------------------------------------------------------- compass call to action */
+  function compassBand() {
+    return '<section class="block"><div class="wrap"><div class="cta-band"><div>' +
+      "<h2>לאיזו רשימה אתה הכי קרוב?</h2>" +
+      "<p>המצפן הפוליטי מחזיר את שלוש הרשימות שהכי מתאימות לתשובות שלך, באחוזי התאמה.</p></div>" +
+      '<div class="kicker-row"><a class="btn light" href="' + A.pageHref("compass") + '">למצפן הפוליטי</a>' +
+      '<a class="btn ghost light" href="' + A.pageHref("coalition") + '">בונה קואליציות</a></div></div></div></section>';
   }
 
   /* ---------------------------------------------------------------- the next election */
@@ -146,16 +235,11 @@
   }
 
   main.innerHTML =
-    '<section class="hero"><div class="wrap"><div class="hero-grid"><div>' +
-    "<h1>היסטוריית הסקרים של ישראל</h1>" +
-    '<p class="lede" style="margin-top:14px">' + countText + " לכנסת, מ-" + esc(CHRONO[0].date.slice(0, 4)) + " ועד " + esc(latest.date.slice(0, 4)) + ': מי נבחר, איך התחלקה הכנסת בין ימין לשמאל ובין קואליציה לאופוזיציה, ומה אמרו הסקרים לפני כן. ' +
-    (UP.length ? "ולצידן הבחירות הקרובות, לכנסת ה-" + esc(UP[0].knesset) + ": הרשימות והסקרים עד היום." : "") + "</p>" +
-    axisLegend() +
-    '<div class="kicker-row"><a class="btn" href="' + A.electionHref(latest.key) + '">' + esc(A.electionTitle(latest)) + '</a><a class="btn ghost" href="' + A.pageHref("polls") + '">ארכיון הסקרים</a></div>' +
-    '</div><a class="hero-chamber" href="' + A.electionHref(latest.key) + '" style="text-decoration:none;color:inherit">' + A.hemicycle(latest, { label: "הכנסת ה-" + latest.knesset + " כפי שנבחרה" }) +
-    '<div class="cap"><b>הכנסת ה-' + esc(latest.knesset) + "</b><span>כפי שנבחרה, " + esc(A.fmtDate(latest.date)) + "</span></div></a>" +
-    "</div></div></section>" +
+    hero(latest) +
     UP.map(next).join("") +
+    recs(latest) +
+    scoreboard(latest) +
+    compassBand() +
 
     '<section class="block"><div class="wrap"><header><h2>' + countText + "</h2>" +
     '<p>לחיצה על מערכת פותחת את התוצאות, הרשימות והסקרים שלה</p></header>' +
@@ -165,7 +249,7 @@
     trajectories() + "</div></section>" +
 
     '<section class="block"><div class="wrap"><header><h2>הפתעות הקלפי</h2><p>הפערים הגדולים ביותר בין ממוצע הסקרים בשלושת החודשים האחרונים לבין התוצאה</p></header>' +
-    '<div class="surprises">' + surprises() + "</div>" +
+    '<div class="surprises top3">' + surprises() + "</div>" +
     '<p class="small" style="margin-top:10px">מחושב לרשימות שנכללו במעקב הסקרים. ממוצע הסקרים הוא ממוצע הגופים (כל גוף במשקל שווה).</p></div></section>' +
 
     '<section class="block"><div class="wrap"><header><h2>הסקרים מול הקלפי, לפי גושים</h2><p>ממוצע הסקרים, ממוצע המדגמים ותוצאת האמת</p></header>' +
