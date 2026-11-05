@@ -488,6 +488,16 @@ def read_mk26():
     return out
 
 
+def rec_of(name, seats):
+    """2026 recommendation to the President for a list (None for a list without seats)."""
+    import results_2026 as R
+    if not seats:
+        return None, ""
+    if name not in R.REC:
+        die("2026: no recommendation for %s (results_2026.REC)" % name)
+    return R.REC[name]
+
+
 def election_2026(key, up, polls, summary, pblocs, positions, person):
     """2026 after election day: results, the elected, exit polls; no government yet.
 
@@ -550,7 +560,7 @@ def election_2026(key, up, polls, summary, pblocs, positions, person):
             pct=("%.2f%%" % (100.0 * votes / R.TOTALS["valid"])) if votes is not None else None,
             passed=seats > 0,
             bloc=blocs_.pop(), blocNote="",
-            rec=None, recNote="",
+            rec=rec_of(name, seats)[0], recNote=rec_of(name, seats)[1],
             members=members, memberNotes={}, candidates=names,
             heWiki=he_url(up["he_article"]) + "#" + sec.replace(" ", "_"), position=pos,
             polls=dict(overall=r1(d["overall"]),
@@ -560,6 +570,11 @@ def election_2026(key, up, polls, summary, pblocs, positions, person):
         ))
     if sum(l["seats"] for l in lists) != 120 or sum(len(l["members"]) for l in lists) != 120:
         die("2026: seats or members do not add up to 120")
+    for nm in R.REC:
+        if R.SEATS.get(nm, 0) == 0:
+            die("2026: recommendation for %s, which has no seats" % nm)
+        if R.REC[nm][0] not in S.CANDIDATES:
+            die("2026: unknown candidate code %r for %s" % (R.REC[nm][0], nm))
     lists.sort(key=lambda l: (-l["seats"], -(l["polls"]["overall"] or 0)))
     small = [dict(name=sec, letters=letters, leader=(ppl[0][0] if ppl else ""), votes=None, pct=None)
              for sec, (letters, ppl) in cands.items() if sec not in used_sections and letters]
@@ -588,7 +603,7 @@ def election_2026(key, up, polls, summary, pblocs, positions, person):
         government=None, outgoing=dict(name=up["outgoing"][0], src=up["outgoing"][1]),
         info=info, links=R.RESULTS_LINKS + up["links"],
         heWiki=he_url(up["he_article"]), enWiki=en_url(up["en_article"]),
-        resultsSrc=R.RESULTS_SRC, govSrc=up["outgoing"][1], recSrc="", recNote="",
+        resultsSrc=R.RESULTS_SRC, govSrc=up["outgoing"][1], recSrc=R.REC_SRC, recNote=R.REC_NOTE,
         pollSrc=cfg["source"], tracked=tracked,
         notes=X.election_notes(key) + NOTES_2026,
         lists=lists, small=small,

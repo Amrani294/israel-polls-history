@@ -45,6 +45,32 @@ TOTALS = dict(
 
 VOTES = None            # list name -> votes, once read from the committee's table
 
+# ------------------------------------------------------------ recommendations to the President
+# Consultations at the President's Residence, 4-5 Nov 2026 (read on 5 Nov 2026, ~18:30).
+# list name -> (candidate code in sitecfg.CANDIDATES, note). Every list with seats needs one.
+#   הציונות הדתית וזהות, ש"ס, ישראל ביתנו (4.11): https://www.c14.co.il/article/1773811
+#   יהדות התורה (5.11, no one): https://www.mako.co.il/news-politics/2026_q4/liveblog-805432e23b9a1a1027.htm
+#   עוצמה יהודית (5.11): https://www.maariv.co.il/news/elections-2026/article-1384980
+#   הדמוקרטים (5.11): https://www.kikar.co.il/political-news/democrats-recommend-eisenkot-government-formation
+#   רע"ם (5.11, 12:27): https://www.walla.co.il/news/breaking-news/383960206
+#   הרשימה המשותפת (5.11): https://www.walla.co.il/news/politics/383960241
+#   ביחד, ישר!, הליכוד: their meetings were still to come (18:00, 19:15, 20:30); assigned by their
+#   public declarations (user decision, 5 Nov 2026): Bennett's statement
+#   https://www.walla.co.il/news/politics/383959711 ; ynet https://www.ynet.co.il/news/article/hj00k0yf6gg
+#   ("וכך ינהגו גם ביחד וישר! ... נתניהו, שיקבל גם את המלצת הליכוד").
+# Totals: Eisenkot 67, Netanyahu 46, no one 7 (as in the summary source, REC_SRC).
+_DECLARED = "שויכה לפי ההצהרה הפומבית, לפני הפגישה בבית הנשיא (5.11.2026)."
+REC = {
+    "הליכוד": ("N", _DECLARED), "ש\"ס": ("N", ""), "עוצמה יהודית": ("N", ""),
+    "הציונות הדתית וזהות": ("N", ""),
+    "ישר!": ("E", _DECLARED), "ביחד": ("E", _DECLARED), "ישראל ביתנו": ("E", ""),
+    "הדמוקרטים": ("E", ""), "רע\"ם": ("E", ""), "הרשימה המשותפת": ("E", ""),
+    "יהדות התורה": ("-", ""),
+}
+REC_SRC = "https://www.kikar.co.il/political-news/joint-list-recommends-eisenkot-government-formatio"
+REC_NOTE = ("סבב ההתייעצויות בבית הנשיא, 4–5.11.2026: 67 ממליצים על גדי איזנקוט, 46 על בנימין נתניהו, "
+            "ו-7 (יהדות התורה) לא המליצו על אף מועמד.")
+
 # Elected list: spelling differences between Kipa and the he-wiki candidate names
 # (normalised: no spaces, quotes, apostrophes or hyphens). (list, place) -> reason.
 SPELLING = {

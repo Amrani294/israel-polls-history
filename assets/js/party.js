@@ -42,7 +42,7 @@
   f.push(["אחוז מהקולות הכשרים", "<dd>" + esc(l.pct || "—") + "</dd>"]);
   f.push(["ראש הרשימה", "<dd>" + esc(A.displayName(l.leader)) + "</dd>"]);
   f.push([e.kind === "pre" ? "גוש (עד שתקום ממשלה)" : "מעמד אחרי הבחירות", "<dd>" + A.blocChip(e, l.bloc) + "</dd>"]);
-  f.push(["המלצה לנשיא", "<dd>" + esc(e.kind === "pre" && l.seats ? "ההמלצות עוד לא נמסרו" : A.recText(l)) + "</dd>"]);
+  f.push(["המלצה לנשיא", "<dd>" + esc(e.kind === "pre" && l.seats && !l.rec ? "ההמלצות עוד לא נמסרו" : A.recText(l)) + "</dd>"]);
   f.push(["ממוצע הסקרים", "<dd>" + (l.polls ? A.fmtSeats(l.polls.overall) : "—") + "</dd>"]);
   f.push(["ממוצע המדגמים", "<dd>" + A.fmtSeats(l.exitAvg) + "</dd>"]);
   }

@@ -29,7 +29,7 @@ GOVERNMENT = {
 
 # Candidates recommended to the President after the election, and where it was read.
 CANDIDATES = {"N": "בנימין נתניהו", "L": "ציפי לבני", "H": "יצחק הרצוג", "G": "בני גנץ",
-              "Y": "יאיר לפיד", "B": "נפתלי בנט", "-": "לא המליץ על אף מועמד"}
+              "Y": "יאיר לפיד", "B": "נפתלי בנט", "E": "גדי איזנקוט", "-": "לא המליץ על אף מועמד"}
 REC_SRC = {
     "2022": "https://en.wikipedia.org/wiki/Thirty-seventh_government_of_Israel",
     "2021": "https://en.wikipedia.org/wiki/Thirty-sixth_government_of_Israel",
