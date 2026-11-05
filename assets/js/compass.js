@@ -2,7 +2,12 @@
    matched against the scores of the 2026 lists. Nothing is sent or stored; the answers can be
    kept in the address (?a=...) so a result can be shared.
    The questions are slides: an answer moves on by itself, and one can swipe (or use the buttons
-   and the arrow keys) back and forth between questions already reached. */
+   and the arrow keys) back and forth between questions already reached.
+   Once started, the questionnaire takes over the screen (focus mode: the rest of the page is dimmed
+   and inert, Esc or "יציאה" leaves it); the result is shown back in the page.
+   The result can be shared as a PNG drawn here on a canvas (the top list and the main numbers)
+   together with a short message and a link to the questionnaire (Web Share API; elsewhere the
+   image is downloaded and the message copied). */
 (function () {
   "use strict";
   var A = window.App, esc = A.esc, V = window.AxesView;
@@ -32,8 +37,9 @@
 
   /* ------------------------------------------------------------ state */
   // ans[i] = null (skipped / not answered) or the answer index 0-4 (the order of the anchors)
-  // view = 0..N-1 (a question) or N (the result); far = the furthest question reached
-  var ans = [], view = 0, far = 0, busy = false, i;
+  // view = START (the start card), 0..N-1 (a question) or N (the result); far = the furthest question reached
+  var START = -1;
+  var ans = [], view = START, far = 0, busy = false, i;
   for (i = 0; i < N; i++) ans.push(null);
   var CODES = "abcde";
   function encode() { return ans.map(function (a) { return a == null ? "-" : CODES.charAt(a); }).join(""); }
@@ -85,7 +91,9 @@
   main.innerHTML =
     '<section class="e-head"><div class="wrap"><div class="bg-num" aria-hidden="true">%</div><h1>מצפן פוליטי</h1>' +
     '<p class="lede" style="margin-top:8px">' + N + " שאלות על שלושת הצירים של מפת הצירים: ביטחוני, חברתי וכלכלי. בסוף: שלוש הרשימות של הבחירות לכנסת ה-26 שהעמדות שלהן הכי קרובות לשלכם, באחוזי התאמה.</p></div></section>" +
-    '<section class="block" style="padding-top:18px"><div class="wrap"><div class="cp cp-stage" data-cp aria-live="polite"></div></div></section>' +
+    '<section class="block cp-sec" id="cp-sec" style="padding-top:18px" aria-label="שאלון המצפן הפוליטי"><div class="wrap cp-shell">' +
+    '<div class="cp-top"><span class="cp-top-t">מצפן פוליטי</span><button type="button" class="cp-close" data-close>יציאה <span aria-hidden="true">✕</span></button></div>' +
+    '<div class="cp cp-stage" data-cp aria-live="polite"></div></div></section>' +
     '<section class="block" id="method"><div class="wrap"><header><h2>איך זה מחושב</h2><p>אותם מדדים ועוגנים כמו במפת הצירים</p></header>' +
     '<ol class="ax-rules">' +
     "<li>" + esc(AX.compass.intro) + "</li>" +
@@ -95,11 +103,52 @@
     "<li>רשימה שיש לה ציון על פחות מחצי מהשאלות שעניתם לא נכנסת לשלוש הראשונות, כי ההתאמה שלה מבוססת על מעט מדי. היא מופיעה ברשימה נפרדת מתחת לדירוג.</li>" +
     "<li>המיקום שלכם על כל ציר הוא ממוצע התשובות בציר, ונדרשות לפחות שתי תשובות בציר (כמו במפה).</li>" +
     "<li>החישוב משתמש רק בתשובות. אין שאלות על מגזר, גיל או מקום מגורים: שני אנשים שעונים אותו דבר מקבלים אותה תוצאה.</li>" +
-    "<li>התשובות לא נשלחות לשום מקום ולא נשמרות. בעמוד התוצאה הן נכנסות לכתובת בדפדפן, כדי שאפשר יהיה לשתף; מי שמקבל את הקישור רואה את התשובות.</li>" +
+    "<li>התשובות לא נשלחות לשום מקום ולא נשמרות. בעמוד התוצאה הן נכנסות לכתובת בדפדפן; מי שמקבל את הכתובת הזו רואה את התשובות. כפתור השיתוף שולח, דרך האפליקציה שתבחרו, תמונה של התוצאה והודעה קצרה עם קישור לשאלון עצמו, בלי התשובות. התמונה נוצרת בדפדפן שלכם.</li>" +
     "</ol>" +
     '<p class="small">זו לא המלצת הצבעה. הציונים של הרשימות הם הערכה של האתר (עם מקור לכל ציון) ל-' + LISTS.length + " הרשימות שדורגו ב-2026. " +
     '<a href="' + A.pageHref("axes") + '#method">השיטה והעוגנים במפת הצירים</a></p></div></section>';
-  var stage = main.querySelector("[data-cp]");
+  var stage = main.querySelector("[data-cp]"), sec = main.querySelector("#cp-sec");
+
+  /* ------------------------------------------------------------ focus mode */
+  // While answering, the questionnaire is the only thing on the screen: the section becomes a
+  // full-screen layer over the dimmed page, and everything else is inert (no focus, no clicks).
+  var focused = false, inerted = [];
+  function enterFocus() {
+    if (focused) return;
+    focused = true;
+    document.body.classList.add("cp-focus");
+    sec.setAttribute("role", "dialog");
+    sec.setAttribute("aria-modal", "true");
+    var keep = function (el) { return el === main || el.contains(sec); };
+    [].slice.call(document.body.children).concat([].slice.call(main.children)).forEach(function (el) {
+      if (!keep(el) && !el.inert && el.tagName !== "SCRIPT") { el.inert = true; el.setAttribute("aria-hidden", "true"); inerted.push(el); }
+    });
+    sec.scrollTop = 0;
+  }
+  function exitFocus() {
+    if (!focused) return;
+    focused = false;
+    document.body.classList.remove("cp-focus");
+    sec.removeAttribute("role");
+    sec.removeAttribute("aria-modal");
+    inerted.forEach(function (el) { el.inert = false; el.removeAttribute("aria-hidden"); });
+    inerted = [];
+  }
+  sec.querySelector("[data-close]").addEventListener("click", function () { if (!busy) show(START, 0); });
+
+  /* ------------------------------------------------------------ the start card */
+  function startHTML() {
+    var n = answered();
+    return '<div class="cp-start">' +
+      '<p class="cp-start-k">' + N + " שאלות · ביטחון, חברה וכלכלה · כשתי דקות</p>" +
+      '<h2 class="cp-q" tabindex="-1">איזו רשימה הכי קרובה לעמדות שלכם?</h2>' +
+      "<p>עונים על השאלות, ובסוף מקבלים את שלוש הרשימות של הבחירות לכנסת ה-" + esc(e.knesset) + " שהכי מתאימות לכם, באחוזי התאמה, ואת המיקום שלכם על שלושת הצירים.</p>" +
+      '<div class="cp-nav">' +
+      (n ? '<button type="button" class="btn cp-go" data-go="resume">להמשיך מהשאלה ' + (Math.min(far, N - 1) + 1) + "</button>" +
+        '<button type="button" class="btn ghost" data-go="reset">להתחיל מחדש</button>' :
+        '<button type="button" class="btn cp-go" data-go="begin">להתחיל את השאלון</button>') +
+      "</div></div>";
+  }
 
   /* ------------------------------------------------------------ a question slide */
   function questionHTML(k) {
@@ -139,6 +188,7 @@
   }
   function resultHTML() {
     var res = compute(), top = res.rows.filter(function (r) { return r.ok; }).slice(0, 3), nq = res.user.length;
+    lastRes = { res: res, top: top };
     var cards = top.map(function (r, k) {
       return '<div class="cp-card" style="--pc:' + r.p.color + '"><div class="cp-rank">' + (k + 1) + "</div>" +
         '<div class="cp-who">' + A.slip(r.p.l) + '<a href="' + esc(r.p.href) + '">' + esc(r.p.l.name) + "</a></div>" +
@@ -172,29 +222,38 @@
         '<ul class="cp-all">' + few.map(row).join("") + "</ul>" : "") +
       '<div class="cp-nav"><button type="button" class="btn ghost" data-go="edit">חזרה לשאלות</button>' +
       '<button type="button" class="btn ghost" data-go="reset">להתחיל מחדש</button>' +
-      '<button type="button" class="btn" data-go="copy">העתקת קישור לתוצאה</button><span class="small" data-copied role="status"></span></div>';
+      (top.length ? '<button type="button" class="btn" data-share disabled>שיתוף התוצאה</button>' : "") +
+      '<span class="small" data-share-out role="status"></span></div>' +
+      (top.length ? '<div class="cp-share-prev" data-share-prev hidden><img alt="התמונה שתישלח בשיתוף: ' + esc(top[0].p.l.name) + ", " + pct(top[0].match) + ' התאמה"><p class="small">' +
+        'זו התמונה שתישלח, עם הודעה קצרה וקישור לשאלון. <a href="#" data-share-dl download>הורדת התמונה</a></p></div>' : "");
   }
 
   /* ------------------------------------------------------------ slides */
-  function slideHTML(v) { return v === N ? resultHTML() : questionHTML(v); }
+  var lastRes = null;
+  function slideHTML(v) { return v === START ? startHTML() : v === N ? resultHTML() : questionHTML(v); }
   function current() { return stage.querySelector(".cp-slide:not(.out)"); }
   function focusSlide(sl) {
     var h = sl.querySelector(".cp-q");
     if (h) h.focus({ preventScroll: true });
-    if (stage.getBoundingClientRect().top < 0) stage.scrollIntoView({ block: "start", behavior: REDUCED ? "auto" : "smooth" });
+    if (focused) sec.scrollTop = 0;
+    else if (stage.getBoundingClientRect().top < 0) stage.scrollIntoView({ block: "start", behavior: REDUCED ? "auto" : "smooth" });
   }
   // dir: 1 = forward (in a right-to-left page the next slide comes in from the left), -1 = back, 0 = no animation
   function show(v, dir) {
-    if (v < 0 || v > N) return;
+    if (v < START || v > N) return;
     if (v === N && answered() < MIN_ANSWERS) v = N - 1;
+    var wasFocused = focused;
+    if (v >= 0 && v < N) enterFocus(); else exitFocus();
+    if (focused !== wasFocused) dir = 0;      // entering or leaving the layer: no slide animation
     view = v;
-    if (v < N) far = Math.max(far, v);
+    if (v >= 0 && v < N) far = Math.max(far, v);
     setAddress(v === N);
     var old = current();
     var sl = document.createElement("div");
     sl.className = "cp-slide";
     sl.innerHTML = slideHTML(v);
     wire(sl);
+    if (v === N) prepareShare(sl);
     if (!old || !dir || REDUCED || !sl.animate) {
       if (old) old.remove();
       stage.appendChild(sl);
@@ -216,7 +275,7 @@
     anim.onfinish = finish;
     setTimeout(finish, 600);
   }
-  function canForward() { return view < N && (ans[view] != null || view < far); }
+  function canForward() { return view >= 0 && view < N && (ans[view] != null || view < far); }
   function forward() {
     if (view === N - 1) show(N, 1);
     else show(view + 1, 1);
@@ -243,16 +302,208 @@
         }
         else if (g === "done") show(N, 1);
         else if (g === "edit") show(N - 1, -1);
+        else if (g === "begin") show(0, 1);
+        else if (g === "resume") show(Math.min(far, N - 1), 1);
         else if (g === "reset") {
           for (var k = 0; k < N; k++) ans[k] = null;
           far = 0; show(0, -1);
-        } else if (g === "copy") {
-          var out = sl.querySelector("[data-copied]");
-          var ok = function () { out.textContent = "הקישור הועתק"; };
-          var fail = function () { out.textContent = "לא הצלחנו להעתיק; אפשר להעתיק את הכתובת מהדפדפן"; };
-          try { navigator.clipboard.writeText(location.href).then(ok, fail); } catch (err) { fail(); }
         }
       });
+    });
+  }
+
+  /* ------------------------------------------------------------ sharing the result */
+  // The link in the message leads to the questionnaire itself (not to the sender's answers).
+  var SITE = "https://pollsisraelhistory.netlify.app";
+  function quizURL() {
+    var base = /^https?:$/.test(location.protocol) ? location.origin : SITE;
+    return base + "/compass";
+  }
+  function shareText(top) {
+    return "יצא לי שהמפלגה שהכי מתאימה לי היא: " + top[0].p.l.name + " (" + pct(top[0].match) + " התאמה).\n" +
+      "ולכם? " + N + " שאלות קצרות על ביטחון, חברה וכלכלה, ותגלו איזו רשימה הכי קרובה לעמדות שלכם.\n" +
+      "היכנסו לשאלון: " + quizURL();
+  }
+
+  // colours of the site (main.css :root)
+  var INK = "#18203a", INK2 = "#4a5268", MUTE = "#6b7385", PAPER = "#f3f4f7", RULE = "#d8dce4";
+  var DISPLAY = "Karantina, 'IBM Plex Sans Hebrew', Arial, sans-serif", SANS = "'IBM Plex Sans Hebrew', Arial, sans-serif";
+  function rrect(c, x, y, w, h, r) {
+    c.beginPath();
+    c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r);
+    c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath();
+  }
+  // largest font size (down to min) at which text fits in maxW
+  function fitFont(c, text, font, size, maxW, min) {
+    for (; size > (min || 12); size -= 2) {
+      c.font = font(size);
+      if (c.measureText(text).width <= maxW) break;
+    }
+    return size;
+  }
+  function drawText(c, str, x, y, font, color, align, dir) {
+    c.font = font; c.fillStyle = color; c.textAlign = align || "right"; c.direction = dir || "rtl";
+    c.fillText(str, x, y);
+  }
+  // the ballot slip: white, the letters, a coloured edge at the bottom
+  function drawSlip(c, x, y, w, h, letters, color) {
+    c.save();
+    c.shadowColor = "rgba(24,32,58,0.18)"; c.shadowBlur = 18; c.shadowOffsetY = 6;
+    rrect(c, x, y, w, h, 8); c.fillStyle = "#fff"; c.fill();
+    c.restore();
+    c.save();
+    rrect(c, x, y, w, h, 8); c.clip();
+    c.fillStyle = color; c.fillRect(x, y + h - Math.round(h * 0.09), w, Math.round(h * 0.09));
+    c.restore();
+    rrect(c, x, y, w, h, 8); c.strokeStyle = RULE; c.lineWidth = 2; c.stroke();
+    var size = fitFont(c, letters, function (z) { return "700 " + z + "px " + DISPLAY; }, Math.round(h * 0.78), w - 28, 20);
+    drawText(c, letters, x + w / 2, y + h * 0.5 + size * 0.3, "700 " + size + "px " + DISPLAY, INK, "center");
+  }
+  function drawCard(c, x, y, w, h, r) {
+    c.save();
+    c.shadowColor = "rgba(24,32,58,0.14)"; c.shadowBlur = 24; c.shadowOffsetY = 8;
+    rrect(c, x, y, w, h, r); c.fillStyle = "#fff"; c.fill();
+    c.restore();
+    rrect(c, x, y, w, h, r); c.strokeStyle = RULE; c.lineWidth = 2; c.stroke();
+  }
+
+  // 1080 x 1350 (4:5, fits chats and Instagram). Returns a promise of { blob, url (data:) }.
+  function drawImage(res, top) {
+    var W = 1080, H = 1350, M = 72;
+    var fonts = document.fonts && document.fonts.load ? Promise.all([
+      document.fonts.load("700 100px Karantina"), document.fonts.load("400 30px 'IBM Plex Sans Hebrew'"),
+      document.fonts.load("600 30px 'IBM Plex Sans Hebrew'"), document.fonts.load("700 30px 'IBM Plex Sans Hebrew'")
+    ]).catch(function () { return null; }) : Promise.resolve();
+    return fonts.then(function () {
+      var cv = document.createElement("canvas");
+      cv.width = W; cv.height = H;
+      var c = cv.getContext("2d");
+      c.fillStyle = PAPER; c.fillRect(0, 0, W, H);
+
+      // header band, as on the site, with the left-centre-right stripe under it
+      c.fillStyle = INK; c.fillRect(0, 0, W, 168);
+      var sub = "מצפן פוליטי · הכנסת ה-" + e.knesset;
+      c.font = "500 30px " + SANS;
+      var subW = c.measureText(sub).width;
+      drawText(c, sub, M, 106, "500 30px " + SANS, "#dfe3ee", "left");
+      var bs = fitFont(c, "היסטוריית הסקרים של ישראל", function (z) { return "700 " + z + "px " + DISPLAY; }, 72, W - 2 * M - subW - 40, 30);
+      drawText(c, "היסטוריית הסקרים של ישראל", W - M, 110, "700 " + bs + "px " + DISPLAY, "#fff");
+      var stripe = [getCSS("--left", "#c42a3c"), getCSS("--centre", "#7b3fa8"), getCSS("--right", "#2350b8")];
+      stripe.forEach(function (col, k) { c.fillStyle = col; c.fillRect(k * W / 3, 168, W / 3 + 1, 12); });
+
+      drawText(c, "יצא לי שהמפלגה שהכי מתאימה לי היא:", W - M, 250, "600 40px " + SANS, INK2);
+
+      // the first list: slip on the right; name, and the match under it
+      var r1 = top[0], cy = 280, ch = 360;
+      drawCard(c, M, cy, W - 2 * M, ch, 28);
+      c.save(); rrect(c, M, cy, W - 2 * M, ch, 28); c.clip(); c.fillStyle = r1.p.color; c.fillRect(M, cy, W - 2 * M, 16); c.restore();
+      var sw = 230, sh = 178, sx = W - M - 44 - sw, sy = cy + 64;
+      drawSlip(c, sx, sy, sw, sh, r1.p.l.letters, r1.p.color);
+      var tx = sx - 40, maxW = tx - (M + 44);
+      var ns = fitFont(c, r1.p.l.name, function (z) { return "700 " + z + "px " + DISPLAY; }, 104, maxW, 36);
+      drawText(c, r1.p.l.name, tx, cy + 140, "700 " + ns + "px " + DISPLAY, INK);
+      var ptxt = pct(r1.match);
+      c.font = "600 42px " + SANS;
+      var mw = c.measureText("התאמה").width;
+      var ps = fitFont(c, ptxt, function (z) { return "700 " + z + "px " + DISPLAY; }, 190, maxW - mw - 24, 60);
+      c.font = "700 " + ps + "px " + DISPLAY;
+      var pw = c.measureText(ptxt).width;
+      drawText(c, ptxt, tx, cy + 300, "700 " + ps + "px " + DISPLAY, r1.p.color, "right", "ltr");
+      drawText(c, "התאמה", tx - pw - 24, cy + 290, "600 42px " + SANS, INK2);
+      drawText(c, "ציון על " + r1.n + " מתוך " + res.user.length + " השאלות שעניתי", W - M - 44, cy + ch - 26, "400 26px " + SANS, MUTE);
+
+      // the next two
+      if (top.length > 1) drawText(c, "ואחריה:", W - M, 700, "600 34px " + SANS, MUTE);
+      top.slice(1).forEach(function (r, k) {
+        var y = 720 + k * 116, h = 100;
+        drawCard(c, M, y, W - 2 * M, h, 20);
+        drawSlip(c, W - M - 24 - 110, y + 11, 110, 78, r.p.l.letters, r.p.color);
+        var x2 = W - M - 24 - 110 - 26;
+        c.font = "700 80px " + DISPLAY;
+        var p2 = c.measureText(pct(r.match)).width;
+        var s2 = fitFont(c, r.p.l.name, function (z) { return "700 " + z + "px " + SANS; }, 40, x2 - (M + 28 + p2 + 30), 20);
+        drawText(c, r.p.l.name, x2, y + 62, "700 " + s2 + "px " + SANS, INK);
+        drawText(c, pct(r.match), M + 28, y + 80, "700 80px " + DISPLAY, r.p.color, "left", "ltr");
+      });
+
+      // the respondent on the three axes (0 at the right, next to the low end, as on the site)
+      var ay = 1000;
+      drawText(c, "המיקום שלי על הצירים", W - M, ay, "700 32px " + SANS, INK);
+      var tR = W - M - 170, tL = M + 20;
+      AX.axes.forEach(function (a, k) {
+        var y = ay + 18 + k * 60, v = res.pos[a.key];
+        drawText(c, a.he, W - M, y + 30, "600 28px " + SANS, INK2);
+        rrect(c, tL, y + 16, tR - tL, 10, 5); c.fillStyle = "#e3e6ec"; c.fill();
+        drawText(c, a.lo, tR, y + 52, "400 20px " + SANS, MUTE);
+        drawText(c, a.hi, tL, y + 52, "400 20px " + SANS, MUTE, "left");
+        if (v == null) { drawText(c, "לא ידוע", (tR + tL) / 2, y + 12, "400 22px " + SANS, MUTE, "center"); return; }
+        var x = tR - (tR - tL) * v / 10;
+        c.beginPath(); c.arc(x, y + 21, 15, 0, 2 * Math.PI); c.fillStyle = INK; c.fill();
+        c.lineWidth = 4; c.strokeStyle = "#fff"; c.stroke();
+      });
+
+      // footer band: where to take it
+      c.fillStyle = INK; c.fillRect(0, H - 112, W, 112);
+      var host = quizURL().replace(/^https?:\/\//, "");
+      drawText(c, "גם אתם? " + host, W / 2, H - 58, "600 34px " + SANS, "#fff", "center");
+      drawText(c, "לא המלצת הצבעה · עמדות הרשימות: הערכה של האתר, עם מקור לכל ציון", W / 2, H - 22, "400 22px " + SANS, "#c9d0e0", "center");
+
+      var url = cv.toDataURL("image/png");
+      return new Promise(function (ok) {
+        cv.toBlob(function (blob) { ok({ blob: blob, url: url }); }, "image/png");
+      });
+    });
+  }
+  function getCSS(name, fb) {
+    var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return v || fb;
+  }
+
+  // The image is drawn as soon as the result shows, so that the share button can call
+  // navigator.share right inside the click (some browsers refuse it after an async step).
+  function prepareShare(sl) {
+    var btn = sl.querySelector("[data-share]");
+    if (!btn || !lastRes || !lastRes.top.length) return;
+    var out = sl.querySelector("[data-share-out]"), prev = sl.querySelector("[data-share-prev]");
+    var top = lastRes.top, msg = shareText(top), file = null, blobURL = null;
+    var name = "matzpen-" + top[0].p.l.id + ".png";
+    out.textContent = "מכינים את התמונה…";
+    drawImage(lastRes.res, top).then(function (img) {
+      if (!img.blob) throw new Error("no image");
+      file = new File([img.blob], name, { type: "image/png" });
+      blobURL = URL.createObjectURL(img.blob);
+      prev.querySelector("img").src = img.url;
+      var dl = prev.querySelector("[data-share-dl]");
+      dl.href = blobURL; dl.setAttribute("download", name);
+      prev.hidden = false;
+      btn.disabled = false;
+      out.textContent = "";
+    }).catch(function () {
+      out.textContent = "לא הצלחנו להכין את התמונה בדפדפן הזה.";
+    });
+    function copyMsg() {
+      try { return navigator.clipboard.writeText(msg); } catch (err) { return Promise.reject(err); }
+    }
+    // no file sharing here (most desktop browsers): download the image and copy the message
+    function fallback() {
+      var a = document.createElement("a");
+      a.href = blobURL; a.download = name;
+      document.body.appendChild(a); a.click(); a.remove();
+      copyMsg().then(function () {
+        out.textContent = "התמונה ירדה והטקסט של ההודעה הועתק: אפשר להדביק אותם בהודעה.";
+      }, function () {
+        out.textContent = "התמונה ירדה. הטקסט להודעה: " + msg;
+      });
+    }
+    btn.addEventListener("click", function () {
+      if (!file) return;
+      var data = { files: [file], text: msg, title: "המצפן הפוליטי" };
+      if (navigator.canShare && navigator.share && navigator.canShare(data)) {
+        navigator.share(data).then(function () { out.textContent = ""; }, function (err) {
+          if (err && err.name === "AbortError") return;       // closed the share sheet
+          fallback();
+        });
+      } else fallback();
     });
   }
 
@@ -262,7 +513,7 @@
   var drag = null, swiped = 0;
   function justSwiped() { return Date.now() - swiped < 400; }
   stage.addEventListener("pointerdown", function (ev) {
-    if (busy || ev.pointerType === "mouse" || view === N) return;
+    if (busy || ev.pointerType === "mouse" || view === N || view === START) return;
     drag = { x: ev.clientX, y: ev.clientY, dx: 0, on: false, id: ev.pointerId };
   });
   stage.addEventListener("pointermove", function (ev) {
@@ -295,7 +546,8 @@
   stage.addEventListener("pointerup", release);
   stage.addEventListener("pointercancel", release);
   document.addEventListener("keydown", function (ev) {
-    if (busy || view === N || ev.altKey || ev.ctrlKey || ev.metaKey) return;
+    if (ev.key === "Escape" && focused && !busy) { ev.preventDefault(); show(START, 0); return; }
+    if (busy || view === N || view === START || ev.altKey || ev.ctrlKey || ev.metaKey) return;
     if (!stage.contains(document.activeElement) && document.activeElement !== document.body) return;
     if (ev.key === "ArrowLeft" && canForward()) { ev.preventDefault(); forward(); }
     else if (ev.key === "ArrowRight" && view > 0) { ev.preventDefault(); show(view - 1, -1); }
@@ -305,6 +557,6 @@
   if (decode(A.qs("a", 20)) && answered() >= MIN_ANSWERS) { far = N - 1; show(N, 0); }
   else {
     for (i = 0; i < N; i++) ans[i] = null;
-    show(0, 0);
+    show(START, 0);
   }
 })();

@@ -777,3 +777,48 @@ section.block > .wrap > header::after {
   .cta-band { padding: 22px 18px; }
 }
 @media (prefers-reduced-motion: reduce) { .score { transition: none; } }
+
+/* ================================================================== compass: start card, focus mode, sharing (5.11.2026) */
+.cp-start { position: relative; overflow: hidden; background: var(--ink); color: #fff; border-radius: 16px; padding: 38px 28px 32px; text-align: center; }
+.cp-start::before { content: ""; position: absolute; inset-inline: 0; top: 0; height: 6px;
+  background: linear-gradient(90deg, var(--left) 0 33%, var(--centre) 33% 67%, var(--right) 67% 100%); }
+.cp-start .cp-q { color: #fff; font-size: clamp(2.4rem, 6vw, 3.6rem); margin: 6px 0 12px; }
+.cp-start p { margin: 0 auto; max-width: 56ch; color: #d3d8e5; }
+.cp-start .cp-start-k { font-size: var(--step--1); font-weight: 700; letter-spacing: 0.04em; color: #fff; }
+.cp-start .cp-nav { justify-content: center; margin-top: 24px; }
+.cp-start .btn.ghost { color: #fff; border-color: rgba(255,255,255,0.5); }
+.cp-start .btn.ghost:hover { background: #fff; color: var(--ink); }
+.btn.cp-go { background: #fff; color: var(--ink); font-size: 1.05rem; padding: 12px 28px; }
+.btn.cp-go:hover { background: var(--focus); color: var(--ink); }
+
+/* focus mode: while answering, the questionnaire is a layer over the dimmed page */
+.cp-top { display: none; }
+body.cp-focus { overflow: hidden; }
+.cp-focus .cp-sec { position: fixed; inset: 0; z-index: 60; overflow-y: auto; overscroll-behavior: contain;
+  padding: 28px 12px 40px !important; background: rgba(24, 32, 58, 0.74);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.cp-focus .cp-shell { position: relative; overflow: hidden; max-width: 820px; margin: 0 auto; padding: 22px 30px 30px;
+  background: var(--paper); border-radius: 18px; box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.55); animation: cp-in .22s ease-out; }
+.cp-focus .cp-shell::before { content: ""; position: absolute; inset-inline: 0; top: 0; height: 6px;
+  background: linear-gradient(90deg, var(--left) 0 33%, var(--centre) 33% 67%, var(--right) 67% 100%); }
+.cp-focus .cp-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 4px 0 16px; }
+.cp-top-t { font-family: var(--display); font-weight: 700; font-size: 1.9rem; line-height: 1; }
+.cp-close { min-height: 40px; padding: 0 14px; border: 1px solid var(--rule); border-radius: 999px; background: var(--slip); cursor: pointer; font-size: var(--step--1); font-weight: 600; color: var(--ink); }
+.cp-close:hover { border-color: var(--ink); }
+.cp-focus .cp { max-width: none; }
+.cp-focus .cp-q { font-size: clamp(2.2rem, 5.4vw, 3.2rem); margin-bottom: 18px; }
+.cp-focus .cp-opts { gap: 10px; }
+.cp-focus .cp-opt { padding: 15px 18px; font-size: 1.05rem; }
+@keyframes cp-in { from { opacity: 0; transform: translateY(14px) scale(0.985); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .cp-focus .cp-shell { animation: none; } }
+@media (max-width: 620px) {
+  .cp-focus .cp-sec { padding: 10px 6px 24px !important; }
+  .cp-focus .cp-shell { padding: 16px 16px 22px; border-radius: 14px; }
+  .cp-start { padding: 32px 18px 26px; }
+}
+
+/* sharing the result: the image that will be sent */
+.cp-share-prev { display: flex; align-items: center; gap: 16px; margin-top: 16px; }
+.cp-share-prev[hidden] { display: none; }
+.cp-share-prev img { width: 168px; height: auto; border-radius: 8px; border: 1px solid var(--rule); box-shadow: var(--shadow-slip); }
+.cp-share-prev p { margin: 0; max-width: 40ch; }
