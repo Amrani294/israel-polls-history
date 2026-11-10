@@ -164,7 +164,8 @@
     return seats;
   }
   function seatFill(list, mode) {
-    if (mode === "bloc") return { C: "#18203a", O: "#b9bfcc", N: "#e1e4ea", X: "#eceef2" }[list.bloc];
+    // CSS variables, so the dark theme can change them (used inside style="fill:…")
+    if (mode === "bloc") return { C: "var(--coal)", O: "var(--opp)", N: "var(--bloc-n)", X: "var(--soft)" }[list.bloc];
     return partyColor(list);
   }
   // returns an SVG string; seats carry data-id so the page can highlight a list
@@ -176,9 +177,9 @@
     order.forEach(function (l) {
       for (var s = 0; s < l.seats; s++, k++) {
         var p = seats[k];
-        var stroke = mode === "bloc" && l.bloc === "N" ? ' stroke="#9aa1b0" stroke-width="1"' : "";
+        var stroke = mode === "bloc" && l.bloc === "N" ? ";stroke:var(--bloc-n-edge);stroke-width:1" : "";
         out.push('<circle class="seat" data-id="' + esc(l.id) + '" cx="' + (p.x * S).toFixed(1) + '" cy="' + (p.y * S).toFixed(1) +
-          '" r="' + rr.toFixed(1) + '" fill="' + seatFill(l, mode) + '"' + stroke + "><title>" + esc(l.name) + " – " + l.seats + " מושבים</title></circle>");
+          '" r="' + rr.toFixed(1) + '" style="fill:' + seatFill(l, mode) + stroke + '"><title>' + esc(l.name) + " – " + l.seats + " מושבים</title></circle>");
       }
     });
     var label = "";
@@ -186,10 +187,10 @@
       if (mode === "bloc") {
         var c = e.blocs.final.C, o = e.blocs.final.O;
         label = '<text class="sum" x="0" y="-20" font-size="30" font-weight="900" text-anchor="middle" direction="ltr">' + o + "–" + c + "</text>" +
-          '<text x="0" y="-2" text-anchor="middle" font-size="11" fill="#6b7385">' + esc(e.blocLabels.C) + " מול " + esc(e.blocLabels.O) + "</text>";
+          '<text x="0" y="-2" text-anchor="middle" font-size="11" style="fill:var(--mute)">' + esc(e.blocLabels.C) + " מול " + esc(e.blocLabels.O) + "</text>";
       } else {
         label = '<text class="sum" x="0" y="-18" font-size="32" font-weight="900" text-anchor="middle">120</text>' +
-          '<text x="0" y="-2" text-anchor="middle" font-size="11" fill="#6b7385">מושבים</text>';
+          '<text x="0" y="-2" text-anchor="middle" font-size="11" style="fill:var(--mute)">מושבים</text>';
       }
     }
     var vb = (-S * 1.06).toFixed(0) + " " + (-S * 1.06).toFixed(0) + " " + (S * 2.12).toFixed(0) + " " + (S * 1.1).toFixed(0);
@@ -225,8 +226,9 @@
     ].map(function (n) {
       return '<a href="' + pageHref(n[0]) + '"' + (n[2] === active ? ' aria-current="page"' : "") + (n[2] === "polls" ? ' class="nav-polls"' : "") + ">" + n[1] + "</a>";
     }).join("");
+    // the accessibility button sits after the menu (a11y.js builds its panel)
     return '<header class="site-head"><div class="wrap"><a class="brand" href="' + pageHref("index") + '">היסטוריית הסקרים של ישראל</a>' +
-      '<nav class="nav" aria-label="ניווט ראשי">' + nav + "</nav></div></header>";
+      '<nav class="nav" aria-label="ניווט ראשי">' + nav + "</nav>" + (window.A11y ? window.A11y.button() : "") + "</div></header>";
   }
   function footer() {
     return '<footer class="site-foot"><div class="wrap">' +
@@ -240,6 +242,7 @@
   }
   function mount(active) {
     document.body.insertAdjacentHTML("afterbegin", header(active));
+    if (window.A11y) window.A11y.bind(document.body.querySelector(".site-head"));
     document.body.insertAdjacentHTML("beforeend", footer());
   }
   function notFound(main, msg) {

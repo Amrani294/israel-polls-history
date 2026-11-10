@@ -19,7 +19,11 @@
   var MIN_ANSWERS = 3;     // fewer answers = no result
   var MIN_COVER = 0.5;     // a list enters the top three only if it has scores on half the answers
   var ADVANCE_MS = 260;    // the chosen answer stays visible this long before the next slide
-  var REDUCED = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  // reduced motion: the device setting or "stop animations" in the accessibility panel (asked each time,
+  // so switching it on mid-questionnaire takes effect at once)
+  function reduced() {
+    return window.A11y ? window.A11y.reducedMotion() : !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }
 
   var IND = Object.create(null);   // indicator key -> { he, anchors }
   AX.axes.forEach(function (a) { a.indicators.forEach(function (ind) { IND[ind.key] = ind; }); });
@@ -236,7 +240,7 @@
     var h = sl.querySelector(".cp-q");
     if (h) h.focus({ preventScroll: true });
     if (focused) sec.scrollTop = 0;
-    else if (stage.getBoundingClientRect().top < 0) stage.scrollIntoView({ block: "start", behavior: REDUCED ? "auto" : "smooth" });
+    else if (stage.getBoundingClientRect().top < 0) stage.scrollIntoView({ block: "start", behavior: reduced() ? "auto" : "smooth" });
   }
   // dir: 1 = forward (in a right-to-left page the next slide comes in from the left), -1 = back, 0 = no animation
   function show(v, dir) {
@@ -254,7 +258,7 @@
     sl.innerHTML = slideHTML(v);
     wire(sl);
     if (v === N) prepareShare(sl);
-    if (!old || !dir || REDUCED || !sl.animate) {
+    if (!old || !dir || reduced() || !sl.animate) {
       if (old) old.remove();
       stage.appendChild(sl);
       if (old) focusSlide(sl);
@@ -288,7 +292,7 @@
         ans[view] = Number(b.getAttribute("data-o"));
         sl.querySelectorAll(".cp-opt").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
         busy = true;
-        setTimeout(function () { busy = false; forward(); }, REDUCED ? 0 : ADVANCE_MS);
+        setTimeout(function () { busy = false; forward(); }, reduced() ? 0 : ADVANCE_MS);
       });
     });
     sl.querySelectorAll("[data-go]").forEach(function (b) {
@@ -539,7 +543,7 @@
     if (far_ && d.dx > 0 && canForward()) { forward(); return; }
     if (far_ && d.dx < 0 && view > 0) { show(view - 1, -1); return; }
     if (sl) {
-      if (sl.animate && !REDUCED) sl.animate([{ transform: sl.style.transform }, { transform: "translateX(0)" }], { duration: 180, easing: "ease-out" });
+      if (sl.animate && !reduced()) sl.animate([{ transform: sl.style.transform }, { transform: "translateX(0)" }], { duration: 180, easing: "ease-out" });
       sl.style.transform = "";
     }
   }

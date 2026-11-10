@@ -77,7 +77,7 @@
     '<div class="table-scroll"><table class="data"><thead><tr><th>רשימה</th><th>ראש הרשימה</th><th class="n">מושבים</th><th class="n">קולות</th><th class="n">אחוז</th>' +
     '<th class="n">ממוצע הסקרים</th><th class="n">ממוצע המדגמים</th><th class="n">תוצאה מול סקרים</th><th>גוש</th></tr></thead><tbody>' +
     inK.map(row).join("") +
-    (out.length ? '<tr><td colspan="9" class="small" style="background:#f7f8fa">מתחת לאחוז החסימה (' + esc(info.threshold.replace(/\s*\(.*\)/, "")) + ")</td></tr>" + out.map(row).join("") : "") +
+    (out.length ? '<tr><td colspan="9" class="small" style="background:var(--sub)">מתחת לאחוז החסימה (' + esc(info.threshold.replace(/\s*\(.*\)/, "")) + ")</td></tr>" + out.map(row).join("") : "") +
     "</tbody></table></div>" +
     '<p class="small" style="margin-top:6px">ממוצע הסקרים מוצג לרשימות שנסקרו לאורך החלון; “תוצאה מול סקרים” = המושבים בפועל פחות ממוצע הסקרים.</p>' +
     (e.small.length ? '<details class="more"><summary>עוד ' + e.small.length + " רשימות שהתמודדו ולא עברו את אחוז החסימה</summary>" +

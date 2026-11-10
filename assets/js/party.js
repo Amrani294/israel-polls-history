@@ -17,13 +17,13 @@
   function axis(pos) {
     var W = 560, H = 74, m = 34, step = (W - 2 * m) / 6;
     function x(v) { return m + (v + 3) * step; }
-    var g = ['<line x1="' + m + '" x2="' + (W - m) + '" y1="26" y2="26" stroke="#d8dce4" stroke-width="6" stroke-linecap="round"/>'];
+    var g = ['<line x1="' + m + '" x2="' + (W - m) + '" y1="26" y2="26" style="stroke:var(--rule)" stroke-width="6" stroke-linecap="round"/>'];
     for (var v = -3; v <= 3; v++) {
-      g.push('<line x1="' + x(v) + '" x2="' + x(v) + '" y1="19" y2="33" stroke="#b9bfcc"/>');
-      g.push('<text x="' + x(v) + '" y="58" font-size="11.5" text-anchor="middle" fill="#4a5268">' + esc(A.AXIS_HE[String(v)]) + "</text>");
+      g.push('<line x1="' + x(v) + '" x2="' + x(v) + '" y1="19" y2="33" style="stroke:var(--opp)"/>');
+      g.push('<text x="' + x(v) + '" y="58" font-size="11.5" text-anchor="middle" style="fill:var(--ink-2)">' + esc(A.AXIS_HE[String(v)]) + "</text>");
     }
     if (pos.lo != null) {
-      if (pos.lo === pos.hi) g.push('<circle cx="' + x(pos.lo) + '" cy="26" r="10" fill="' + color + '" stroke="#fff" stroke-width="3"/>');
+      if (pos.lo === pos.hi) g.push('<circle cx="' + x(pos.lo) + '" cy="26" r="10" fill="' + color + '" style="stroke:var(--slip)" stroke-width="3"/>');
       else g.push('<line x1="' + x(pos.lo) + '" x2="' + x(pos.hi) + '" y1="26" y2="26" stroke="' + color + '" stroke-width="16" stroke-linecap="round"/>');
     }
     return '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="מיקום פוליטי: ' + esc(pos.he) + '" direction="ltr">' + g.join("") + "</svg>";

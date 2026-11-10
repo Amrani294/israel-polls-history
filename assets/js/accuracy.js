@@ -121,20 +121,20 @@
     var bw = (W - m.l - m.r) / ds.length, g = [];
     function y(v) { return H - m.b - (H - m.t - m.b) * v / maxV; }
     for (var v = 0; v <= maxV; v += 5) {
-      g.push('<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#e8eaef"/>');
-      g.push('<text x="' + (m.l - 6) + '" y="' + (y(v) + 4) + '" font-size="11" fill="#6b7385" text-anchor="end">' + v + "</text>");
+      g.push('<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(v) + '" y2="' + y(v) + '" style="stroke:var(--rule-2)"/>');
+      g.push('<text x="' + (m.l - 6) + '" y="' + (y(v) + 4) + '" font-size="11" style="fill:var(--mute)" text-anchor="end">' + v + "</text>");
     }
     ds.forEach(function (d, i) {
       var x0 = m.l + i * bw + bw * 0.18, w = bw * 0.3;
-      g.push('<rect x="' + x0.toFixed(1) + '" y="' + y(d.pAvg).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + (H - m.b - y(d.pAvg)).toFixed(1) + '" fill="#18203a" rx="2"><title>' +
+      g.push('<rect x="' + x0.toFixed(1) + '" y="' + y(d.pAvg).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + (H - m.b - y(d.pAvg)).toFixed(1) + '" style="fill:var(--ink)" rx="2"><title>' +
         esc(A.shortWhen(d.e) + ": סקרים אחרונים, " + fmt(d.pAvg) + " מנדטים") + "</title></rect>");
-      g.push('<rect x="' + (x0 + w + 4).toFixed(1) + '" y="' + y(d.xAvg).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + (H - m.b - y(d.xAvg)).toFixed(1) + '" fill="#b9bfcc" rx="2"><title>' +
+      g.push('<rect x="' + (x0 + w + 4).toFixed(1) + '" y="' + y(d.xAvg).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + (H - m.b - y(d.xAvg)).toFixed(1) + '" style="fill:var(--opp)" rx="2"><title>' +
         esc(A.shortWhen(d.e) + ": מדגמים, " + fmt(d.xAvg) + " מנדטים") + "</title></rect>");
-      g.push('<text x="' + (x0 + w / 2).toFixed(1) + '" y="' + (y(d.pAvg) - 5).toFixed(1) + '" font-size="12" font-weight="700" text-anchor="middle" fill="#18203a">' + fmt(d.pAvg) + "</text>");
-      g.push('<text x="' + (x0 + w * 1.5 + 4).toFixed(1) + '" y="' + (y(d.xAvg) - 5).toFixed(1) + '" font-size="12" text-anchor="middle" fill="#6b7385">' + fmt(d.xAvg) + "</text>");
+      g.push('<text x="' + (x0 + w / 2).toFixed(1) + '" y="' + (y(d.pAvg) - 5).toFixed(1) + '" font-size="12" font-weight="700" text-anchor="middle" style="fill:var(--ink)">' + fmt(d.pAvg) + "</text>");
+      g.push('<text x="' + (x0 + w * 1.5 + 4).toFixed(1) + '" y="' + (y(d.xAvg) - 5).toFixed(1) + '" font-size="12" text-anchor="middle" style="fill:var(--mute)">' + fmt(d.xAvg) + "</text>");
       var parts = A.shortWhen(d.e).split(" ");
-      g.push('<text x="' + (m.l + i * bw + bw / 2).toFixed(1) + '" y="' + (H - m.b + 17) + '" font-size="12" text-anchor="middle" fill="#18203a">' + esc(parts[0]) + "</text>");
-      g.push('<text x="' + (m.l + i * bw + bw / 2).toFixed(1) + '" y="' + (H - m.b + 32) + '" font-size="12" text-anchor="middle" fill="#6b7385">' + esc(parts.slice(1).join(" ")) + "</text>");
+      g.push('<text x="' + (m.l + i * bw + bw / 2).toFixed(1) + '" y="' + (H - m.b + 17) + '" font-size="12" text-anchor="middle" style="fill:var(--ink)">' + esc(parts[0]) + "</text>");
+      g.push('<text x="' + (m.l + i * bw + bw / 2).toFixed(1) + '" y="' + (H - m.b + 32) + '" font-size="12" text-anchor="middle" style="fill:var(--mute)">' + esc(parts.slice(1).join(" ")) + "</text>");
     });
     return '<figure class="acc-trend"><svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="ממוצע המנדטים שהוזזו בכל מערכת: סקרים אחרונים מול מדגמים" direction="ltr">' + g.join("") + "</svg>" +
       '<div class="legend"><span class="C"><i></i>הסקר האחרון של כל גוף (ממוצע)</span><span class="O"><i></i>מדגמי ליל הבחירות (ממוצע)</span></div></figure>';

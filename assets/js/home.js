@@ -51,11 +51,11 @@
     function y(v) { return H - m.b - (H - m.t - m.b) * v / maxV; }
     var g = [];
     for (var v = 0; v <= maxV; v += 10) {
-      g.push('<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#e8eaef"/>');
-      g.push('<text x="' + (m.l - 8) + '" y="' + (y(v) + 4) + '" font-size="11" fill="#6b7385" text-anchor="end">' + v + "</text>");
+      g.push('<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(v) + '" y2="' + y(v) + '" style="stroke:var(--rule-2)"/>');
+      g.push('<text x="' + (m.l - 8) + '" y="' + (y(v) + 4) + '" font-size="11" style="fill:var(--mute)" text-anchor="end">' + v + "</text>");
     }
     CHRONO.forEach(function (e, i) {
-      g.push('<text x="' + x(i) + '" y="' + (H - m.b + 22) + '" font-size="11.5" fill="#4a5268" text-anchor="middle">' + esc(shortLabel(e)) + "</text>");
+      g.push('<text x="' + x(i) + '" y="' + (H - m.b + 22) + '" font-size="11.5" style="fill:var(--ink-2)" text-anchor="middle">' + esc(shortLabel(e)) + "</text>");
     });
     var lines = [], ends = [];
     ids.forEach(function (id) {
@@ -71,7 +71,7 @@
       }
       pts.forEach(function (l, i) {
         if (!l) return;
-        lines.push('<circle data-f="' + id + '" cx="' + x(i) + '" cy="' + y(l.seats) + '" r="4.5" fill="' + c + '" stroke="#fff" stroke-width="1.5"><title>' +
+        lines.push('<circle data-f="' + id + '" cx="' + x(i) + '" cy="' + y(l.seats) + '" r="4.5" fill="' + c + '" style="stroke:var(--slip)" stroke-width="1.5"><title>' +
           esc(l.name + ", " + A.shortWhen(CHRONO[i]) + ": " + l.seats + " מושבים") + "</title></circle>");
       });
       var lastIdx = -1;
