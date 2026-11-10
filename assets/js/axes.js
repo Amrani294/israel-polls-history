@@ -234,7 +234,11 @@
   fit();
   window.addEventListener("resize", function () { fit(); draw(); });
   draw();
-  var spinning = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  // no spinning with reduced motion: the device setting or "stop animations" in the accessibility panel
+  function reduced() {
+    return window.A11y ? window.A11y.reducedMotion() : !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }
+  var spinning = !reduced();
   var anim = null;
   function stop() { spinning = false; if (anim) { cancelAnimationFrame(anim); anim = null; } }
   function spin() {
@@ -275,4 +279,6 @@
     });
   });
   if (spinning) anim = requestAnimationFrame(spin);
+  // "stop animations" switched on while the cube turns
+  document.addEventListener("a11ychange", function (ev) { if (ev.detail && ev.detail.reducedMotion) stop(); });
 })();

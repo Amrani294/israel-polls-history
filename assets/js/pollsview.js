@@ -35,22 +35,22 @@
     function y(v) { return H - m.b - (H - m.t - m.b) * v / maxV; }
     var g = [];
     for (var v = 0; v <= maxV; v += 5) {
-      g.push('<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#e8eaef"/>');
-      g.push('<text x="' + (m.l - 8) + '" y="' + (y(v) + 4) + '" font-size="11" fill="#6b7385" text-anchor="end">' + v + "</text>");
+      g.push('<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(v) + '" y2="' + y(v) + '" style="stroke:var(--rule-2)"/>');
+      g.push('<text x="' + (m.l - 8) + '" y="' + (y(v) + 4) + '" font-size="11" style="fill:var(--mute)" text-anchor="end">' + v + "</text>");
     }
     // month ticks
     var d = A.parseISO(e.windowStart);
     d = new Date(d.getFullYear(), d.getMonth() + 1, 1);
     while (d.getTime() < t1) {
       var xx = x(d.getTime());
-      g.push('<line x1="' + xx + '" x2="' + xx + '" y1="' + m.t + '" y2="' + (H - m.b) + '" stroke="#eef0f4"/>');
-      g.push('<text x="' + xx + '" y="' + (H - m.b + 18) + '" font-size="11" fill="#6b7385" text-anchor="middle">' +
+      g.push('<line x1="' + xx + '" x2="' + xx + '" y1="' + m.t + '" y2="' + (H - m.b) + '" style="stroke:var(--rule-2)"/>');
+      g.push('<text x="' + xx + '" y="' + (H - m.b + 18) + '" font-size="11" style="fill:var(--mute)" text-anchor="middle">' +
         esc(d.toLocaleDateString("he-IL", { day: "numeric", month: "short" })) + "</text>");
       d = new Date(d.getFullYear(), d.getMonth() + 1, 1);
     }
     var xe = x(t1);
-    g.push('<line x1="' + xe + '" x2="' + xe + '" y1="' + m.t + '" y2="' + (H - m.b) + '" stroke="#18203a" stroke-dasharray="3 3"/>');
-    g.push('<text x="' + xe + '" y="' + (H - m.b + 18) + '" font-size="11" fill="#18203a" text-anchor="middle" font-weight="600">יום הבחירות</text>');
+    g.push('<line x1="' + xe + '" x2="' + xe + '" y1="' + m.t + '" y2="' + (H - m.b) + '" style="stroke:var(--ink)" stroke-dasharray="3 3"/>');
+    g.push('<text x="' + xe + '" y="' + (H - m.b + 18) + '" font-size="11" style="fill:var(--ink)" text-anchor="middle" font-weight="600">יום הבחירות</text>');
     var pts = [];
     polls.forEach(function (p) {
       var t = A.parseISO(p.end).getTime();
@@ -64,17 +64,17 @@
     var ends = [];
     if (e.upcoming) {
       var xa = x(A.parseISO(e.asOf).getTime());
-      g.push('<line x1="' + xa + '" x2="' + xa + '" y1="' + m.t + '" y2="' + (H - m.b) + '" stroke="#b9bfcc"/>');
-      g.push('<text x="' + xa + '" y="' + (m.t + 10) + '" font-size="11" fill="#6b7385" text-anchor="end" dx="-4">עדכון אחרון</text>');
+      g.push('<line x1="' + xa + '" x2="' + xa + '" y1="' + m.t + '" y2="' + (H - m.b) + '" style="stroke:var(--opp)"/>');
+      g.push('<text x="' + xa + '" y="' + (m.t + 10) + '" font-size="11" style="fill:var(--mute)" text-anchor="end" dx="-4">עדכון אחרון</text>');
     }
     lists.forEach(function (l) {
       if (l.seats == null) return;
       var c = A.partyColor(l), yy = y(l.seats);
-      ends.push('<rect data-p="' + esc(l.id) + '" x="' + (xe - 6) + '" y="' + (yy - 6) + '" width="12" height="12" transform="rotate(45 ' + xe + " " + yy + ')" fill="' + c + '" stroke="#fff" stroke-width="1.5"><title>' +
+      ends.push('<rect data-p="' + esc(l.id) + '" x="' + (xe - 6) + '" y="' + (yy - 6) + '" width="12" height="12" transform="rotate(45 ' + xe + " " + yy + ')" fill="' + c + '" style="stroke:var(--slip)" stroke-width="1.5"><title>' +
         esc(l.name + ": תוצאה " + l.seats) + "</title></rect>");
       if (l.exitAvg != null) {
         var ye = y(l.exitAvg);
-        ends.push('<rect data-p="' + esc(l.id) + '" x="' + (xe + 10) + '" y="' + (ye - 5) + '" width="10" height="10" fill="#fff" stroke="' + c + '" stroke-width="2"><title>' +
+        ends.push('<rect data-p="' + esc(l.id) + '" x="' + (xe + 10) + '" y="' + (ye - 5) + '" width="10" height="10" style="fill:var(--slip)" stroke="' + c + '" stroke-width="2"><title>' +
           esc(l.name + ": ממוצע המדגמים " + A.fmtSeats(l.exitAvg)) + "</title></rect>");
       }
       ends.push('<text data-p="' + esc(l.id) + '" x="' + (xe + 26) + '" y="' + (yy + 4) + '" font-size="11" fill="' + c + '" font-weight="700">' + l.seats + "</text>");
